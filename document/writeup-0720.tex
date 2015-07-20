@@ -1,0 +1,285 @@
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\usepackage{enumitem,changepage,lipsum,titlesec}
+\usepackage{cite}
+\usepackage{comment, xcolor}
+\usepackage[pdftex]{graphicx}
+  \graphicspath{{images/}, {images/stat/}}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png, .jpg}
+\usepackage[cmex10]{amsmath}
+\usepackage{array} 
+\usepackage[tight,footnotesize]{subfigure} 
+\newcommand{\grey}[1]{\textcolor{black!30}{#1}}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+
+\oddsidemargin0cm
+\topmargin-2cm %I recommend adding these three lines to increase the
+\textwidth16.5cm %amount of usable space on the page (and save trees)
+\textheight23.5cm
+
+\begin{document}
+\title{Dynamic Energy Mapping Project Outline}
+\maketitle
+\begin{abstract}
+  This document provides an approach of adding the ``time'' dimension
+  to an Energy Map. The approach is demonstrated with a model of a
+  conceptual urban setting created in CityEngine based on the
+  extracted topological and density pattern from an existing urban
+  design project. The buildings in the conceptual model is then
+  assigned an energy profile of certain DOE Commercial Benchmark
+  Building Reference model based on its building type. Hourly energy
+  demand profile of heating and cooling end use is then obtained from
+  the EnergyPlus Reference models. The energy consumption data is
+  classified into groups with consideration of building energy design
+  context and the data distribution properties. A corresponding color
+  coded energy profile is then generated and imported to
+  CityEngine. 8760 color coded 3D map images was then extracted from
+  CityEngine with Python script. A data reading, ploting,
+  color-coding calculation and a user interface for visualizing the
+  images and dynamic data plot with sliders is implemented using
+  Python and related packages. The tool is anticipated to provide
+  decision support for community energy management and
+  planning, demand-side strategy design and district system sizing.
+  
+  The document will also briefly discuss one of the testbed for data
+  classification and visualization.
+\end{abstract}
+\newpage
+\section{General Introduction}
+\subsection{Definition of Energy Map: energy related geo-database}
+\subsection{Why ``time'' dimension is important for an Energy Map}
+\begin{enumerate}[label*=\arabic*.]
+\item Development of supply side requires better understanding of
+  the demand side
+\item Community Energy Planning and District system design
+  requires a more detailed picture of the energy temporal behavior
+  on community level
+\end{enumerate}
+\subsection{General Description of Dynamic Energy Map}
+\begin{enumerate}[label*=\arabic*.]
+\item Dynamic Map holds 8760-hour meta data of energy demand
+    and supply
+\item Dynamic Map has multi-dimensional graphical display of the
+    meta data in conveying spatial-temporal pattern
+    \begin{enumerate}[label*=\arabic*.]
+    \item 1D: data plot for providing quantitative information
+    \item 2D/3D: graphical display of spatial relationship of energy 
+    data
+    \item 1D + 2D/3D: interactive graphical display of
+    spatial-temporal pattern of energy data
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Related Works}
+\subsection{Energy Map (without temporal dimension) (grouped with field
+  of application)}
+\begin{enumerate}[label*=\arabic*.]
+\item Supply side: Assessing renewable energy potential
+  \begin{enumerate}[label*=\arabic*.]
+  \item ``Evaluation of Renewable Energy potential using a {GIS}
+    decision support system'', Voivontas et al., 1998
+  \item ``Spatial mapping of renewable energy potential'', Ramachandra
+    and Shruthi, 2007
+  \item ``Energy Potential Mapping: Visualizing Energy
+    Characteristics'', Dobbelsteen et al.\ , 2013
+  \item ``NYC City Solar Map'': present solar energy potential for
+    buildings across the city. Information presented include: solar
+    energy generation curve, estimated solar system installation area,
+    finantial incentive and payback etc\url{http://www.nycsolarmap.com/}.
+    \end{enumerate}
+
+\item Supply and Demand Side: Analysis or design support of existing energy infrastructures
+    \begin{enumerate}[label*=\arabic*.]
+    \item ``Developments to an existing city-wide district energy
+    network – Part I: Identification of potential expansions using
+    heat mapping'', Finney et al.\ , 2012
+    \item National Heat Map, \url{http://tools.decc.gov.uk/nationalheatmap/}
+    \end{enumerate}
+\item Smart Management of Urban Energy System
+    \begin{enumerate}[label*=\arabic*.]
+    \item ``Smart Urban Services for Higher Energy
+    Efficiency''(SUNSHINE) project (2013): energy consumption map,
+    automatic alerts, remote control of public building lighting
+    system.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{comment}
+  \item Dynamic Map
+    \begin{enumerate}[label*=\arabic*.]
+    \item History and Archaeology Instances of Dynamic Maps
+      \begin{enumerate}[label*=\arabic*.]
+      \item Pittsburgh Historic Map, \url{http://peoplemaps.esri.com/pittsburgh/} 
+      \item Europe History Interactive Map, \url{http://www.worldology.com/Europe/europe\_history\_md.htm}
+      \end{enumerate}
+    \item Animated Maps
+      \begin{enumerate}[label*=\arabic*.]
+      \item ``The Role of Map Animation for Geographic
+        Visualization'', Mark Harrower and Sara Fabrikant
+      \item ``Using Computer Animation to Visualize Patterns'', D Dorling and S Openshaw, 1992
+      \end{enumerate}
+    \end{enumerate}
+  \item Works on Visualization focusing on map design and information
+    convey
+    \begin{enumerate}[label*=\arabic*.]
+    \item ``Data Visualization with Spacetime Maps'', Richard
+      L. Brownrigg, 2005
+    \item ``Effectiveness and efficiency of map symbols for dynamic
+      geographic information visualization.'', Dong et al.\ 
+    \item ``Geographic Visualization: Designing Manipulable Maps for
+      Exploring Temporally Varying Georeferenced Statistics'', MacEachren et al.\
+    \item ``Strategies for the Visualization of Geographic Time-Series
+      Data'', Mark Monmonier, 2011
+    \item ``Evaluation of Methods for Classifying Epidemiological Data
+      on Choropleth Maps in Series'', Brewer and Pickle, 2002
+    \end{enumerate}
+  \item Works on Technology regarding 4D visualization
+    \begin{enumerate}[label*=\arabic*.]
+    \item ``Web-based 4D visualization of marine geo-data using
+      WebGL'', Resch et al.\ , 2014
+    \end{enumerate}
+  \item Interface design of 4D visualization Case studies
+    \begin{enumerate}[label*=\arabic*.]
+    \item ``Web-based 4D visualization of marine geo-data using
+      WebGL'', Resch et al.\ , 2014
+    \end{enumerate}
+  \end{enumerate}
+\item Objective
+  \begin{enumerate}[label*=\arabic*.]
+  \item Discuss the specifications / definitions of dynamic energy map
+  \item Evaluating some possible approaches to implement dynamic
+    energy map
+  \item Presenting one major implementation approach
+  \end{enumerate}
+\item Methodology
+  \begin{enumerate}[label*=\arabic*.]
+  \item General Work Flow
+  \item Simulation Setting
+    \begin{enumerate}[label*=\arabic*.]
+    \item Source of benchmark models and default assumptions
+    \item Modified settings: urban environment context
+    \item Summary of input and output parameters
+    \end{enumerate}
+  \item Model Setting
+    \begin{enumerate}[label*=\arabic*.]
+    \item Software used in modeling and their general features (why
+      choosing them)
+    \item Process of extracting building layout from Mellon Arena
+      Project
+      \begin{enumerate}[label*=\arabic*.]
+      \item Topological Pattern of the Mellon Arena Project
+      \item Building Type converting
+      \item Final Plan of the Conceptual Model
+      \end{enumerate}
+    \end{enumerate}
+    \item Data Collection and Analysis
+      \begin{enumerate}[label*=\arabic*.]
+      \item Simulation Data Analysis of the benchmark models
+        \begin{enumerate}[label*=\arabic*.]
+        \item Distribution: Histogram, box plot
+        \item Profile: Energy - Time plot
+        \end{enumerate}
+      \item Potential Impact on system design or data visualization
+        based on the analysis above
+      \end{enumerate}
+    \item Temporal Data Aggregation
+      \begin{enumerate}[label*=\arabic*.]
+      \item With CityEngine
+      \item With ArcGIS (ArcScene)
+      \item Comparison
+      \end{enumerate}
+  \item Data Classification and symbol/color design of a dynamic
+    choropleth map
+    \begin{enumerate}[label*=\arabic*.]
+    \item Review of General Approaches: see 3.3
+    \item ``Critical Values'' or special cutoff values to be
+      considered in the context of Community Energy Planning: need to
+      look up (@@)
+    \item Final choices of classification method and symbol/color
+      scheme and the implementation
+    \end{enumerate}
+  \end{enumerate}
+\item Interface Design
+  \begin{enumerate}[label*=\arabic*.]
+  \item Guidelines from interface design case study: See 2.5
+  \item User definition
+    \begin{enumerate}[label*=\arabic*.]
+    \item Potential Users: policy makers, urban planners with the
+      interest in executing community level energy strategies,
+      researchers in energy related fields, public groups or
+      individuals.
+    \item Target users for the current project: researchers in energy
+      related fields
+      \begin{enumerate}[label*=\arabic*.]
+      \item Assumptions about the skill level and background knowledge
+      \item How the assumptions influence design choices of the
+        interface design
+      \end{enumerate}
+    \end{enumerate}
+  \item Goal Function of the interface
+    \begin{enumerate}[label*=\arabic*.]
+    \item Revealing the spatial-temporal heating / cooling demand
+      variation of the conceptual model by applying the Dynamic
+      Energy Map on a conceptual urban setting
+    \end{enumerate}
+  \item Major Operation Description
+    \begin{enumerate}[label*=\arabic*.]
+    \item Navigate through dynamic map images with time sliders
+    \item Provide several default settings for choropleth map display
+    \item Provide a brief help window and documentation of the tool
+    \end{enumerate}
+  \item Current Interface Design
+    \begin{enumerate}[label*=\arabic*.]
+    \item General Layout
+    \item Navigation Function
+      \begin{enumerate}[label*=\arabic*.]
+      \item Overall navigation of year-round data
+      \item Navigate and compare with default time steps: month, day,
+        hour
+      \end{enumerate}
+    \item Dynamic Plot
+    \item Implementation tools and strategy
+    \end{enumerate}
+  \end{enumerate}
+\item Conclusion
+  \begin{enumerate}[label*=\arabic*.]
+  \item Summary of the current approach in implementing the dynamic
+    energy map
+  \item Limitations of the current implementation
+    \begin{enumerate}[label*=\arabic*.]
+    \item Simplified building simulation assumption about urban
+      environment
+    \item Lack of user choices for the stand-alone user interface as a
+      result of its dependence on existing modeling softwares
+    \end{enumerate}
+  \item Future Expansion of the project
+    \begin{enumerate}[label*=\arabic*.]
+    \item Adding information of the supply side: residual energy,
+      sustainable energy
+    \item Providing different interfaces for different user population
+    \item 2D and 3D compatible \\The reason for providing 2D map
+      together with 3D map is that 2D maps have the following good
+      properties:
+      \begin{enumerate}[label*=\arabic*.]
+      \item Better for region selection and spatial navigation than 3D
+        map
+      \item Better for conveying spatial relationship that does not
+        involve height induced variation
+      \item For larger scale display of city, state or nationwide, 3D
+        building geometries becomes less significant in providing the
+        urban environment context
+      \end{enumerate}
+    \item Creating an on-line tool for better information share
+      \begin{enumerate}[label*=\arabic*.]
+      \item Potential techniques: see 2.4
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+\item Acknowledgments
+\end{enumerate}
+\end{comment}
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEfull,myCitation}
+\end{document}
