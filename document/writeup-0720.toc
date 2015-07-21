@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}General Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Definition of Energy Map: Urban Energy Geo-database}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Why ``time'' dimension is important for an Energy Map}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}General Description of Dynamic Energy Map}{3}{subsection.1.3}
+\contentsline {section}{\numberline {2}Related Works}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Energy Map (without temporal dimension) (grouped with field of application)}{5}{subsection.2.1}

@@ -20,6 +20,8 @@
 \begin{document}
 \title{Dynamic Energy Mapping Project Outline}
 \maketitle
+\tableofcontents
+\newpage
 \begin{abstract}
   This document provides an approach of adding the ``time'' dimension
   to an Energy Map. The approach is demonstrated with a model of a
@@ -46,11 +48,57 @@
 \end{abstract}
 \newpage
 \section{General Introduction}
-\subsection{Definition of Energy Map: energy related geo-database}
+\subsection{Definition of Energy Map: Urban Energy Geo-database}
+In a restricted sense, Energy Map is an instance of a thematic map
+that depicts energy information. More generally, an energy map is an
+abstract representation of some energy feature in an urban
+environment. It is useful in providing qualitative or quantitative
+insight of the energy feature it represents. The energy related
+features depicted in an energy map can be classified into two major
+categories: the supply side and the demand side. The following
+discussions will be based on the two main categories.
+
+Energy map is a hibernation of two types of databases: building energy
+database, a subset of the BIM (Building Information Model) system and
+GIS (Geographical Information System). The basic functions of an
+energy map includes 1) storing energy data in an organized fashion,
+that facilitate easy analysis and query of energy data and 2) provide
+reports in the form of graphs, tables, animations etc that conveys
+numerical information in a way that best support pattern recognition
+and decision support.
+
 \subsection{Why ``time'' dimension is important for an Energy Map}
 \begin{enumerate}[label*=\arabic*.]
-\item Development of supply side requires better understanding of
-  the demand side
+\item Demand Side is strongly time dependent
+
+  The demand of energy is strongly dependent on weather condition and
+  building types, operation schedules. Weather conditions have
+  strongly seasonal pattern and periodical daily pattern. This type of
+  variation takes the form of a global influence on heating or cooling
+  load. The building operation schedule of different building types
+  vary greatly which indicate a non-coherent arrival of peak
+  demand. In order to match the supply side to the demand side,
+  understanding the strongly the spatial-temporal pattern of the
+  energy demand is crutial.
+
+\item Supply Side should better match the demand side in energy supply
+  timing and intensity for reducing total consumption
+
+  \begin{comment}
+  Mark!!!!!!
+  The major energy source used in the building sector are electricity
+  and natural gas: 3559 tBtu (55\%) electricity and 2100 tBtu (32\%)
+  natural gas were consumed for the commertial building sector,
+  ~\cite{CBECS2003}. In RECS 2009, the space heating (42\%) and
+  lighting and appliances (30\%) accounted for over 70\% of
+  residential energy consumption~\cite{HomeEnergyEIA2015}.
+
+  \par As the result of the finiteness of fossil fuels, the using of
+  renewable energy begins to come into play. In 2013, renewable energy
+  account for 9\% of the residential and commercial primary energy
+  source~\cite{EIAPrimary2013}.
+  \end{comment}
+  
 \item Community Energy Planning and District system design
   requires a more detailed picture of the energy temporal behavior
   on community level
@@ -95,6 +143,10 @@
     network – Part I: Identification of potential expansions using
     heat mapping'', Finney et al.\ , 2012
     \item National Heat Map, \url{http://tools.decc.gov.uk/nationalheatmap/}
+    \end{enumerate}
+\item Demand Side: Energy consumption prediction model
+    \begin{enumerate}[label*=\arabic*.]
+      \item ``A large-scale study on predicting and contextualizing building energy usage'', Kolter, J. Zico; Ferreira Jr, Joseph.
     \end{enumerate}
 \item Smart Management of Urban Energy System
     \begin{enumerate}[label*=\arabic*.]
@@ -280,6 +332,6 @@
 \end{enumerate}
 \end{comment}
 \newpage
-\bibliographystyle{IEEEtran}
-\bibliography{IEEEfull,myCitation}
+\bibliographystyle{plain}
+\bibliography{myCitation}
 \end{document}
