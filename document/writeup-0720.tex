@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[hidelinks,12pt]{article}
 \usepackage{hyperref}
 \usepackage{enumitem,changepage,lipsum,titlesec}
 \usepackage{cite}
@@ -113,7 +113,16 @@ pattern recognition and decision support.
 This definition can be considered as a superset of the thematic
 definition, so the energy topics inherits those representable in the
 thematic energy map. Some examples of the Energy Maps under this
-definition include: National Heat Map that supports 
+definition include: National Heat Map that visualizes heat demand
+density of different building sectors, using GIS as a decision support
+to for assessing Renewable Energy Potential~\cite{Voivontas1998333},
+evaluating different choices of power plant~\cite{Yeo201499},
+evaluation district system expanssion~\cite{Finney2012165}.
+
+\subsubsection{Coupled Geo-database and Energy Simulation Platform}
+Even further, the new development of Dynamic Energy Map would provide
+stooth connections to urban level energy simulation tools support the
+performance-based community energy planning and geo-design.
 
 \subsection{Why ``time'' dimension is important for an Energy Map}
 \subsubsection{Strong Temporal Variation of Energy Demand}
@@ -164,8 +173,9 @@ match the supply side to the complicated behavior of the demand side,
 understanding the spatial-temporal pattern of the energy demand 
 in the early design and planning stage is important.
 
-\subsubsection{Development of Supply Side Requires Better Understanding of Supply Side} 
-\subsubsection{Community energy planning and district system design requires a more detailed picture of the energy temporal behavior on community level} 
+%\subsubsection{Development of Supply Side Requires Better Understanding of Supply Side} 
+%\subsubsection{Community energy planning and district system design requires a more detailed picture of the energy temporal behavior on community level} 
+
 \subsection{General Description of Dynamic Energy Map}
 Within the current context, ``dynamic'' refers to changing over time,
 hence Dynamic Energy Map is an Energy Map equipped with temporal
@@ -188,7 +198,7 @@ breakpoints to the sequence of thematic maps in this version of
 Dynamic Energy Map.
 
 \subsubsection{Spatial-Temporal Energy-geo-database}
-In a broader sence, where Energy Map is defined as a
+In a broader sence, where Energy Map is defined as
 energy-geo-database, Dynamic Energy Map is an energy-geo-database with
 ``time'' being one of its data entries. One major purpose of Dynamic
 Energy Map under this definition is to enable search, filter and query
@@ -197,52 +207,95 @@ as one of the indexes in the database that facilitates faster search
 and query of the time data.  The second task of Dynamic Energy Map is
 to provide more powerful reporting tools than normal Energy Maps that
 accounts for the difficulty and complexity of spatial-temporal data
-visualization aiming that better conveying the dynamic spatial
+visualization aiming at better conveying the dynamic spatial
 pattern.
 
-In this study we explored the realization and application of Dynamic
-Energy Map with a use case senario of supporting district
-energy system design and community energy management. 
+\subsubsection{Performance Based Geo-design Support Platform}
+When Dynamic Energy Map becomes a platform coupled with Energy
+Simulation tools, design alternatives would be evaluated and compared
+at each given time spot or time window according to the design context.
+\newpage
+\section{Objective and Problem Definition}
+\subsection{Exploring potential use cases of Dynamic Energy Map}
+One major objective of this study is to explore the application of
+Dynamic Energy Map with a use case senario of supporting district
+energy system design, community energy management and geo-design
+approach.
 
+\subsubsection{Support District System Design}
 A district energy system consists of a power plant, a series of
 buildings as ternimal energy users and a network of pipelines that
 transmit energy from the power plant to end-users. Commonly used media
 for energy transmission include steam, hot water or chilled
 water~\cite{baird2014}. The district system helps reducing
 environmental impact by harvesting residual energy in the form of
-rejected heat or coolth in the process of electricity generation, more
-efficient energy generation equipment than stand-alone system, and by
-using waste in energy generation.
+rejected heat or coolth in the process of electricity generation. It
+is also more efficient in energy generation , and by using waste in energy generation. Other
+non-environmental benifits include reducing the space dedicated to
+mechanical system and improve design flexibility in buildings and less
+harmful gas production from stand-alone boiler conbustion.
 
-Dynamic Energy Map support district energy system design by revealing
-the non-coherant peak demand of heat and electricity.
-For this scenario, we identify ``demand side'', 
+Dynamic Energy Map support district energy system design by 1)
+revealing the non-coherant peak demand of heat and electricity, so
+that the size of the co-generation system capacity is not the sum of
+the peak demand of each individual building within the system
+coverage. 2) Support comparison of aggregate energy demand for
+different design choices so that the design alternative with more
+stable demand could stand out among all design alternatives.
 
-In this use case, we define our Dynamic Energy Map as:
+\subsubsection{Support Community Energy Management}
+Community Energy Management is a combination of urban planning,
+transportation management and infrastructure design.
+
+\subsubsection{Support Geo-design}
+\subsubsection{Definition of Dynamic Energy Map according to the use
+  cases above}
+According to the use cases above we selected the heating and cooling
+demand as the major variable in discussion.
+We define ``Local'' Dynamic Energy Map for Community level design support as:
 \begin{itemize}
-\item A database holding 8760-hour meta data of energy demand
-  ~\cite{baird2014}.
-\item An interface that has multi-dimensional graphical display of
-  the meta data in conveying spatial-temporal pattern
+\item A database holding 8760-hour meta data of energy demand of
+  buildings in a moderate sized community served by a district
+  system~\cite{baird2014}.
+\item An interface that has multi-dimensional graphical display of the
+  meta data in conveying spatial-temporal pattern of the energy
+  behavior of the district.
   \begin{itemize}
-  \item 1D: data plot for providing quantitative information
+  \item 1D: data plot for providing quantitative information 
+
+    The Local Dynamic Energy Map displays the aggregated hourly energy
+    demand of the whole community and major building sectors
+    throughout the year. It enables comparison of different urban
+    design alternatives in terms of total demand and demand
+    variation. These information supports district system planning by
+    optimizing the load of buildings in a mix-used community so that
+    they have a stabler demand profile.
+
   \item 2D/3D: graphical display of spatial relationship of energy
     data
+
+    The Local Dynamic Energy Map applies a graduated symbol or color
+    to buildings in the community aiming at providing the intuition of
+    the building energy demand behavior within a community. It helps
+    identify the rank of energy demand in a community and provides a
+    guidance in energy cascading design.
+    
+    For univariant map senario, we suggest the variant size
+    symbol. For bivariant map senario, such as the case for the
+    current study, we suggest a two dimentional color ramp.
+
   \item 1D + 2D/3D: interactive graphical display of spatial-temporal
     pattern of energy data
   \end{itemize}
 \end{itemize}
 
-\section{Objective}
-\subsection{Exploring a potential use case of Dynamic Energy Map in
-  Community Planning 
-  Design Support}
+\begin{comment}
+\begin{enumerate}
 \item Discuss the specifications / definitions of dynamic Energy Map
 \item Evaluating some possible approaches to implement dynamic energy
   map
 \item Presenting one major implementation approach
 \end{enumerate}
-\begin{comment}
 \section{Related Works}
 \subsection{Energy Map (without temporal dimension) (grouped with field
   of application)}

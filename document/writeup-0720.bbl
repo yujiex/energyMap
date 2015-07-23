@@ -86,12 +86,12 @@ Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
 \newblock web, July 2015.
 \newblock \url{http://www.eia.gov/state/?sid=PA}.
 
-\bibitem{EIARenewable2015}
-{EIA}.
-\newblock What is renewable energy.
-\newblock web, July 2015.
-\newblock
-  \url{http://www.eia.gov/energyexplained/index.cfm?page=renewable_home}.
+\bibitem{Finney2012165}
+Karen~N. Finney, Vida~N. Sharifi, Jim Swithenbank, Andy Nolan, Simon White, and
+  Simon Ogden.
+\newblock Developments to an existing city-wide district energy network –
+  part i: Identification of potential expansions using heat mapping.
+\newblock {\em Energy Conversion and Management}, 62(0):165 -- 175, 2012.
 
 \bibitem{Hay2011}
 Geoffrey Hay, Christopher Kyle, Bharanidharan Hemachandran, Gang Chen,
@@ -117,6 +117,12 @@ Zoe Redgrove.
 \newblock web, October 2012.
 \newblock \url{http://tools.decc.gov.uk/nationalheatmap/}.
 
+\bibitem{Voivontas1998333}
+D.~Voivontas, D.~Assimacopoulos, A.~Mourelatos, and J.~Corominas.
+\newblock Evaluation of renewable energy potential using a {GIS} decision
+  support system.
+\newblock {\em Renewable Energy}, 13(3):333 -- 344, 1998.
+
 \bibitem{HeatmapWiki}
 {Wikipedia}.
 \newblock Heat map.
@@ -128,5 +134,13 @@ Zoe Redgrove.
 \newblock Thematic map.
 \newblock web, July 2015.
 \newblock \url{https://en.wikipedia.org/wiki/Thematic_map#History}.
+
+\bibitem{Yeo201499}
+In-Ae Yeo and Jurng-Jae Yee.
+\newblock A proposal for a site location planning model of environmentally
+  friendly urban energy supply plants using an environment and energy
+  geographical information system (e-gis) database (db) and an artificial
+  neural network (ann).
+\newblock {\em Applied Energy}, 119(0):99 -- 117, 2014.
 
 \end{thebibliography}
