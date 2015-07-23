@@ -1,12 +1,58 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{CBECS2003}
-{EIA}.
-\newblock Table c1a. total energy consumption by major fuel for all buildings,
-  2003.
-\newblock web, December 2003.
-\newblock
-  \url{http://www.eia.gov/consumption/commercial/data/archive/cbecs/cbecs2003/detailed_tables_2003/2003set14/2003html/c1a.html}.
+\bibitem{CO2Atlas}
+Global~Carbon Atlas.
+\newblock Global carbon atlas.
+\newblock web, July 2015.
+\newblock \url{http://www.globalcarbonatlas.org/?q=en/emissions}.
+
+\bibitem{baird2014}
+Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
+\newblock {\em Building information modeling: BIM in current and future
+  practice}, chapter~10.
+\newblock Wiley, Hoboken, New Jersey, 2014.
+
+\bibitem{DOEEnergyCost}
+{DOE}.
+\newblock Energy expenditure per person.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/how-much-do-you-spend-energy}.
+
+\bibitem{DOEVulner}
+{DOE}.
+\newblock The energy sector's vulnerabilities to climatic conditions.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/climate-vulnerabilities#al}.
+
+\bibitem{IECCClimate}
+{DOE}.
+\newblock Residential prescriptive requirement.
+\newblock web, July 2015.
+\newblock \url{https://energycode.pnl.gov/EnergyCodeReqs/}.
+
+\bibitem{CodeAdopt}
+{DOE}.
+\newblock Status of state energy code adoption.
+\newblock web, July 2015.
+\newblock \url{https://www.energycodes.gov/status-state-energy-code-adoption}.
+
+\bibitem{DOEEnergyProduct}
+{DOE}.
+\newblock Us energy production through the years.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/energy-production-over-years}.
+
+\bibitem{DOEHydro}
+{DOE}.
+\newblock Us hydropower potential from existing non-powered dams.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/energy-production-over-years}.
+
+\bibitem{DOEWindFarm}
+{DOE}.
+\newblock Wind farms through years.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/wind-farms-through-years#buttn}.
 
 \bibitem{EIAPrimary2013}
 {EIA}.
@@ -15,11 +61,72 @@
 \newblock
   \url{http://www.eia.gov/energyexplained/index.cfm?page=us_energy_homes}.
 
-\bibitem{HomeEnergyEIA2015}
+\bibitem{EIAGaspipe}
 {EIA}.
-\newblock Use of energy in the united states explained energy use in home.
+\newblock About u.s. natural gas pipelines.
 \newblock web, July 2015.
 \newblock
-  \url{http://www.eia.gov/energyexplained/index.cfm?page=us_energy_homes}.
+  \url{http://www.eia.gov/pub/oil_gas/natural_gas/analysis_publications/ngpipeline/ngpipeline_maps.html}.
+
+\bibitem{EIACoalProduct}
+{EIA}.
+\newblock Asia leads growth in global coal production since 1980.
+\newblock web, July 2015.
+\newblock \url{http://www.eia.gov/todayinenergy/detail.cfm?id=4210}.
+
+\bibitem{EIACoalDemand}
+{EIA}.
+\newblock Rising asian demand drives global coal consumption growth.
+\newblock web, July 2015.
+\newblock \url{http://www.eia.gov/todayinenergy/detail.cfm?id=4390}.
+
+\bibitem{EIAProfile2015}
+{EIA}.
+\newblock State profile and energy estimates.
+\newblock web, July 2015.
+\newblock \url{http://www.eia.gov/state/?sid=PA}.
+
+\bibitem{EIARenewable2015}
+{EIA}.
+\newblock What is renewable energy.
+\newblock web, July 2015.
+\newblock
+  \url{http://www.eia.gov/energyexplained/index.cfm?page=renewable_home}.
+
+\bibitem{Hay2011}
+Geoffrey Hay, Christopher Kyle, Bharanidharan Hemachandran, Gang Chen,
+  Mir~Mustafizur Rahman, Tak Fung, and Joseph Arvai.
+\newblock Geospatial technologies to improve urban energy efficiency.
+\newblock {\em Remote Sensing}, 3:1380--1405, July 2011.
+
+\bibitem{Mikkola2014256}
+Jani Mikkola and Peter~D. Lund.
+\newblock Models for generating place and time dependent urban energy demand
+  profiles.
+\newblock {\em Applied Energy}, 130:256 -- 264, 2014.
+
+\bibitem{NRELMap2015}
+{NREL}.
+\newblock Dynamic maps, gis data, \&analysis tools.
+\newblock web, July 2015.
+\newblock \url{http://www.nrel.gov/gis/maps.html}.
+
+\bibitem{heatMap2012}
+Zoe Redgrove.
+\newblock Using the national heat map.
+\newblock web, October 2012.
+\newblock \url{http://tools.decc.gov.uk/nationalheatmap/}.
+
+\bibitem{HeatmapWiki}
+{Wikipedia}.
+\newblock Heat map.
+\newblock web, July 2015.
+\newblock \url{https://en.wikipedia.org/wiki/Heat_map}.
+
+\bibitem{ThematicMap}
+{Wikipedia}.
+\newblock Thematic map.
+\newblock web, July 2015.
+\newblock \url{https://en.wikipedia.org/wiki/Thematic_map#History}.
 
 \end{thebibliography}

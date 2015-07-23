@@ -48,76 +48,183 @@
 \end{abstract}
 \newpage
 \section{General Introduction}
-\subsection{Definition of Energy Map: Urban Energy Geo-database}
+\subsection{Definition of Energy Map}
+\subsubsection{Energy Thematic Map}
 In a restricted sense, Energy Map is an instance of a thematic map
-that depicts energy information. More generally, an energy map is an
-abstract representation of some energy feature in an urban
-environment. It is useful in providing qualitative or quantitative
-insight of the energy feature it represents. The energy related
-features depicted in an energy map can be classified into two major
-categories: the supply side and the demand side. The following
-discussions will be based on the two main categories.
+that depicts energy information. It is an abstract representation of
+some energy feature in an urban environment. It is useful in providing
+energy related qualitative or quantitative insight. 
 
-Energy map is a hibernation of two types of databases: building energy
-database, a subset of the BIM (Building Information Model) system and
-GIS (Geographical Information System). The basic functions of an
-energy map includes 1) storing energy data in an organized fashion,
-that facilitate easy analysis and query of energy data and 2) provide
-reports in the form of graphs, tables, animations etc that conveys
-numerical information in a way that best support pattern recognition
-and decision support.
+The energy topics depicted in an Energy Map can be classified into
+four major categories: energy supply, energy demand, energy related
+building design / urban planning, and energy related environmental
+impact. One common sub-category of the supply side topics concerns the
+locations and evolving process of energy infrastructures such as power
+plants, energy transmission pipelines, energy refining facilities and
+market hubs. EIA state energy profile map~\cite{EIAProfile2015},
+U.S. natural gas pipeline map~\cite{EIAGaspipe}, and U.S. wind farm
+development dynamic map \cite{DOEWindFarm} are under this
+sub-category. Other supply side topics include total energy production
+~\cite{DOEEnergyProduct}; total energy source production like global
+coal production map~\cite{EIACoalProduct}; sustainable energy
+potential map of wind, solar, biomass, geothermal energy
+potential~\cite{NRELMap2015} and hidropower
+potential~\cite{DOEHydro}. Common demand side topics include: energy
+demand for one or more enduses ~\cite{heatMap2012}, energy source
+demand like coal demand ~\cite{EIACoalDemand} and energy cost
+~\cite{DOEEnergyCost}. The design side topics concerns building
+physical conditions like Calgory Heat Map ~\cite{Hay2011}, design
+policy information like climate zone map~\cite{IECCClimate} and energy
+code adoption map~\cite{CodeAdopt}. The energy behavior environmental
+impact map include both the impact of building or energy
+infrastructure to environment and the environment change to buildings
+or infrastructures. The carbon emission map as ~\cite{CO2Atlas} is an
+instance of the former and the ``Energy Sector's Vulnerabilities to
+Climatic Conditions'' Map is an example of the
+latter~\cite{DOEVulner}.
+
+It is necessary to mention some unfortunate terminology overloading
+involved in the topic of Energy Map. The term ``Heat Map'' used in
+this discussion refers to the Energy Map with building heating energy
+as its theme, not to be mis-interpreted as the color-coded
+representation of matrix values as in this
+definition~\cite{HeatmapWiki}.
+
+The history of thematic map dates back to early 17th century, and from
+then map can present spatial changes of some feature in addition to
+merely recording locations of geographic
+features~\cite{ThematicMap}. Over a century later, spatial analysis
+emerges and map starts to assisting geo-data analysis. Finally
+after the born of modern computer and the development of database, map
+becomes a more powerful information system that undertakes more
+complecated tasks including data aggregation, managing, querying and
+presenting. This gives Energy Map a much broader meaning.
+
+\subsubsection{Geo-database of Building Energy}
+In a broader sense, Energy Map is a hibernation of two types of
+databases: building energy database, a subset of the BIM (Building
+Information Model), and Geographical Information
+System (GIS). The basic functions of an Energy Map includes 1) storing
+energy data in an organized fashion, that facilitate easy analysis and
+query of energy data and 2) provide reports in the form of graphs,
+tables, animations etc that conveys numerical information in a way
+that best support pattern recognition and decision support.
 
 \subsection{Why ``time'' dimension is important for an Energy Map}
-\begin{enumerate}[label*=\arabic*.]
-\item Demand Side is strongly time dependent
+\subsubsection{Strong Temporal Variance Energy Demand}
+Building energy demand is strongly dependent on weather conditions,
+building types, size, building physical design, building mechanical
+system and appliance selection and operation schedules. The factors of
+building design, mechanical system and appliance selection remain
+relatively constant over time. Weather conditions have strong seasonal
+pattern and day-night pattern. This type of variation takes the form
+of a global influence on building heating or cooling load. The
+building operation schedule vary greatly from building to building as
+a result of difference in building types, sizes, design, appliance
+etc. Different operation scheduce indicates a non-coherent arrival of
+peak demand within a mixed-use urban environment. Difference in
+building type suggests a different indoor environment requirement such
+as ventilation rate, lighting intencity etc., indicating a dramatic
+variance in data distribution of energy consumption over
+time. Building envolope and mechanical system quality indicate a great
+variance in the range and extreme value of energy consumption. All of
+these suggests a simple annual or monthly average cannot effectly
+represent the real energy consumption behavior of an urban
+environment. In order to present this complecated behavior of energy
+demand, the time dimension is 
 
-  The demand of energy is strongly dependent on weather condition and
-  building types, operation schedules. Weather conditions have
-  strongly seasonal pattern and periodical daily pattern. This type of
-  variation takes the form of a global influence on heating or cooling
-  load. The building operation schedule of different building types
-  vary greatly which indicate a non-coherent arrival of peak
-  demand. In order to match the supply side to the demand side,
-  understanding the strongly the spatial-temporal pattern of the
-  energy demand is crutial.
+In order to match the supply side to the demand side,
+understanding the spatial-temporal pattern of the energy demand is
+crutial.
+\subsubsection{Temporal variation of the Supply Side}
+The commonly used renewable energy source includes: solar, wind,
+geothermal, hydropower and biomass. Among these sources, solar energy
+have strong temporal fluctuation as a result of the temporal variation
+of solar radiation between different hours of a year and the time of
+year~\cite{EIARenewable2015}. There is also a cost variation involved
+in the energy supply.
 
-\item Supply Side should better match the demand side in energy supply
-  timing and intensity for reducing total consumption
+\subsubsection{Close Match of Supply Side to Demand Side Improves Community Scale Energy Performance} 
+As the result of the finiteness of fossil fuels, the using of
+renewable energy begins to come into play. In 2013, renewable energy
+account for 9\% of the residential and commercial primary energy
+source~\cite{EIAPrimary2013}. Electricity generated from sustainable
+sources normally do not have much storage capacity, hence in order to
+meet the energy demand with renewable electricity, a better
+understanding of the spatial-temporal pattern of energy demand is
+important~\cite{Mikkola2014256}.
 
-  \begin{comment}
-  Mark!!!!!!
-  The major energy source used in the building sector are electricity
-  and natural gas: 3559 tBtu (55\%) electricity and 2100 tBtu (32\%)
-  natural gas were consumed for the commertial building sector,
-  ~\cite{CBECS2003}. In RECS 2009, the space heating (42\%) and
-  lighting and appliances (30\%) accounted for over 70\% of
-  residential energy consumption~\cite{HomeEnergyEIA2015}.
-
-  \par As the result of the finiteness of fossil fuels, the using of
-  renewable energy begins to come into play. In 2013, renewable energy
-  account for 9\% of the residential and commercial primary energy
-  source~\cite{EIAPrimary2013}.
-  \end{comment}
-  
-\item Community Energy Planning and District system design
-  requires a more detailed picture of the energy temporal behavior
-  on community level
-\end{enumerate}
+\subsubsection{Development of Supply Side Requires Better Understanding of Supply Side} 
+\subsubsection{Community energy planning and district system design requires a more detailed picture of the energy temporal behavior on community level} 
 \subsection{General Description of Dynamic Energy Map}
-\begin{enumerate}[label*=\arabic*.]
-\item Dynamic Map holds 8760-hour meta data of energy demand
-    and supply
-\item Dynamic Map has multi-dimensional graphical display of the
-    meta data in conveying spatial-temporal pattern
-    \begin{enumerate}[label*=\arabic*.]
-    \item 1D: data plot for providing quantitative information
-    \item 2D/3D: graphical display of spatial relationship of energy 
-    data
-    \item 1D + 2D/3D: interactive graphical display of
-    spatial-temporal pattern of energy data
-    \end{enumerate}
-\end{enumerate}
+Within the current context, ``dynamic'' refers to changing over time,
+hence Dynamic Energy Map is an Energy Map equipped with temporal
+information. As a result of the ``dynamic'' property, one assumption
+about Dynamic Energy Map is that at least one of the energy related
+variables depicted in the map should change over time. Due to the fact
+that there are two versions of definitions for Energy Map, there are
+also two versions of corresponding Dynamic Energy Map.
 
+In a restricted sense, where an Energy Map is defined as a thematic
+map focusing on energy topics, Dynamic Energy Map is just a series of
+maps, each of which is a thematic Energy Map representing the status
+of energy information happened at a certain time spot. Also with the
+convention that thematic maps are ordered in increasing time order.
+The purpose of such a Dynamic Energy Map is to facilitate the
+comparison of thematic maps at different time steps. Baring this in
+mind, it makes more sence to apply a universal map symbol and
+breakpoints to the sequence of thematic maps in this version of
+Dynamic Energy Map.
+
+In a broader sence, where Energy Map is defined as a
+energy-geo-database, Dynamic Energy Map is an energy-geo-database with
+``time'' being one of its data entries. One major purpose of Dynamic
+Energy Map under this definition is to enable search, filter and query
+of the energy data by ``time'' field, thus presumably, time should act
+as one of the indexes in the database that facilitates faster search
+and query of the time data.  The second task of Dynamic Energy Map is
+to provide more powerful reporting tools than normal Energy Maps that
+accounts for the difficulty and complexity of spatial-temporal data
+visualization aiming that better conveying the dynamic spatial
+pattern.
+
+In this study we explored the realization and application of Dynamic
+Energy Map with a restricted use case senario of supporting district
+energy system design and community energy management. 
+
+A district energy system consists of a power plant, a series of
+buildings as ternimal energy users and a network of pipelines that
+transmit energy from the power plant to end-users. Commonly used media
+for energy transmission include steam, hot water or chilled water~\cite{baird2014}.
+
+For this scenario, we identify ``demand side'', 
+
+with
+heating and cooling demand as two major variables. 
+
+\begin{itemize}
+\item Dynamic Energy Map holds 8760-hour meta data of energy demand
+  and supply~\cite{baird2014}.
+\item Dynamic Energy Map has multi-dimensional graphical display of
+  the meta data in conveying spatial-temporal pattern
+  \begin{itemize}
+  \item 1D: data plot for providing quantitative information
+  \item 2D/3D: graphical display of spatial relationship of energy
+    data
+  \item 1D + 2D/3D: interactive graphical display of spatial-temporal
+    pattern of energy data
+  \end{itemize}
+\end{itemize}
+
+\newpage
+\section{Objective}
+%BookMark!!!!!
+\begin{enumerate}[label*=\arabic*.]
+\item Discuss the specifications / definitions of dynamic Energy Map
+\item Evaluating some possible approaches to implement dynamic energy
+  map
+\item Presenting one major implementation approach
+\end{enumerate}
 \newpage
 \section{Related Works}
 \subsection{Energy Map (without temporal dimension) (grouped with field
@@ -196,13 +303,6 @@ and decision support.
     \item ``Web-based 4D visualization of marine geo-data using
       WebGL'', Resch et al.\ , 2014
     \end{enumerate}
-  \end{enumerate}
-\item Objective
-  \begin{enumerate}[label*=\arabic*.]
-  \item Discuss the specifications / definitions of dynamic energy map
-  \item Evaluating some possible approaches to implement dynamic
-    energy map
-  \item Presenting one major implementation approach
   \end{enumerate}
 \item Methodology
   \begin{enumerate}[label*=\arabic*.]
@@ -297,7 +397,7 @@ and decision support.
 \item Conclusion
   \begin{enumerate}[label*=\arabic*.]
   \item Summary of the current approach in implementing the dynamic
-    energy map
+    Energy Map
   \item Limitations of the current implementation
     \begin{enumerate}[label*=\arabic*.]
     \item Simplified building simulation assumption about urban
