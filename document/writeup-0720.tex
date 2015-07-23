@@ -116,38 +116,37 @@ thematic energy map. Some examples of the Energy Maps under this
 definition include: National Heat Map that supports 
 
 \subsection{Why ``time'' dimension is important for an Energy Map}
-\subsubsection{Strong Temporal Variance Energy Demand}
-Building energy demand is strongly dependent on weather conditions,
-building types, size, building physical design, building mechanical
-system and appliance selection and operation schedules. The factors of
-building design, mechanical system and appliance selection remain
-relatively constant over time. Weather conditions have strong seasonal
-pattern and day-night pattern. This type of variation takes the form
-of a global influence on building heating or cooling load. The
-building operation schedule vary greatly from building to building as
-a result of difference in building types, sizes, design, appliance
-etc. Different operation scheduce indicates a non-coherent arrival of
-peak demand within a mixed-use urban environment. Difference in
-building type suggests a different indoor environment requirement such
-as ventilation rate, lighting intencity etc., indicating a dramatic
-variance in data distribution of energy consumption over
-time. Building envolope and mechanical system quality indicate a great
-variance in the range and extreme value of energy consumption. All of
-these suggests a simple annual or monthly average cannot effectly
-represent the real energy consumption behavior of an urban
-environment. In order to present this complecated behavior of energy
-demand, the time dimension is 
+\subsubsection{Strong Temporal Variation of Energy Demand}
+Building energy demand is strongly dependent on weather condition,
+building type, size, building physical design, building mechanical
+system and appliance quality and building operation schedules.  The
+aggregation of all parameters results in a great variance in the range
+and extreme value of energy consumption. Weather condition have strong
+seasonal pattern and day-night pattern. This type of variation takes
+the form of a global influence on building heating or cooling
+load. The building operation schedule vary greatly from building to
+building as a result of difference in building type and occupant
+behavior. Different operation scheduce indicates a non-coherent
+arrival of peak demand within a mixed-use urban
+environment. Difference in building type also suggest difference in
+indoor environment parameter requirement such as ventilation rate,
+lighting intencity etc., indicating a dramatic variation in energy
+consumption data distribution between buildings. Upon these
+considerations, a simple annual or monthly average cannot effectly
+represent the real energy consumption behavior of each building and
+the whole urban environment. In order to present this complecated
+behavior of time-depandent energy demand, the time dimension is
+necessary.
 
-In order to match the supply side to the demand side,
-understanding the spatial-temporal pattern of the energy demand is
-crutial.
+\begin{comment}
 \subsubsection{Temporal variation of the Supply Side}
 The commonly used renewable energy source includes: solar, wind,
 geothermal, hydropower and biomass. Among these sources, solar energy
 have strong temporal fluctuation as a result of the temporal variation
 of solar radiation between different hours of a year and the time of
-year~\cite{EIARenewable2015}. There is also a cost variation involved
-in the energy supply.
+year~\cite{EIARenewable2015}. There is also a cost difference involved
+in the electricity supply.
+\end{comment}
 
 \subsubsection{Close Match of Supply Side to Demand Side Improves Community Scale Energy Performance} 
 As the result of the finiteness of fossil fuels, the using of
@@ -158,6 +157,12 @@ sources normally do not have much storage capacity, hence in order to
 meet the energy demand with renewable electricity, a better
 understanding of the spatial-temporal pattern of energy demand is
 important~\cite{Mikkola2014256}.
+
+Demand-driven energy supply is necessary to reduce energy waste and
+achieve better total community energy performance, and in order to
+match the supply side to the complicated behavior of the demand side,
+understanding the spatial-temporal pattern of the energy demand 
+in the early design and planning stage is important.
 
 \subsubsection{Development of Supply Side Requires Better Understanding of Supply Side} 
 \subsubsection{Community energy planning and district system design requires a more detailed picture of the energy temporal behavior on community level} 
@@ -196,24 +201,28 @@ visualization aiming that better conveying the dynamic spatial
 pattern.
 
 In this study we explored the realization and application of Dynamic
-Energy Map with a restricted use case senario of supporting district
+Energy Map with a use case senario of supporting district
 energy system design and community energy management. 
 
 A district energy system consists of a power plant, a series of
 buildings as ternimal energy users and a network of pipelines that
 transmit energy from the power plant to end-users. Commonly used media
-for energy transmission include steam, hot water or chilled water~\cite{baird2014}.
+for energy transmission include steam, hot water or chilled
+water~\cite{baird2014}. The district system helps reducing
+environmental impact by harvesting residual energy in the form of
+rejected heat or coolth in the process of electricity generation, more
+efficient energy generation equipment than stand-alone system, and by
+using waste in energy generation.
 
-\begin{comment}
+Dynamic Energy Map support district energy system design by revealing
+the non-coherant peak demand of heat and electricity.
 For this scenario, we identify ``demand side'', 
 
-with
-heating and cooling demand as two major variables. 
-
+In this use case, we define our Dynamic Energy Map as:
 \begin{itemize}
-\item Dynamic Energy Map holds 8760-hour meta data of energy demand
-  and supply~\cite{baird2014}.
-\item Dynamic Energy Map has multi-dimensional graphical display of
+\item A database holding 8760-hour meta data of energy demand
+  ~\cite{baird2014}.
+\item An interface that has multi-dimensional graphical display of
   the meta data in conveying spatial-temporal pattern
   \begin{itemize}
   \item 1D: data plot for providing quantitative information
@@ -224,16 +233,16 @@ heating and cooling demand as two major variables.
   \end{itemize}
 \end{itemize}
 
-\newpage
 \section{Objective}
-%BookMark!!!!!
-\begin{enumerate}[label*=\arabic*.]
+\subsection{Exploring a potential use case of Dynamic Energy Map in
+  Community Planning 
+  Design Support}
 \item Discuss the specifications / definitions of dynamic Energy Map
 \item Evaluating some possible approaches to implement dynamic energy
   map
 \item Presenting one major implementation approach
 \end{enumerate}
-\newpage
+\begin{comment}
 \section{Related Works}
 \subsection{Energy Map (without temporal dimension) (grouped with field
   of application)}
