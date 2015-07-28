@@ -48,12 +48,6 @@ Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
 \newblock web, July 2015.
 \newblock \url{http://energy.gov/maps/energy-production-over-years}.
 
-\bibitem{DOEWindFarm}
-{DOE}.
-\newblock Wind farms through years.
-\newblock web, July 2015.
-\newblock \url{http://energy.gov/maps/wind-farms-through-years#buttn}.
-
 \bibitem{EIAPrimary2013}
 {EIA}.
 \newblock Monthly energy review.
@@ -93,11 +87,40 @@ Karen~N. Finney, Vida~N. Sharifi, Jim Swithenbank, Andy Nolan, Simon White, and
   part i: Identification of potential expansions using heat mapping.
 \newblock {\em Energy Conversion and Management}, 62(0):165 -- 175, 2012.
 
+\bibitem{Flaxman2010}
+Michael Flaxman.
+\newblock Geodesign: Fundamental principles and routes forward.
+\newblock web, 2010.
+\newblock Talk at GeoDesign Summit 2010.
+
+\bibitem{Garlandini2009}
+Simone Garlandini and Sara~Irina Fabrikant.
+\newblock Evaluating the effectiveness and efficiency of visual variables for
+  geographic information visualization.
+\newblock {\em Remote Sensing}, 3:195--211, July 2009.
+
+\bibitem{CPcp66-goodchild}
+Michael Goodchild.
+\newblock Towards geodesign: Repurposing cartography and gis?
+\newblock {\em Cartographic Perspectives}, 0(66), 2010.
+
 \bibitem{Hay2011}
 Geoffrey Hay, Christopher Kyle, Bharanidharan Hemachandran, Gang Chen,
   Mir~Mustafizur Rahman, Tak Fung, and Joseph Arvai.
 \newblock Geospatial technologies to improve urban energy efficiency.
 \newblock {\em Remote Sensing}, 3:1380--1405, July 2011.
+
+\bibitem{IDEA2005}
+{International District Energy Association}.
+\newblock Idea report: The district energy industry.
+\newblock Technical report, IDEA, IDEA Report: The District Energy Industry,
+  August 2005.
+
+\bibitem{Jaccard19971065}
+Mark Jaccard, Lee Failing, and Trent Berry.
+\newblock From equipment to infrastructure: community energy management and
+  greenhouse gas emission reduction.
+\newblock {\em Energy Policy}, 25(13):1065 -- 1074, 1997.
 
 \bibitem{Mikkola2014256}
 Jani Mikkola and Peter~D. Lund.
@@ -128,6 +151,12 @@ D.~Voivontas, D.~Assimacopoulos, A.~Mourelatos, and J.~Corominas.
 \newblock Heat map.
 \newblock web, July 2015.
 \newblock \url{https://en.wikipedia.org/wiki/Heat_map}.
+
+\bibitem{smartGrowthWiki}
+Wikipedia.
+\newblock Smart growth.
+\newblock web, July 2015.
+\newblock \url{https://en.wikipedia.org/wiki/Smart_growth}.
 
 \bibitem{ThematicMap}
 {Wikipedia}.
