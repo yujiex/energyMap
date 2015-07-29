@@ -18,6 +18,20 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
   exergetic optimisation of the built environment.
 \newblock {\em Entropy}, 15(2):490, 2013.
 
+\bibitem{heatMapLocal2012}
+{Department of Energy and Climate Change}.
+\newblock National heat map, guide to point data for local authorities.
+\newblock web, August 2013.
+\newblock
+  \url{https://www.cse.org.uk/downloads/file/national_heat_map_data_guide.pdf}.
+
+\bibitem{heatMap2015}
+{Department of Energy and Climate Change}.
+\newblock About the national heat map.
+\newblock web, June 2015.
+\newblock
+  \url{http://tools.decc.gov.uk/en/content/cms/heatmap/about\_map/about\_map.aspx}.
+
 \bibitem{DOEEnergyCost}
 {DOE}.
 \newblock Energy expenditure per person.
@@ -145,11 +159,22 @@ Jani Mikkola and Peter~D. Lund.
 \newblock web, July 2015.
 \newblock \url{http://www.nrel.gov/gis/maps.html}.
 
+\bibitem{Ramachandra20071460}
+T.V. Ramachandra and B.V. Shruthi.
+\newblock Spatial mapping of renewable energy potential.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 11(7):1460 -- 1480,
+  2007.
+
 \bibitem{heatMap2012}
 Zoe Redgrove.
 \newblock Using the national heat map.
 \newblock web, October 2012.
 \newblock \url{http://tools.decc.gov.uk/nationalheatmap/}.
+
+\bibitem{NYCSolarMap}
+{Sustainable CUNY}.
+\newblock Nyc solar map, July 2015.
+\newblock \url{http://www.nycsolarmap.com/}.
 
 \bibitem{Voivontas1998333}
 D.~Voivontas, D.~Assimacopoulos, A.~Mourelatos, and J.~Corominas.

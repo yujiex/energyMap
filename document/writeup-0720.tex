@@ -468,47 +468,131 @@ The majority of existing Energy Map instances are static maps with no
 time information. As is mentioned in the thematic map definition, the
 major application of Energy Maps include energy supply, energy demand,
 building or infrastructure design resulted energy impact and
-environmental impact. The section will present some more detailed
+environmental impact. The sub-section will present some more detailed
 examples in each use cases.
-\subsubsection{Supply side: Assessing renewable energy potential}
-Voivontas et al. developed a decision support tool using GIS for
-accessing the wind energy potential in terms of theoretical potential
-of wind speed, availability potential in terms of landuse regulations
-and technological potential in terms of energy production features of
-wind turbine and economical potential in terms of IRR.
 
-Ramachandra and Shruthi produced an energy potential map on various
-renewable energy sources such as solar, wind, biomass and hydroenergy.
-  \begin{enumerate}[label*=\arabic*.]
-  \item ``Spatial mapping of renewable energy potential'', Ramachandra
-    and Shruthi, 2007
-  \item ``Energy Potential Mapping: Visualizing Energy
-    Characteristics'', Dobbelsteen et al.\ , 2013
-  \item ``NYC City Solar Map'': present solar energy potential for
-    buildings across the city. Information presented include: solar
-    energy generation curve, estimated solar system installation area,
-    finantial incentive and payback etc\url{http://www.nycsolarmap.com/}.
-    \end{enumerate}
-\subsubsection{Supply and Demand Side: Analysis or design support of existing energy infrastructures}
-    \begin{enumerate}[label*=\arabic*.]
-    \item ``Developments to an existing city-wide district energy
-    network – Part I: Identification of potential expansions using
-    heat mapping'', Finney et al.\ , 2012
-    \item National Heat Map, \url{http://tools.decc.gov.uk/nationalheatmap/}
-    \end{enumerate}
-\subsubsection{Demand Side: Energy consumption prediction model}
+\subsubsection{Supply}
+\paragraph{Assessing Renewable Energy Potential}
+In order to reduce environmental impact, increase resilience of local
+energy supply and match energy intensity of supply and demand in urban
+environment, renewable energy source of wind, solar, geothermal,
+biomass and hydropower becomes an increasingly important energy
+source. Comparing with fossil fuel, the energy production with
+renewable energy has strong correlations to geo-locations, thus the
+energy map of renewable energy availability and demand can support
+energy planning that aims at improve urban scale energy
+performance~\cite{Ramachandra20071460}.
+
+Some study focuses only on one type of renewable energy source.
+\begin{itemize}
+\item Wind: 
+
+Voivontas et al. developed a decision support tool using GIS for
+accessing the wind energy potential in four aspects:the theoretical
+potential in terms of wind speed, availability potential in terms of
+landuse regulations and technological potential in terms of energy
+production features of wind turbine and economical potential in terms
+of IRR. 
+\item Solar
+
+``NYC City Solar Map'' presents solar energy potential for
+buildings across the New York city. The map presents solar energy
+generation curve, estimated solar system installation area, finantial
+incentive and payback~\cite{NYCSolarMap}
+\end{itemize}
+
+Other efforts tackles multiple renewable energy sources:
+
+Ramachandra and Shruthi produced a series of district level renewable
+energy theoretical potential maps of solar, wind, hydroenergy and
+biomass in Karnataka State, India. The potential is estimated based on
+data of global solar radiation, wind speed, hydropower plant capacity,
+and plantation and livestock information. GIS is used in aggregating
+energy potential data to each district. Each type of renewable energy
+source is presented as a single variable thematic energy map.
+
+\subsubsection{Demand and Infrastructure}
+\paragraph{Analysis or design support of existing energy
+  infrastructures}
+Finney et al.\ studied the potential expansion opportunities for the
+Sheffield district energy network by producing a heat mapping that 1)
+depictes heat sources and sinks, including existing ones and emerging
+ones 2) identify ``heat zones'' by connecting sources and sinks. The
+``heat zone'' is then filtered with concerns of economic feasibility
+and environmental impact. The network extenssion is then designed
+based on the remaining ``heat zones''. Heat demand is assessed with
+population density for residential buildings and is represented on the
+map as polygon features with graduated color. Heat demand for
+non-residential buildings are assessed with gas consumption and is
+mapped as point features with graduated size. Heat sources are
+identified with the criteria ``producing recoverable, low-grade
+'waste' heat''~\cite{Finney2012165}. They are mapped as point features
+including steelworks, combined heat and power (CHP) plants, and
+biomass power stations. The ``heat zone'' is identified based on
+abundance of sources or sinks.
+
+National Heat Map is a ``publicly accessible high resolution
+web-based'' heating energy interactive map, developed by the
+Department of Energy and Climate Change (DECC) in UK. It aimed at
+``support planning and deployment of local low-carbon energy projects
+in England''~\cite{heatMap2015}. Heating demand density ($kwh/m^2$) of
+four major building sectors: public buildings, commercial buildings,
+industry buildings and residential buildings, together with the total
+demand is plotted on the map as 2D raster feature with a color scheme
+from blue to red, with blue for low heating demand and red for high
+heating demand. Heat source of CHP stations and ``Thermal Power
+Stations'' ~\cite{heatMap2012} are plotted as point features in the
+map. Address level heat demand data in csv format is also available
+for local authorities~\cite{heatMapLocal2012}. 
+
+The new ``Water Source Heat Map'' is added to the existing National
+Heat Map to support the usage of water-based thermal system as
+water-based heat pump.
+!!!!!!!!!!!!!!!!!!
+
+\paragraph{Energy consumption prediction model}
     \begin{enumerate}[label*=\arabic*.]
       \item ``A large-scale study on predicting and contextualizing building energy usage'', Kolter, J. Zico; Ferreira Jr, Joseph.
     \end{enumerate}
-\subsubsection{Demand Side: Smart Management of Urban Energy System}
+\paragraph{Smart Management of Urban Energy System}
     \begin{enumerate}[label*=\arabic*.]
     \item ``Smart Urban Services for Higher Energy
     Efficiency''(SUNSHINE) project (2013): energy consumption map,
     automatic alerts, remote control of public building lighting
     system.
     \end{enumerate}
+
+\subsubsection{Combined Supply, Demand and Infrustructure}
+Comparing with the previous examples, Dobbelsteen et al. described a
+framework of energy potential mapping that 1) in addition to renewable
+energy source, it also considered residual energy as energy sources
+and 2) aggregated multiple types of energy potentials in a single map
+with the unit of GJ or GJ/ha~\cite{Dobbelsteen2013}. The energy
+potential of sources are estimated by theoretical potential multiplied
+by a serious of ``limiting factors''. The energy demand includes
+buildings and transportation. The authors also suggest to map energy
+storage on the map. A case study of ``HEAT Mapping'' is presented with
+aggregated supply and demand presented in a single 3D Heat Map. The
+absolute quantity of each type of demand and supply of a certain
+region is represented with extruded height in the 3D map. Demand is
+represented with a transparent 3D feature, each supply source is
+represented with solid 3D feature in a different color. The
+aggregation of information is valuable in answering the question of
+whether the supply meets the demand, the representation becomes too
+complicated~\cite{Dobbelsteen2013}.
+
+\subsubsection{Reflections}
+The existing mapping approaches had their main effort in the data
+calculation and aggregation, however the resulted visual
+representation is questionable for most instances. One common issue is
+too much distraction from unthoughtful map symbology design. For
+static maps, a poor designed visual representation might still be
+tolerable, but for Dynamic Energy Map with an additional time
+dimension, each additional bit of distraction will prevent the
+necessary information from getting through. Hence the authors think it
+is necessary to discuss the map design aspect, and look for examples
+of best practices. This is done in section x.x.!!!!!!
 \begin{comment}
-\end{enumerate}
 
   \item Dynamic Map
     \begin{enumerate}[label*=\arabic*.]
@@ -529,6 +613,12 @@ renewable energy sources such as solar, wind, biomass and hydroenergy.
     \end{enumerate}
   \item Works on Visualization focusing on map design and information
     convey
+
+    The motivation to consider this is: throughout the analysis of
+    existing mapping approaches, the majority of the map design are
+    not quite thoughly considered and are with too much distraction
+    from the actual information. Hence the authors think this aspect
+    should be looked at and studied in further details.
     \begin{enumerate}[label*=\arabic*.]
     \item ``Data Visualization with Spacetime Maps'', Richard
       L. Brownrigg, 2005

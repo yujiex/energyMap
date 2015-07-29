@@ -18,7 +18,11 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Definition of Dynamic Energy Map for Supporting District System Design}{9}{subsubsection.2.1.1}
 \contentsline {section}{\numberline {3}Related Works}{10}{section.3}
 \contentsline {subsection}{\numberline {3.1}Static Energy Map}{10}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Supply side: Assessing renewable energy potential}{10}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Supply and Demand Side: Analysis or design support of existing energy infrastructures}{10}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Demand Side: Energy consumption prediction model}{10}{subsubsection.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.4}Demand Side: Smart Management of Urban Energy System}{10}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.1}Supply}{10}{subsubsection.3.1.1}
+\contentsline {paragraph}{\numberline {3.1.1.1}Assessing Renewable Energy Potential}{10}{paragraph.3.1.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Demand and Infrastructure}{11}{subsubsection.3.1.2}
+\contentsline {paragraph}{\numberline {3.1.2.1}Analysis or design support of existing energy infrastructures}{11}{paragraph.3.1.2.1}
+\contentsline {paragraph}{\numberline {3.1.2.2}Energy consumption prediction model}{11}{paragraph.3.1.2.2}
+\contentsline {paragraph}{\numberline {3.1.2.3}Smart Management of Urban Energy System}{11}{paragraph.3.1.2.3}
+\contentsline {subsubsection}{\numberline {3.1.3}Combined Supply, Demand and Infrustructure}{11}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Reflections}{12}{subsubsection.3.1.4}
