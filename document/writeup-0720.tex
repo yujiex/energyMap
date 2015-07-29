@@ -398,30 +398,30 @@ When Dynamic Energy Map becomes a platform coupled with Energy
 Simulation tools, design alternatives would be evaluated and compared
 at each given time spot or time window according to the design
 context. This enables more detailed energy analysis.
-!!!!!!!!!!!!!!!!!!!!
 \newpage
 \section{Objective and Problem Definition}
 \subsection{Exploring potential use cases of Dynamic Energy Map}
-One major objective of this study is to explore the application of
-Dynamic Energy Map with a use case senario of supporting district
-energy system design, community energy management and geo-design
-approach.
+The major objective of this study is to explore the power of Dynamic
+Energy Map with a use case senario of supporting district energy
+system design, which is one of the infrastructure side strategy used
+in community energy management. Aligned with this major goal, there
+are two sub-goals of the project: evaluating some possible approaches
+to implement dynamic energy map and presenting one major
+implementation approach
 
-\subsubsection{Definition of Dynamic Energy Map according to the use
-  cases above}
-District system supply heat or coolth in the process of energy
-generation, thus the heating or cooling demand decides the size of a
-district system. Heating demand in gas and cooling demand in
-electricity are selected as the major variables in the study. We
-define ``Local'' Dynamic Energy Map for Community level design support
-as:
+\subsubsection{Definition of Dynamic Energy Map for Supporting
+  District System Design}
+District system supply thermal energy to the surrounding community,
+thus the community heating or cooling demand decide the size of a
+district system. Therefore heating demand and cooling demand are
+selected as the major variables in the study. We define ``Local''
+Dynamic Energy Map for Community level design support as:
 \begin{itemize}
 \item A database holding 8760-hour meta data of energy demand of
   buildings in a moderate sized community served by a district
   system~\cite{baird2014}.
 \item An interface that has multi-dimensional graphical display of the
-  meta data in conveying spatial-temporal pattern of the energy
-  behavior of the district.
+  meta data.
 \end{itemize}
 
 The data display would include 1D data plot, 2D or 3D map and 4D
@@ -434,44 +434,52 @@ temperal-statial navigation:
   demand of the whole community and major building sectors throughout
   the year. It enables comparison of different urban design
   alternatives in terms of total demand and demand variation. These
-  information supports district system planning by optimizing the load
-  of buildings in a mix-used community so that they have a stabler
-  demand profile.
+  information supports district system planning by arranging landuse
+  design to minimize load variation.
 
-\item 2D/3D: graphical display of spatial relationship of energy data
+\item 2D or 3D: graphical display of spatial relationship of energy data
 
   The Local Dynamic Energy Map applies a graduated symbol or color to
-  buildings in the community aiming at providing the intuition of the
-  building energy demand behavior within a community. It helps
-  identify the rank of energy demand in a community and provides a
-  guidance in energy cascading design.
+  buildings in the community to provide the intuition of the building
+  energy demand changing within a community. It helps identify the
+  rank of energy demand in a community and provides a guidance in
+  energy cascading design.
     
   For univariant map senario, we suggest the variant size symbol
   according to the study of Garlandini et
-  al.~\cite{Garlandini2009}. For bivariant map senario, such as the
-  case for the current study, when heating demand and cooling demand
-  are depicted on the map together, we suggest a two dimentional color
-  ramp.
+  al.~\cite{Garlandini2009}. For bivariate map
+  senario~\cite{bimapWiki}, which is the case for the current study,
+  when heating demand and cooling demand are depicted on the map
+  together, we suggest a two dimentional color ramp representation.
 
-\item 1D + 2D/3D: interactive graphical display of spatial-temporal
+\item 1D + 2D or 3D: interactive graphical display of spatial-temporal
   pattern of energy data.
+  
+  The Local Dynamic Energy Map compares energy demand of different
+  time of year by providing a easy navigation with a time
+  slider. Energy demand of each time spot is expressed with 2D or 3D
+  map and 1D data plot.
 \end{itemize}
 
-\begin{comment}
-\begin{enumerate}
-\item Discuss the specifications / definitions of dynamic Energy Map
-\item Evaluating some possible approaches to implement dynamic energy
-  map
-\item Presenting one major implementation approach
-\end{enumerate}
 \section{Related Works}
-\subsection{Energy Map (without temporal dimension) (grouped with field
-  of application)}
-\begin{enumerate}[label*=\arabic*.]
-\item Supply side: Assessing renewable energy potential
+\grey{add logic}!!!!!!
+\subsection{Static Energy Map}
+The majority of existing Energy Map instances are static maps with no
+time information. As is mentioned in the thematic map definition, the
+major application of Energy Maps include energy supply, energy demand,
+building or infrastructure design resulted energy impact and
+environmental impact. The section will present some more detailed
+examples in each use cases.
+\subsubsection{Supply side: Assessing renewable energy potential}
+Voivontas et al. developed a decision support tool using GIS for
+accessing the wind energy potential in terms of theoretical potential
+of wind speed, availability potential in terms of landuse regulations
+and technological potential in terms of energy production features of
+wind turbine and economical potential in terms of IRR.
+
+Ramachandra and Shruthi produced an energy potential map on various
+renewable energy sources such as solar, wind, biomass and hydroenergy.
   \begin{enumerate}[label*=\arabic*.]
-  \item ``Evaluation of Renewable Energy potential using a {GIS}
-    decision support system'', Voivontas et al., 1998
   \item ``Spatial mapping of renewable energy potential'', Ramachandra
     and Shruthi, 2007
   \item ``Energy Potential Mapping: Visualizing Energy
@@ -481,25 +489,25 @@ temperal-statial navigation:
     energy generation curve, estimated solar system installation area,
     finantial incentive and payback etc\url{http://www.nycsolarmap.com/}.
     \end{enumerate}
-
-\item Supply and Demand Side: Analysis or design support of existing energy infrastructures
+\subsubsection{Supply and Demand Side: Analysis or design support of existing energy infrastructures}
     \begin{enumerate}[label*=\arabic*.]
     \item ``Developments to an existing city-wide district energy
     network – Part I: Identification of potential expansions using
     heat mapping'', Finney et al.\ , 2012
     \item National Heat Map, \url{http://tools.decc.gov.uk/nationalheatmap/}
     \end{enumerate}
-\item Demand Side: Energy consumption prediction model
+\subsubsection{Demand Side: Energy consumption prediction model}
     \begin{enumerate}[label*=\arabic*.]
       \item ``A large-scale study on predicting and contextualizing building energy usage'', Kolter, J. Zico; Ferreira Jr, Joseph.
     \end{enumerate}
-\item Smart Management of Urban Energy System
+\subsubsection{Demand Side: Smart Management of Urban Energy System}
     \begin{enumerate}[label*=\arabic*.]
     \item ``Smart Urban Services for Higher Energy
     Efficiency''(SUNSHINE) project (2013): energy consumption map,
     automatic alerts, remote control of public building lighting
     system.
     \end{enumerate}
+\begin{comment}
 \end{enumerate}
 
   \item Dynamic Map
