@@ -41,45 +41,48 @@
   assigned an energy profile of certain DOE Commercial Benchmark
   Building Reference model based on its building type. Hourly energy
   demand profile of heating and cooling end use is then obtained from
-  the EnergyPlus Reference models. The energy consumption data is
-  classified into groups with consideration of building energy design
-  context and the data distribution properties. A corresponding color
-  coded energy profile is then generated and imported to
-  CityEngine. 8760 color coded 3D map images was then extracted from
-  CityEngine with Python script. A data reading, ploting,
-  color-coding calculation and a user interface for visualizing the
-  images and dynamic data plot with sliders is implemented using
-  Python and related packages. The tool is anticipated to provide
-  decision support for community energy management and
-  planning, demand-side strategy design and district system sizing.
+  the EnergyPlus simulation of DOE Commercial Benchmark models. The
+  energy consumption data is classified into groups with consideration
+  of building energy design context and the data distribution
+  properties. A corresponding color coded energy profile is then
+  generated and imported to CityEngine. 8760 color coded 3D map images
+  was then extracted from CityEngine with Python script. A series of
+  data reading, ploting, data classification and color-coding
+  calculation utilities were implemented. A interactive interface for
+  visualizing the images and dynamic data plot with sliders is
+  implemented using Python and related packages. The tool is
+  anticipated to provide decision support for community energy
+  management and planning, demand-side strategy design and district
+  system sizing.
   
   The document will also briefly discuss one of the testbed for data
   classification and visualization.
+
 \end{abstract}
 \newpage
 
 \section{General Introduction}
 \subsection{Project Overview}
 Buildings alone account for 40\% of the total energy usage in the
-United States. Although, if one was to consider the indirect energy
-impact of the built environment as a whole, the community design
-induced energy and environmental impact could exceed this already high
+United States. However the indirect energy impact of the built
+environment as a whole was considered, the community design induced
+energy and environmental impact could exceed this already high
 ratio. The focus of reducing energy usage in the building sector has
 once been focused only on the scale of individual buildings and
-equipment~\cite{Jaccard19971065}. However the community level urban
-design and the infrustructure layout can substentially influence the
-overall environmental impact by influencing people's life pattern,
-energy using behavior and waste production.
+equipment~\cite{Jaccard19971065}. Community level urban design and the
+infrustructure layout can inevitably influence the overall energy
+throughput by influencing people's life pattern, energy using behavior
+and waste production.
 
-Community Energy Planning is a combination of community level design
-and energy management strategies aiming at providing quality of life
-in an urban environment with minimized energy consumption and
-environmental impact~\cite{Jaccard19971065}. The awareness of the
-importance of the environmental design on energy performance and
-quality of life is reflected in design concepts such as New Urbanism,
-Smart Growth and Transit-Oriented Growth. These concepts advocates a
-compact and pedestrian and bicycle friendly urban growth that
-minimizes car usage by creating mixed-used communities,
+Community Energy Management (CEM) is a combination of community level
+design strategies and energy management strategies aiming at providing
+quality of life in an urban environment with minimized energy
+consumption and environmental impact~\cite{Jaccard19971065}. The
+awareness of the importance of the environmental design on energy
+performance and quality of life is reflected in design concepts such
+as New Urbanism, Smart Growth and Transit-Oriented Growth. These
+concepts advocate a compact and pedestrian and bicycle friendly urban
+growth that minimizes car usage by creating mixed-used communities,
 well-functioned road, complete public transportation system and
 diverse housing choices~\cite{smartGrowthWiki}.
 
@@ -91,34 +94,41 @@ close in exergy to the demand side, 2) application of district energy
 system that reuses waste heat 3) energy cascading that arranges the
 demand side as a chain of decreasing exergy demand so that the entropy
 generation is minimized 4) smart grid system that makes electricity
-demand and supply match
+demand and supply match.
 
-Energy Map accords with the concept of ``geo-design'', a
+Energy Map provides great opportunity to execute the CEM strategies
+since it accords with the concept of ``geo-design'', a
 performance-based design method, and makes the energy performance
 metrics of community design and management alternatives visible to
 planners and policy makers. It facilitates quantitive comparison of
 design alternatives and informs better decision making. However the
-temporal variation of energy performance metrics are missing from the
-current Energy Maps, leading to a simplified picture of energy impact
-of design choices and poor decision making such as excessively
-oversized infrustructure systems and loss of energy recovery and reuse
-opportunities.
+temporal variation of energy performance metrics is missing from the
+majority of current Energy Maps, leading to a simplified picture of
+energy impact of design choices and poor decision making such as
+excessively oversized infrustructure systems and loss of energy
+recovery and reuse opportunities.
 
 Dynamic Energy Map reveals the temporal variation and better serves
 ``geo-design'' approach by revealing the problem of such simplified
 pictures of energy supply and demand and support better time-of-use
 energy system design, community energy management and policy making.
 
-The project implemented a Dynamic Energy Map on a conceptual city
-model with a use senario of supporting district energy system
-sizing. The Dynamic Energy Map is built upon hourly heating and
-cooling energy consumption data from DOE Commertial Benchmark Building
-simulation. City Engine is used in 3D urban environment image
-generation with each building color-coded according to its hourly
-energy demand. An interface is then designed to achieve the
-``dynamic'' function with sliders to navigation through the 8760 hours
-through a year and present the energy consumption data in the form of
-3D color-coded map and data plot.
+The current project aims at exploring how a Dynamic Energy Map can
+serve as decision support tool for Community Energy Managemeng, more
+specifically, to support district energy system design. The focus of
+the study is not on expoiting the energy using behavior of a specific
+site, but rather a exploration of a generic methodology, thus the map
+setting is based on a conceptual city model with a size (comprable to
+the typical service area of a district energy (combined heating and
+cooling) system, about 50 to 150 buildings~\cite{IDEA2005}. The Dynamic
+Energy Map is built upon hourly heating and cooling energy consumption
+data from DOE Commertial Benchmark Building simulation. City Engine is
+used in 3D urban environment image generation with each building
+color-coded according to its hourly energy demand. An interface is
+then designed to achieve the ``dynamic'' function with sliders to
+navigation through the 8760 hours through a year and present the
+energy consumption data in the form of 3D color-coded map and data
+plot.
 
 \grey{summary of each section of the report here...}
 
@@ -252,7 +262,8 @@ energy demand. With this approach, the different energy usage pattern
 of a hospital and a performance center is not differentiable.
 
 \subsubsection{Aggretation of Peak Value Becomes Tricky for Data with Time Variation}
-\grey{(move things above)}
+See section \ref{district}
+\grey{(move things above)??}
 
 \begin{comment}
 \subsubsection{Temporal variation of the Supply Side}
@@ -281,7 +292,7 @@ match the supply side to the complicated behavior of the demand side,
 understanding the spatial-temporal pattern of the energy demand 
 in the early design and planning stage is important. 
 
-\paragraph{District Energy System Sizing}
+\paragraph{District Energy System Sizing}\label{district}
 A district energy system consists of a power plant, a series of
 buildings as ternimal energy users and a network of pipelines that
 transmit energy from the power plant to end-users. Commonly used media
@@ -381,11 +392,13 @@ in the following cases:
 \subsection{General Description of Dynamic Energy Map}
 Within the current context, ``dynamic'' refers to changing over time,
 hence Dynamic Energy Map is an Energy Map equipped with temporal
-information. As a result of the ``dynamic'' property, one assumption
-about Dynamic Energy Map is that at least one of the energy related
-variables depicted in the map should change over time. Due to the fact
-that there are three versions of definitions for Energy Map, there are
-also three versions of corresponding Dynamic Energy Map.
+information. Sometimes this type of map is referred to as
+``spacetime'' map~\cite{Brownrigg2005}. As a result of the ``dynamic''
+property, one assumption about Dynamic Energy Map is that at least one
+of the energy related variables depicted in the map should change over
+time. Due to the fact that there are three versions of definitions for
+Energy Map, there are also three versions of corresponding Dynamic
+Energy Map.
 
 \subsubsection{Thematic Map Time Series}
 In a restricted sense, where an Energy Map is defined as a thematic
@@ -465,11 +478,12 @@ temperal-statial navigation:
   energy cascading design.
     
   For univariant map senario, we suggest the variant size symbol
-  according to the study of Garlandini et
-  al.~\cite{Garlandini2009}. For bivariate map
-  senario~\cite{bimapWiki}, which is the case for the current study,
-  when heating demand and cooling demand are depicted on the map
-  together, we suggest a two dimentional color ramp representation.
+  according to the study of Garlandini et al.~\cite{Garlandini2009,
+    doi:10.1559/1523040639298}. For bivariate map
+  senario~\cite{bimapWiki} in 3D map design, we suggest the bivariate
+  choropleth map representation. For detailed explanation please refer
+  to section \ref{mapDesign}.
+
 
 \item 1D + 2D or 3D: interactive graphical display of spatial-temporal
   pattern of energy data.
@@ -620,112 +634,228 @@ aggregation of information is valuable in answering the question of
 whether the supply meets the demand, the representation becomes too
 complicated~\cite{Dobbelsteen2013}.
 
-\subsubsection{Reflections}
+\subsubsection{Reflections}\label{Reflection}
 The existing mapping approaches had their main effort in the data
 calculation and aggregation, however the resulted visual
 representation is questionable for most instances. One common issue is
 too much distraction from unthoughtful map symbology design. For
-static maps, a poor designed visual representation might still be
+static maps, a poorly designed visual representation might still be
 tolerable, but for Dynamic Energy Map with an additional time
 dimension, each additional bit of distraction will prevent the
 necessary information from getting through. Hence the authors think it
 is necessary to discuss the map design aspect, and look for examples
-of best practices. This is done in section x.x.!!!!!!
+of best practices. This is done in section 3.2.3.
 
 \subsection{Dynamic Map}
 The aim of this section is to explore how the time dimension can be
 represented in a map.
-\subsubsection{Animated Maps}
-In order to represent dynamic geographc process, map animation was
-introduced to the world of cartography in 1930s. ~\cite{Harrower2008}
-
-The author also pointed out the technology of implementing a dynamic
-map has been exceeding the catographic theory~\cite{Harrower2008}. The
-animated map is advantageous in the changing between frames rather
-than the absolute value represented in each
-frame~\cite{Dorling1992}. It is proved to be more powerful in convey
-the spatial-temporal pattern than static
-map~\cite{McEachern1998}. There are also challenges such as a result
-of the cognitive limitations. One example mentioned by Harrower et
-al.\ is the comparison of color on the map and that on the legend
-becomes difficult for animated maps as a result of the changing of
-images. This issue is considered in the current Dynamic Energy Map
-interface design, with a series of tick marks that pointed out the
-colors used on the map.
-
-They also suggest that the difference in time should have different
-visual representations in data display~\cite{Harrower2008}. The two
-major types of time are linear and cyclic. Upon this consideration,
-the design of the interface considered adding utilities that
-facilitates jumps between natural period that facilitate the
-representation of linear changes and periodical changes of energy
-usage in the community.
-
-One of the challenge of animated map design is the balance of the
-presentation of information and legend and the degree of
-distraction. One proposed approach of strengthening information convey
-is to use audio legend~\cite{Harrower2008}. This might become one of
-the next extenssions of the current Dynamic Energy Map interface
-design.
-
-Peuquet claimed that ``The development of temporal analytical
-capabilities in GIS such as temporal queries requires basic
-topological structures in both time and space''
-
-There are also debates about the level of user control to animated
-maps. 
 \subsubsection{Energy Dynamic Map}
-Current Dynamic Energy Map instances are mainly animated maps with
-large time steps, large spatial scale, and very few number of
-frames. These instances include: State wind power capacity map that
-depicts the wind industry growth at state level from 2000 to
-2050~\cite{DOEWind}, wind farm development map that shows the wind
-farm location and capacity development from 1975 to
+Current Dynamic Energy Map instances are mainly 2D animated maps with
+large time steps, in large spatial scale and low resolution (state
+level), and very few number of frames. These instances include: State
+wind power capacity map that depicts the wind industry growth at state
+level from 2000 to 2050~\cite{DOEWind}, wind farm development map that
+shows the wind farm location and capacity development from 1975 to
 2013~\cite{DOEWindFarm}, solar plant development map that shows the
 solar plant location and capacity development from 1975 to
 2013~\cite{DOESolarPlant}, US Energy Production Map that shows
 statewise energy production from 1993 to 2012~\cite{DOEEnergyProduct},
-CO2 emission map presenting world-wide carbon emissions from 1980 to
-2014~\cite{CO2Atlas}.
+$CO_2$ emission map presenting world-wide carbon emissions from 1980 to
+2014~\cite{CO2Atlas}
+
+One instance of the high resolution energy demand dynamic map was
+found in the project ``Energy Mapping to Identify Opportunities for
+Future Networks''~\cite{Diaz2013}. The aim of the project is to
+``analyse the spatial and temporal distribution of energy
+consumption'' and support decision making and design of energy network
+development. Energy data was retrieved from both metered data and HEM
+simulation. Energy Demand Maps of three different resolutions were
+created: campus level, community level and city level. For campus and
+community level maps, monthly heating demand density dynamic map and
+monthly electricity demand density dynamic maps are created with
+($kWh/m^2$) as the unit. The energy demand is represented in a scale
+from blue to red, the same as the approach of the National Heat
+Map. The time dimension is added in the form of a non-interactive 2D
+animation . The problem for this animation is the lack of temporal and
+spatial legend and its non-interactive nature. Also the heating and
+electricity demand is represented separately, making the pairwise
+comparison of these two variables difficult.
 
 \subsubsection{History and Archaeology Instances of Dynamic Maps}
-    \begin{enumerate}[label*=\arabic*.]
-    \item Pittsburgh Historic Map, \url{http://peoplemaps.esri.com/pittsburgh/} 
-    \item Europe History Interactive Map, \url{http://www.worldology.com/Europe/europe\_history\_md.htm}
-    \end{enumerate}
-\begin{comment}
-  \item Works on Visualization focusing on map design and information
-    convey
+Although based on current knowledge of the authors, Energy Maps
+equiped with the time dimension is still rare, but there already
+exists many instances of dynamic interactive map in History and
+Archaeology practices. Pittsburgh Historic Map displays the urban
+environment layout of the City of Pittsburgh from 1835 to 2015 using a
+combination of historic maps and Google map as the base map. It allows
+users to navigate through the times with a time slider. It also
+contains point features of historic buildings\cite{EsriHistory2015};
+Europe History Interactive Map that demonstrate the changes of
+political boundary with historic information associated to each
+political entity~\cite{Worldology2009}. User can navigate through
+different historic period by forward and backward arrows and by
+clicking on specific entries to that period.
 
-    The motivation to consider this is: throughout the analysis of
-    existing mapping approaches, the majority of the map design are
-    not quite thoughly considered and are with too much distraction
-    from the actual information. Hence the authors think this aspect
-    should be looked at and studied in further details.
-    \begin{enumerate}[label*=\arabic*.]
-    \item ``Data Visualization with Spacetime Maps'', Richard
-      L. Brownrigg, 2005
-    \item ``Effectiveness and efficiency of map symbols for dynamic
-      geographic information visualization.'', Dong et al.\ 
-    \item ``Geographic Visualization: Designing Manipulable Maps for
-      Exploring Temporally Varying Georeferenced Statistics'', MacEachren et al.\
-    \item ``Strategies for the Visualization of Geographic Time-Series
-      Data'', Mark Monmonier, 2011
-    \item ``Evaluation of Methods for Classifying Epidemiological Data
-      on Choropleth Maps in Series'', Brewer and Pickle, 2002
-    \end{enumerate}
-  \item Works on Technology regarding 4D visualization
-    \begin{enumerate}[label*=\arabic*.]
-    \item ``Web-based 4D visualization of marine geo-data using
-      WebGL'', Resch et al.\ , 2014
-    \end{enumerate}
-  \item Interface design of 4D visualization Case studies
-    \begin{enumerate}[label*=\arabic*.]
-    \item ``Web-based 4D visualization of marine geo-data using
-      WebGL'', Resch et al.\ , 2014
-    \end{enumerate}
-  \end{enumerate}
-\item Methodology
+\subsubsection{Works on Map Design}\label{mapDesign}
+\paragraph{Symbol Chosen}
+Dong et al.\ assessed the effectiveness of symbol design and frame
+rate on the effectiveness on dynamic map display with two metrics:
+deviation and response time. They discovered the change of symbol size
+is more effective than color under the same frame rate. They also
+identified the optimal class numbers for graduated size symbol (15)
+and graduated color symbol (10) on 1024x768 display. The optimal frame
+rate identified in the study is 3 for color symbol maps and 6 for size
+symbol maps. They also suggest to reduce class number and frame rate
+if the display size is smaller than
+1024x768~\cite{doi:10.1559/1523040639298}.
+
+\paragraph{Bivariate Map Design} \label{bivariate}
+In order to represent heating demand and cooling demand are on the
+same map together, we encounter a common map design problem: bivariate
+map design problem. Elmer presented eight possible types of
+representation for bavariate maps: ``shaded cartogram, rectangle map,
+bar chart, value by alpha, choropleth with graduated symbol, bivariate
+choropleth, spoke glyph and shaded texture''~\cite{Elmer2012}. In our
+current case of 3D representation, to incorporate the map symbol to
+the 3D model, the representation with dimensional changes are not
+suitable since they will distort the actual building geometry which
+makes the urban environment un-realistic. The only choices are the
+ones that only involves color or texture, i.e. representing the change
+of each variable with color or texture, corresponding to ``bivaiate
+choropleth, value by alpha and shaded texture''. Among these three
+choices, bivariate choropleth representation has the highest accuracy
+rate, hence we choose bivariate choropleth as the representation of
+the current map interface design.
+
+\subsubsection{Works on 2D vs. 3D} \label{2d3d} As is mentioned in
+Brownrigg, the choice of 2D representation vs. 3D representation is
+one of the debating decisions in the world of data
+visualization~\cite{Brownrigg2005}. 2D maps are easier to navigate and
+2D map design has better theory support while 3D maps don't. The
+advantage of 3D map is its rich and realistic environment.
+
+\subsubsection{Works on Map Design Conveying Spatial Temporal
+  Information}
+\paragraph{Time Representation}
+Brownrigg mentioned several methods of representing time on a map: 1)
+a graph or chart that represents a function over time or a timeline
+for displaying chronological events 2) animation of snapshots 3)
+small-multiples of snapshots of changing states
+~\cite{Brownrigg2005}. The graph or chart representation of temporal
+time series is used in the current interface design to anchor the
+quantative information. The interactive animation approach is used for
+the map display, as is apposed to small-multiple method. The choice is
+based on the following points mentioned by Brownrigg: 1) the number of
+snapshots in one display is limited and the finer the detail per
+snapshot, the less snapshots one can contain in one display. Since the
+3D representation is chosen as the major map display method, the level
+of details per image is high, which will result in a very small number
+of multiples per display 2) the subtle changes are easier
+to be noticed in the form of animation than with small-multiples. Both
+of the two drawbacks of small-multiple method will impair the ability
+of conveying the rapid temporal changes of energy behavior, hence is
+not suitable for the current project.
+
+\paragraph{Animated Maps}
+As is mentioned in section \ref{Reflection}, the majority of the map
+design of Energy and Dynamic Energy Maps are not thoughly considered
+and contain too much distraction. Hence the authors think it is
+helpful to conduct theory and case studies of temporal-spatial map
+design in the current project of Dynamic Energy Map.
+
+In order to represent dynamic geographc process, map animation is a
+natual solution and it was introduced to the world of cartography in
+1930s~\cite{Harrower2008}. The major application of animated maps
+include: 1) demonstration of intuition of dynamic geographic process,
+such as weather maps in weather forecasting 2) assisting pattern
+recognition and knowledge development for scientific researches, such
+as the study by Dorling and Openshaw, where they discovered new
+leukaemia hotspots through animated maps~\cite{Dorling1992}.
+
+Harrower and Fabrikant mentioned that the chanllenge of using animated
+maps is the overflow of information and the volnerability to
+distraction. One example mentioned by Harrower and Fabrikant is the
+comparison of color on the map and that on the legend becomes
+difficult for animated maps as a result of the changing of
+images. This issue is considered in the current Dynamic Energy Map
+interface design, with a series of tick marks that pointed out the
+colors used on the map, for more details, please refer to section x.x.
+They also proposed one approach of strengthening information convey
+with minized distraction introduced is to use audio
+legend~\cite{Harrower2008}. This might become one of the next
+extenssions of the current Dynamic Energy Map interface design.
+
+They also suggested that the difference in time should have different
+visual representations in data display~\cite{Harrower2008}. Peuquet
+claimed that ``The development of temporal analytical capabilities in
+GIS such as temporal queries requires basic topological structures in
+both time and space''. Thus the different spatial representation seems
+to be a natural choice for adapting to different temporal resolution
+and scale. The two major types of time are linear and cyclic. Upon
+this consideration, the design of the current interface considered
+adding utilities that facilitates jumps with time steps corresponding
+to the natural period of data time series, such as month, day and
+hour. This design choice is anticipated to facilitate the
+representation of both linear changes and periodical changes of energy
+usage in the community.
+
+The level of user control of playback behavior to animated maps is
+also debatable. Some claim providing the full freedom of adjusting
+this feature can enhance pattern understanding~\cite{Nelson1998}. But
+others argue that this control will impair the ability of animation in
+convey temporal change pattern and reduce it to still
+images~\cite{Lowe2004}.
+
+The technology of implementing a dynamic map has been exceeding the
+catographic theory~\cite{Harrower2008}. This makes the design of
+Dynamic Map even more difficult. Animated maps are not superior to
+static maps, it is just they are good at different aspect of
+information convey. The animated map is advantageous in demonstrating
+the changes between frames rather than the absolute value represented
+in each frame~\cite{Dorling1992}. It is proved to be more powerful in
+convey the spatial-temporal pattern than static
+map~\cite{McEachern1998}.
+
+\begin{comment}
+``Data Visualization with Spacetime Maps'', Richard L. Brownrigg, 2005
+(read further later on)
+\end{comment}
+
+\grey{To be continued later:
+\begin{enumerate}[label*=\arabic*.]
+\item ``Geographic Visualization: Designing Manipulable Maps for
+    Exploring Temporally Varying Georeferenced Statistics'', MacEachren et al.\
+\item ``Strategies for the Visualization of Geographic Time-Series
+    Data'', Mark Monmonier, 2011
+\item ``Evaluation of Methods for Classifying Epidemiological Data
+    on Choropleth Maps in Series'', Brewer and Pickle, 2002
+\end{enumerate}}
+
+\subsection{Works on Technology Regarding 4D Visualization and
+  Interface Design}
+The next step for the current project is to create an on-line platform
+that enables easy map share and design collaboration. The following
+section contains some information of possible technologies for this
+possible extenssion.
+
+Resch et al.\ presented a good summary of existing web-3D and 4D
+visualization technologies~\cite{Resch2014}. Early approaches for
+web-based 3D map display are based on VRML, X3D or similar
+instances. Their drawbacks are the requirement of additional add-ins
+and their limited ability in handling large amount of data. Later
+approaches include some Java-based or WebGL based tools. Zipf used
+OpenStreetMap, Shuttle Radar Topography Mission and Java based
+xNavigator to display 3D maps with a Java based
+plug-in~\cite{Zipf2014}. WebGL based approaches include: a campus
+information system by Hering et al.\ ~\cite{Hering2011}, a
+geo-visualization system with ``browser-server'' architecture by Feng
+et al.\ ~\cite{Feng2011}, open source software OpenWebGlobe developed
+by Loesch et al.\ , WebGL Earth project by Klokan
+Technologies~\cite{KlokanTechnologies2015} and Cesium project by
+Analitical Graphics~\cite{AGI2015}. Cesium also support ``time-dynamic
+graphical scenes''~\cite{CZML2015}
+
+\section{Methodology}
   \begin{enumerate}[label*=\arabic*.]
   \item General Work Flow
   \item Simulation Setting
@@ -773,7 +903,9 @@ CO2 emission map presenting world-wide carbon emissions from 1980 to
       scheme and the implementation
     \end{enumerate}
   \end{enumerate}
-\item Interface Design
+
+\begin{comment}
+\section{Interface Design}
   \begin{enumerate}[label*=\arabic*.]
   \item Guidelines from interface design case study: See 2.5
   \item User definition

@@ -1,5 +1,18 @@
 \begin{thebibliography}{10}
 
+\bibitem{AGI2015}
+{Analytical Graphics Inc.}
+\newblock Cesium.
+\newblock web, July 2015.
+\newblock \url{http://cesiumjs.org/}.
+
+\bibitem{CZML2015}
+{Analytical Graphics Inc.}
+\newblock Czml guide.
+\newblock web, July 2015.
+\newblock
+  \url{https://github.com/AnalyticalGraphicsInc/cesium/wiki/CZML-Guide}.
+
 \bibitem{CO2Atlas}
 Global~Carbon Atlas.
 \newblock Global carbon atlas.
@@ -17,6 +30,11 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock Energy potential mapping: Visualising energy characteristics for the
   exergetic optimisation of the built environment.
 \newblock {\em Entropy}, 15(2):490, 2013.
+
+\bibitem{Brownrigg2005}
+Richard Brownrigg.
+\newblock {\em {Data Visualization with Spacetime Maps}}.
+\newblock PhD thesis, University of Kansas, May 2005.
 
 \bibitem{heatMapLocal2012}
 {Department of Energy and Climate Change}.
@@ -38,6 +56,15 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock web, March 2015.
 \newblock
   \url{https://www.gov.uk/government/news/cold-water-could-heat-one-million-homes}.
+
+\bibitem{Diaz2013}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Towards smart cities: Energy mapping to identify opportunities for
+  future networks.
+\newblock web, July 2015.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/index.html}.
 
 \bibitem{DOEEnergyCost}
 {DOE}.
@@ -94,6 +121,13 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock
   \url{http://energy.gov/maps/map-projected-growth-wind-industry-now-until-2050}.
 
+\bibitem{doi:10.1559/1523040639298}
+Weihua Dong, Jing Ran, and Jue Wang.
+\newblock Effectiveness and efficiency of map symbols for dynamic geographic
+  information visualization.
+\newblock {\em Cartography and Geographic Information Science}, 39(2):98--106,
+  2012.
+
 \bibitem{Dorling1992}
 D.~Dorling and S.~Openshaw.
 \newblock Using computer animation to visualize space - time patterns.
@@ -130,6 +164,23 @@ D.~Dorling and S.~Openshaw.
 \newblock State profile and energy estimates.
 \newblock web, July 2015.
 \newblock \url{http://www.eia.gov/state/?sid=PA}.
+
+\bibitem{Elmer2012}
+Martin~E. Elmer.
+\newblock Symbol considerations for bivariate thematic mapping.
+\newblock diploma thesis, University of Wisconsin-Madison, 2012.
+
+\bibitem{EsriHistory2015}
+Esri.
+\newblock Pittsburgh historic maps.
+\newblock web, July 2015.
+\newblock \url{http://peoplemaps.esri.com/pittsburgh/}.
+
+\bibitem{Feng2011}
+Lei Feng, Chaoliang Wang, Chuanrong Li, and Ziyang Li.
+\newblock A research for 3d webgis based on webgl.
+\newblock In {\em Computer Science and Network Technology (ICCSNT), 2011
+  International Conference on}, volume~1, pages 348--351, Dec 2011.
 
 \bibitem{Finney2012165}
 Karen~N. Finney, Vida~N. Sharifi, Jim Swithenbank, Andy Nolan, Simon White, and
@@ -173,6 +224,14 @@ Geoffrey Hay, Christopher Kyle, Bharanidharan Hemachandran, Gang Chen,
 \newblock Geospatial technologies to improve urban energy efficiency.
 \newblock {\em Remote Sensing}, 3:1380--1405, July 2011.
 
+\bibitem{Hering2011}
+Nils Hering, Martin Rünz, Lubosz Sarnecki, and Lutz Priese.
+\newblock 3dcis: A real-time browser-rendered 3d campus information system
+  based on webgl.
+\newblock In {\em The 2011 world congress in computer science, computer
+  engineering and applied computing, Worldcomp}, pages 18--21, Las Vegas, NV,
+  July 2011.
+
 \bibitem{IDEA2005}
 {International District Energy Association}.
 \newblock Idea report: The district energy industry.
@@ -185,10 +244,24 @@ Mark Jaccard, Lee Failing, and Trent Berry.
   greenhouse gas emission reduction.
 \newblock {\em Energy Policy}, 25(13):1065 -- 1074, 1997.
 
+\bibitem{Nelson1998}
+Harry Johnson and Elisabeth~S. Nelson.
+\newblock Using flow maps to visualize time-series data: Comparing the
+  effectiveness of a paper map series, a computer map series, and animation.
+\newblock {\em Cartographic Perspectives}, 19(30):47--64, 1998.
+
 \bibitem{IDEA2012}
 Michael King.
 \newblock Community energy: Planning, development and delivery.
 \newblock Technical report, IDEA, 2012.
+
+\bibitem{Lowe2004}
+Richard Lowe.
+\newblock User-controllable animated diagrams: The solution for learning
+  dynamic content?
+\newblock In AlanF. Blackwell, Kim Marriott, and Atsushi Shimojima, editors,
+  {\em Diagrammatic Representation and Inference}, volume 2980 of {\em Lecture
+  Notes in Computer Science}, pages 355--359. Springer Berlin Heidelberg, 2004.
 
 \bibitem{McEachern1998}
 Alan~M. MacEachren, Francis~P. Boscoe, Daniel Haug, and Linda~W. Pickle.
@@ -221,10 +294,22 @@ Zoe Redgrove.
 \newblock web, October 2012.
 \newblock \url{http://tools.decc.gov.uk/nationalheatmap/}.
 
+\bibitem{Resch2014}
+Bernd Resch, Ralf Wohlfahrt, and Christoph Wosniok.
+\newblock Web-based 4d visualization of marine geo-data using webgl.
+\newblock {\em Cartography and Geographic Information Science}, 41(3):235--247,
+  2014.
+
 \bibitem{NYCSolarMap}
 {Sustainable CUNY}.
 \newblock Nyc solar map, July 2015.
 \newblock \url{http://www.nycsolarmap.com/}.
+
+\bibitem{KlokanTechnologies2015}
+Klokan Technologies.
+\newblock Opensource project: 3d digital globe for web and mobile devices.
+\newblock web, July 2015.
+\newblock \url{http://www.webglearth.org/about}.
 
 \bibitem{Voivontas1998333}
 D.~Voivontas, D.~Assimacopoulos, A.~Mourelatos, and J.~Corominas.
@@ -256,6 +341,12 @@ Wikipedia.
 \newblock web, July 2015.
 \newblock \url{https://en.wikipedia.org/wiki/Thematic_map#History}.
 
+\bibitem{Worldology2009}
+Worldology.
+\newblock Europe history interactive map.
+\newblock web, June 2009.
+\newblock \url{http://www.worldology.com/Europe/europe_history_lg.htm}.
+
 \bibitem{Yeo201499}
 In-Ae Yeo and Jurng-Jae Yee.
 \newblock A proposal for a site location planning model of environmentally
@@ -263,5 +354,11 @@ In-Ae Yeo and Jurng-Jae Yee.
   geographical information system (e-gis) database (db) and an artificial
   neural network (ann).
 \newblock {\em Applied Energy}, 119(0):99 -- 117, 2014.
+
+\bibitem{Zipf2014}
+Alexander Zipf.
+\newblock Crowdsourced gi - beginn einer neuen Ära freier geodaten?
+\newblock In {\em Proceedings of the FOSSGIS 2011 Conference}, Heidelberg,
+  April 2011.
 
 \end{thebibliography}
