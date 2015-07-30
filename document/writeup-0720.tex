@@ -229,12 +229,30 @@ demand within a mixed-use urban environment are not
 simultaneous. Difference in building type also suggest difference in
 indoor environment requirement such as ventilation rate, lighting
 intencity etc., indicating a dramatic variation in energy consumption
-data distribution among buildings in the community. Upon these
-considerations, a simple annual or monthly average cannot effectly
-represent the real energy consumption behavior of an individual
-building and the whole urban environment. In order to present this
-complecated behavior of time-depandent energy demand, the time
-dimension is necessary.
+data distribution among buildings in the community. 
+
+\subsubsection{More Detailed Description of Energy Behavior Supports
+  Better Design}
+A simple annual or monthly average cannot effectly represent the real
+energy consumption behavior of an individual building and the whole
+urban environment. In order to present this complecated behavior of
+time-depandent energy demand, the time dimension is necessary.
+
+For example, hospitals are usually constant heat consumers with very
+stable heat demand throughout a year, while a performance center is,
+on the other hand, an occassional huge heat consumer with very high
+peak demand occur occassionally at event time and with almost zero
+demand in the remaining time. It is reasonable to apply different
+energy planning strategy for building groups involving one of these
+two types of buildings. However, if time dimension is not included,
+one has to choose some form of aggregate description of the energy
+consumption, be it average, maximum, minimum or annual total. For most
+cases, annual total demand is used for representing a building's
+energy demand. With this approach, the different energy usage pattern
+of a hospital and a performance center is not differentiable.
+
+\subsubsection{Aggretation of Peak Value Becomes Tricky for Data with Time Variation}
+\grey{(move things above)}
 
 \begin{comment}
 \subsubsection{Temporal variation of the Supply Side}
@@ -246,7 +264,8 @@ year~\cite{EIARenewable2015}. There is also a cost difference involved
 in the electricity supply.
 \end{comment}
 
-\subsubsection{Close Match of Supply Side to Demand Side Improves Community Scale Energy Performance} 
+\subsubsection{Close Match of Supply Side to Demand Side Improves
+  Community Scale Energy Performance}
 As a result of the finiteness of fossil fuels, the using of renewable
 energy begins to come into play. In 2013, renewable energy account for
 9\% of the primary energy source of residential and commercial
@@ -462,7 +481,6 @@ temperal-statial navigation:
 \end{itemize}
 
 \section{Related Works}
-\grey{add logic}!!!!!!
 \subsection{Static Energy Map}
 The majority of existing Energy Map instances are static maps with no
 time information. As is mentioned in the thematic map definition, the
@@ -545,26 +563,47 @@ Stations'' ~\cite{heatMap2012} are plotted as point features in the
 map. Address level heat demand data in csv format is also available
 for local authorities~\cite{heatMapLocal2012}. 
 
-The new ``Water Source Heat Map'' is added to the existing National
-Heat Map to support the usage of water-based thermal system as
-water-based heat pump.
-!!!!!!!!!!!!!!!!!!
+The ``Water Source Heat Map'' is an added layer group to the existing
+National Heat Map with information about the the heat potential of the
+4041 waterways in England. Heat potential of waterways are represented
+in temperature, surface area, flow rate and heat capacity ($kJ/m^3$
+for coastal and estuary, $kW$ for canal, river and settlement). It
+aims at supporting the plan of water-based thermal system as
+water-based heat pump~\cite{waterHeatMap}. The map revealed the large
+thermal capacity of water bodies that could serve over one million
+buildings~\cite{waterHeatMap}.
 
 \paragraph{Energy consumption prediction model}
-    \begin{enumerate}[label*=\arabic*.]
-      \item ``A large-scale study on predicting and contextualizing building energy usage'', Kolter, J. Zico; Ferreira Jr, Joseph.
-    \end{enumerate}
+Kolter and Ferreira presented a modeling method to predict building
+energy enduse in Cambridge, MA. They also developed a user
+application, ``Energy View'' with two target user groups: general
+public and local authorities. The model can be used by local
+authorities to identify energy usage outliers and by general public to
+compare their monthly energy consumption with predicted baseline
+consumption.
+
 \paragraph{Smart Management of Urban Energy System}
-    \begin{enumerate}[label*=\arabic*.]
-    \item ``Smart Urban Services for Higher Energy
-    Efficiency''(SUNSHINE) project (2013): energy consumption map,
-    automatic alerts, remote control of public building lighting
-    system.
-    \end{enumerate}
+Energy Map also helps smart management of energy system in a large
+urban scale. ``Smart Urban Services for Higher Energy Efficiency''
+(SUNSHINE) project is a European Co-Founded project launched in
+2013. It is accessible through webpage and smartphone or tablet
+application. It aims at developing a platform capable of 1) assessing
+building energy consumption behavior and create a 2D and 3D energy
+map, ``ecomap'' accordingly 2) providing automatic alerts regarding
+optimized usage of heating/cooling system 3) remote control of public
+building lighting systems~\cite{SUNSHINE2015}. The target users of the
+application include facility managers, policy makers, citizens and
+energy service companies. Function 1) is anticipated to help energy
+company and facility managers to identify energy consuming outliers,
+provide information for building pre-certification. Function 2) aims
+at providing more accurate baseline consumption data using weather and
+meter data. Function 3) allows better management of public lighting
+system based on illuminance requirements and weather conditions.
 
 \subsubsection{Combined Supply, Demand and Infrustructure}
-Comparing with the previous examples, Dobbelsteen et al. described a
-framework of energy potential mapping that 1) in addition to renewable
+Dobbelsteen et al. described a framework of energy potential mapping
+that depicts information of energy supply, demand and infrastructure.
+Comparing with the previous examples, that 1) in addition to renewable
 energy source, it also considered residual energy as energy sources
 and 2) aggregated multiple types of energy potentials in a single map
 with the unit of GJ or GJ/ha~\cite{Dobbelsteen2013}. The energy
@@ -592,25 +631,69 @@ dimension, each additional bit of distraction will prevent the
 necessary information from getting through. Hence the authors think it
 is necessary to discuss the map design aspect, and look for examples
 of best practices. This is done in section x.x.!!!!!!
-\begin{comment}
 
-  \item Dynamic Map
+\subsection{Dynamic Map}
+The aim of this section is to explore how the time dimension can be
+represented in a map.
+\subsubsection{Animated Maps}
+In order to represent dynamic geographc process, map animation was
+introduced to the world of cartography in 1930s. ~\cite{Harrower2008}
+
+The author also pointed out the technology of implementing a dynamic
+map has been exceeding the catographic theory~\cite{Harrower2008}. The
+animated map is advantageous in the changing between frames rather
+than the absolute value represented in each
+frame~\cite{Dorling1992}. It is proved to be more powerful in convey
+the spatial-temporal pattern than static
+map~\cite{McEachern1998}. There are also challenges such as a result
+of the cognitive limitations. One example mentioned by Harrower et
+al.\ is the comparison of color on the map and that on the legend
+becomes difficult for animated maps as a result of the changing of
+images. This issue is considered in the current Dynamic Energy Map
+interface design, with a series of tick marks that pointed out the
+colors used on the map.
+
+They also suggest that the difference in time should have different
+visual representations in data display~\cite{Harrower2008}. The two
+major types of time are linear and cyclic. Upon this consideration,
+the design of the interface considered adding utilities that
+facilitates jumps between natural period that facilitate the
+representation of linear changes and periodical changes of energy
+usage in the community.
+
+One of the challenge of animated map design is the balance of the
+presentation of information and legend and the degree of
+distraction. One proposed approach of strengthening information convey
+is to use audio legend~\cite{Harrower2008}. This might become one of
+the next extenssions of the current Dynamic Energy Map interface
+design.
+
+Peuquet claimed that ``The development of temporal analytical
+capabilities in GIS such as temporal queries requires basic
+topological structures in both time and space''
+
+There are also debates about the level of user control to animated
+maps. 
+\subsubsection{Energy Dynamic Map}
+Current Dynamic Energy Map instances are mainly animated maps with
+large time steps, large spatial scale, and very few number of
+frames. These instances include: State wind power capacity map that
+depicts the wind industry growth at state level from 2000 to
+2050~\cite{DOEWind}, wind farm development map that shows the wind
+farm location and capacity development from 1975 to
+2013~\cite{DOEWindFarm}, solar plant development map that shows the
+solar plant location and capacity development from 1975 to
+2013~\cite{DOESolarPlant}, US Energy Production Map that shows
+statewise energy production from 1993 to 2012~\cite{DOEEnergyProduct},
+CO2 emission map presenting world-wide carbon emissions from 1980 to
+2014~\cite{CO2Atlas}.
+
+\subsubsection{History and Archaeology Instances of Dynamic Maps}
     \begin{enumerate}[label*=\arabic*.]
-    \item History and Archaeology Instances of Dynamic Maps
-      \begin{enumerate}[label*=\arabic*.]
-      \item Pittsburgh Historic Map, \url{http://peoplemaps.esri.com/pittsburgh/} 
-      \item Europe History Interactive Map, \url{http://www.worldology.com/Europe/europe\_history\_md.htm}
-      \end{enumerate}
-    \item Animated Maps
-      \begin{enumerate}[label*=\arabic*.]
-      \item ``The Role of Map Animation for Geographic
-        Visualization'', Mark Harrower and Sara Fabrikant
-      \item ``Using Computer Animation to Visualize Patterns'', D Dorling and S Openshaw, 1992
-      \end{enumerate}
-    \item Energy Dynamic Map
-
-      wind farm development dynamic map \cite{DOEWindFarm}
+    \item Pittsburgh Historic Map, \url{http://peoplemaps.esri.com/pittsburgh/} 
+    \item Europe History Interactive Map, \url{http://www.worldology.com/Europe/europe\_history\_md.htm}
     \end{enumerate}
+\begin{comment}
   \item Works on Visualization focusing on map design and information
     convey
 

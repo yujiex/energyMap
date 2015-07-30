@@ -32,6 +32,13 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock
   \url{http://tools.decc.gov.uk/en/content/cms/heatmap/about\_map/about\_map.aspx}.
 
+\bibitem{waterHeatMap}
+{Department of Energy and Climate Change}.
+\newblock Cold water could heat one million homes.
+\newblock web, March 2015.
+\newblock
+  \url{https://www.gov.uk/government/news/cold-water-could-heat-one-million-homes}.
+
 \bibitem{DOEEnergyCost}
 {DOE}.
 \newblock Energy expenditure per person.
@@ -50,6 +57,12 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock web, July 2015.
 \newblock \url{https://energycode.pnl.gov/EnergyCodeReqs/}.
 
+\bibitem{DOESolarPlant}
+{DOE}.
+\newblock Solar plants online.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/utility-scale-solar-through-years#buttn}.
+
 \bibitem{CodeAdopt}
 {DOE}.
 \newblock Status of state energy code adoption.
@@ -67,6 +80,24 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock Us hydropower potential from existing non-powered dams.
 \newblock web, July 2015.
 \newblock \url{http://energy.gov/maps/energy-production-over-years}.
+
+\bibitem{DOEWindFarm}
+{DOE}.
+\newblock Wind farms through years.
+\newblock web, July 2015.
+\newblock \url{http://energy.gov/maps/wind-farms-through-years#buttn}.
+
+\bibitem{DOEWind}
+{DOE}.
+\newblock Wind vision.
+\newblock web, July 2015.
+\newblock
+  \url{http://energy.gov/maps/map-projected-growth-wind-industry-now-until-2050}.
+
+\bibitem{Dorling1992}
+D.~Dorling and S.~Openshaw.
+\newblock Using computer animation to visualize space - time patterns.
+\newblock {\em Planning and Design}, 19:639--650, July 1992.
 
 \bibitem{EIAPrimary2013}
 {EIA}.
@@ -113,6 +144,12 @@ Michael Flaxman.
 \newblock web, 2010.
 \newblock Talk at GeoDesign Summit 2010.
 
+\bibitem{SUNSHINE2015}
+{Fondazione GraphiTech}.
+\newblock Sunshine.
+\newblock web, July 2015.
+\newblock \url{http://www.sunshineproject.eu/}.
+
 \bibitem{Garlandini2009}
 Simone Garlandini and Sara~Irina Fabrikant.
 \newblock Evaluating the effectiveness and efficiency of visual variables for
@@ -123,6 +160,12 @@ Simone Garlandini and Sara~Irina Fabrikant.
 Michael Goodchild.
 \newblock Towards geodesign: Repurposing cartography and gis?
 \newblock {\em Cartographic Perspectives}, 0(66), 2010.
+
+\bibitem{Harrower2008}
+Mark Harrower and Sara Fabrikant.
+\newblock {\em The Role of Map Animation for Geographic Visualization}, pages
+  49--65.
+\newblock John Wiley \& Sons, Ltd, 2008.
 
 \bibitem{Hay2011}
 Geoffrey Hay, Christopher Kyle, Bharanidharan Hemachandran, Gang Chen,
@@ -146,6 +189,13 @@ Mark Jaccard, Lee Failing, and Trent Berry.
 Michael King.
 \newblock Community energy: Planning, development and delivery.
 \newblock Technical report, IDEA, 2012.
+
+\bibitem{McEachern1998}
+Alan~M. MacEachren, Francis~P. Boscoe, Daniel Haug, and Linda~W. Pickle.
+\newblock Geographic visualization: Designing manipulable maps for exploring
+  temporally varying georeferenced statistics.
+\newblock In {\em Proceedings of the IEEE Information Visualization Symposium},
+  pages 87--94, International Plea Conference, October 1998.
 
 \bibitem{Mikkola2014256}
 Jani Mikkola and Peter~D. Lund.
