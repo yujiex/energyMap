@@ -170,6 +170,18 @@ Martin~E. Elmer.
 \newblock Symbol considerations for bivariate thematic mapping.
 \newblock diploma thesis, University of Wisconsin-Madison, 2012.
 
+\bibitem{ArcGIS2015}
+Esri.
+\newblock Arcgis.
+\newblock web, June 2015.
+\newblock \url{http://www.arcgis.com/features/}.
+
+\bibitem{cityEngine2015}
+Esri.
+\newblock City engine.
+\newblock web, June 2015.
+\newblock \url{http://www.esri.com/software/cityengine}.
+
 \bibitem{EsriHistory2015}
 Esri.
 \newblock Pittsburgh historic maps.
@@ -282,6 +294,13 @@ Jani Mikkola and Peter~D. Lund.
 \newblock web, July 2015.
 \newblock \url{http://www.nrel.gov/gis/maps.html}.
 
+\bibitem{DOE2015}
+Office of~Energy Efficiency \& Renewable~Energy.
+\newblock Commercial reference buildings.
+\newblock web, June 2015.
+\newblock
+  \url{http://energy.gov/eere/buildings/commercial-reference-buildings}.
+
 \bibitem{Ramachandra20071460}
 T.V. Ramachandra and B.V. Shruthi.
 \newblock Spatial mapping of renewable energy potential.
@@ -310,6 +329,12 @@ Klokan Technologies.
 \newblock Opensource project: 3d digital globe for web and mobile devices.
 \newblock web, July 2015.
 \newblock \url{http://www.webglearth.org/about}.
+
+\bibitem{veolia2014}
+{Veolia}.
+\newblock Sheffield erf virtual tour.
+\newblock web, July 2015.
+\newblock \url{http://veolia.co.uk/sheffield/about-us/about-us/videos}.
 
 \bibitem{Voivontas1998333}
 D.~Voivontas, D.~Assimacopoulos, A.~Mourelatos, and J.~Corominas.

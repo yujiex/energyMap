@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: writeup-0720.aux
 The style file: plain.bst
 Database file #1: myCitation.bib
-You've used 58 entries,
+You've used 62 entries,
             2118 wiz_defined-function locations,
-            819 strings with 12692 characters,
-and the built_in function-call counts, 16046 in all, are:
-= -- 1574
-> -- 661
+            836 strings with 13103 characters,
+and the built_in function-call counts, 16922 in all, are:
+= -- 1662
+> -- 689
 < -- 8
-+ -- 271
-- -- 209
-* -- 920
-:= -- 2701
-add.period$ -- 207
-call.type$ -- 58
-change.case$ -- 277
++ -- 283
+- -- 217
+* -- 952
+:= -- 2849
+add.period$ -- 223
+call.type$ -- 62
+change.case$ -- 293
 chr.to.int$ -- 0
-cite$ -- 58
-duplicate$ -- 555
-empty$ -- 1403
-format.name$ -- 209
-if$ -- 3439
+cite$ -- 62
+duplicate$ -- 583
+empty$ -- 1491
+format.name$ -- 217
+if$ -- 3631
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 62
 missing$ -- 23
-newline$ -- 325
-num.names$ -- 118
-pop$ -- 401
+newline$ -- 349
+num.names$ -- 126
+pop$ -- 433
 preamble$ -- 1
-purify$ -- 219
+purify$ -- 231
 quote$ -- 0
-skip$ -- 420
+skip$ -- 444
 stack$ -- 0
-substring$ -- 717
-swap$ -- 99
+substring$ -- 737
+swap$ -- 103
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 228
+type$ -- 244
 warning$ -- 0
-while$ -- 141
-width$ -- 60
-write$ -- 678
+while$ -- 149
+width$ -- 64
+write$ -- 726
