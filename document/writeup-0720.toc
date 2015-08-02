@@ -36,30 +36,34 @@
 \contentsline {paragraph}{\numberline {2.2.3.1}Symbol Chosen}{16}{paragraph.2.2.3.1}
 \contentsline {paragraph}{\numberline {2.2.3.2}Bivariate Map Design}{16}{paragraph.2.2.3.2}
 \contentsline {subsubsection}{\numberline {2.2.4}Works on 2D vs. 3D}{17}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Works on Map Design Conveying Spatial Temporal Information}{17}{subsubsection.2.2.5}
-\contentsline {paragraph}{\numberline {2.2.5.1}Time Representation}{17}{paragraph.2.2.5.1}
-\contentsline {paragraph}{\numberline {2.2.5.2}Animated Maps}{17}{paragraph.2.2.5.2}
+\contentsline {subsubsection}{\numberline {2.2.5}Works on Data Classification}{17}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Works on Map Design Conveying Spatial Temporal Information}{17}{subsubsection.2.2.6}
+\contentsline {paragraph}{\numberline {2.2.6.1}Time Representation}{17}{paragraph.2.2.6.1}
+\contentsline {paragraph}{\numberline {2.2.6.2}Animated Maps}{17}{paragraph.2.2.6.2}
 \contentsline {subsection}{\numberline {2.3}Works on Technology Regarding 4D Visualization and Interface Design}{18}{subsection.2.3}
 \contentsline {section}{\numberline {3}Methodology}{19}{section.3}
-\contentsline {subsection}{\numberline {3.1}Definition of Use Case Scenario}{19}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}General Work Flow}{19}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Simulation Setting}{19}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Model Setting}{19}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Data Collection and Analysis}{20}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Simulation Data Analysis of the benchmark models}{20}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Potential Impact on system design or data visualization based on the analysis above}{21}{subsubsection.3.5.2}
-\contentsline {subsection}{\numberline {3.6}Temporal Data Aggregation}{21}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Data Classification and symbol/color design of a dynamic choropleth map}{22}{subsection.3.7}
-\contentsline {section}{\numberline {4}Interface Specification}{24}{section.4}
-\contentsline {subsection}{\numberline {4.1}Guidelines from interface design case study}{24}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}User Definition}{24}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Goal Function}{24}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Specification of the Major Operation of the Interface}{24}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Map display and data plot}{25}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Navigation utilities that navigates through dynamic map and data plot}{25}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.3}Provide default settings for choropleth map display}{25}{subsubsection.4.4.3}
-\contentsline {section}{\numberline {5}Interface Design}{26}{section.5}
-\contentsline {subsection}{\numberline {5.1}General Layout}{26}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Navigation Function}{26}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Dynamic Plot}{27}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Implementation tools and strategy}{27}{subsection.5.4}
+\contentsline {subsection}{\numberline {3.1}General Work Flow}{19}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Input}{19}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Energy Data}{19}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Model Setting}{20}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Data Collection and Analysis}{21}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Simulation Data Analysis of the benchmark models}{21}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Temporal Data Aggregation}{23}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Data Classification and symbol/color design of a dynamic choropleth map}{24}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}General Approaches}{24}{subsubsection.3.5.1}
+\contentsline {section}{\numberline {4}Interface Specification}{25}{section.4}
+\contentsline {subsection}{\numberline {4.1}Guidelines from interface design case study}{25}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}User Definition}{25}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Goal Function}{25}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Specification of the Major Operation of the Interface}{25}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Map display and data plot}{26}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Navigation utilities that navigates through dynamic map and data plot}{26}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Provide default settings for choropleth map display}{26}{subsubsection.4.4.3}
+\contentsline {section}{\numberline {5}Interface Design}{27}{section.5}
+\contentsline {subsection}{\numberline {5.1}General Layout}{27}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Navigation Function}{27}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Dynamic Plot}{28}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Implementation tools and strategy}{28}{subsection.5.4}
+\contentsline {section}{\numberline {6}Case Analysis: Using the Tool to Design a District Energy System}{28}{section.6}
+\contentsline {subsection}{\numberline {6.1}Using Static Energy Map}{29}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Using Dynamic Energy Map}{29}{subsection.6.2}

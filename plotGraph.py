@@ -145,12 +145,13 @@ class DataPlot(CanvasWtMargin):
             y1 = y0
             # prevent division by 0
             if (maxi - mini > 0):
-                y0 = (self.margin_t + 
+                y0 = (self.margin_t +
                       self.h_graph*(1 - scaleRatio(maxi,mini,data[i])))
                 y1 = (self.margin_t +
                       self.h_graph*(1 - scaleRatio(maxi, mini,
                                                    data[i + 1])))
-            self.g.create_line(x0, y0, x1, y1)
+            self.g.create_line(x0, y0, x1, y1,
+                               joinstyle = ROUND, capstyle = ROUND)
 
     # plot a single graph
     def plotSingle(self, idx, length, lower, upper):
@@ -182,8 +183,8 @@ class DataPlot(CanvasWtMargin):
 graphList = []
 
 sectorList = ["Hotel", "Office", "Residencial", "Commercial", "Total"]
-titleList = [[i + " Heat Demand (Gas/kbtu)", 
-              i + " Cool Demand (Electricity/kbtu)"] 
+titleList = [[i + " Heat Demand (Gas/kbtu)",
+              i + " Cool Demand (Electricity/kbtu)"]
              for i in sectorList]
 pathList = [["energyData/" + i + "_gas.csv", "energyData/" + i +
              "_elec.csv"] for i in sectorList]
@@ -193,9 +194,9 @@ def createAll(master, num_row_gr, num_col_gr, row_gr_0, col_gr_0,
               h_span_gr, w_span_gr, h_span_agg, w_span_agg):
     for i in range(num_row_gr):
         for j in range(num_col_gr):
-            f = DataPlot(titleList[i][j], i * h_span_gr + row_gr_0, 
-                         j * w_span_gr + col_gr_0, h_span_gr, 
-                         w_span_gr, graph_width, graph_height, 
+            f = DataPlot(titleList[i][j], i * h_span_gr + row_gr_0,
+                         j * w_span_gr + col_gr_0, h_span_gr,
+                         w_span_gr, graph_width, graph_height,
                          pathList[i][j], left, right, top, bottom,
                          master)
             graphList.append(f)
@@ -205,9 +206,9 @@ def createAll(master, num_row_gr, num_col_gr, row_gr_0, col_gr_0,
     # total heat demand plot span many row
     row_agg = row_gr_0 + num_row_gr * h_span_gr
     for j in range(num_col_gr):
-        f = DataPlot(titleList[4][j], row_agg, 
-                     col_gr_0 + j * w_span_gr, h_span_agg, w_span_agg, 
-                     graph_width, h_aggregateGraph, pathList[4][j], 
+        f = DataPlot(titleList[4][j], row_agg,
+                     col_gr_0 + j * w_span_gr, h_span_agg, w_span_agg,
+                     graph_width, h_aggregateGraph, pathList[4][j],
                      left, right, top, bottom, master)
         graphList.append(f)
     maxi_total = max([max(f.data) for f in graphList])

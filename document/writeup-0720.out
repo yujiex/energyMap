@@ -36,30 +36,34 @@
 \BOOKMARK [4][-]{paragraph.2.2.3.1}{Symbol Chosen}{subsubsection.2.2.3}% 36
 \BOOKMARK [4][-]{paragraph.2.2.3.2}{Bivariate Map Design}{subsubsection.2.2.3}% 37
 \BOOKMARK [3][-]{subsubsection.2.2.4}{Works on 2D vs. 3D}{subsection.2.2}% 38
-\BOOKMARK [3][-]{subsubsection.2.2.5}{Works on Map Design Conveying Spatial Temporal Information}{subsection.2.2}% 39
-\BOOKMARK [4][-]{paragraph.2.2.5.1}{Time Representation}{subsubsection.2.2.5}% 40
-\BOOKMARK [4][-]{paragraph.2.2.5.2}{Animated Maps}{subsubsection.2.2.5}% 41
-\BOOKMARK [2][-]{subsection.2.3}{Works on Technology Regarding 4D Visualization and Interface Design}{section.2}% 42
-\BOOKMARK [1][-]{section.3}{Methodology}{}% 43
-\BOOKMARK [2][-]{subsection.3.1}{Definition of Use Case Scenario}{section.3}% 44
-\BOOKMARK [2][-]{subsection.3.2}{General Work Flow}{section.3}% 45
-\BOOKMARK [2][-]{subsection.3.3}{Simulation Setting}{section.3}% 46
-\BOOKMARK [2][-]{subsection.3.4}{Model Setting}{section.3}% 47
-\BOOKMARK [2][-]{subsection.3.5}{Data Collection and Analysis}{section.3}% 48
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Simulation Data Analysis of the benchmark models}{subsection.3.5}% 49
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Potential Impact on system design or data visualization based on the analysis above}{subsection.3.5}% 50
-\BOOKMARK [2][-]{subsection.3.6}{Temporal Data Aggregation}{section.3}% 51
-\BOOKMARK [2][-]{subsection.3.7}{Data Classification and symbol/color design of a dynamic choropleth map}{section.3}% 52
-\BOOKMARK [1][-]{section.4}{Interface Specification}{}% 53
-\BOOKMARK [2][-]{subsection.4.1}{Guidelines from interface design case study}{section.4}% 54
-\BOOKMARK [2][-]{subsection.4.2}{User Definition}{section.4}% 55
-\BOOKMARK [2][-]{subsection.4.3}{Goal Function}{section.4}% 56
-\BOOKMARK [2][-]{subsection.4.4}{Specification of the Major Operation of the Interface}{section.4}% 57
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Map display and data plot}{subsection.4.4}% 58
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Navigation utilities that navigates through dynamic map and data plot}{subsection.4.4}% 59
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Provide default settings for choropleth map display}{subsection.4.4}% 60
-\BOOKMARK [1][-]{section.5}{Interface Design}{}% 61
-\BOOKMARK [2][-]{subsection.5.1}{General Layout}{section.5}% 62
-\BOOKMARK [2][-]{subsection.5.2}{Navigation Function}{section.5}% 63
-\BOOKMARK [2][-]{subsection.5.3}{Dynamic Plot}{section.5}% 64
-\BOOKMARK [2][-]{subsection.5.4}{Implementation tools and strategy}{section.5}% 65
+\BOOKMARK [3][-]{subsubsection.2.2.5}{Works on Data Classification}{subsection.2.2}% 39
+\BOOKMARK [3][-]{subsubsection.2.2.6}{Works on Map Design Conveying Spatial Temporal Information}{subsection.2.2}% 40
+\BOOKMARK [4][-]{paragraph.2.2.6.1}{Time Representation}{subsubsection.2.2.6}% 41
+\BOOKMARK [4][-]{paragraph.2.2.6.2}{Animated Maps}{subsubsection.2.2.6}% 42
+\BOOKMARK [2][-]{subsection.2.3}{Works on Technology Regarding 4D Visualization and Interface Design}{section.2}% 43
+\BOOKMARK [1][-]{section.3}{Methodology}{}% 44
+\BOOKMARK [2][-]{subsection.3.1}{General Work Flow}{section.3}% 45
+\BOOKMARK [2][-]{subsection.3.2}{Input}{section.3}% 46
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Energy Data}{subsection.3.2}% 47
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Model Setting}{subsection.3.2}% 48
+\BOOKMARK [2][-]{subsection.3.3}{Data Collection and Analysis}{section.3}% 49
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Simulation Data Analysis of the benchmark models}{subsection.3.3}% 50
+\BOOKMARK [2][-]{subsection.3.4}{Temporal Data Aggregation}{section.3}% 51
+\BOOKMARK [2][-]{subsection.3.5}{Data Classification and symbol/color design of a dynamic choropleth map}{section.3}% 52
+\BOOKMARK [3][-]{subsubsection.3.5.1}{General Approaches}{subsection.3.5}% 53
+\BOOKMARK [1][-]{section.4}{Interface Specification}{}% 54
+\BOOKMARK [2][-]{subsection.4.1}{Guidelines from interface design case study}{section.4}% 55
+\BOOKMARK [2][-]{subsection.4.2}{User Definition}{section.4}% 56
+\BOOKMARK [2][-]{subsection.4.3}{Goal Function}{section.4}% 57
+\BOOKMARK [2][-]{subsection.4.4}{Specification of the Major Operation of the Interface}{section.4}% 58
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Map display and data plot}{subsection.4.4}% 59
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Navigation utilities that navigates through dynamic map and data plot}{subsection.4.4}% 60
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Provide default settings for choropleth map display}{subsection.4.4}% 61
+\BOOKMARK [1][-]{section.5}{Interface Design}{}% 62
+\BOOKMARK [2][-]{subsection.5.1}{General Layout}{section.5}% 63
+\BOOKMARK [2][-]{subsection.5.2}{Navigation Function}{section.5}% 64
+\BOOKMARK [2][-]{subsection.5.3}{Dynamic Plot}{section.5}% 65
+\BOOKMARK [2][-]{subsection.5.4}{Implementation tools and strategy}{section.5}% 66
+\BOOKMARK [1][-]{section.6}{Case Analysis: Using the Tool to Design a District Energy System}{}% 67
+\BOOKMARK [2][-]{subsection.6.1}{Using Static Energy Map}{section.6}% 68
+\BOOKMARK [2][-]{subsection.6.2}{Using Dynamic Energy Map}{section.6}% 69

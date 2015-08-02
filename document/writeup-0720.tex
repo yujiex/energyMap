@@ -11,6 +11,7 @@
 \usepackage{subfigure} 
 \newcommand{\grey}[1]{\textcolor{black!30}{#1}}
 \newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
 
 \oddsidemargin0cm
 \topmargin-2cm %I recommend adding these three lines to increase the
@@ -596,6 +597,14 @@ in the following cases:
   benefit of community level load balancing could be visible to the
   policy makers and planners to inform better land use design.
   
+\item Optimizing site selection of the backup central power plant
+
+  A central power plant sometimes have backup systems to account for
+  peak demand. With Dynamic Energy Map, one could identify the
+  location of the cluster of occasional high heat demand and consider
+  putting the backup plant near the cluster of buildings with high
+  peak demand and thus reducing the energy transmission lost
+
 \end{itemize}
 
 \newpage
@@ -835,6 +844,8 @@ visualization~\cite{Brownrigg2005}. 2D maps are easier to navigate and
 2D map design has better theory support while 3D maps don't. The
 advantage of 3D map is its rich and realistic environment.
 
+\subsubsection{Works on Data Classification}
+
 \subsubsection{Works on Map Design Conveying Spatial Temporal
   Information}
 \paragraph{Time Representation}
@@ -956,29 +967,89 @@ Technologies~\cite{KlokanTechnologies2015} and Cesium project by
 Analitical Graphics~\cite{AGI2015}. Cesium also support ``time-dynamic
 graphical scenes''~\cite{CZML2015}
 
+Resch et al.\ pointed out several map design guidelines including:
+``dule coding, data generalisation, consistent color
+scheme''~\cite{Resch2014}. The dual coding concept supports our
+decision in accompany the map image display with the data plot The
+dual coding concept supports our decision in accompany the map image
+display with the data plot
 \newpage
 \section{Methodology}
-\subsection{Definition of Use Case Scenario}
+This section demonstrate how the Dynamic Energy Mapping is 
 
 \subsection{General Work Flow}
-\subsection{Simulation Setting}
- The energy profile used in the study is retrieved from simulation
- results of commercial building benchmark models developed by
- U.S. Department of Energy (DOE)~\cite{DOE2015}. The building types
- involved in the models are Large Office, Medium Office, Small Office,
- Stand-alone Retail, Supermarket, Quick Service Restaurant, Full
- Service Restaurant, Large Hotel and Midrise Apartment. The default
- setting of the benchmark models are stand-alone, but the building in
- a community setting are imposed to influences from surrounding
- buildings and the ``stand-alone'' assumption is not realistic. To
- account for this issue, the model used in this study is assumed to be
- within an urban context, thus the presence of surrounding building
- should be reflected in the reference building models. The general
- assumption used in this study is a 20ft exterior shading on each side
- of each building.
+The Dynamic Energy Map is demonstrated with a conceptual urban
+environment. The building density and building type layout resembles
+an existing urban environment. The number of buildings in the model
+represents a typical sized community that can be covered by a district
+energy system. The input to the dynamic energy map are the energy
+consumption data and the urban environment layout. For the conceptual
+setting, the energy data is retrieved from the simulation of DOE
+Benchmark building, the urban environment layout is created so that it
+follows a typical urban environment layout pattern. The output of the
+dynamic energy map is a sequence of 2D or 3D energy choropleth maps
+and data plots that can be navigated with an interface written in
+Python~\fref{fig:flow}.
 
-\subsection{Model Setting}
-So the conceptual community model is configurated in
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{flow.png}
+  \caption{General Work Flow}
+  \label{fig:flow}
+\end{figure}
+
+\subsection{Input}
+\subsubsection{Energy Data}
+The energy profile used in the study is retrieved from simulation
+results of commercial building benchmark models developed by
+U.S. Department of Energy (DOE)~\cite{DOE2015}. The building types
+involved in the models are Large Office (LO), Medium Office (MO),
+Small Office (SO), Stand-alone Retail (SR), Supermarket (SU), Quick
+Service Restaurant (QR), Full Service Restaurant (FR), Large Hotel
+(LH) and Midrise Apartment (MA). The two-letter shorthand in the
+parenthesis after each building type is used in the building label of
+the dynamic map and the box plot labels in section~\ref{boxPlot}.
+
+The general information for the benchmark buildings are as follows:
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{l|l|c|c}
+    \hline
+Building Type Name&Shorthand&  Floor Area (ft2)    & Number of Floors\\
+    \hline
+Large Office	         &LO&  498,588	      & 12\\
+Medium Office	         &MO&  53,628	      & 3\\
+Small Office	         &SO&  5,500	      & 1\\
+Warehouse	         &WH&  52,045	      & 1\\
+Stand-alone Retail       &SR&  24,962	      & 1\\
+Strip Mall	         &SM&  22,500	      & 1\\
+Primary School	         &PS&  73,960	      & 1\\
+Secondary School         &SS&  210,887	      & 2\\
+Supermarket	         &SU&  45,000	      & 1\\
+Quick Service Restaurant &QR&  2,500          & 1\\
+Full Service Restaurant  &FR&  5,500          & 1\\
+Hospital	         &HO&  241,351	      & 5\\
+Outpatient Health Care   &OP&  40,946	      & 3\\
+Small Hotel	         &SH&  43,200	      & 4\\
+Large Hotel	         &LH&  122,120	      & 6\\
+Midrise Apartment        &MA&  33,740	      & 4\\
+    \hline
+\end{tabular}
+\end{table}
+
+The default setting of the benchmark models are stand-alone, but the
+building in a community setting are imposed to influences from
+surrounding buildings and the ``stand-alone'' assumption is not
+
+realistic. To account for this issue, the model used in this study is
+assumed to be within an urban context, thus the presence of
+surrounding building should be reflected in the reference building
+models. The general assumption used in this study is a 20ft exterior
+shading on each side of each building.
+
+\subsubsection{Model Setting}
+The conceptual community model is configurated in
 CityEngine~\cite{cityEngine2015}. CityEngine is an Esri software that
 can aggregate geographic information into buildings and is capable of
 smoothly transition models to ArcGIS\cite{ArcGIS2015}, a widely
@@ -1074,7 +1145,8 @@ Arena Project (\fref{fig:sitePlan})
 \end{figure}   
 
 \subsection{Data Collection and Analysis}
-\subsubsection{Simulation Data Analysis of the benchmark models}
+\subsubsection{Simulation Data Analysis of the benchmark
+  models}\label{boxPlot}
 The output of EnergyPlus simulation of 16 benchmark buildings are read
 and processed with python script. This data loading and processing
 module is used in both data analysis and the dynamic plot in the
@@ -1084,18 +1156,33 @@ By analysing the simulation result of the Heating Energy (Gas) and the
 Cooling Energy (electricity), we observed a large variation between
 different building types.
 
-Heating demand profile ranges
-
-Hospital and Outpatient Health Care has a more spread out heating
-demand (Gas) for all year round, this pattern is revealed in the
-box plot graph. Comparing to these two building types, the other
-benchmark buildings have a more concentrated demand pattern, with high
-heat demand for winter and near-zero or zero heat demand over half of
-the year (except for Large Hotel, Small Hotel and Midrise
-Apartment). This indicates that these two building types could become
-the major ``heat sink'' or anchor building to be connected to a
+Hourly heating demand of the 16 benchmark building types ranges from 0
+to 14000 kBtu. The majority (75\%) of all hourly consumption are below
+2000 kBtu. All building types have a large amount of outliers on the
+upper side (except for outpatient hospital). This indicates heating
+demand of all building types are right scewed. The building type with
+highest median heating demand is hospital (about 1000kBtu). The
+building type with the second largest median is out patient
+hospital. This indicates that these two building types could become
+the major ``heat sink'' or anchor load building to be connected to a
 district system. In terms of peak demand, Large Office and Secondary
-School has the highest peak heating demand, indicating the high heat .
+School has the highest peak heating demand. The reason for the later
+is probably because of the swimming pool.
+
+Hourly cooling demand (electricity) of the 16 benchmark building types
+ranges from 0 to 3000 kBtu, which is about 20\% of that of the peak
+heating demand. Hospital and Large Hotel has no outliers on the upper
+side, meaning their hourly consumption are not as right skewed as the
+remaining building types. The building type with the highest median
+cooling demand is hospital (about 2000 kBtu). The building type with
+the second largest median cooling demand is Large Hospital. The design
+impact is: hospital can also act as an anchor building for cooling if
+the central plant is a heating-cooling combined system. The consistent
+high cooling load of hospital might also indicate a high portion of
+heat rejection. The reject heat could be recovered and reused if
+building with moderate heating demand are placed near the heavy
+cooling consumers.
+
 \begin{figure}[h!]
   \centering
   \begin{subfigure}
@@ -1113,17 +1200,45 @@ School has the highest peak heating demand, indicating the high heat .
   \end{subfigure}
 \end{figure}   
 
-\subsubsection{Potential Impact on system design or data visualization
-  based on the analysis above}
-The heating and 
 \subsection{Temporal Data Aggregation}
-      \begin{enumerate}[label*=\arabic*.]
-      \item With CityEngine
-      \item With ArcGIS (ArcScene)
-      \item Comparison
-      \end{enumerate}
+The authors have experimented with two approaches in aggregating
+energy profile data into the conceptual model constructed in
+CityEngine: 1) write the energy profile data directly in the rule file
+for building generation in CityEngine 2) importing 3D models from
+CityEngine to ArcScene and aggregate the energy information into the
+3D feature with a ``one-to-many'' join.
+
+The first approach requires user-end pre-processing of energy profile
+data and implementation of data classification and display colorramp,
+and also the interface for visualising an image sequence. The second
+approach has the advantage of 1) utilizing the existing method to
+classify the numerical fields and create graduated symbles or
+color-code to visualize energy data and 2) the ``time-slider''
+function for creating a time-wise navigation and
+time-animation. \fref{fig:arcgisTime} shows the interface slider and
+the dynamic map of heating energy demand for the conceptual model
+using.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\linewidth]{arcgisTime}
+  \caption{ArcGIS Time Slider for Temperal Data Display}
+  \label{fig:arcgisTime}
+\end{figure}
+
+However, the second approach has the disadvantage of high requirement
+of computational power. Using a machine with Quad Core 3.10GHz and
+16GB RAM, the ``one-to-many'' join, which is a necessary step for
+aggregating the temporal data of energy profile could only be achieved
+for one month data, hence the ``time-slider'' function could only be
+used in dynamic map for the conceptual model for only one-month. This
+is far from enough to reveal the anual energy consumption pattern. An
+animation export method is also available, but the exported animation
+does not contain any temporal label, hence lost the information for
+the time dimension.
 \subsection{Data Classification and symbol/color design of a
         dynamic choropleth map}
+\subsubsection{General Approaches}
     \begin{enumerate}[label*=\arabic*.]
     \item Review of General Approaches: see 3.3
     \item ``Critical Values'' or special cutoff values to be
@@ -1301,6 +1416,67 @@ for building simulation, CityEngine for 3D modeling and image
 generation, Python 2.7 for interface design. The interface is written
 in Python2.7 with standard Tkinter graphic package including the data
 plot section.
+\section{Case Analysis: Using the Tool to Design a District Energy System}
+This section uses the tool assist the design of a district energy
+network. The common steps in conducting such a design follows the
+guidance of ~\cite{IDEA2012}. The goal of the case study is to
+demonstrate how dynamic energy map can do better than static map in
+assist the design of a district system and in demonstrating the
+advantage of a district system. The major performance metric comparing
+the static and dynamic map is the energy throughput.
+
+As is suggested in the document~\cite{IDEA2012}, the data needed for
+designing a district system include: 1) existing and emerging thermal
+energy consumption, 2) fuel source availability and 3) land use
+constraint. For the current case analysis on the conceptual setting,
+the energy consumption is restricted to the heating gas energy
+consumption and cooling electricity energy for the existing buildings.
+The assumption about the central plant is it uses natural gas to
+produce electricity, as is the most common case. It can also produce
+chilled water with absorption chiller in summer. For land use
+constraint, we assume the pipeline can be put only under the road
+network.
+ 
+\subsection{Using Static Energy Map}
+To create a static energy map, the heating energy density for each
+building in the community is used to decide whether to include the
+building in the district system. The building type, annual energy
+consumption and building area are depicted in the \tref{tab:heatDmd}.
+With the common boundary demand of whether to connect this building to
+the district network, 0.93$kWh/ft^2$ (IEA) ~\cite{IDEA2012}, the
+buildings to be connected include: Full Service Restaurant, Large
+Hotel, Midrise Apartment, Quick Service Restaurant, Stand-alone Retail
+and Super Market. In order to meet the peak demand, the heating
+capacity of the central plant is: 
+
+The remaining building types: Large Office, Medium Office and Small
+Office are assumed to use stand-alone equipment and is sized with peak
+demand.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{l|c|c|c}
+    \hline
+Building Type Name&  Floor Area (ft2)&Heating (kWh)&Density(kWh/ft2)\\
+    \hline
+Full Service Restaurant  &  5,500             & 29729   &5.41   \\
+Large Hotel	         &  122,120	      & 117219  &0.96   \\
+Large Office	         &  498,588	      & 257397  &0.52   \\
+Medium Office	         &  53,628	      & 7229    &0.13   \\
+Midrise Apartment        &  33,740	      & 49599   &1.47   \\
+Quick Service Restaurant &  2,500          & 14790   &5.91   \\
+Small Office	         &  5,500	      & 3152    &0.57   \\
+Stand-alone Retail       &  24,962	      & 49342   &1.98   \\
+Supermarket	         &  45,000	      & 123698  &2.75   \\
+    \hline
+\end{tabular}
+\caption{Heating Demand Density}
+\label{tab:heatDmd}
+\end{table}
+
+\subsection{Using Dynamic Energy Map}
+Using Dynamic Energy Map, one can do nothing.
+
 \begin{comment}
 \item Conclusion
   \begin{enumerate}[label*=\arabic*.]

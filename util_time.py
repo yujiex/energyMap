@@ -38,9 +38,12 @@ def imgName2hour(name):
 
 # turn integer value hour (restricted to 4 digit) to image name
 # make the path directory be images/imgxxxx.gif
-def hour2imgName(hour):
+def hour2imgName(hour, is3d):
 #   dirname = 'images/'  # snapshot round one
-    dirname = 'imagesRedBlue/'
+#   dirname = 'imagesRedBlue/'
+    dirname = 'images2d/'
+    if (is3d == 1):
+        dirname = 'imagesRedBlue/'
     if hour < 10:
         return dirname + 'img000' + str(hour) + '.gif'
     elif hour < 100:
@@ -130,7 +133,7 @@ def mdh2hour(month, date, hour, monthlist):
 
 def test_mdh2hour():
     # need to import csv for testing
-    timeTable = numpy.loadtxt("timeTest.txt", delimiter = ',', 
+    timeTable = numpy.loadtxt("timeTest.txt", delimiter = ',',
                               dtype = 'int')
     # [idx, hour, day, month]
     i = randint(0, 8759)
@@ -183,7 +186,7 @@ def test_time2hour():
     print(time2hour(12, 31, 0))
     print('time2hour(12, 31, 23)')
     print(time2hour(12, 31, 23))
-    
+
 def test_findInterval():
     assert (0 == findInterval(1, lst))
     assert (0 == findInterval(10, lst))

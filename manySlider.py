@@ -1,4 +1,5 @@
 from Tkinter import *
+from time import sleep
 from util_time import *
 import plotGraph
 import colorRamp as cr
@@ -12,6 +13,8 @@ photo_lr = plotGraph.photo_lr
 w_window = plotGraph.w_window
 h_window = plotGraph.h_window
 h_slider = plotGraph.h_slider
+w_graph = plotGraph.graph_width
+h_graph = plotGraph.graph_height
 
 h_slider = 10
 w_slider = w_window
@@ -29,7 +32,7 @@ h_span_mdh = h_span_colorscheme / 3
 w_span_year = w_span_photo
 h_span_year = 1
 h_span_plotagg = h_span_colorscheme
-w_span_graph = w_span_button * 2
+w_span_graph = w_span_button * 4
 h_span_graph = 1
 h_span_photo = h_span_graph * 4
 s_colorcell = 28
@@ -71,7 +74,21 @@ def back24h():
 
 def back1h():
     allyear.set(allyear.get() - 1)
-    
+
+def play():
+    x = allyear.get()
+    for idx in range (x, 8760):
+        print("idx = %d" % idx)
+        sleep(0.5)
+        imgName = hour2imgName(idx)
+        mdh = hour2mdh(idx)
+        t_month = mdh[0]
+        t_date = mdh[1]
+        t_hour = mdh[2]
+        time = mdh2str(t_month, t_date, t_hour)
+        size = s_colorcell
+        display(idx, time, imgName)
+
 def display(idx, time, imgName):
     size = s_colorcell
     for i in range(category):
@@ -101,13 +118,13 @@ def printimg3(event):
     evt_hour = (hour.get())
     idx = mdh2hour(evt_month, evt_date, evt_hour, numdays)
     allyear.set(idx)
-    imgName = hour2imgName(idx)
+    imgName = hour2imgName(idx, is3d.get())
     time = mdh2str(evt_month, evt_date, evt_hour)
     display(idx, time, imgName)
 
 def printimg(event):
     idx = allyear.get()
-    imgName = hour2imgName(idx)
+    imgName = hour2imgName(idx, is3d.get())
     mdh = hour2mdh(idx)
     t_month = mdh[0]
     t_date = mdh[1]
@@ -117,6 +134,8 @@ def printimg(event):
     display(idx, time, imgName)
 
 master = Tk()
+w = str(w_graph * 2 + w_window + 10)
+master.geometry(w+'x675+0+0')
 master.title("Dynamic Heat Map")
 defaultbg = master.cget('bg')
 bd_font = "TkDefault 8 bold"
@@ -129,6 +148,7 @@ buttonList = [{'text':'+24h', 'cmd':advance24h},
               {'text':'+1h', 'cmd':advance1h},
               {'text':'-24h', 'cmd':back24h},
               {'text':'-1h', 'cmd':back1h}]
+#             {'text':'play', 'cmd':play}]
 
 buttoncount = 0
 for button in buttonList:
@@ -214,5 +234,11 @@ x = cr.createColorScheme(master, category, row_colorscheme,
 (color_2d, coloridDict) = x
 colorGrid = cr.colorRamp_2d(category, [255, 255, 255],
                             [255, 0, 0], [0, 0, 255])
+
+# check button
+is3d = IntVar()
+ck3d = Checkbutton(master, width = 4, text = '3d', variable = is3d,
+                   onvalue = 1, offvalue = 0)
+ck3d.grid(row = row_button_0, column = col_button_0 + 4)
 
 mainloop()
