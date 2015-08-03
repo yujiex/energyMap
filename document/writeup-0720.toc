@@ -10,60 +10,60 @@
 \contentsline {paragraph}{\numberline {1.4.2.3}Coupled Geo-database and Energy Simulation Platform}{8}{paragraph.1.4.2.3}
 \contentsline {subsubsection}{\numberline {1.4.3}Definition of Dynamic Energy Map}{8}{subsubsection.1.4.3}
 \contentsline {paragraph}{\numberline {1.4.3.1}Thematic Map Time Series}{8}{paragraph.1.4.3.1}
-\contentsline {paragraph}{\numberline {1.4.3.2}Spatial-Temporal Energy-Geo-database}{8}{paragraph.1.4.3.2}
+\contentsline {paragraph}{\numberline {1.4.3.2}Spatial-Temporal Energy-Geo-database}{9}{paragraph.1.4.3.2}
 \contentsline {paragraph}{\numberline {1.4.3.3}Performance Based Geo-design Support Platform}{9}{paragraph.1.4.3.3}
-\contentsline {subsubsection}{\numberline {1.4.4}Definition of Dynamic Energy Map for Supporting District System Design}{9}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.4}Definition of Local Dynamic Energy Map for Supporting District System Design}{9}{subsubsection.1.4.4}
 \contentsline {subsection}{\numberline {1.5}Why ``time'' dimension is important for an Energy Map}{10}{subsection.1.5}
 \contentsline {subsubsection}{\numberline {1.5.1}Strong Temporal Variation of Energy Demand}{10}{subsubsection.1.5.1}
 \contentsline {subsubsection}{\numberline {1.5.2}More Detailed Description of Energy Behavior Supports Better Design}{10}{subsubsection.1.5.2}
-\contentsline {subsubsection}{\numberline {1.5.3}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{10}{subsubsection.1.5.3}
+\contentsline {subsubsection}{\numberline {1.5.3}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{11}{subsubsection.1.5.3}
 \contentsline {subsubsection}{\numberline {1.5.4}Close Match of Supply Side to Demand Side Improves Community Scale Energy Performance}{11}{subsubsection.1.5.4}
 \contentsline {paragraph}{\numberline {1.5.4.1}District System Design}{11}{paragraph.1.5.4.1}
-\contentsline {section}{\numberline {2}Related Works}{13}{section.2}
-\contentsline {subsection}{\numberline {2.1}Static Energy Map}{13}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Supply}{13}{subsubsection.2.1.1}
-\contentsline {paragraph}{\numberline {2.1.1.1}Assessing Renewable Energy Potential}{13}{paragraph.2.1.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Demand and Infrastructure}{13}{subsubsection.2.1.2}
-\contentsline {paragraph}{\numberline {2.1.2.1}Analysis or design support of existing energy infrastructures}{13}{paragraph.2.1.2.1}
-\contentsline {paragraph}{\numberline {2.1.2.2}Energy consumption prediction model}{14}{paragraph.2.1.2.2}
-\contentsline {paragraph}{\numberline {2.1.2.3}Smart Management of Urban Energy System}{14}{paragraph.2.1.2.3}
-\contentsline {subsubsection}{\numberline {2.1.3}Combined Supply, Demand and Infrastructure}{15}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}Reflections}{15}{subsubsection.2.1.4}
-\contentsline {subsection}{\numberline {2.2}Dynamic Map}{15}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Energy Dynamic Map}{15}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}History and Archaeology Instances of Dynamic Maps}{16}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Works on Map Design}{16}{subsubsection.2.2.3}
-\contentsline {paragraph}{\numberline {2.2.3.1}Symbol Chosen}{16}{paragraph.2.2.3.1}
-\contentsline {paragraph}{\numberline {2.2.3.2}Bivariate Map Design}{16}{paragraph.2.2.3.2}
-\contentsline {subsubsection}{\numberline {2.2.4}Works on 2D vs. 3D}{17}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Works on Data Classification}{17}{subsubsection.2.2.5}
-\contentsline {subsubsection}{\numberline {2.2.6}Works on Map Design Conveying Spatial Temporal Information}{17}{subsubsection.2.2.6}
-\contentsline {paragraph}{\numberline {2.2.6.1}Time Representation}{17}{paragraph.2.2.6.1}
-\contentsline {paragraph}{\numberline {2.2.6.2}Animated Maps}{17}{paragraph.2.2.6.2}
-\contentsline {subsection}{\numberline {2.3}Works on Technology Regarding 4D Visualization and Interface Design}{18}{subsection.2.3}
-\contentsline {section}{\numberline {3}Methodology}{19}{section.3}
-\contentsline {subsection}{\numberline {3.1}General Work Flow}{19}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Input}{19}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Energy Data}{19}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Model Setting}{20}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}Data Collection and Analysis}{21}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Simulation Data Analysis of the benchmark models}{21}{subsubsection.3.3.1}
-\contentsline {subsection}{\numberline {3.4}Temporal Data Aggregation}{23}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Data Classification and symbol/color design of a dynamic choropleth map}{24}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}General Approaches}{24}{subsubsection.3.5.1}
-\contentsline {section}{\numberline {4}Interface Specification}{25}{section.4}
-\contentsline {subsection}{\numberline {4.1}Guidelines from interface design case study}{25}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}User Definition}{25}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Goal Function}{25}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Specification of the Major Operation of the Interface}{25}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Map display and data plot}{26}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Navigation utilities that navigates through dynamic map and data plot}{26}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.3}Provide default settings for choropleth map display}{26}{subsubsection.4.4.3}
-\contentsline {section}{\numberline {5}Interface Design}{27}{section.5}
-\contentsline {subsection}{\numberline {5.1}General Layout}{27}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Navigation Function}{27}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Dynamic Plot}{28}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Implementation tools and strategy}{28}{subsection.5.4}
-\contentsline {section}{\numberline {6}Case Analysis: Using the Tool to Design a District Energy System}{28}{section.6}
-\contentsline {subsection}{\numberline {6.1}Using Static Energy Map}{29}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Using Dynamic Energy Map}{29}{subsection.6.2}
+\contentsline {section}{\numberline {2}Related Works}{14}{section.2}
+\contentsline {subsection}{\numberline {2.1}Static Energy Map}{14}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Supply}{14}{subsubsection.2.1.1}
+\contentsline {paragraph}{\numberline {2.1.1.1}Assessing Renewable Energy Potential}{14}{paragraph.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Demand and Infrastructure}{14}{subsubsection.2.1.2}
+\contentsline {paragraph}{\numberline {2.1.2.1}Analysis or design support of existing energy infrastructures}{14}{paragraph.2.1.2.1}
+\contentsline {paragraph}{\numberline {2.1.2.2}Energy consumption prediction model}{15}{paragraph.2.1.2.2}
+\contentsline {paragraph}{\numberline {2.1.2.3}Smart Management of Urban Energy System}{15}{paragraph.2.1.2.3}
+\contentsline {subsubsection}{\numberline {2.1.3}Combined Supply, Demand and Infrastructure}{16}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Reflections}{16}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Dynamic Map}{16}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Energy Dynamic Map}{17}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}History and Archaeology Instances of Dynamic Maps}{17}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Works on Map Design}{18}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Symbol Chosen}{18}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Bivariate Map Design}{18}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}2D vs. 3D}{18}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Data Classification}{18}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Spacetime Map Design}{19}{subsubsection.2.3.5}
+\contentsline {paragraph}{\numberline {2.3.5.1}Time Representation}{19}{paragraph.2.3.5.1}
+\contentsline {paragraph}{\numberline {2.3.5.2}Animated Maps}{19}{paragraph.2.3.5.2}
+\contentsline {subsection}{\numberline {2.4}Spatial Temporal Data Analysis}{20}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Works on Technology Regarding 4D Visualization and Interface Design}{20}{subsection.2.5}
+\contentsline {section}{\numberline {3}Methodology}{22}{section.3}
+\contentsline {subsection}{\numberline {3.1}General Work Flow}{22}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Input}{22}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Energy Data}{22}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}3D GIS Model}{22}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Data Collection and Analysis}{24}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Simulation Data Analysis of the benchmark models}{24}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Temporal Data Aggregation}{27}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Interface Specification}{28}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Guidelines from Literature Study}{28}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}User Definition}{28}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}Goal Function}{29}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}Specification of the Major Operation}{29}{subsubsection.3.5.4}
+\contentsline {paragraph}{\numberline {3.5.4.1}Map display and data plot}{29}{paragraph.3.5.4.1}
+\contentsline {paragraph}{\numberline {3.5.4.2}Navigation utilities that navigates through dynamic map and data plot}{29}{paragraph.3.5.4.2}
+\contentsline {subsubsection}{\numberline {3.5.5}Provide default settings for choropleth map display}{30}{subsubsection.3.5.5}
+\contentsline {subsection}{\numberline {3.6}Interface Design}{30}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}General Layout}{30}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Navigation Function}{30}{subsubsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.3}Dynamic Plot}{31}{subsubsection.3.6.3}
+\contentsline {subsubsection}{\numberline {3.6.4}Implementation tools and strategy}{31}{subsubsection.3.6.4}
+\contentsline {section}{\numberline {4}Case Analysis: Using the Tool to Design a District Energy System}{32}{section.4}
+\contentsline {subsection}{\numberline {4.1}Using Static Energy Map}{32}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Using Dynamic Energy Map}{33}{subsection.4.2}
+\contentsline {section}{\numberline {5}Findings and Discussion}{33}{section.5}

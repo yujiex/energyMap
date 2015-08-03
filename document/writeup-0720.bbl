@@ -25,6 +25,12 @@ Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
   practice}, chapter~10.
 \newblock Wiley, Hoboken, New Jersey, 2014.
 
+\bibitem{GRASSGIS2008}
+Michael Barton, Daniel~Cavelo Aros, Martin Landa, and Jachym Cepicky.
+\newblock d.vect.thematic - displays thematic vector map.
+\newblock web, August 2008.
+\newblock \url{http://grass.osgeo.org/grass64/manuals/d.vect.thematic.html}.
+
 \bibitem{Dobbelsteen2013}
 Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock Energy potential mapping: Visualising energy characteristics for the
@@ -35,6 +41,13 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 Richard Brownrigg.
 \newblock {\em {Data Visualization with Spacetime Maps}}.
 \newblock PhD thesis, University of Kansas, May 2005.
+
+\bibitem{gvGIS2011}
+Joaquin~Jose del Cerro~Murciano.
+\newblock gvsig desktop 1.11 user manual (pdf version).
+\newblock web, December 2011.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
 
 \bibitem{heatMapLocal2012}
 {Department of Energy and Climate Change}.
@@ -170,6 +183,13 @@ Martin~E. Elmer.
 \newblock Symbol considerations for bivariate thematic mapping.
 \newblock diploma thesis, University of Wisconsin-Madison, 2012.
 
+\bibitem{GIS_Jenks2014}
+{Esri}.
+\newblock Classifying numerical fields for graduated symbology.
+\newblock web, October 2012.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
+
 \bibitem{ArcGIS2015}
 Esri.
 \newblock Arcgis.
@@ -267,6 +287,13 @@ Michael King.
 \newblock Community energy: Planning, development and delivery.
 \newblock Technical report, IDEA, 2012.
 
+\bibitem{Kwan2005}
+M.~Kwan.
+\newblock Gis methods in time-geographic research: Geocomputation and
+  geovisualization of human activity patterns.
+\newblock {\em Geografiska Annaler: Series B, Human Geography}, 86(4):267--280,
+  2004.
+
 \bibitem{Lowe2004}
 Richard Lowe.
 \newblock User-controllable animated diagrams: The solution for learning
@@ -329,6 +356,11 @@ Klokan Technologies.
 \newblock Opensource project: 3d digital globe for web and mobile devices.
 \newblock web, July 2015.
 \newblock \url{http://www.webglearth.org/about}.
+
+\bibitem{Tufte83}
+Edward~R. Tufte.
+\newblock {\em The visual display of quantitative information}.
+\newblock Graphics Press, Cheshire, Conn. (Box 430, Cheshire 06410), 1983.
 
 \bibitem{veolia2014}
 {Veolia}.
