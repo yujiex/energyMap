@@ -51,19 +51,20 @@
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Simulation Data Analysis of the benchmark models}{subsection.3.3}% 51
 \BOOKMARK [2][-]{subsection.3.4}{Temporal Data Aggregation}{section.3}% 52
 \BOOKMARK [2][-]{subsection.3.5}{Interface Specification}{section.3}% 53
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Guidelines from Literature Study}{subsection.3.5}% 54
-\BOOKMARK [3][-]{subsubsection.3.5.2}{User Definition}{subsection.3.5}% 55
-\BOOKMARK [3][-]{subsubsection.3.5.3}{Goal Function}{subsection.3.5}% 56
-\BOOKMARK [3][-]{subsubsection.3.5.4}{Specification of the Major Operation}{subsection.3.5}% 57
-\BOOKMARK [4][-]{paragraph.3.5.4.1}{Map display and data plot}{subsubsection.3.5.4}% 58
-\BOOKMARK [4][-]{paragraph.3.5.4.2}{Navigation utilities that navigates through dynamic map and data plot}{subsubsection.3.5.4}% 59
-\BOOKMARK [3][-]{subsubsection.3.5.5}{Provide default settings for choropleth map display}{subsection.3.5}% 60
+\BOOKMARK [3][-]{subsubsection.3.5.1}{User Definition}{subsection.3.5}% 54
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Goal Function}{subsection.3.5}% 55
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Specification of the Major Operation}{subsection.3.5}% 56
+\BOOKMARK [4][-]{paragraph.3.5.3.1}{Map display and data plot}{subsubsection.3.5.3}% 57
+\BOOKMARK [4][-]{paragraph.3.5.3.2}{Navigation utilities that navigates through dynamic map and data plot}{subsubsection.3.5.3}% 58
+\BOOKMARK [3][-]{subsubsection.3.5.4}{Provide default settings for choropleth map display}{subsection.3.5}% 59
+\BOOKMARK [3][-]{subsubsection.3.5.5}{Guidelines from Literature Study}{subsection.3.5}% 60
 \BOOKMARK [2][-]{subsection.3.6}{Interface Design}{section.3}% 61
 \BOOKMARK [3][-]{subsubsection.3.6.1}{General Layout}{subsection.3.6}% 62
 \BOOKMARK [3][-]{subsubsection.3.6.2}{Navigation Function}{subsection.3.6}% 63
 \BOOKMARK [3][-]{subsubsection.3.6.3}{Dynamic Plot}{subsection.3.6}% 64
 \BOOKMARK [3][-]{subsubsection.3.6.4}{Implementation tools and strategy}{subsection.3.6}% 65
-\BOOKMARK [1][-]{section.4}{Case Analysis: Using the Tool to Design a District Energy System}{}% 66
+\BOOKMARK [1][-]{section.4}{Case Analysis: Using the Current Dynamic Map to Design a District Energy System}{}% 66
 \BOOKMARK [2][-]{subsection.4.1}{Using Static Energy Map}{section.4}% 67
 \BOOKMARK [2][-]{subsection.4.2}{Using Dynamic Energy Map}{section.4}% 68
 \BOOKMARK [1][-]{section.5}{Findings and Discussion}{}% 69
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 70

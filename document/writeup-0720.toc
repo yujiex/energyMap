@@ -51,19 +51,20 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Simulation Data Analysis of the benchmark models}{24}{subsubsection.3.3.1}
 \contentsline {subsection}{\numberline {3.4}Temporal Data Aggregation}{27}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Interface Specification}{28}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Guidelines from Literature Study}{28}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}User Definition}{28}{subsubsection.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}Goal Function}{29}{subsubsection.3.5.3}
-\contentsline {subsubsection}{\numberline {3.5.4}Specification of the Major Operation}{29}{subsubsection.3.5.4}
-\contentsline {paragraph}{\numberline {3.5.4.1}Map display and data plot}{29}{paragraph.3.5.4.1}
-\contentsline {paragraph}{\numberline {3.5.4.2}Navigation utilities that navigates through dynamic map and data plot}{29}{paragraph.3.5.4.2}
-\contentsline {subsubsection}{\numberline {3.5.5}Provide default settings for choropleth map display}{30}{subsubsection.3.5.5}
-\contentsline {subsection}{\numberline {3.6}Interface Design}{30}{subsection.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}General Layout}{30}{subsubsection.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Navigation Function}{30}{subsubsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.5.1}User Definition}{28}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Goal Function}{28}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}Specification of the Major Operation}{29}{subsubsection.3.5.3}
+\contentsline {paragraph}{\numberline {3.5.3.1}Map display and data plot}{29}{paragraph.3.5.3.1}
+\contentsline {paragraph}{\numberline {3.5.3.2}Navigation utilities that navigates through dynamic map and data plot}{29}{paragraph.3.5.3.2}
+\contentsline {subsubsection}{\numberline {3.5.4}Provide default settings for choropleth map display}{30}{subsubsection.3.5.4}
+\contentsline {subsubsection}{\numberline {3.5.5}Guidelines from Literature Study}{30}{subsubsection.3.5.5}
+\contentsline {subsection}{\numberline {3.6}Interface Design}{31}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}General Layout}{31}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Navigation Function}{31}{subsubsection.3.6.2}
 \contentsline {subsubsection}{\numberline {3.6.3}Dynamic Plot}{31}{subsubsection.3.6.3}
 \contentsline {subsubsection}{\numberline {3.6.4}Implementation tools and strategy}{31}{subsubsection.3.6.4}
-\contentsline {section}{\numberline {4}Case Analysis: Using the Tool to Design a District Energy System}{32}{section.4}
-\contentsline {subsection}{\numberline {4.1}Using Static Energy Map}{32}{subsection.4.1}
+\contentsline {section}{\numberline {4}Case Analysis: Using the Current Dynamic Map to Design a District Energy System}{32}{section.4}
+\contentsline {subsection}{\numberline {4.1}Using Static Energy Map}{33}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Using Dynamic Energy Map}{33}{subsection.4.2}
 \contentsline {section}{\numberline {5}Findings and Discussion}{33}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{33}{section.6}
