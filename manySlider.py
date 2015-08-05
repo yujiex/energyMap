@@ -1,8 +1,15 @@
 from Tkinter import *
-from time import sleep
+#from time import sleep
+import csv
+import ast
 from util_time import *
 import plotGraph
+import util_loadData as ld
 import colorRamp as cr
+import util_geo as geo
+import pandas as pd
+import matplotlib.pyplot as plt
+from ggplot import *
 
 # ###############
 # global setting of user interface
@@ -75,6 +82,7 @@ def back24h():
 def back1h():
     allyear.set(allyear.get() - 1)
 
+'''
 def play():
     x = allyear.get()
     for idx in range (x, 8760):
@@ -88,6 +96,7 @@ def play():
         time = mdh2str(t_month, t_date, t_hour)
         size = s_colorcell
         display(idx, time, imgName)
+'''
 
 def display(idx, time, imgName):
     size = s_colorcell
@@ -166,6 +175,86 @@ hmap = plotGraph.ImgPlot("Dynamic Heat Map", row_photo, col_photo,
                          h_window, photo_lr, photo_lr, photo_tb,
                          photo_tb, master)
 
+'''
+def callback(event):
+    with open ('landCord.txt', 'a') as wt:
+        wt.write ('{0}, {1}, '.format(event.x, event.y))
+        print event.x, event.y
+'''
+# reading a table with landuse and coordinates
+def readLandShape():
+    landDict = {}
+    with open ('land.txt', 'r') as rd:
+        rows = csv.reader(rd)
+        for row in rows:
+            key = str(row[1:])
+            land = row[0]
+            landDict[key] = land
+    return landDict
+        
+heatDict = ld.profile2Dict("energyData/meterData/", "Heating:Gas")
+dfHeat = pd.DataFrame(heatDict)
+coolDict = ld.profile2Dict("energyData/meterData/", "Cooling:Elec")
+dfCool = pd.DataFrame(coolDict)
+landDict = readLandShape()
+initialDict = {
+        "SO":"SmallOffice", 
+        "FR":"FullServiceRestaurant",
+        "MA":"MidriseApartment",
+        "LO":"LargeOffice",
+        "HO":"Hospital",
+        "SS":"SecondarySchool",
+        "OP":"OutPatient",
+        "SU":"SuperMarket",
+        "QR":"QuickServiceRestaurant",
+        "SM":"StripMall",
+        "PS":"PrimarySchool",
+        "SR":"Stand-aloneRetail",
+        "LH":"LargeHotel",
+        "WH":"Warehouse",
+        "SH":"SmallHotel",
+        "MO":"MediumOffice"}
+
+landSelection = []
+
+def landName(event):
+    pt = (event.x, event.y)
+    for key in landDict:
+        key2list = [int(x) for x in ast.literal_eval(key)]
+#       print(key2list)
+        #print(polygonCord)
+        if geo.pointInPolygon(pt, key2list):
+            landInit = landDict[key]
+            bdtype = initialDict[landInit] 
+            hmap.g.create_polygon(tuple(key2list), fill = 'red', tag = 'a')
+            landSelection.append(landInit)
+            print 'Selection Set: {0}'.format(landSelection)
+            print "landuse is {0}".format(landDict[key])
+            if isSingle.get() == 1:
+                plt.figure()
+                dfHeat[bdtype].plot()
+                plt.title(bdtype)
+                plt.xlabel('time')
+                plt.ylabel('Heating / Cooling Demand (kBtu)')
+                plt.show()
+            else:
+                plt.figure()
+                bdtypelst = [initialDict[x] for x in landSelection]
+                selectHeatDF = pd.DataFrame(dfHeat, columns =
+                                            bdtypelst)
+                print list(selectHeatDF.columns.values)
+                selectHeatDF['agg'] = selectHeatDF.sum(axis = 1) 
+                selectHeatDF['agg'].plot()
+                plt.title('Aggregate Demand')
+                plt.xlabel('time')
+                plt.ylabel('Heating / Cooling Demand (kBtu)')
+                plt.show()
+            
+            return
+    print "invalid selection"
+
+hmap.g.bind("<Button-1>", landName)
+
 n_row = 4
 n_col = 2
 x = plotGraph.createAll(master, n_row, n_col, row_graph_0,
@@ -241,4 +330,17 @@ ck3d = Checkbutton(master, width = 4, text = '3d', variable = is3d,
                    onvalue = 1, offvalue = 0)
 ck3d.grid(row = row_button_0, column = col_button_0 + 4)
 
+# clear selected landuse for calculation
+def clearSelect():
+    landSelection = []
+    hmap.g.delete("a")
+clearButton = Button(master, width = 5, text = 'clear', command =
+                     clearSelect)
+clearButton.grid(row = row_button_0, column = col_button_0 + 5)
+
+isSingle = IntVar()
+showSingle = Checkbutton(master, width = 4, text = 'single',
+                         variable = isSingle, onvalue = 1, offvalue =
+                         0)
+showSingle.grid(row = row_button_0, column = col_button_0 + 6)
 mainloop()

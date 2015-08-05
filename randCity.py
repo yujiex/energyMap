@@ -1,5 +1,9 @@
 from Tkinter import *
 import random as rd
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as scst
 
 import util_loadData as ld
 import util_array as ar
@@ -12,9 +16,9 @@ defaultbg = master.cget('bg')
 
 # global settings
 dim = 10    # city dimension
-size = 40   # bd size
+size = 30   # bd size
 h_time = 20
-density = 0.3
+density = 0.8
 bdTypelist = ["Green", "FullServiceRestaurant", "Hospital",
               "LargeHotel", "LargeOffice", "MediumOffice",
               "MidriseApartment", "OutPatient", "PrimarySchool",
@@ -24,15 +28,43 @@ bdTypelist = ["Green", "FullServiceRestaurant", "Hospital",
 
 bdinitlist = ["", "FR", "HO", "LH", "LO", "MO", "MA", "OP", "PS", "QR",
               "SS", "SH", "SO", "SR", "SM", "SU", "WH"]
+# get distribution:
+def landequalLike():
+    return [1.0/16] * (dim * dim)
+
+# single use by some land
+def landsingleUse(land):
+    lst = [0.0] * 16
+    lst[bdinitlist.index(land) - 1] = 1.0
+    return lst
+
+def landbyDis(distribution):
+    a = scst.rv_discrete(values = (list(range(1, 17)), distribution))
+    return a.rvs(size = (dim * dim))
+
 category = 7
 
 bd_font = "TkDefault 8 bold"
 ot_font = "TkDefault 6"
 font_color = "gray45"
 
+# month is 0 indexing
+hourList = range(8760)
+hpermonth = 8760/12
+seasons = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
 # loaddata
 heatDict = ld.profile2Dict("energyData/meterData/", "Heating:Gas")
+dfHeat = pd.DataFrame(heatDict)
 coolDict = ld.profile2Dict("energyData/meterData/", "Cooling:Elec")
+dfCool = pd.DataFrame(coolDict)
+#print [[(x*hpermonth,(x + 1)*hpermonth) for x in y] for y in seasons]
+dfHeatSeason = [[dfHeat[x*hpermonth:(x + 1)*hpermonth] 
+                 for x in y] for y in seasons]
+dfHeatSeason = [pd.concat(x) for x in dfHeatSeason]
+
+dfCoolSeason = [[dfCool[x*hpermonth:(x + 1)*hpermonth] 
+                 for x in y] for y in seasons]
+dfCoolSeason = [pd.concat(x) for x in dfCoolSeason]
 
 # functions for buttons
 def advance24h():
@@ -47,11 +79,45 @@ def back24h():
 def back1h():
     allyear.set(allyear.get() - 1)
 
+def showmsg():
+    msgwindow = Tk()
+    msgwindow.title("load balancing stats")
+    defaultbg = master.cget('bg')
+
+    heatmsg = Message(msgwindow,text = getmsg(dfHeatSeason, "Heating"),
+                      font = bd_font, width = category * size, fg =
+                      font_color)
+    heatmsg.grid(row = 0, column = 0)
+    coolmsg = Message(msgwindow,text = getmsg(dfCoolSeason, "Cooling"),
+                      font = bd_font, width = category * size, fg =
+                      font_color)
+    coolmsg.grid(row = 0, column = 1)
+
+def plotDay_heat():
+    idx = allyear.get()
+    f, axarr = plt.subplots(4, 4, sharex=True, sharey = True)
+    for i in range(16):
+        dfHeat.ix[idx: min(idx + 24, 8760), i].plot(ax=axarr[i/4, i%4], title = bdinitlist[i+1])
+    plt.show()
+
+def plotMonth():
+    print "not implemented"
+
+def plotSeason():
+    print "not implemented"
+
+def plotYear_heat():
+    f, axarr = plt.subplots(4, 4)
+    for i in range(16):
+        dfHeat.ix[:, i].plot(ax=axarr[i/4, i%4])
+    plt.show()
+
 # create a starting board of random city
-def createBoard(n_row, n_col, size):
+def createBoard(n_row, n_col, size, distribution):
     f_matrix = []
     l_matrix = []
     bd_cnt = [0] * 17
+    landlist = landbyDis(distribution)
     for i in range(n_row):
         f_row = []
         l_row = []
@@ -63,7 +129,7 @@ def createBoard(n_row, n_col, size):
             landuse = 0
             color = "lawngreen"
             if (rd.random() < density):
-                landuse = rd.randint(1, 16)
+                landuse = landlist[i * n_row + j]
                 color = "red"
             bdtype = bdinitlist[landuse]
             bd_cnt[landuse] += 1
@@ -164,9 +230,48 @@ def changeColor(event):
             f.create_text(size/2, size/2, fill = font_color, font =
                           bd_font, text = bdinit)
 
-(f_2d, l_2d, bd_count) = createBoard(dim, dim, size)
+#distribution = landequalLike()
+distribution = landsingleUse("LH")
+(f_2d, l_2d, bd_count) = createBoard(dim, dim, size, distribution)
 countDict = dict(zip(bdTypelist, bd_count))
 del countDict["Green"]
+
+import itertools
+headers = [x * [y] for (x, y) in zip(bd_count, bdTypelist) if y !=
+           'Green']
+headers = list(itertools.chain(*headers))
+
+def generalMsg():
+    bdtypemsg = ['{0:<5} {1:<5} {2:>5} : {3:<}'.format(n, round(p, 3), x, y) for (n, p, x, y) in zip(bd_count, distribution, bdinitlist, bdTypelist) if x != ""]
+    bdtypemsg = "\n".join(bdtypemsg)
+    densitymsg = "\n\nUrban Density: {0}\n\n".format(density)
+    return (bdtypemsg + densitymsg)
+
+def getmsg(dflist, cate):
+    energy = ''
+    season = ['winter', 'spring', 'summer', 'fall']
+    count = 0
+    for df in dflist:
+        energy += (season[count]) + '\n'
+        count += 1
+        dfall = pd.DataFrame(df, columns = headers)
+        dfall['total'] = dfall.sum(axis = 1)
+        # total  demand max
+        maxtotal = dfall['total'].max()
+        mintotal = dfall['total'].min()
+        dif = maxtotal - mintotal 
+        ratio = round(float(dif)/maxtotal, 3)
+        if cate == "Heating":
+            energy += ('Max Heaing Demand (Gas)/kBtu: {0}\n'+
+                       'Min Heaing Demand (Gas)/kBtu: {1}\n'+
+                       'Heating Demand Variation/kBtu: {2}\n'+
+                       'Heating Energy Variation Ratio: {3}\n\n').format(maxtotal, mintotal, dif, ratio)
+        else:
+            energy += ('Max Cooling Demand (Electricity)/kBtu: {0}\n'+
+                       'Min Cooling Demand (Electricity)/kBtu: {1}\n'+
+                       'Cooling Demand Variation/kBtu: {2}\n'+
+                       'Cooling Energy Variation Ratio: {3}\n\n').format(maxtotal, mintotal, dif, ratio)
+    return energy
 
 # classify data
 totalheat = ld.total_count(countDict, heatDict)
@@ -224,7 +329,10 @@ w_button = 5
 buttonList = [{'text':'+24h', 'cmd':advance24h, 'col' : 0},
               {'text':'+1h', 'cmd':advance1h, 'col' : 2},
               {'text':'-24h', 'cmd':back24h, 'col' : 4},
-              {'text':'-1h', 'cmd':back1h, 'col' : 6}]
+              {'text':'-1h', 'cmd':back1h, 'col' : 6},
+              {'text':'balance', 'cmd':showmsg, 'col' : 8},
+              {'text':'heatyear', 'cmd':plotYear_heat, 'col' : 10},
+              {'text':'heatday', 'cmd':plotDay_heat, 'col' : 12}]
 
 for button in buttonList:
     f_button = Button(master, text = button['text'], command =
@@ -233,4 +341,16 @@ for button in buttonList:
     f_button.grid(row = row_button, column = button['col'], columnspan
                   = 2)
 
+# display heating cooling msg
+row_genmsg = 0
+col_genmsg = dim + category + 2 
+col_span_msg = 1
+row_span_msg = dim 
+
+genmsg = Message(master, text = generalMsg(), font = ot_font, width =
+                 category * size, fg = font_color)
+genmsg.grid(row = row_genmsg, column = col_genmsg, columnspan =
+            col_span_msg, rowspan = row_span_msg)
+
+#b_plotyear = Button(master, text = 'plot', command = plot_yr)
 mainloop()
