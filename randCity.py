@@ -55,6 +55,7 @@ seasons = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
 # loaddata
 heatDict = ld.profile2Dict("energyData/meterData/", "Heating:Gas")
 dfHeat = pd.DataFrame(heatDict)
+dfHeat_3d = pd.DataFrame(heatDict)
 coolDict = ld.profile2Dict("energyData/meterData/", "Cooling:Elec")
 dfCool = pd.DataFrame(coolDict)
 #print [[(x*hpermonth,(x + 1)*hpermonth) for x in y] for y in seasons]

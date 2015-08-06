@@ -35,266 +35,125 @@
 \maketitle
 \tableofcontents
 \newpage
-\begin{abstract}
-  This document provides an approach of creating a space-time Energy
-  Map, or a Dynamic Energy Map. The approach is demonstrated with a
-  conceptual urban environment setting created in CityEngine based on
-  the extracted topological and density pattern from an existing urban
-  design project. The buildings in the conceptual model is then
-  assigned an energy profile of certain DOE Commercial Benchmark
-  Building Reference model based on its building type. Hourly energy
-  heating and cooling demand profile are then obtained from the
-  EnergyPlus simulation of DOE Commercial Benchmark models. The energy
-  consumption data is classified into groups with consideration of
-  \red{building energy design context} and the data distribution
-  properties. A corresponding color coded energy profile is then
-  generated and imported to CityEngine. 8760 color coded 2D and 3D map
-  images was then extracted from CityEngine with Python script. A
-  series of data reading, plotting, data classification and
-  color-coding calculation utilities were implemented. An interactive
-  interface for visualizing the images and dynamic data plot with
-  sliders is implemented using Python. The tool is anticipated to
-  provide decision insight for community energy management and
-  planning, demand-side strategy design and district system sizing.
-  
-  The document will also briefly discuss one of the test-bed for data
-  classification and visualization.
-
-\end{abstract}
-\newpage
-
 \section{General Introduction}
 \subsection{Project Overview}
 Buildings alone account for 40\% of the total energy usage in the
 United States. However if the indirect energy impact of the built
 environment as a whole was considered, the community design induced
-energy and environmental impact could exceed this already high
-ratio. The focus of reducing energy usage in the building sector has
-once been focused only on the scale of individual buildings and
-equipment~\cite{Jaccard19971065}. Community level urban design and the
-infrastructure layout can inevitably influence the overall energy
-throughput by influencing people's life pattern, energy using behavior
-and waste production.
+energy and environmental impact could exceed this already high ratio:
+60\% - 75\% of the energy consumption is connected to the spatial
+layout of built environment~\cite{Owens199281}. In a broader sense,
+the energy resources distribution influences the layout of human
+activities~\cite{Owens199281}. More specifically, built environment
+influence the energy throughput in the form of land use design and
+infrastructure layout~\cite{Jaccard19971065}. Infrastructure design
+influences energy demand by influencing the heating and cooling demand
+and travel behavior~\cite{Owens199281}.
 
 Community Energy Management (CEM) is a combination of community level
 design strategies and energy management strategies aiming at providing
 quality of life in an urban environment with minimized energy
-consumption and environmental impact~\cite{Jaccard19971065}. The
-awareness of the importance of the environmental design on energy
-performance and quality of life is reflected in design concepts such
-as New Urbanism, Smart Growth and Transit-Oriented Growth. These
-concepts advocate a compact and pedestrian and bicycle friendly urban
-growth that minimizes car usage by creating mixed-used communities,
-well-functioned road, complete public transportation system and
-diverse housing choices~\cite{smartGrowthWiki}.
+consumption and environmental impact~\cite{Jaccard19971065}. It
+contains ``land use planning'', ``transportation management'', ``site
+planning'' and ``local energy supply and delivery planning''~\cite{Jaccard19971065}.
 
-The core of the community energy management is to match the demand and
-supply as close as possible in terms of energy and
-exergy~\cite{Dobbelsteen2013}. CEM reduces energy use impact by 1)
-distributed energy generation with sustainable energy source that
-close in exergy to the demand side, 2) application of district energy
-system that reuses waste heat 3) energy cascading that arranges the
-demand side as a chain of decreasing exergy demand so that the entropy
-generation is minimized 4) smart grid system that makes electricity
-demand and supply match.
+Energy Mapping makes the community energy planning alternatives
+visible to planners and policy makers~\cite{baird2014}. Energy Map, or
+energy master plan~\cite{londonHeatMap} contains the information of
+energy demand and supply in the form of energy
+intensity~\cite{baird2014}, renewable energy, residual
+energy~\cite{Dobbelsteen2013} and decentralized energy
+network~\cite{decentralHeatMap2011}. It facilitates the matching of
+energy demand and supply in the aspect of spatial, temporal and
+quality ~\cite{Dobbelsteen2013}. 
 
-Energy Map provides great opportunity to execute the CEM strategies
-since it accords with the concept of ``Geo-design'', a
-performance-based design method, and makes the energy performance
-metrics of community design and management alternatives visible to
-planners and policy makers. It facilitates quantitive comparison of
-design alternatives and informs better decision making. However the
-temporal variation of energy performance metrics is missing from the
-majority of current Energy Maps, leading to a simplified picture of
-energy impact of design choices and poor decision making such as
-excessively over-sized infrastructure systems and loss of energy
-recovery and reuse opportunities.
+The current challenge of the Energy Mapping approach is that they do
+not show temporal information of energy supply and demand, they do not
+provide system sizing information of decentralized energy generation~\cite{baird2014}.
 
-Dynamic Energy Map reveals the temporal variation and better serves
-``Geo-design'' approach by revealing the problem of such simplified
-pictures of energy supply and demand and support better time-of-use
-energy system design, community energy management and policy making.
-
-The current project aims at exploring how a Dynamic Energy Map can
-serve as decision support tool for Community Energy Management, more
-specifically, to support district energy system design. The focus of
-the study is not on exploiting the energy using behavior of a specific
-site, but rather a exploration of a generic methodology of Dynamic
-Energy Map, thus the map setting is based on a conceptual city model
-with a size (68 buildings) comparable to the typical service area of a
-district energy system (combined heating and cooling), about 50 to 150
-buildings~\cite{IDEA2005}. The Dynamic Energy Map is built upon annual
-hourly heating (gas) and cooling energy (electricity) consumption data
-from DOE Commercial Benchmark Building simulation. City Engine is used
-in 3D urban environment image generation with each building
-color-coded according to its hourly energy demand. An interface is
-then designed to achieve the ``dynamic'' function with sliders to
-navigation through the 8760 hours through a year and present the
-energy consumption data in the form of 3D color-coded map and 1D
-energy consumption data plot of major building sectors and the whole
-community.
+A Dynamic Energy Map acts as a geo-database that holds 1) high
+resolution (hourly) energy profile data for each building and the
+aggregated energy profile data for the whole community; 2) hourly
+energy supply data of community decentralized energy
+source~\cite{baird2014}. With the Dynamic Energy Map, the temporal
+behavior of the demand and supply of heating, cooling and electricity
+are revealed. Dynamic Energy Map is connected to simulation software,
+and can act as a key component of Geo-design, ``an iterative design
+method that uses stakeholder input, geospatial modeling, impact
+simulations, and real-time feedback to facilitate holistic designs and
+smart decisions''~\cite{esriGeodesign2012}.
 
 \subsection{Objective and Problem Definition}
-The objective of the project is to provide an implementation of a
-dynamic energy map and experimenting with different approaches of
-drawing design support information and develop valuable design
-insights with a Dynamic Energy Map, which is best summarized by the
-quote: ``Visualization is about exploring, not only the data, but also
-the method.''~\cite{Dorling1992}.
+The objective of the project is to 1) implement a Dynamic Energy
+Demand Map with hourly thermal energy consumption data for each
+building and the whole community 2) use it to optimize the arrangement
+of land use pattern to improve the energy performance in terms of
+aggreagated energy demand variation and 3) support sizing of a
+district thermal energy supply system.
 
-Such experimentation is conducted with a use case scenario of
-supporting district energy system design, which is one of the
-infrastructure side strategy used in community energy management.
+The community model is created in City Engine based on the land use
+pattern of a mixed-use redevelopment project of the Lower Hill
+District, Pittsburgh, PA~\cite{Ramesh2013}. The model contains 68
+buildings, which is comparable to a typical service area of a district
+thermal energy system (combined heating and cooling), about 50 to 150
+buildings~\cite{IDEA2005}.
 
-The question we aim to answer in this project is: to what extend and
-how can we use Dynamic Energy Map to optimize the design of a district
-system.
+The hourly heating (gas) and cooling energy (electricity) consumption
+profile is retrieved from DOE Commercial Benchmark Building
+simulation~\cite{DOE2015}. An interface was designed to combine the
+8760 heating-cooling energy choropleth map images from City Engine and
+the 8760 hourly heating-cooling energy data from EnergyPlus to form a
+Dynamic Energy Map. The interface provides users with the functions of
+1) navigating through the dynamic map images, 2) dynamic data
+plots of single buildings, building sectors and aggregated community
+thermal energy demand.
 
 \subsection{Outline}
-The document begins with a section explaining some related definitions
-regarding the Energy Map and its use case scenario. Then some related
-works are presented, including cases studies of Energy Map, Dynamic
-Energy Map and design issues regarding space-time visualization.
-Section \ref{method} explains the methodology of the implementation of
-the dynamic energy map and section \ref{interfaceSpec} explains the
-interface design.\grey{not finished}
+The document begins with a section (section \ref{concept}) explaining
+some related concepts regarding Energy Map and Dynamic Energy
+Map. Following this, some related works are presented, including cases
+studies of Energy Map, Dynamic Energy Map and space-time
+visualization. Section \ref{method} explains the process of the
+implementation of the dynamic energy map.
 
-\subsection{Related Concepts}
-Before diving into details about the specific project, it is necessary
-to clarify some key concepts including district energy system and
-Community Energy Planning, Energy Map and Dynamic Energy Map. 
+\subsection{Related Concepts}\label{concept}
+Some key concepts related to this project include district energy
+system, and Energy Map.
 
 \subsubsection{District Energy System}
-A district energy system consists of a power plant, a series of
-buildings as terminal energy users and a network of pipelines that
-transmit energy from the power plant to end-users. It can supply
-heating energy and service hot water to terminal buildings and can
-also supply cooling energy with absorption chillers. Commonly used
-media for energy transmission include steam, hot water or chilled
-water~\cite{baird2014}. A district energy system helps reducing
-negative environmental impact by harvesting residual energy in the
-form of rejected thermal energy in the process of electricity
-generation (CHP based district system) or other industrial
-processes. It can adapt to a broader range of fuel choices including
-natural gas, oil, coal, waste, and renewable energy sources. This
-makes it more flexible and more competitive in the market and
-increases the energy system resilience~\cite{IDEA2005}. Other
-non-environmental benefits include reducing the space dedicated to
-mechanical system and improve building design flexibility, reducing
-harmful gas production from stand-alone boiler combustion and reduces
-building cost. Comparing with a district system heat exchanger, a
-stand-alone chiller usually need 30\% to 100\% more cooling capacity,
-which means larger system initial cost~\cite{IDEA2005}.
+A district thermal system brings the power generation near to the
+power end users, and reduces the transmission loss of thermal
+energy. It consists of a power plant, a series of buildings as
+terminal thermal energy users and a network of closed-loop pipelines
+that transmit thermal energy from the power plant to end-users. It can
+supply thermal energy and service hot water to terminal
+buildings. Commonly used media for energy transmission include steam,
+hot water or chilled water~\cite{baird2014}. The central power plant
+can use a broader range of fuel choices including natural gas, oil,
+coal, waste, and renewable energy sources in the generation of thermal
+energy. This makes the district thermal energy system more flexible
+and more competitive in the market and increases the energy system
+resilience~\cite{IDEA2005}. It also reduces the space and cost
+dedicated to installation and maintainance of HVAC systems in single
+buildings and reduces harmful gas emission~\cite{IDEA2005}.
 
-District systems are most commonly connected to high density urban
-environment, university campuses, hospitals and military bases as a
-result of their high demand in heating energy or service hot
-water~\cite{IDEA2005}. A district system brings the power generation
-near to the power end users, and reduces the energy transmission loss
-of both heat and electricity.
+\subsubsection{Energy Mapping}
+Energy Map is a visual representation of the existing and
+potential supply and demand of community energy on a map. It is also a
+combination of building energy database, a subset of the BIM (Building
+Information Model), and a Geo-database or Geographical Information
+System (GIS). Development of data-driven approaches and machine
+learning methods makes the analysis of more complicated
+spatial-temporal data possible. With these emerging analysis tools,
+using data to support design is possible.
 
-Combined Heat and Power Plant (CHP) is one of the major central plant
-used in a district energy system. Traditional electricity generation
-central plant has only about 1/3 of the energy turned into electricity
-and the remaining 2/3 are rejected as waste heat to the
-environment. CHP plant can reduce the amount of reject heat to 20\%
-and the recovered heat is supplied to surrounding buildings for space
-heating or cooling~\cite{IDEA2005}.CHP plant can also be equipped with
-back-up boilers, electric boilers, and thermal storage that help shift
-the demand and production peak of thermal and electric energy and
-provide a reliable and cost-effective energy supply~\cite{IDEA2012}.
-
-One famous example of CHP based district system is the Sheffield
-District Energy Network in UK. The Sheffield District Energy Network
-is a system that started to provide local buildings with heat and
-electricity since 1988. The system consists of an Energy Recovery
-Facility (ERF) located in the center of Sheffield, a pipe system
-transferring thermal energy with hot water, and terminal heat
-exchangers installed in the local buildings. Electricity generation is
-based on waste combustion process that produces high pressure steam
-and flue gas. The latter is treated and emitted to the atmosphere with
-10\% to 60\% less pollutant below required level. The former enter the
-turbo generator and generates 19 MW electricity that serves 22600
-local homes. After going through the electricity generator, the
-400$^\circ$C steam is de-pressured and dumps its heat to hot
-water. The hot water is then sent to the local buildings and provides
-these buildings with space heating~\cite{veolia2014}.
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\linewidth]{sheffield.png}
-  \caption{Sheffield District System}
-  \label{fig:sheffield}
-\end{figure}
-
-Energy Map helps the assessment of whether a building is suitable to
-be connected to the district system according to its heat demand
-density. A common lower bound for making a connection is
-0.93$kWh/ft^2$ (IEA) or 26.5 MMBtu per square mile~\cite{IDEA2012}.
-
-Energy Map can be used in analyzing the network design and extension
-of a district system: one example of using Energy
-Map to analyze the potential of extension of Sheffield District System
+Energy Mapping has been used in supporting of district heating system
+and CHP-based system design. can be used in analyzing the network design and
+extension of a district system: one example of using Energy Map to
+analyze the potential of extension of Sheffield District System
 Network is illustrated in section \ref{infra}.
 
-\subsubsection{Definition of Energy Map}
-\paragraph{Energy Thematic Map}\label{energyThematicMap}
-In a restricted sense, Energy Map is an instance of a thematic map
-that depicts energy information. It is useful in providing
-energy related qualitative or quantitative insight. 
-
-The energy topics depicted in an Energy Map can be classified into
-four major categories: energy supply, energy demand, energy related
-building design / urban planning, and energy related environmental
-impact. One common sub-category of the supply side topics concerns the
-locations and evolving process of energy infrastructures such as power
-plants, energy transmission pipelines, energy refining facilities and
-market hubs. EIA state energy profile map~\cite{EIAProfile2015},
-U.S. natural gas pipeline map~\cite{EIAGaspipe} are under this
-sub-category. Other supply side topics include total energy production
-~\cite{DOEEnergyProduct}; total energy source
-production~\cite{EIACoalProduct}; sustainable energy potential map of
-wind, solar, biomass, geothermal ~\cite{NRELMap2015} and hydropower
-~\cite{DOEHydro}. Common demand side topics include: energy
-demand for one or more end uses~\cite{heatMap2012}, energy source
-demand ~\cite{EIACoalDemand} and energy cost
-~\cite{DOEEnergyCost}. The design side topics concerns building
-physical conditions like Calgory Heat Map ~\cite{Hay2011}, design
-policy information like climate zone map~\cite{IECCClimate} and energy
-code adoption map~\cite{CodeAdopt}. The energy behavior environmental
-impact map include both the impact of building or energy
-infrastructure to environment and the environment change to buildings
-or infrastructures. The carbon emission map as ~\cite{CO2Atlas} is an
-instance of the former and the ``Energy Sector's Vulnerabilities to
-Climatic Conditions'' Map is an example of the
-latter~\cite{DOEVulner}.
-
-It is necessary to mention some unfortunate terminology overloading
-involved in the topic of Energy Map. The term ``Heat Map'' used in
-this discussion refers to the Energy Map with building heating energy
-as its theme, not to be mis-interpreted as the color-coded
-representation of matrix values as in this
-definition~\cite{HeatmapWiki}.
-
-The history of thematic map dates back to early 17th century, and from
-then on maps can present spatial patterns of features other than
-geographic locations~\cite{ThematicMap}. Over a century later, spatial
-analysis emerges and map starts to assisting Geo-data
-analysis. Finally after the born of modern computer and the
-development of database, map becomes a more powerful information
-system that can performing complicated data crunching tasks including
-data aggregation, managing, querying and presentation. This gives
-Energy Map a much broader meaning.
-
 \paragraph{Geo-database of Building Energy}
-In a broader sense, Energy Map is a hibernation of two types of
-databases: building energy database, a subset of the BIM (Building
-Information Model), and a Geo-database or Geographical Information
-System (GIS). The basic functions of an Energy Map includes 1) storing
-energy data in an organized fashion, that facilitate easy analysis and
-query of energy data and 2) provide reports in the form of graphs,
-tables, animations etc that conveys numerical information in a way
-that best support pattern recognition and decision making.
-
 This definition can be considered as a super set of the thematic map
 definition, so the energy topics inherits those representable in the
 thematic energy map definition. Some examples of the Energy Maps under
@@ -308,10 +167,6 @@ and ``Heat maps'' with information of heat sources and sinks that
 supports district system expansion design~\cite{Finney2012165}.
 
 \paragraph{Coupled Geo-database and Energy Simulation Platform}
-Development of data-driven approaches and learning methods makes the
-analysis of more complicated spatial-temporal data possible. With
-these emerging analysis tools, using data to support design is
-possible.
 
 ``Geo-design is a design and planning method which tightly couples the
 creation of design proposals with impact simulations informed by
@@ -495,7 +350,6 @@ the aggregated demand and the demand for single buildings or building
 sectors side by side, eliminating the misunderstanding of the
 aggregated demand and providing the actual data for system sizing.
 
-\begin{comment}
 \subsubsection{Temporal Variation in Energy Generation, Storage
     Devices, Price Variation}
 The commonly used renewable energy source includes: solar, wind,
@@ -503,7 +357,6 @@ geothermal, hydropower and biomass. Among these sources, solar energy
 have strong temporal fluctuation as a result of the temporal variation
 of solar radiation between different hours of a year and the time of
 year~\cite{EIARenewable2015}. 
-\end{comment}
 
 \subsubsection{Close Match of Supply Side to Demand Side Improves
   Community Scale Energy Performance}
@@ -1024,7 +877,6 @@ others argue that this control will reduce time animation to still
 images and impair its ability in conveying temporal changes
 ~\cite{Lowe2004}.
 
-\begin{comment}
 The technology of implementing a dynamic map has been exceeding the
 cartographic theory~\cite{Harrower2008}. This makes the design of
 Dynamic Maps even more challenging. Animated maps are not superior to
@@ -1038,16 +890,14 @@ map~\cite{McEachern1998}.
 ``Data Visualization with Spacetime Maps'', Richard L. Brownrigg, 2005
 (read further later on)
 
-\grey{To be continued later:
-\begin{enumerate}[label*=\arabic*.]
+\begin{enumerate}
 \item ``Geographic Visualization: Designing Manipulable Maps for
     Exploring Temporally Varying Georeferenced Statistics'', MacEachren et al.\
 \item ``Strategies for the Visualization of Geographic Time-Series
     Data'', Mark Monmonier, 2011
 \item ``Evaluation of Methods for Classifying Epidemiological Data
     on Choropleth Maps in Series'', Brewer and Pickle, 2002
-\end{enumerate}}
-\end{comment}
+\end{enumerate}
 
 \subsection{Spatial Temporal Data Analysis}\label{stDataAnalysis}
 In order to better utilize the power of Dynamic Maps, one has to
@@ -1097,10 +947,6 @@ graphical scenes''~\cite{CZML2015}
 
 \newpage
 \section{Methodology}\label{method}
-This section demonstrate the Dynamic Energy Map implementation used in
-the project.
-
-\subsection{General Work Flow}
 The Dynamic Energy Map is created with a conceptual urban environment
 whose building density and land use pattern resembles an existing
 urban environment. The number of buildings in the model represents a
@@ -1169,7 +1015,6 @@ Midrise Apartment        &MA&  33,740	      & 4\\
 \label{tab:doeModel}
 \end{table}
 
-\begin{comment}
 The default setting of the benchmark models are stand-alone, but the
 building in a community setting are imposed to influences from
 surrounding buildings and the ``stand-alone'' assumption is not
@@ -1178,7 +1023,6 @@ assumed to be within an urban context, thus the presence of
 surrounding building should be reflected in the reference building
 models. The general assumption used in this study is a 20ft exterior
 shading on each side of each building.
-\end{comment}
 
 \subsubsection{3D GIS Model}
 The conceptual community model is constructed in
@@ -1632,7 +1476,6 @@ assist the design of a district system and in demonstrating the
 advantage of a district system. The major performance metric comparing
 the static and dynamic map is the energy throughput.
 
-\begin{comment}
 As is suggested in the document~\cite{IDEA2012}, the data needed for
 designing a district system include: 1) existing and emerging thermal
 energy consumption, 2) fuel source availability and 3) land use
@@ -1644,59 +1487,19 @@ produce electricity, as is the most common case. It can also produce
 chilled water with absorption chiller in summer. For land use
 constraint, we assume the pipeline can be put only under the road
 network.
-\end{comment}
  
-\subsection{Using Static Energy Map}
-\begin{comment}
-To create a static energy map, the heating energy density for each
-building in the community is used to decide whether to include the
-building in the district system. The building type, annual energy
-consumption and building area are depicted in the \tref{tab:heatDmd}.
-With the common boundary demand of whether to connect this building to
-the district network, 0.93$kWh/ft^2$ (IEA) ~\cite{IDEA2012}, the
-buildings to be connected include: Full Service Restaurant, Large
-Hotel, Midrise Apartment, Quick Service Restaurant, Stand-alone Retail
-and Super Market. In order to meet the peak demand, the heating
-capacity of the central plant is: 
-
-The remaining building types: Large Office, Medium Office and Small
-Office are assumed to use stand-alone equipment and is sized with peak
-demand.
-
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{l|c|c|c}
-    \hline
-Building Type Name&  Floor Area (ft2)&Heating (kWh)&Density(kWh/ft2)\\
-    \hline
-Full Service Restaurant  &  5,500             & 29729   &5.41   \\
-Large Hotel	         &  122,120	      & 117219  &0.96   \\
-Large Office	         &  498,588	      & 257397  &0.52   \\
-Medium Office	         &  53,628	      & 7229    &0.13   \\
-Midrise Apartment        &  33,740	      & 49599   &1.47   \\
-Quick Service Restaurant &  2,500          & 14790   &5.91   \\
-Small Office	         &  5,500	      & 3152    &0.57   \\
-Stand-alone Retail       &  24,962	      & 49342   &1.98   \\
-Supermarket	         &  45,000	      & 123698  &2.75   \\
-    \hline
-\end{tabular}
-\caption{Heating Demand Density}
-\label{tab:heatDmd}
-\end{table}
-
-\end{comment}
-
-\subsection{Using Dynamic Energy Map}
-
 \section{Findings and Discussion}
+\subsection{Landuse Design on Load Balancing}
+
+\begin{comment}
 One of the point of having a visualization of dynamic map is, as
 Dorling and Openshaw suggested, to detect mistakes that could
 otherwise be neglected under a black box calculation routine or some
 false application of rule of thumbs~\cite{Dorling1992}.
+\end{comment}
 
 \grey{not finished}
 \section{Conclusion}
-\begin{comment}
 \item Conclusion
   \begin{enumerate}[label*=\arabic*.]
   \item Summary of the current approach in implementing the dynamic
@@ -1735,6 +1538,35 @@ false application of rule of thumbs~\cite{Dorling1992}.
 \end{enumerate}
 \end{comment}
 \newpage
+
+\begin{abstract}
+  This document provides an approach of creating a space-time Energy
+  Map, or a Dynamic Energy Map. The approach is demonstrated with a
+  conceptual urban environment setting created in CityEngine based on
+  the extracted topological and density pattern from an existing urban
+  design project. The buildings in the conceptual model is then
+  assigned an energy profile of certain DOE Commercial Benchmark
+  Building Reference model based on its building type. Hourly energy
+  heating and cooling demand profile are then obtained from the
+  EnergyPlus simulation of DOE Commercial Benchmark models. The energy
+  consumption data is classified into groups with consideration of
+  \red{building energy design context} and the data distribution
+  properties. A corresponding color coded energy profile is then
+  generated and imported to CityEngine. 8760 color coded 2D and 3D map
+  images was then extracted from CityEngine with Python script. A
+  series of data reading, plotting, data classification and
+  color-coding calculation utilities were implemented. An interactive
+  interface for visualizing the images and dynamic data plot with
+  sliders is implemented using Python. The tool is anticipated to
+  provide decision insight for community energy management and
+  planning, demand-side strategy design and district system sizing.
+  
+  The document will also briefly discuss one of the test-bed for data
+  classification and visualization.
+
+\end{abstract}
+\newpage
+
 \bibliographystyle{plain}
 \bibliography{myCitation}
 \end{document}

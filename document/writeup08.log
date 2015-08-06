@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  3 AUG 2015 21:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  6 AUG 2015 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input writeup-0720.tex
-(./writeup-0720.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+**\input writeup08.tex
+(./writeup08.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
@@ -298,8 +298,8 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip55
 \subfig@bottom=\skip56
 )
-(./writeup-0720.aux)
-\openout1 = `writeup-0720.aux'.
+(./writeup08.aux)
+\openout1 = `writeup08.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
@@ -317,10 +317,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring OFF on input line 33.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
-
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
@@ -330,9 +328,9 @@ LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
 
-(./writeup-0720.out) (./writeup-0720.out)
+(./writeup08.out) (./writeup08.out)
 \@outlinefile=\write4
-\openout4 = `writeup-0720.out'.
+\openout4 = `writeup08.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -370,251 +368,159 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 LaTeX Warning: No \author given.
 
-(./writeup-0720.toc
+(./writeup08.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 2.
+)
+\tf@toc=\write5
+\openout5 = `writeup08.toc'.
+
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-[2])
-\tf@toc=\write5
-\openout5 = `writeup-0720.toc'.
+[2] [3] [4] <images/mixLoad.png, id=154, 689.57625pt x 361.35pt>
+File: images/mixLoad.png Graphic file (type png)
 
- [3] [4] [5] [6] <images/sheffield.png, id=410, 698.61pt x 423.5825pt>
-File: images/sheffield.png Graphic file (type png)
+<use images/mixLoad.png>
+Package pdftex.def Info: images/mixLoad.png used on input line 210.
+(pdftex.def)             Requested size: 328.62788pt x 172.20543pt.
+ [5 <./images/mixLoad.png (PNG copy)>] [6]
 
-<use images/sheffield.png>
-Package pdftex.def Info: images/sheffield.png used on input line 224.
-(pdftex.def)             Requested size: 328.62788pt x 199.25832pt.
- [7] [8 <./images/sheffield.png (PNG copy)>] [9]
-[10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 389.
+LaTeX Warning: Reference `dynamicMap' on page 7 undefined on input line 234.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 389.
- [11] [12]
-[13] Excluding 'comment' comment. [14] [15] [16] [17] [18] [19] [20] [21]
-[22] [23] [24] Excluding 'comment' comment. [25]
-<images/flow.png, id=654, 901.3675pt x 250.9375pt>
-File: images/flow.png Graphic file (type png)
- <use images/flow.png>
-Package pdftex.def Info: images/flow.png used on input line 1125.
-(pdftex.def)             Requested size: 328.62788pt x 91.48994pt.
 
-[26 <./images/flow.png (PNG copy)>] Excluding 'comment' comment.
-<images/mellonArena.png, id=669, 654.445pt x 397.485pt>
-File: images/mellonArena.png Graphic file (type png)
+LaTeX Warning: Reference `mapDesign' on page 7 undefined on input line 236.
 
-<use images/mellonArena.png>
-Package pdftex.def Info: images/mellonArena.png used on input line 1208.
-(pdftex.def)             Requested size: 234.73523pt x 142.56682pt.
 
-<images/mellonPie.png, id=670, 354.32375pt x 288.07625pt>
-File: images/mellonPie.png Graphic file (type png)
+LaTeX Warning: Reference `stDataAnalysis' on page 7 undefined on input line 236
+.
 
-<use images/mellonPie.png>
-Package pdftex.def Info: images/mellonPie.png used on input line 1215.
-(pdftex.def)             Requested size: 140.84256pt x 114.51195pt.
- [27]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `4dMap' on page 7 undefined on input line 238.
 
-<images/mellonTop.png, id=681, 1255.69125pt x 601.24625pt>
-File: images/mellonTop.png Graphic file (type png)
+<images/calgaryCmp.png, id=170, 929.4725pt x 603.25375pt>
+File: images/calgaryCmp.png Graphic file (type png)
 
-<use images/mellonTop.png>
-Package pdftex.def Info: images/mellonTop.png used on input line 1267.
-(pdftex.def)             Requested size: 328.62788pt x 157.34784pt.
+<use images/calgaryCmp.png>
+Package pdftex.def Info: images/calgaryCmp.png used on input line 263.
+(pdftex.def)             Requested size: 281.68513pt x 182.8185pt.
+ [7 <./images/calgaryCmp.png (PNG copy)>]
+<images/calgaryAlter.png, id=180, 328.22626pt x 654.445pt>
+File: images/calgaryAlter.png Graphic file (type png)
 
-<images/sitePlan.png, id=682, 621.07031pt x 271.0125pt>
-File: images/sitePlan.png Graphic file (type png)
+<use images/calgaryAlter.png>
+Package pdftex.def Info: images/calgaryAlter.png used on input line 280.
+(pdftex.def)             Requested size: 140.84256pt x 280.82668pt.
+ [8 <./images/calgaryAlter.png (PNG copy)>]
+<images/londonHeat.png, id=194, 1352.05125pt x 575.14874pt>
+File: images/londonHeat.png Graphic file (type png)
 
-<use images/sitePlan.png>
-Package pdftex.def Info: images/sitePlan.png used on input line 1274.
-(pdftex.def)             Requested size: 328.62788pt x 143.40022pt.
+<use images/londonHeat.png>
+Package pdftex.def Info: images/londonHeat.png used on input line 317.
+(pdftex.def)             Requested size: 328.62788pt x 139.79372pt.
+ <images/nhm.jpeg, id=201, 803.0pt x 423.5825pt>
+File: images/nhm.jpeg Graphic file (type jpg)
+
+<use images/nhm.jpeg>
+Package pdftex.def Info: images/nhm.jpeg used on input line 342.
+(pdftex.def)             Requested size: 234.73523pt x 123.82466pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28 <./images/mellonArena.png (PNG copy)> <./images/mellonPie.png (PNG copy)>]
-[29] <images/heatBox.png, id=700, 578.16pt x 433.62pt>
-File: images/heatBox.png Graphic file (type png)
+[9 <./images/londonHeat.png (PNG copy)>]
+<images/waterMap.png, id=219, 1185.42876pt x 958.58125pt>
+File: images/waterMap.png Graphic file (type png)
 
-<use images/heatBox.png>
-Package pdftex.def Info: images/heatBox.png used on input line 1329.
-(pdftex.def)             Requested size: 328.62788pt x 246.47124pt.
- <images/coolBox.png, id=702, 578.16pt x 433.62pt>
-File: images/coolBox.png Graphic file (type png)
+<use images/waterMap.png>
+Package pdftex.def Info: images/waterMap.png used on input line 359.
+(pdftex.def)             Requested size: 234.73523pt x 189.81137pt.
 
-<use images/coolBox.png>
-Package pdftex.def Info: images/coolBox.png used on input line 1336.
-(pdftex.def)             Requested size: 328.62788pt x 246.47124pt.
+<images/heatmapNL.png, id=225, 606.265pt x 490.83376pt>
+File: images/heatmapNL.png Graphic file (type png)
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[30 <./images/mellonTop.png (PNG copy)> <./images/sitePlan.png>] [31 <./images/
-heatBox.png> <./images/coolBox.png>]
-<images/arcgisTime.png, id=722, 934.49126pt x 714.67pt>
-File: images/arcgisTime.png Graphic file (type png)
-
-<use images/arcgisTime.png>
-Package pdftex.def Info: images/arcgisTime.png used on input line 1372.
-(pdftex.def)             Requested size: 234.73523pt x 179.51764pt.
- [32 <./images/arcgisTime.png (PNG copy)>] [33]
-
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1456.
-
-[34] [35] <images/interface0720.png, id=758, 1219.55624pt x 696.6025pt>
-File: images/interface0720.png Graphic file (type png)
-
-<use images/interface0720.png>
-Package pdftex.def Info: images/interface0720.png used on input line 1573.
-(pdftex.def)             Requested size: 328.62788pt x 187.71317pt.
-
-<images/interface2d.png, id=759, 1223.57124pt x 704.6325pt>
-File: images/interface2d.png Graphic file (type png)
-
-<use images/interface2d.png>
-Package pdftex.def Info: images/interface2d.png used on input line 1580.
-(pdftex.def)             Requested size: 328.62788pt x 189.24265pt.
-
-<images/legend.png, id=762, 930.47626pt x 501.875pt>
-File: images/legend.png Graphic file (type png)
- <use images/legend.png>
-Package pdftex.def Info: images/legend.png used on input line 1594.
-(pdftex.def)             Requested size: 328.62788pt x 177.25174pt.
-
-[36]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[37 <./images/interface0720.png (PNG copy)> <./images/interface2d.png (PNG copy
-)>] [38 <./images/legend.png (PNG copy)>] Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment. [39]
-(./writeup-0720.bbl
-Underfull \hbox (badness 1168) in paragraph at lines 17--21
-[]\OT1/cmr/m/n/12 Global Car-bon At-las.  Global car-bon at-las.  web, July 201
-5.  []$\OT1/cmtt/m/n/12 http : / / www .
- []
-
-
-Underfull \hbox (badness 3884) in paragraph at lines 29--33
-[]\OT1/cmr/m/n/12 Michael Bar-ton, Daniel Cavelo Aros, Mar-tin Landa, and Jachy
-m Cepicky.
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 60--65
+<use images/heatmapNL.png>
+Package pdftex.def Info: images/heatmapNL.png used on input line 383.
+(pdftex.def)             Requested size: 328.62788pt x 266.05736pt.
+ [10 <./images/nhm.jpeg> <./images/waterMap.png>]
+Excluding 'comment' comment. [11 <./images/heatmapNL.png (PNG copy)>]
+(./writeup08.bbl
+Underfull \hbox (badness 1502) in paragraph at lines 39--44
 []\OT1/cmr/m/n/12 Department of En-ergy and Cli-mate Change.  About the na-tion
 al heat map.
  []
 
 
-Underfull \hbox (badness 3460) in paragraph at lines 67--72
+Underfull \hbox (badness 3460) in paragraph at lines 46--51
 []\OT1/cmr/m/n/12 Department of En-ergy and Cli-mate Change.  Cold wa-ter could
  heat one
  []
 
 
-Underfull \hbox (badness 2662) in paragraph at lines 67--72
+Underfull \hbox (badness 2662) in paragraph at lines 46--51
 \OT1/cmr/m/n/12 mil-lion homes.  web, March 2015.  []$\OT1/cmtt/m/n/12 https : 
 / / www . gov . uk / government / news /
  []
 
-[40]
-Underfull \hbox (badness 2913) in paragraph at lines 101--105
-[]\OT1/cmr/m/n/12 DOE.  So-lar plants on-line.  web, July 2015.  []$\OT1/cmtt/m
-/n/12 http : / / energy . gov / maps /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--136
-[]\OT1/cmr/m/n/12 DOE.  Wind vi-sion.  web, July 2015.  []$\OT1/cmtt/m/n/12 htt
-p : / / energy . gov / maps /
- []
-
-
-Underfull \hbox (badness 3769) in paragraph at lines 150--155
-[]\OT1/cmr/m/n/12 EIA.  Monthly en-ergy re-view.  web, May 2014.  []$\OT1/cmtt/
-m/n/12 http : / / www . eia . gov /
- []
-
-[41]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [42]
-Underfull \hbox (badness 3439) in paragraph at lines 254--258
-[]\OT1/cmr/m/n/12 Geoffrey Hay, Christo-pher Kyle, Bha-ranid-ha-ran Hemachan-dr
-an, Gang Chen,
- []
-
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¼ in font cmr12!
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 325--330
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 95--100
 []\OT1/cmr/m/n/12 Office of En-ergy Ef-fi-ciency & Re-new-able En-ergy.  Com-me
 r-cial ref-er-
  []
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 325--330
+Underfull \hbox (badness 6691) in paragraph at lines 95--100
 \OT1/cmr/m/n/12 ence build-ings.  web, June 2015.  []$\OT1/cmtt/m/n/12 http : /
  / energy . gov / eere / buildings /
  []
 
-[44]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
 Missing character: There is no Ã in font cmr12!
-Missing character: There is no „ in font cmr12!
+Missing character: There is no © in font cmr12!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1740.
- [45]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1740.
- (./writeup-0720.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1740.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1740.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1395.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1395.
+ (./writeup08.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1395.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1395.
 
-Package rerunfilecheck Info: File `writeup-0720.out' has not changed.
-(rerunfilecheck)             Checksum: 32B5781BE21EF18140D2E9918D300B53;5967.
+Package rerunfilecheck Info: File `writeup08.out' has not changed.
+(rerunfilecheck)             Checksum: 347BD1B014D715EB342EF59A907F8A18;1250.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1740.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1395.
  ) 
 Here is how much of TeX's memory you used:
- 7388 strings out of 495028
- 104893 string characters out of 6181498
- 286030 words of memory out of 5000000
- 10288 multiletter control sequences out of 15000+600000
- 9932 words of font info for 35 fonts, out of 8000000 for 9000
+ 7050 strings out of 495028
+ 99803 string characters out of 6181498
+ 278947 words of memory out of 5000000
+ 10127 multiletter control sequences out of 15000+600000
+ 9324 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,10n,35p,238b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt12.pfb>
-Output written on writeup-0720.pdf (45 pages, 1593154 bytes).
+ 29i,7n,35p,235b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt12.pfb>
+Output written on writeup08.pdf (13 pages, 3432931 bytes).
 PDF statistics:
- 972 PDF objects out of 1000 (max. 8388607)
- 891 compressed objects within 9 object streams
- 214 named destinations out of 1000 (max. 500000)
- 621 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 

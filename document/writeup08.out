@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{General Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Project Overview}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Objective and Problem Definition}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Related Concepts}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.3.1}{District Thermal Energy System}{subsection.1.3}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Heat Map}{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.3}{Energy Map}{subsection.1.3}% 7
+\BOOKMARK [3][-]{subsubsection.1.3.4}{Dynamic Energy Map}{subsection.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.4}{Why ``time'' dimension is important for an Energy Map}{section.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Strong Temporal Variation of Energy Demand}{subsection.1.4}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{subsection.1.4}% 11
+\BOOKMARK [1][-]{section.2}{Related Works}{}% 12
+\BOOKMARK [2][-]{subsection.2.1}{Static Energy Map}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Calgary Energy Map}{subsection.2.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.2}{UK Heat Map}{subsection.2.1}% 15
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Energy Potential Mapping}{subsection.2.1}% 16
