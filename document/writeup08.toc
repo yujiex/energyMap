@@ -1,16 +1,27 @@
-\contentsline {section}{\numberline {1}General Introduction}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Project Overview}{2}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Objective and Problem Definition}{3}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Related Concepts}{3}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}District Thermal Energy System}{3}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}Heat Map}{4}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Energy Map}{4}{subsubsection.1.3.3}
-\contentsline {subsubsection}{\numberline {1.3.4}Dynamic Energy Map}{5}{subsubsection.1.3.4}
-\contentsline {subsection}{\numberline {1.4}Why ``time'' dimension is important for an Energy Map}{5}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}Strong Temporal Variation of Energy Demand}{5}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{6}{subsubsection.1.4.2}
-\contentsline {section}{\numberline {2}Related Works}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}Static Energy Map}{7}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Calgary Energy Map}{7}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}UK Heat Map}{8}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Energy Potential Mapping}{10}{subsubsection.2.1.3}
+\contentsline {section}{\numberline {1}General Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Project Overview}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Objective and Problem Definition}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Related Concepts}{5}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}District Energy System}{5}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Heat Map}{7}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}Energy Map}{7}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.4}Dynamic Energy Map}{8}{subsubsection.1.3.4}
+\contentsline {subsection}{\numberline {1.4}Why ``time'' dimension is important for an Energy Map}{8}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Strong Temporal Variation of Energy Demand}{8}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{8}{subsubsection.1.4.2}
+\contentsline {section}{\numberline {2}Related Works}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}Static Energy Map}{10}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Calgary Energy Map}{10}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}UK Heat Map}{12}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Energy Potential Mapping}{14}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Dynamic Energy Map}{14}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Lower Hill District Dynamic Mapping Project}{15}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Energy Mapping to Identify Opportunities for Future Networks Project}{15}{subsubsection.2.2.2}
+\contentsline {section}{\numberline {3}Building From Previous Work}{17}{section.3}
+\contentsline {section}{\numberline {4}Methodology}{19}{section.4}
+\contentsline {subsection}{\numberline {4.1}Overview}{19}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Input}{20}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Benchmark Models and Energy Data}{20}{subsubsection.4.2.1}
+\contentsline {paragraph}{\numberline {4.2.1.1}Input for Identifing Energy Recovery Opportunities}{22}{paragraph.4.2.1.1}
+\contentsline {paragraph}{\numberline {4.2.1.2}Input for Sizing District Co-generation System}{24}{paragraph.4.2.1.2}
+\contentsline {subsubsection}{\numberline {4.2.2}3D GIS Model Geometry}{25}{subsubsection.4.2.2}

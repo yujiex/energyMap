@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  6 AUG 2015 17:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  11 AUG 2015 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -165,6 +165,24 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen110
 \titlewidthfirst=\dimen111
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip46
+\LTright=\skip47
+\LTpre=\skip48
+\LTpost=\skip49
+\LTchunksize=\count100
+\LTcapwidth=\dimen112
+\LT@head=\box27
+\LT@firsthead=\box28
+\LT@foot=\box29
+\LT@lastfoot=\box30
+\LT@cols=\count101
+\LT@rows=\count102
+\c@LT@tables=\count103
+\c@LT@chunks=\count104
+\LT@p@ftn=\toks17
+)
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
@@ -183,7 +201,7 @@ Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count100
+\Gread@gobject=\count105
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
@@ -209,12 +227,12 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip46
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -222,81 +240,81 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks17
-\ex@=\dimen114
+\@emptytoks=\toks18
+\ex@=\dimen115
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen115
+\pmbraise@=\dimen116
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count101
+\inf@bad=\count106
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count102
-\leftroot@=\count103
+\uproot@=\count107
+\leftroot@=\count108
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count104
-\DOTSCASE@=\count105
+\classnum@=\count109
+\DOTSCASE@=\count110
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen116
+\Mathstrutbox@=\box31
+\strutbox@=\box32
+\big@size=\dimen117
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count106
-\c@MaxMatrixCols=\count107
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
 \dotsspace@=\muskip11
-\c@parentequation=\count108
-\dspbrk@lvl=\count109
-\tag@help=\toks18
-\row@=\count110
-\column@=\count111
-\maxfields@=\count112
-\andhelp@=\toks19
-\eqnshift@=\dimen117
-\alignsep@=\dimen118
-\tagshift@=\dimen119
-\tagwidth@=\dimen120
-\totwidth@=\dimen121
-\lineht@=\dimen122
-\@envbody=\toks20
-\multlinegap=\skip47
-\multlinetaggap=\skip48
-\mathdisplay@stack=\toks21
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks19
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks20
+\eqnshift@=\dimen118
+\alignsep@=\dimen119
+\tagshift@=\dimen120
+\tagwidth@=\dimen121
+\totwidth@=\dimen122
+\lineht@=\dimen123
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen123
-\extrarowheight=\dimen124
-\NC@list=\toks22
-\extratabsurround=\skip49
-\backup@length=\skip50
+\col@sep=\dimen124
+\extrarowheight=\dimen125
+\NC@list=\toks23
+\extratabsurround=\skip53
+\backup@length=\skip54
 )
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip51
-\subfigcapskip=\skip52
-\subfigcaptopadj=\dimen125
-\subfigbottomskip=\skip53
-\subfigcapmargin=\dimen126
-\subfiglabelskip=\skip54
-\c@subfigure=\count113
-\c@lofdepth=\count114
-\c@subtable=\count115
-\c@lotdepth=\count116
+\subfigtopskip=\skip55
+\subfigcapskip=\skip56
+\subfigcaptopadj=\dimen126
+\subfigbottomskip=\skip57
+\subfigcapmargin=\dimen127
+\subfiglabelskip=\skip58
+\c@subfigure=\count118
+\c@lofdepth=\count119
+\c@subtable=\count120
+\c@lotdepth=\count121
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip55
-\subfig@bottom=\skip56
+\subfig@top=\skip59
+\subfig@bottom=\skip60
 )
 (./writeup08.aux)
 \openout1 = `writeup08.aux'.
@@ -315,14 +333,14 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box33
 Package hyperref Info: Link coloring OFF on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count117
+\c@section@level=\count122
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
@@ -335,17 +353,17 @@ LaTeX Info: Redefining \nameref on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen127
-\scratchbox=\box30
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen128
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count123
+\scratchdimen=\dimen128
+\scratchbox=\box34
+\nofMPsegments=\count124
+\nofMParguments=\count125
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen129
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -375,152 +393,349 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 2.
-)
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write5
 \openout5 = `writeup08.toc'.
 
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] <images/mixLoad.png, id=154, 689.57625pt x 361.35pt>
+[2] Excluding 'comment' comment. [3] [4] [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 222.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
+ [6] [7]
+<images/mixLoad.png, id=254, 689.57625pt x 361.35pt>
 File: images/mixLoad.png Graphic file (type png)
-
-<use images/mixLoad.png>
-Package pdftex.def Info: images/mixLoad.png used on input line 210.
+ <use images/mixLoad.png>
+Package pdftex.def Info: images/mixLoad.png used on input line 344.
 (pdftex.def)             Requested size: 328.62788pt x 172.20543pt.
- [5 <./images/mixLoad.png (PNG copy)>] [6]
-
-LaTeX Warning: Reference `dynamicMap' on page 7 undefined on input line 234.
-
-
-LaTeX Warning: Reference `mapDesign' on page 7 undefined on input line 236.
-
-
-LaTeX Warning: Reference `stDataAnalysis' on page 7 undefined on input line 236
-.
-
-
-LaTeX Warning: Reference `4dMap' on page 7 undefined on input line 238.
-
-<images/calgaryCmp.png, id=170, 929.4725pt x 603.25375pt>
-File: images/calgaryCmp.png Graphic file (type png)
-
-<use images/calgaryCmp.png>
-Package pdftex.def Info: images/calgaryCmp.png used on input line 263.
-(pdftex.def)             Requested size: 281.68513pt x 182.8185pt.
- [7 <./images/calgaryCmp.png (PNG copy)>]
-<images/calgaryAlter.png, id=180, 328.22626pt x 654.445pt>
-File: images/calgaryAlter.png Graphic file (type png)
-
-<use images/calgaryAlter.png>
-Package pdftex.def Info: images/calgaryAlter.png used on input line 280.
-(pdftex.def)             Requested size: 140.84256pt x 280.82668pt.
- [8 <./images/calgaryAlter.png (PNG copy)>]
-<images/londonHeat.png, id=194, 1352.05125pt x 575.14874pt>
-File: images/londonHeat.png Graphic file (type png)
-
-<use images/londonHeat.png>
-Package pdftex.def Info: images/londonHeat.png used on input line 317.
-(pdftex.def)             Requested size: 328.62788pt x 139.79372pt.
- <images/nhm.jpeg, id=201, 803.0pt x 423.5825pt>
-File: images/nhm.jpeg Graphic file (type jpg)
-
-<use images/nhm.jpeg>
-Package pdftex.def Info: images/nhm.jpeg used on input line 342.
-(pdftex.def)             Requested size: 234.73523pt x 123.82466pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9 <./images/londonHeat.png (PNG copy)>]
-<images/waterMap.png, id=219, 1185.42876pt x 958.58125pt>
+[8] [9 <./images/mixLoad.png (PNG copy)>] Excluding 'comment' comment.
+Overfull \hbox (16.32213pt too wide) in paragraph at lines 383--406
+ [][] 
+ []
+
+<images/calgaryCmp.png, id=273, 929.4725pt x 603.25375pt>
+File: images/calgaryCmp.png Graphic file (type png)
+
+<use images/calgaryCmp.png>
+Package pdftex.def Info: images/calgaryCmp.png used on input line 432.
+(pdftex.def)             Requested size: 281.68513pt x 182.8185pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10] <images/calgaryAlter.png, id=284, 328.22626pt x 654.445pt>
+File: images/calgaryAlter.png Graphic file (type png)
+
+<use images/calgaryAlter.png>
+Package pdftex.def Info: images/calgaryAlter.png used on input line 449.
+(pdftex.def)             Requested size: 140.84256pt x 280.82668pt.
+ [11 <./images/calgaryCmp.png (PNG copy)> <./images/calgaryAlter.png (PNG copy)
+>]
+<images/londonHeat.png, id=298, 1352.05125pt x 575.14874pt>
+File: images/londonHeat.png Graphic file (type png)
+
+<use images/londonHeat.png>
+Package pdftex.def Info: images/londonHeat.png used on input line 486.
+(pdftex.def)             Requested size: 328.62788pt x 139.79372pt.
+ [12 <./images/londonHeat.png (PNG copy)>]
+<images/nhm.jpeg, id=313, 803.0pt x 423.5825pt>
+File: images/nhm.jpeg Graphic file (type jpg)
+ <use images/nhm.jpeg>
+Package pdftex.def Info: images/nhm.jpeg used on input line 511.
+(pdftex.def)             Requested size: 234.73523pt x 123.82466pt.
+
+<images/waterMap.png, id=318, 1185.42876pt x 958.58125pt>
 File: images/waterMap.png Graphic file (type png)
 
 <use images/waterMap.png>
-Package pdftex.def Info: images/waterMap.png used on input line 359.
+Package pdftex.def Info: images/waterMap.png used on input line 528.
 (pdftex.def)             Requested size: 234.73523pt x 189.81137pt.
-
-<images/heatmapNL.png, id=225, 606.265pt x 490.83376pt>
+ [13 <./images/nhm.jpeg> <./images/waterMap.png>]
+<images/heatmapNL.png, id=335, 606.265pt x 490.83376pt>
 File: images/heatmapNL.png Graphic file (type png)
 
 <use images/heatmapNL.png>
-Package pdftex.def Info: images/heatmapNL.png used on input line 383.
+Package pdftex.def Info: images/heatmapNL.png used on input line 552.
 (pdftex.def)             Requested size: 328.62788pt x 266.05736pt.
- [10 <./images/nhm.jpeg> <./images/waterMap.png>]
-Excluding 'comment' comment. [11 <./images/heatmapNL.png (PNG copy)>]
-(./writeup08.bbl
-Underfull \hbox (badness 1502) in paragraph at lines 39--44
+ [14 <./images/heatmapNL.png (PNG copy)>]
+<images/mellonArenaGIS.png, id=345, 837.1275pt x 593.21625pt>
+File: images/mellonArenaGIS.png Graphic file (type png)
+
+<use images/mellonArenaGIS.png>
+Package pdftex.def Info: images/mellonArenaGIS.png used on input line 575.
+(pdftex.def)             Requested size: 328.62788pt x 232.8741pt.
+
+<images/3dexcel.png, id=349, 933.4875pt x 331.2375pt>
+File: images/3dexcel.png Graphic file (type png)
+ <use images/3dexcel.png>
+Package pdftex.def Info: images/3dexcel.png used on input line 591.
+(pdftex.def)             Requested size: 328.62788pt x 116.60707pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15 <./images/mellonArenaGIS.png (PNG copy)>]
+<images/heatGlasgow.png, id=366, 460.72125pt x 304.13625pt>
+File: images/heatGlasgow.png Graphic file (type png)
+
+<use images/heatGlasgow.png>
+Package pdftex.def Info: images/heatGlasgow.png used on input line 637.
+(pdftex.def)             Requested size: 234.73523pt x 154.95428pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/seqheatGlasgow.png, id=368, 477.785pt x 46.1725pt>
+File: images/seqheatGlasgow.png Graphic file (type png)
+
+<use images/seqheatGlasgow.png>
+Package pdftex.def Info: images/seqheatGlasgow.png used on input line 644.
+(pdftex.def)             Requested size: 234.73523pt x 22.68459pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/animeheatGlasgow.png, id=370, 261.97874pt x 216.81pt>
+File: images/animeheatGlasgow.png Graphic file (type png)
+
+<use images/animeheatGlasgow.png>
+Package pdftex.def Info: images/animeheatGlasgow.png used on input line 651.
+(pdftex.def)             Requested size: 140.84256pt x 116.56287pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16 <./images/3dexcel.png (PNG copy)>] [17 <./images/heatGlasgow.png (PNG copy)
+> <./images/seqheatGlasgow.png (PNG copy)> <./images/animeheatGlasgow.png (PNG 
+copy)>] <images/interface08.png, id=392, 1225.57875pt x 702.625pt>
+File: images/interface08.png Graphic file (type png)
+
+<use images/interface08.png>
+Package pdftex.def Info: images/interface08.png used on input line 707.
+(pdftex.def)             Requested size: 328.62788pt x 188.40329pt.
+ [18 <./images/interface08.png (PNG copy)>]
+<images/flow.png, id=402, 901.3675pt x 250.9375pt>
+File: images/flow.png Graphic file (type png)
+ <use images/flow.png>
+Package pdftex.def Info: images/flow.png used on input line 746.
+(pdftex.def)             Requested size: 328.62788pt x 91.48994pt.
+
+[19 <./images/flow.png (PNG copy)>] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 819--819
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 821--821
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--825
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--829
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--831
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--833
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--835
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--837
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 839--839
+[]|\OT1/cmr/m/n/8 IRAC (in-di-vid-ual room air
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 839--839
+\OT1/cmr/m/n/8 con-di-tioner), PACU (packed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 845--845
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 847--847
+[]|\OT1/cmr/m/n/8 PACU (packed air-
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 851
+ []
+
+[21]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/heatFuel.png, id=435, 464.4853pt x 324.46219pt>
+File: images/heatFuel.png Graphic file (type png)
+
+<use images/heatFuel.png>
+Package pdftex.def Info: images/heatFuel.png used on input line 929.
+(pdftex.def)             Requested size: 328.62788pt x 229.5677pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22] [23 <./images/heatFuel.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] <images/mellonArena.png, id=459, 654.445pt x 397.485pt>
+File: images/mellonArena.png Graphic file (type png)
+
+<use images/mellonArena.png>
+Package pdftex.def Info: images/mellonArena.png used on input line 1024.
+(pdftex.def)             Requested size: 234.73523pt x 142.56682pt.
+
+<images/mellonPie.png, id=460, 354.32375pt x 288.07625pt>
+File: images/mellonPie.png Graphic file (type png)
+
+<use images/mellonPie.png>
+Package pdftex.def Info: images/mellonPie.png used on input line 1031.
+(pdftex.def)             Requested size: 140.84256pt x 114.51195pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/mellonTop.png, id=471, 1255.69125pt x 601.24625pt>
+File: images/mellonTop.png Graphic file (type png)
+
+<use images/mellonTop.png>
+Package pdftex.def Info: images/mellonTop.png used on input line 1083.
+(pdftex.def)             Requested size: 328.62788pt x 157.34784pt.
+
+<images/sitePlan.png, id=472, 621.07031pt x 271.0125pt>
+File: images/sitePlan.png Graphic file (type png)
+
+<use images/sitePlan.png>
+Package pdftex.def Info: images/sitePlan.png used on input line 1090.
+(pdftex.def)             Requested size: 328.62788pt x 143.40022pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Excluding 'comment' comment. [26 <./images/mellonArena.png (PNG copy)> <./image
+s/mellonPie.png (PNG copy)>] (./writeup08.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 32--37
+\OT1/cmtt/m/n/12 / / www . theccc . org . uk / tackling-[]climate-[]change / re
+ducing-[]carbon-[]emissions /
+ []
+
+[27]
+Underfull \hbox (badness 1502) in paragraph at lines 57--62
 []\OT1/cmr/m/n/12 Department of En-ergy and Cli-mate Change.  About the na-tion
 al heat map.
  []
 
 
-Underfull \hbox (badness 3460) in paragraph at lines 46--51
+Underfull \hbox (badness 3460) in paragraph at lines 64--69
 []\OT1/cmr/m/n/12 Department of En-ergy and Cli-mate Change.  Cold wa-ter could
  heat one
  []
 
 
-Underfull \hbox (badness 2662) in paragraph at lines 46--51
+Underfull \hbox (badness 2662) in paragraph at lines 64--69
 \OT1/cmr/m/n/12 mil-lion homes.  web, March 2015.  []$\OT1/cmtt/m/n/12 https : 
 / / www . gov . uk / government / news /
  []
 
+[28 <./images/mellonTop.png (PNG copy)> <./images/sitePlan.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 95--100
+ [29]
+Underfull \hbox (badness 10000) in paragraph at lines 183--188
 []\OT1/cmr/m/n/12 Office of En-ergy Ef-fi-ciency & Re-new-able En-ergy.  Com-me
 r-cial ref-er-
  []
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 95--100
+Underfull \hbox (badness 6691) in paragraph at lines 183--188
 \OT1/cmr/m/n/12 ence build-ings.  web, June 2015.  []$\OT1/cmtt/m/n/12 http : /
  / energy . gov / eere / buildings /
  []
 
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no © in font cmr12!
+[30]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ƒ in font cmr12!
+Missing character: There is no ∞ in font cmr12!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1395.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1395.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1560.
+ [31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1560.
  (./writeup08.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1395.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1395.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1560.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1560.
 
 Package rerunfilecheck Info: File `writeup08.out' has not changed.
-(rerunfilecheck)             Checksum: 347BD1B014D715EB342EF59A907F8A18;1250.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1395.
+(rerunfilecheck)             Checksum: 3D4BA378EE7325E87B415EF85DBAA6AC;2159.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1560.
  ) 
 Here is how much of TeX's memory you used:
- 7050 strings out of 495028
- 99803 string characters out of 6181498
- 278947 words of memory out of 5000000
- 10127 multiletter control sequences out of 15000+600000
+ 7335 strings out of 495028
+ 104048 string characters out of 6181498
+ 298758 words of memory out of 5000000
+ 10317 multiletter control sequences out of 15000+600000
  9324 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,7n,35p,235b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,35p,235b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmtt12.pfb>
-Output written on writeup08.pdf (13 pages, 3432931 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmtt12.pfb>
+Output written on writeup08.pdf (31 pages, 5294616 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 164 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 614 PDF objects out of 1000 (max. 8388607)
+ 546 compressed objects within 6 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
 

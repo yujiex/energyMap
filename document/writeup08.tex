@@ -1,7 +1,7 @@
 \documentclass[hidelinks,12pt]{article}
 \linespread{1.3}
 \usepackage{hyperref}
-\usepackage{enumerate,changepage,lipsum,titlesec}
+\usepackage{enumerate,changepage,lipsum,titlesec, longtable}
 \usepackage{cite}
 \usepackage{comment, xcolor}
 \usepackage[pdftex]{graphicx}
@@ -37,6 +37,7 @@
 \newpage
 \section{General Introduction}
 \subsection{Project Overview}
+\begin{comment}
 Buildings alone account for 40\% of the total energy usage in the
 United States. However if the indirect energy impact of the built
 environment as a whole was considered, the community design induced
@@ -44,54 +45,128 @@ energy and environmental impact could exceed this already high ratio:
 60\% - 75\% of the energy consumption is connected to the spatial
 layout of built environment~\cite{Owens199281}. In a broader sense,
 the energy resources distribution influences the layout of human
-activities~\cite{Owens199281}. More specifically, built environment
-influence the energy throughput in the form of land use design and
-infrastructure layout~\cite{Jaccard19971065}. 
+activities~\cite{Owens199281}. In a more restrict sense, built
+environment influence the community energy throughput by its density,
+degree of land use mix, energy supply infrastructure and
+transportation network ~\cite{Jaccard19971065}.
+\end{comment}
 
-Community Energy Management (CEM) is a combination of community level
-design strategies and energy management strategies aiming at providing
-quality of life in an urban environment with minimized energy
-consumption and environmental impact~\cite{Jaccard19971065}. It
-contains ``land use planning'', ``transportation management'', ``site
-planning'' and ``local energy supply and delivery planning''~\cite{Jaccard19971065}.
+The burning of fossil fuels produces green house gas (GHG) and causes
+significant global climate changes including global sea level rise,
+temperature rise, ocean warming, ice sheet melting and extreme weather
+event~\cite{NASA2015}. Fossil fuels are finite: studies have shown
+that if the consuming rate of fossil fuels remain the same, the major
+fossil fuels including oil, gas and coal will run out by the end of
+the century~\cite{Ecotricity2015, Kathryn2015}. Governments began to
+put reducing GHG as one of their major goals: the ``Climate Change
+Act'' of UK aims at reducing GHG emissions by 80\% comparing to 1990
+by 2050~\cite{carbonBudgetUK}, the City of Calgary aims at reducing
+CO$_2$ emission rate by 50\% by 2050~\cite{aacip2009}. 
+
+Reducing GHG emission and fossil fuel consumption also took place on
+the community level. Community Energy Management (CEM) is a
+combination of community level design strategies and energy management
+strategies aiming at providing quality of life in an urban environment
+with minimized energy consumption and environmental
+impact~\cite{Jaccard19971065}. It contains ``land use planning'',
+``transportation management'', ``site planning'' and ``local energy
+supply and delivery planning''~\cite{Jaccard19971065}. Community level
+energy planning and management achieves GHG reduction by means of :1)
+improving energy usage efficiency, 2) conserving the use of high
+quality energy and 3) switching to using more renewable energy source
+~\cite{StDenis20092088}. 
 
 Energy Mapping makes the community energy planning alternatives
-visible to planners and policy makers~\cite{baird2014}. Energy Map, or
-energy master plan~\cite{londonHeatMap} contains the information of
-energy demand and supply in the form of energy
-intensity~\cite{baird2014}, renewable energy, residual
-energy~\cite{Dobbelsteen2013} and decentralized energy
-network~\cite{decentralHeatMap2011}. It facilitates the matching of
-energy demand and supply in the aspect of spatial, temporal and
-quality ~\cite{Dobbelsteen2013}. 
+visible to planners and policy makers~\cite{baird2014} and thus
+flourishes under this trend. Emerging explorations on the
+functionality and the power of Energy Mapping in assisting community
+energy planning are taking place all over the world. City of Calgary
+carried out an Energy Mapping Study that aims to ``provide clear
+direction to the City and inform the private sector about the
+potential to reduce greenhouse gas emissions and encourage the use of
+alternative energy systems, through considerations such as the design
+of buildings and encouragement of more compact, mixed-use and high
+density communities.''~\cite{baird2014}.  
 
-The current challenge of the Energy Mapping approach is its lack of
-temporal information of energy supply and demand, creating barriers
-for the matching of demand and supply in the a time-of-use
-fashion~\cite{baird2014}.
+What information should an Energy Map hold and in what form should the
+information be conveyed or displayed is still not completely agreed
+between different approaches. Calgary Energy Mapping study depicts
+annual average energy use intensity and alternative renewable energy
+supply region~\cite{aacip2009}. London Heat Map contains mainly
+heating energy related features: high heating energy consumers,
+suppliers and district heating networks. Dutch Heat Map, an
+application of the EPM method, contains information of annual heating
+energy demand (or demand density), heating energy supply (or supply
+density), infrastructure network layout and CHP and Biomass plant
+location.
 
-A Dynamic Energy Map aggregates the time-of-use energy information to
-the traditional Energy Mapping practices. It acts as a geo-database
-that holds 1) hourly energy profile data for each building and the
-aggregated energy profile data for the whole community; 2) hourly
-energy supply data of community decentralized energy
-sources~\cite{baird2014}. With the Dynamic Energy Map, the temporal
-behavior of the demand and supply of heating, cooling and electricity
-are revealed and are available to be compared, analyzed and
-updated. Dynamic Energy Map is also connected to simulation software,
-and can act as a key component of Geo-design that encompasses
-``geo-spatial modeling, impact simulations, and real-time feedback to
-facilitate holistic designs and smart
-decisions''~\cite{esriGeodesign2012}. The development of data-driven
-approaches and machine learning methods could also be coupled and can
-perform more complicated analysis of spatial-temporal behavior of
-energy data and provide more informative design or management support.
+However, as suggested by Baird et al.\ existing Energy Mapping
+practices are mainly static, i.e. the time-dependent changes of energy
+demand and supply information is not included in these Energy Maps nor
+do they support more advanced community energy system analysis and
+comparison. Thus the concept of ``Dynamic Energy Map'' was brought
+about: It acts as a geo-database that holds 1) hourly energy profile
+data for each building and the aggregated energy profile data for the
+whole community; 2) hourly energy supply data of community
+decentralized energy sources~\cite{baird2014}. 
+
+With the Dynamic Energy Map, the temporal behavior of the demand and
+supply of heating, cooling and electricity are revealed and are
+available to be compared, analyzed and updated. For example, the
+Dynamic Energy Map will show the spatial and temporal changes of peak
+energy demand and supply and verifies whether and how well the supply
+meets the demand over time. A Dynamic Energy Map is also connected to
+simulation software~\cite{baird2014}, and can act as a key component
+of Geo-design that encompasses ``geo-spatial modeling, impact
+simulations, and real-time feedback to facilitate holistic designs and
+smart decisions''~\cite{esriGeodesign2012}. The development of
+data-driven approaches and machine learning methods could also be
+coupled and can perform more complicated analysis of spatial-temporal
+behavior of energy data and provide more informative design or
+management support.
+
+An initial instance of Dynamic Energy Map was created by Baird et al.\
+in 2011-2012. The map consists of two parts: a geo-database that holds
+general building information (name, conditioned area) annual and
+monthly energy usage information (energy use intensity, annual peak
+demand value and monthly peak demand value); an excel screening tool
+that holds hourly energy usage information of each building and
+performs analysis and system comparison of a district energy
+system~\cite{baird2014}.
 
 \subsection{Objective and Problem Definition}
-The objective of the project is to 1) implement a Dynamic Energy
-Demand Map with hourly thermal energy consumption data for each
-building and the whole community 2) use it to optimize the arrangement
-of land use pattern to improve the energy performance in terms of
+Appealing to the definition of Dynamic Energy Map~\cite{baird2014},
+its major functions could be summarized as: 1) holding, 2) visualizing
+and 3) analyzing community level high spatial-temporal resolution
+energy demand and supply data 4) connection to simulation engine for
+iterative performance analysis. In the initial instance of Dynamic
+Energy Map by Baird et al.\ ~\cite{baird2014}, function 1) of holding
+spatial-temporal (although with low temporal resolution) energy data
+is realized. Function 4) of connecting to building simulation data is
+also realized by importing simulation result csv files to the
+geo-database (although with low temporal resolution). Function 2)
+visualizing and 3) analyzing high resolution energy data remains to be
+done.
+
+For function 3), although the geo-database and the analysis is
+conducted separately, it is possible to export the analysis result and
+aggregate it to the geo-database. For function 2), the spatial and
+temporal information are visualized separately: the spatial
+information of 3D building geometry and location could be visually
+inspected in the geo-database but not the hourly energy consumption
+information. 2) The temporal visualization of energy demand is done
+separately in the excel screening tool as 3D graphs, but no spatial
+context is present and the spatial dimension is then lost. The authors
+thus identified the crucially missing function: the visualization of
+such a spatial-temporal changing of energy behavior as the major goal
+of the current project.
+
+The objective of the project is thus defined as to 1) implement a
+Dynamic Energy Demand Map with the focus on creating a high-resolution
+spatial-temporal visualization of hourly thermal energy consumption
+data for each building, major building sectors and the whole community
+2) testify the its use in optimizing the arrangement of land use
+pattern to improve the community level energy performance in terms of
 aggregated thermal energy demand variation and 3) support sizing of a
 district thermal energy supply system.
 
@@ -113,78 +188,137 @@ plots of single buildings, building sectors and aggregated community
 thermal energy demand.
 
 \subsection{Related Concepts}\label{concept}
-Some related key concepts will be discussed in this section include
-district energy system, Energy Map and Dynamic Energy Map.
+Some related key concepts will be discussed in this section: the
+district energy system, the Energy Map and the Dynamic Energy Map.
 
-\subsubsection{District Thermal Energy System}
-A Decentralized Energy System is a ``local or sub-regional supply of
-energy from a local source.''~\cite{lhmreport2012}. It brings the
-energy generation near to the energy end users and reduces the energy
-transmission and distribution loss~\cite{decentralHeatMap2011}. A
-district energy system is one form of decentralized energy
-generation. It can produce thermal energy in a central plant and
-deliver the thermal energy to local buildings through a closed-loop
-pipeline network. Thermal energy are delivered in the form of steam,
-hot water or chilled water~\cite{baird2014}. The central power plant
-can take on one of the following forms: 1) thermal power plant that
-only generates thermal energy, which can be either heating or cooling
-energy 2) co-generation system, or combined heat and power (CHP)
-system, that generates electricity and reuses the reject heat from
-electricity generation to serve space heating and service hot water to
-local buildings~\cite{IDEA2005} 3) tri-generation system, where the
-central plant uses the heat generated by CHP plant to produce chilled
-water and supply both heating and cooling energy
+\subsubsection{District Energy System}
+A district energy system is one form of Decentralized Energy System, a
+``local or sub-regional supply of energy from a local
+source.''~\cite{lhmreport2012}. It brings the energy generation near
+to the energy end users and reduces the energy transmission and
+distribution loss~\cite{decentralHeatMap2011}.
+
+A district energy system produces thermal energy in a central plant
+and deliver the thermal energy to local buildings through a
+closed-loop pipeline network. Thermal energy are delivered in the form
+of steam, hot water or chilled water~\cite{baird2014}. The central
+power plant can take on one of the following forms: 1) thermal power
+plant that only generates thermal energy, which can be either heating
+or cooling energy 2) co-generation system, or combined heat and power
+(CHP) system, that generates electricity and reuses the reject heat
+from electricity generation to serve space heating and service hot
+water to local buildings~\cite{IDEA2005} 3) tri-generation system,
+where the central plant uses the heat generated by CHP plant to
+produce chilled water and supply both heating and cooling energy
 ~\cite{cchp2015}. Corresponding to the different types of power plant,
 the network delivering thermal energy can be classified as 1) district
 heating network that only delivers steam or hot water 2) district
-thermal network that delivers both heating energy in the form of
-steam or hot water and cooling energy as chilled water.
+thermal network that delivers both heating energy in the form of steam
+or hot water and cooling energy as chilled water.
 
-There are several advantages of adopting a district thermal energy
-system: the central power plant can use a broader range of fuel
-choices including natural gas, oil, coal, waste, and renewable energy
-sources in the generation of thermal energy. This makes the district
-thermal energy system more flexible and more competitive in the market
-and increases the energy system resilience~\cite{IDEA2005}. It reduces
-the transmission loss of thermal or power (if the central plant is a
-CHP plant or CCHP plant) by bringing energy production closer to
-energy end use~\cite{decentralHeatMap2011}. It has high energy
-generation efficiency as a result 1) it can utilize high efficiency
-large-scale energy generation equipment and 2) it provides better
-``load matching''~\cite{IDEA2005}. It also reduces the space and cost
-dedicated to installation and maintenance of HVAC systems in single
-buildings and reduces harmful gas emission~\cite{IDEA2005}.
+A district thermal energy system corresponds to the three means of GHG
+reduction as follows:
+\begin{itemize}
+\item High energy generation efficiency
+
+  Higher energy usage efficiency means with the same amount of input
+  energy, more useful energy is produced and less are
+  wasted. Buildings' electricity supply are mainly from centralized
+  power plant that are far away from cities. Heat produced in power
+  generation are normally dumped into oceans and
+  lakes~\cite{baird2014, IDEA2012}, not only causing negative
+  environment impact~\cite{wasteHeatEnviron}, but also reduce the
+  power generation efficiency to be only about
+  1/3~\cite{IDEA2012}. District Energy System has high energy
+  generation efficiency as a result of 1) it can utilize high
+  efficiency large-scale energy generation equipment~\cite{IDEA2005}
+  and 2) it is closer to the energy end user which reduces the energy
+  loss due to transmission and distribution~\cite{IDEA2012}.
+
+\item Better Exergy Performance 
+
+  The quality of energy is usually described with exergy. It is
+  defined as ``maximum useful work possible during a process that
+  brings the system into equilibrium with a heat
+  reservoir''~\cite{exergyWiki2015}. It represents the energy one can
+  get out of the system. One example of a District Energy system helps
+  improving exergy performance and better match the thermal energy
+  supply and the low and medium-quality building energy demand
+  ~\cite{Dobbelsteen2013} is the low-temperature (or low-energy)
+  district heating system~\cite{Tol2012551} which has a supply
+  temperature of around 50~$^o$C and return temperature of around
+  25$^o$~C~\cite{Tol2012551}.
+
+\item Multiple fuel choices including renewable energy sources
+
+  The central plant of a district energy system can use a broad range
+  of fuel choices including natural gas, oil, coal, waste, and
+  renewable energy sources including geothermal, solar thermal and
+  biomass, in the generation of thermal energy. This makes the switch
+  to large scale renewable energy source possible. It also makes the
+  district thermal energy system more flexible and more competitive in
+  the market and increases the energy system
+  resilience~\cite{IDEA2005, IDEA2012}.
+
+\end{itemize}
+
+It also reduces the space and cost dedicated to installation and
+maintenance of HVAC systems in single buildings. It also reduces
+harmful gas emission of NO$_x$, SO$_x$ by using non-combustion energy
+sources as lake body and by filtering~\cite{IDEA2012} the flue gas~\cite{veolia2014}.
 
 \subsubsection{Heat Map}
-Heat map is defined as ``a spatial plan of existing and planned
-building heat demand, and decentralised energy networks and generation
-equipment''~\cite{decentralHeatMap2011}. It is also a GIS ``live
-database'' that allows new development information to be
-incorporated. It is a key component to the DE energy master
-plan~\cite{decentralHeatMap2011}.
+Although ``heat map'' is generally accepted as ``graphical
+representation of data where the individual values contained in a
+matrix are represented as colors''~\cite{HeatmapWiki}, with respect to
+buildings, a ``heat map'' may be defined as ``a spatial plan of
+existing and planned building heat demand, and decentralized energy
+networks and generation equipment''~\cite{decentralHeatMap2011}. It is
+also a GIS ``live database'' that allows new development information
+to be incorporated. It is a key component to the decentralized energy
+master plan~\cite{decentralHeatMap2011}. One of the well-known
+instances of a heat map is the ``London Heat
+Map''~\cite{londonHeatMap}
 
 \subsubsection{Energy Map}
-Energy Map is a generalization of a heat map that includes energy
-supply, demand and infrastructure information of various energy forms
-and technologies. It is also a combination of building energy
-database, a subset of the BIM (Building Information Model), and a
-Geo-database or Geographical Information System (GIS). 
+International District Energy Association (IDEA) define Energy Map as:
+``a tool that can be used to organize/present data as the basis for
+defining energy character areas as part of energy
+planning''~\cite{IDEA2012}. It is a ``GIS based system'' that can be
+used to develop energy strategies, prioritize project, identify
+potential growth opportunities and impose planning
+restrictions~\cite{IDEA2012}. Dobbelsteen et al.\ adopted the term
+``Energy Potential Mapping'' that assist the development and plan of a
+sustainable built environment. It is a method that ``visualizes local
+energy potentials and demand in order to support spatial planning
+towards more energy-efficient urban or rural
+environment''~\cite{Dobbelsteen2013}. UK used the ``Decentralized
+Energy Masterplanning'' as a method that helps local authorities
+identify low carbon strategies that ``maximises the opportunity for
+large-scale schemes to capture and use waste heat from major energy
+sources''~\cite{decentralHeatMap2011}.
 
-Energy Map can help to envision the community or city level energy
-demand reduction with high performance building
-design~\cite{aacip2009}. It can be used in supporting district heating
-system design~\cite{decentralHeatMap2011, Finney2012165} by
+With respects to the various definitions above, an Energy Map could be
+understood as a generalization of a heat map that includes energy
+supply, demand and infrastructure information of various energy forms
+and technologies. Some existing use cases of suggest an Energy Map
+could be used to visualize the community or city level energy demand
+reduction with high performance building design~\cite{aacip2009} or
+adoption of alternative energy supply
+technologies~\cite{aacip2009}. It can be used in supporting district
+heating system design~\cite{decentralHeatMap2011, Finney2012165} by
 visualizing the heat sources and sinks.
 
 \subsubsection{Dynamic Energy Map}
-Dynamic Energy is a Energy Map equipped with temporal information of
-energy supply and demand. It enables spatial-temporal comparison,
-aggregation and query of energy demand and supply. When coupled with
-Energy simulation tools, design alternatives would be evaluated and
-compared at each given time spot or time period. By performing
-advanced data analysis method, the dynamic map makes patterns that are
-omitted in static maps visible and analyzable. Both aspects enable
-more detailed energy analysis and design support.
+According to the study of Baird et al.\ , a Dynamic Energy Map is a
+Energy Map equipped with temporal information of energy supply and
+demand. It enables spatial-temporal comparison, aggregation and query
+of energy demand and supply. It is coupled with Energy simulation
+tools, and design alternatives would be evaluated and compared at each
+given time spot or time period. By performing advanced data analysis
+method, the dynamic map makes patterns that are omitted in static maps
+visible and analyzable. Both aspects enable more detailed energy
+analysis and design support.
 
 \subsection{Why ``time'' dimension is important for an Energy Map}
 \subsubsection{Strong Temporal Variation of Energy Demand}
@@ -200,9 +334,9 @@ simultaneous~\cite{decentralHeatMap2011}.
 
 In the design of a district energy system, mixing building types with
 different time-of-use energy profile can be helpful in creating a less
-variate aggregated energy demand. This allows the central power plant
-in a district thermal energy system to a have higher utilization rate
-and reduces the need for backup plant that accounts for high peak
+variate aggregated energy demand. This allows the central CHP plant in
+a district energy system to a have higher utilization rate and reduces
+the need for backup plant that accounts for high peak
 demand~\cite{decentralHeatMap2011}.
 
 \begin{figure}[h!]
@@ -220,23 +354,58 @@ of individual buildings do not occur at the same time, the end result
 of summing up the peak demand at each end point exceeds the actual
 total demand peak of the community, hence with this approach, the
 whole district system becomes excessively over-sized, which reduces
-the whole system efficiency. Dynamic Energy Map can reveal the problem
-of such approaches by directly providing the aggregated thermal energy
-demand for the community and for single buildings or building
-sectors. It allows a side by side comparison of single building demand
-and aggregated demand and eliminates the misunderstanding of the
-demand aggregation. With the direct information of aggregated thermal
-energy demand, it also assists actually sizing a district thermal
-energy system.
+the whole system efficiency. A Dynamic Energy Map can reveal the
+problem of such approaches by directly providing the aggregated
+thermal energy demand for the community and for single buildings or
+building sectors. It allows a side by side comparison of single
+building demand and aggregated demand and eliminates the
+misunderstanding of the demand aggregation. With the direct
+information of aggregated thermal energy demand, it also assists
+actually sizing a district thermal energy system.
 
 \newpage
 \section{Related Works}
 Section \ref{staticEnergyMap} and section \ref{dynamicMap} provide an
 overview of the existing instances of static energy maps and dynamic
-energy maps. Section \ref{mapDesign} and \ref{stDataAnalysis} provides
+energy maps. A list of summary of techniques used in the production of
+Static and Dynamic Energy Map instances are as in
+\tref{tab:mapSummary}:
+
+\begin{comment}
+Section \ref{mapDesign} and \ref{stDataAnalysis} provides
 some supporting evidences for certain design choices. Section
 \ref{4dMap} provides some information on potential technologies for
 further development. \grey{(?? are not written)}
+\end{comment}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{r|c| c }
+    \hline
+Project Name           &Type   & Software \\
+    \hline
+    \hline
+Calgary Map            &Static, Stand-alone &     ?    \\
+    \hline
+London Heat Map        &Static, web, interactive &     ?    \\
+    \hline
+National Heat Map      &Static, web, interactive &Google Map API \\
+    \hline
+Water Source Heat Map  &Static, web, interactive &Google Map API \\
+    \hline
+Dutch Heat Map         &Static, Stand-alone&     ?    \\
+    \hline
+Lowe Hill District Map &Dynamic, web, interactive&ArcScene, ArcMap,
+                                                   GIS Cloud, excel  \\
+    \hline
+Energy Mapping to      &Dynamic, Stand-alone&QGIS      \\
+Identify Opportunities & &          \\
+for Future Network     & &          \\
+    \hline
+  \end{tabular}
+  \caption{Map Technology Summary Table}
+  \label{tab:mapSummary}
+\end{table}
 
 \subsection{Static Energy Map}\label{staticEnergyMap}
 \subsubsection{Calgary Energy Map}
@@ -386,394 +555,191 @@ color~\cite{Dobbelsteen2013}.
   \label{fig:heatmapNL}
 \end{figure}
 
-\begin{comment}
-\subsubsection{Supply}
-\paragraph{Assessing Renewable Energy Potential}
-Voivontas et al. developed a decision support tool using GIS for
-accessing the wind energy potential in four aspects: the theoretical
-potential in terms of wind speed, availability potential in terms of
-land use regulations, technological potential in terms of energy
-production features of wind turbine and economical potential in terms
-of IRR. 
+\subsection{Dynamic Energy Map}\label{dynamicMap}
+As is discussed before, dynamic map includes time information in a
+map. Several existing approaches occur.
 
-``NYC City Solar Map'' presents solar energy potential for
-buildings across the New York city. The map presents solar energy
-generation curve, estimated solar system installation area, financial
-incentive and payback~\cite{NYCSolarMap}
+\subsubsection{Lower Hill District Dynamic Mapping Project}
+In 2011 to 2012, the Dynamic Energy Map of the Lower Hill District,
+Pittsburgh, PA was created. It is designed to conduct feasibility
+analysis and comparison of alternative energy supply techniques of a
+district energy system~\cite{baird2014, Ramesh2013}. A geo-data base
+was created with ArcMap, ArcScene and Sketchup. In the database, each
+building, represented as a 3D feature, contains attributes of its
+building name, annual energy consumption, energy use intensity (EUI),
+and annual and monthly peak demand. The map is online accessible via
+GIS Cloud (\fref{fig:mellonArenaGIS}).
 
-Other efforts tackles multiple renewable energy sources:
-
-Ramachandra and Shruthi produced a series of district level renewable
-energy theoretical potential maps of solar, wind, hydroenergy and
-biomass in Karnataka State, India. The potential is estimated based on
-data of global solar radiation, wind speed, hydropower plant capacity,
-and plantation and livestock information. GIS is used in aggregating
-energy potential data to each district. Each type of renewable energy
-source is presented as a univariate thematic energy map.
-
-\subsubsection{Demand and Infrastructure}
-\paragraph{Analysis or design support of existing energy
-  infrastructures}\label{infra}
-
-\paragraph{Energy consumption prediction model}
-Kolter and Ferreira presented a modeling method to predict building
-energy end use in Cambridge, MA. They also developed a user
-application, ``Energy View'' with two target user groups: general
-public and local authorities. The model can be used by local
-authorities to identify energy usage outliers and by general public to
-compare their monthly energy consumption with predicted baseline
-consumption. 
-
-This case suggested how Dynamic Energy Map as a database can be
-combined with more complicated data analysis method that reveals more
-detailed spatial-temporal pattern. Their current time resolution of
-the energy consumption data prediction is on month. If the resolution
-increases to hour, the model could then be used to 1) assist better
-supply side control of energy generation 2) help individual users to
-better understand their energy usage behavior and provide more specific
-suggestions about energy saving behavior.
-
-\paragraph{Smart Management of Urban Energy System}
-Energy Map also helps smart management of energy system in a large
-urban scale. ``Smart Urban Services for Higher Energy Efficiency''
-(SUNSHINE) project is a European Co-Founded energy mapping project
-launched in 2013. The application is accessible through web page and
-smart phone or tablet application. It aims at developing a platform
-capable of 1) assessing building energy consumption behavior and
-create a 2D and 3D energy map, ``ecomap'' accordingly 2) providing
-automatic alerts regarding optimized usage of heating/cooling system
-3) remote control of public building lighting
-systems~\cite{SUNSHINE2015}. The target users of the application
-include facility managers, policy makers, citizens and energy service
-companies. Function 1) is anticipated to help energy company and
-facility managers to identify energy consuming outliers, provide
-information for building pre-certification. Function 2) aims at
-providing more accurate baseline consumption data using weather and
-meter data. Function 3) allows better management of public lighting
-system based on illuminance requirements and weather conditions.
-
-\subsubsection{Combined Supply, Demand and Infrastructure}
-\subsubsection{Reflections}\label{Reflection}
-The existing mapping approaches had their main effort in the data
-calculation and aggregation, however the resulted visual
-representation is questionable for most instances. One common issue is
-too much distraction from unthoughtful map symbol design. For
-static maps, a poorly designed visual representation might still be
-tolerable, but for Dynamic Energy Map with an additional time
-dimension, each additional bit of distraction will prevent the
-necessary information from getting through. Hence the authors think it
-is necessary to discuss the map design aspect, and look for examples
-of best practices. This is done in section 3.2.3.
-
-\subsection{Dynamic Map}\label{dynamicMap}
-The majority of existing Energy Map instances or maps in general are
-static maps with no time information. One reason for such a lack of
-Dynamic Map instances, explained in \cite{Brownrigg2005}, is the lack
-of proper software support, manifested as ``unsupported data-format,
-inadequate interaction and rendering speed''~\cite{Brownrigg2005,
-  Kwan2005}. Brownrigg claimed that the lack of software support
-also led to over-simplified implementations, which is justified from
-the instance search in result presented in the following section.
-
-\subsubsection{Energy Dynamic Map}
-Current Dynamic Energy Map instances are mainly 2D animated maps with
-very coarse spatial and temporal resolution. These instances include:
-State wind power capacity map that depicts the wind industry growth at
-state level from 2000 to 2050~\cite{DOEWind}, wind farm development
-map that shows the wind farm location and capacity development from
-1975 to 2013~\cite{DOEWindFarm}, solar plant development map that
-shows the solar plant location and capacity development from 1975 to
-2013~\cite{DOESolarPlant}, US Energy Production Map that shows state
-wise energy production from 1993 to 2012~\cite{DOEEnergyProduct},
-CO$_2$ emission map presenting world-wide carbon emissions from 1980
-to 2014~\cite{CO2Atlas}
-
-One instance of energy demand dynamic map with high spatial resolution
-was found in the project ``Energy Mapping to Identify Opportunities
-for Future Networks''~\cite{Diaz2013}. The aim of the project is to
-``analyze the spatial and temporal distribution of energy
-consumption'' and support decision making and design of energy network
-development. Energy Demand Maps of three different resolutions were
-created: campus level, community level and city level. Energy data was
-retrieved from both metered data (campus level map) and HEM simulation
-(community and city level map). For campus and community level maps,
-monthly heating demand density dynamic map and monthly electricity
-demand density dynamic maps are created with ($kWh/m^2$) as the
-unit. The energy demand is represented in a scale from blue to red,
-the same as the approach of the National Heat Map. The time
-dimension is added in the form of a non-interactive 2D animation . The
-problem for this animation is the lack of temporal and spatial legend
-and its non-interactive nature. Also the heating and electricity
-demand is represented separately, making the pairwise comparison of
-these two variables difficult.
-
-However, the spatial analysis approach in representing small scale
-energy consumption data is questionable. With the building footprint
-clearly visible and centroid sparsely located on the map, it is easier
-and less confusing to aggregate the energy data on the centroid point
-or the building foot print rather than creating a density map.
-
-\subsubsection{History and Archaeology Instances of Dynamic Maps}
-More instances of dynamic interactive map exist in History and
-Archaeology practices as a result of the temporal nature of the
-subject. Pittsburgh Historic Map displays the urban environment layout
-of the City of Pittsburgh from 1835 to 2015 using a combination of
-historic maps and Google map as the base map. It allows users to
-navigate through the times with a time slider. It also contains point
-features of historic buildings\cite{EsriHistory2015}; Europe History
-Interactive Map that demonstrate the changes of political boundary
-with historic information associated to each political
-entity~\cite{Worldology2009}. User can navigate through different
-historic period by forward and backward arrows and by clicking on
-specific entries to that period. Historic map instances focuses more
-on recording individual events, the temporal coherence and the
-space-time pattern are not as strongly emphasized as other dynamic
-maps that shows a dynamic process.
-
-\subsection{Works on Map Design}\label{mapDesign}
-\subsubsection{Symbol Chosen}
-Dong et al.\ assessed the effectiveness of symbol design and frame
-rate on the effectiveness of dynamic map display with two performance
-measurements: deviation and response time. They discovered the change
-of symbol size is more effective than color under the same frame
-rate. They also identified the optimal class numbers is 15 for
-graduated size symbol and is 10 for graduated color symbol on a
-1024x768 display. The optimal frame rate identified in the study is 3
-for color symbol maps and 6 for size symbol maps. They also suggest to
-reduce class number and frame rate if the display size is smaller than
-1024x768~\cite{doi:10.1559/1523040639298}.
-
-\subsubsection{Bivariate Map Design} \label{bivariate} In order to
-represent heating demand and cooling demand on the same map together,
-a common map design problem is encountered: bivariate map design
-problem. Elmer presented eight possible types of representation for
-bivariate maps: ``shaded cartographer, rectangle map, bar chart, value
-by alpha, choropleth with graduated symbol, bivariate choropleth,
-spoke glyph and shaded texture''~\cite{Elmer2012}. In our current 3D
-representation, to incorporate the map symbol to the 3D model, the
-representation with dimensional changes are not suitable since they
-will distort the actual building geometry which makes the urban
-environment un-realistic. The only choices are the ones that only
-involves color or texture, i.e. ``bivaiate choropleth, value by alpha
-and shaded texture''. Among these three choices, bivariate choropleth
-representation has the highest accuracy rate, hence we choose
-bivariate choropleth as the representation of the current map
-interface design.
-
-\subsubsection{2D vs. 3D} \label{2d3d} 
-
-As is mentioned in ~\cite{Brownrigg2005}, the choice of 2D
-representation vs. 3d representation is one of the debating decisions
-in the world of data visualization~\cite{Brownrigg2005}. 2D maps are
-easier to navigate and 2d map design has better theory support.  3D do
-not have sufficient map design theory, which make the design of 3D
-maps more difficult. 3D map is rich in geometry and can provide
-realistic scenes. This feature can both be an advantage or
-disadvantage based on the actual map usage. According to Tufte's
-data-ink ratio theory, the extra non-crucial richness of information
-should be eliminated to make the most important bits of information
-stand out~\cite{Tufte83}. There might be cases when the third
-dimension add no new information to the data display and thus should
-be eliminated.
-
-\subsubsection{Data Classification}\label{dataClassification}
-The commonly used GIS software surveyed in the study include,
-ArcGIS~\cite{GIS_Jenks2014}, GRASS GIS~\cite{GRASSGIS2008},
-gvGIS~\cite{gvGIS2011}, and QGIS. The data classification method
-adopted by the surveyed software in creating a thematic map include:
-1) equal interval, 2) quantile 3) Jenks 4) Standard Deviation
-5) pretty breaks 6) manual interval (use context specific
-break point values). The common data classification method shared by
-all surveyed instances are ``Equal Interval'', ``Quantile'' and ``User
-Defined''. Therefore we chose to implement the ``Equal Interval'' and
-``Quantile'' method in the current project.
-
-\begin{table}[h!]
+\begin{figure}[h!]
   \centering
-  \begin{tabular}{r|c c c c c c}
-    \hline
-           & Equal Interval & Quantile & Jenks & Pretty Breaks & StDev & User Defined\\
-    \hline
-    ArcGIS &      o        &    o     &  o    & x &  o  &   o  \\
- GRASS GIS &      o        &    o     &  x    & x &  o  &   o  \\
-     GVSIG &      o        &    o     &  o    & x &  x  &   o  \\
-      QGIS &      o        &    o     &  o    & o &  o  &   o  \\
-    \hline
-  \end{tabular}
-  \caption{Data Classification Method (o: yes, x: no)}
-  \label{tab:classify}
-\end{table}
+  \includegraphics[width=0.7\linewidth]{mellonArenaGIS.png}
+  \caption{Online Accessible GIS-database with GIS
+    Cloud~\cite{baird2014, Ramesh2013}}
+  \label{fig:mellonArenaGIS}
+\end{figure}
 
-\subsubsection{Spacetime Map Design}
-Dorling and Openshaw pointed out that dynamic map provide new
-potential and possibilities for data analysis but also pose a great
-challenge as a result of the less developed theory in space-time
-pattern detection and measurement~\cite{Dorling1992}. 
+The feasibility analysis and temporal data display are separated from
+the geo-database and is performed in a excel screening tool. The tool
+takes input of energy cost rate, building type and size, development
+phase and central plant types and feature and produces a feasibility
+analysis and related temporal graphs (\fref{fig:3dexcel}) of annual
+hourly energy consumption for each building type and the aggregated
+demand of natural gas, cooling use electricity and total electricity.
 
-\paragraph{Time Representation}\label{timeRepresent}
-Brownrigg mentioned several methods of representing time on a map: 1)
-a graph or chart that represents a function over time or a time line
-for displaying chronological events 2) animation of snapshots 3)
-small-multiples of snapshots of changing states
-~\cite{Brownrigg2005}. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{3dexcel.png}
+  \caption{Heating Load and Electricity Load for Residencial
+    Building~\cite{baird2014}}
+  \label{fig:3dexcel}
+\end{figure}
 
-Based on this classification, the current interface design applied
-method 1) and 2) in time representation. The dynamic plot of temporal
-time series is using method 1) to anchor the quantitative
-information. The interactive animation approach is using method 2) for
-choropleth map display, as is apposed to method 3)(small-multiple
-method). The choice is based on the following points mentioned by
-Brownrigg: 1) the number of snapshots in one display is limited and
-the finer the detail per snapshot, the less snapshots one can contain
-in one display. Since the 3D representation is chosen as the major map
-display method, the level of details per image is high, which will
-result in a very small number of multiples per display 2) the subtle
-changes are easier to be noticed in the form of animation than with
-small-multiples. Both drawbacks of small-multiple method will impair
-the ability of conveying the rapid temporal changes of energy
-behavior, hence is not suitable for the current project.
+\subsubsection{Energy Mapping to Identify Opportunities for Future
+  Networks Project}
+Another instance of energy demand dynamic map with high spatial
+resolution was found in the project ``Energy Mapping to Identify
+Opportunities for Future Networks''~\cite{Diaz2013}. The aim of the
+project is to ``analyze the spatial and temporal distribution of
+energy consumption'' and support decision making and design of energy
+network: more specifically, to identifiy opportunities of District
+Heating, CHP plant development and Building Design
+Improvement~\cite{Diaz2013}.
 
-\paragraph{Animated Maps}\label{anime}
-As is mentioned in section \ref{Reflection}, the majority of the map
-design of Energy and Dynamic Energy Maps are not thoroughly considered
-and contain too much distraction. Hence the authors think it is
-helpful to conduct theory and case studies of temporal-spatial map
-design in the current project of Dynamic Energy Map.
+Energy Demand Maps of three different resolutions were created using
+QGIS: campus level, community level and city level. Energy data was
+retrieved from both metered data (used in campus level map) and HEM
+simulation (used in community and city level map). HEM is a tool for
+``mapping the possiblemapping the possible carbon and energy
+performance of a dwelling. It has pre-simulated results embedded as a
+data table in the tool and applies the appropriate system and context
+calculations to provide instant energy, carbon and cost results''~\cite{HEMesru2015}.
 
-In order to represent dynamic geographic processes, map animation is a
-natural choice. It was introduced to the world of cartography in
-1930s~\cite{Harrower2008}. The major application of animated maps
-include: 1) demonstrating the dynamic process of geographic events
-(weather maps in weather forecasting is such an example) 2) assisting
-pattern recognition and knowledge development for scientific
-researches. The study by Dorling and Openshaw is an example of 
-application 2), where they discovered new leukaemia hotspots through
-animated maps~\cite{Dorling1992}.
+For the campus level map, the heat demand density (heat demand over
+conditioned area) were depicted to identify ``outliers'': the
+buildings with high heat demand~\cite{Diaz2013campus}. These outliers
+were potential buildings need to be improved in building insulation
+level or HVAC system efficiency. They claim a spatial map is
+sufficient for this outlier identification process
+(\fref{fig:heatGlasgow}). They also created a temporal spatial map of
+monthly heat consumption that is in the form of both small multiples
+(\fref{fig:seqheatGlasgow}) and non-interactive animated map
+(\fref{fig:animeheatGlasgow}). With the dynamic map, they identified
+two campus buildings with high heat demand through the whole year
+(anchor load building) and concluded that the two buildings could
+connect to a district heating system. They also created two animated
+maps with electricity and natural gas. By comparing these two animated
+maps, consistent high consumers for electricity and gas were
+identified as potential candidate building for a micro-CHP
+system~\cite{microCHP}.
 
-Harrower and Fabrikant mentioned that the chanllenge of using animated
-maps is the overflow of information and the vulnerability to
-distraction. One example mentioned by Harrower and Fabrikant is the
-comparison of color on the map and that on the legend becomes
-difficult for animated maps as a result of the changing of
-images. This issue is considered in the current Dynamic Energy Map
-interface design, with a series of tick marks that pointed out the
-colors used on the map, for more details, please refer to section
-\ref{interfaceDesign}.  They also proposed the audio legend approach of
-strengthening information convey with minimized
-distraction~\cite{Harrower2008}. This might become one of the next
-extensions of the current Dynamic Energy Map interface design.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{heatGlasgow.png}
+  \caption{Campus Level Heat Demand Density Map~\cite{Diaz2013campus}}
+  \label{fig:heatGlasgow}
+\end{figure}
 
-They also suggested that the difference in time should have different
-visual representations in data display~\cite{Harrower2008}. Peuquet
-claimed that ``The development of temporal analytical capabilities in
-GIS such as temporal queries requires basic topological structures in
-both time and space''. Thus the different spatial representation seems
-to be a natural choice for adapting to different temporal resolution
-and scale. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{seqheatGlasgow.png}
+  \caption{Campus Level Monthly Heat Demand Map in Small Multiples\cite{Diaz2013campus}}
+  \label{fig:seqheatGlasgow}
+\end{figure}
 
-They classify time into two types: linear and cyclic. Upon this
-consideration, the design of the current interface include both an
-overall time navigation utility and time navigation utilities that
-facilitate jumps with time steps corresponding to the natural period
-of energy data, such as month, day and hour. This design choice
-is anticipated to facilitate the representation of both linear changes
-and periodical changes of energy usage in the community.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\linewidth]{animeheatGlasgow.png}
+  \caption{Campus Level Monthly Heat Demand Map in Animation\cite{Diaz2013campus}}
+  \label{fig:animeheatGlasgow}
+\end{figure}
 
-The level of user control of playback behavior of animated maps is
-also debatable. Some claim providing the full freedom of adjusting
-this feature can enhance pattern understanding~\cite{Nelson1998}. But
-others argue that this control will reduce time animation to still
-images and impair its ability in conveying temporal changes
-~\cite{Lowe2004}.
+The community level spatial and temporal GIS analysis undertook a
+similar process as the campus level except for the energy data is
+retrieved from HEM simulation. By comparing the four different
+building types: ``Traditional Build, New Build, Council Estate, High
+Rise Flat'', they identified the consistent high gas and electricity
+demand of High Rise Flat buildings. They also discovered that the
+improvement of building design could adjust the heat to power ratio
+(HTP) and could make applying CHP option feasible~\cite{Diaz2013com}.
 
-The technology of implementing a dynamic map has been exceeding the
-cartographic theory~\cite{Harrower2008}. This makes the design of
-Dynamic Maps even more challenging. Animated maps are not superior to
-static maps, it is just they are good at different aspect of
-information convey. The animated map is advantageous in demonstrating
-the changes between frames rather than the absolute value represented
-in each frame~\cite{Dorling1992}. It is proved to be more powerful in
-convey the spatial-temporal pattern than static
-map~\cite{McEachern1998}.
+City level map does not contain temporal mapping analysis and is left
+out from the case study~\cite{Diaz2013city}.
 
-``Data Visualization with Spacetime Maps'', Richard L. Brownrigg, 2005
-(read further later on)
+\section{Building From Previous Work}
+As is mentioned in the introduction, a dynamic energy map has four
+major functions: 1) holding, 2) visualizing and 3) analyzing community
+level high spatial-temporal resolution energy demand and supply data
+4) connection to simulation engine for iterative performance
+analysis. 
 
-\begin{enumerate}
-\item ``Geographic Visualization: Designing Manipulable Maps for
-    Exploring Temporally Varying Georeferenced Statistics'', MacEachren et al.\
-\item ``Strategies for the Visualization of Geographic Time-Series
-    Data'', Mark Monmonier, 2011
-\item ``Evaluation of Methods for Classifying Epidemiological Data
-    on Choropleth Maps in Series'', Brewer and Pickle, 2002
-\end{enumerate}
+In the initial instance of Dynamic Energy Map by Baird et al.\
+~\cite{baird2014}, function 1) of holding spatial-temporal (although
+with low temporal resolution) energy data is realized by processing
+the energy simulation data with Microsoft excel and importing the csv
+file including ``building name, total conditioned area annual, energy
+use intensity, annual and monthly peak demand''. The further
+improvement of the current project is to make the geo-database hold
+more high resolution energy data, meaning the 8760 hourly energy data
+should be contained in the dynamic energy map.
 
-\subsection{Spatial Temporal Data Analysis}\label{stDataAnalysis}
-In order to better utilize the power of Dynamic Maps, one has to
-understand the special features of spactial-temporal data and the
-methods of how to use spactial-temporal data. This leads to the
-literature study of the following section of spatial temporal data
-analysis.
+Function 4) of connecting to building simulation data is also realized
+by importing simulation result csv files to the geo-database (although
+with low temporal resolution).
 
-One temptation of analyzing spatial-temporal data is to aggregate them
-into ``time periods'' and ``zonal entities'' and then use the static
-analysis method to analyze the aggregated data~\cite{Dorling1992}. The
-problem of this approach is 1) it increases the sensitivity
-(i.e. minor changes in input causes dramatic changes in output) and 2)
-it removes the ``dynamic'' feature of a dynamic
-map~\cite{Dorling1992}.
+For function 3), the feasibility analysis of a district energy system
+is performed in a stand-alone excel tool~\cite{baird2014} but it is
+possible that the analysis result could be linked in to the
+geo-database as the energy simulation result. 
 
-One layer of the goal of a space-time map is to make ``complex dynamic
-process'' visible, in the hope of letting observers comprehend the
-dynamics of data presented and to gain a general insight. Baring this
-goal in mind, Dorling and Openshaw suggested a noise removal or data
-smoothing in both the time and space dimension before the actual map
-creation~\cite{Dorling1992}.
+For function 2), the spatial and temporal information are visualized
+separately in the Lower District Hill Project: the spatial information
+of 3D building geometry and location could be visually inspected in
+the geo-database but not the hourly energy consumption information. 2)
+The temporal visualization of energy demand is done separately in the
+excel screening tool as 3D graphs, but no spatial context is present
+and the spatial dimension is then lost. The authors thus identified
+the crucially missing function: the visualization of such a
+spatial-temporal changing of energy behavior as the major goal of the
+current project.
 
-\subsection{Works on Technology Regarding 4D Visualization and
-  Interface Design}\label{4dMap}
-The next step for the current project is to create an on-line platform
-that enables easy map share and design collaboration. The following
-section contains some information of possible technologies for this
-possible extension.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{interface08.png}
+  \caption{Unified Dynamic Energy Map Display System}
+  \label{fig:interface08}
+\end{figure}
 
-Resch et al.\ presented a nice summary of existing web-3D and 4D
-visualization technologies~\cite{Resch2014}. Early approaches for
-web-based 3D map display are based on VRML, X3D or similar
-instances. Their drawbacks are the requirement of additional add-ins
-and their limited ability in handling large amount of data. Later
-approaches include some Java-based or WebGL based tools. Zipf used
-OpenStreetMap, Shuttle Radar Topography Mission and Java based
-xNavigator to display 3D maps with a Java based
-plug-in~\cite{Zipf2014}. WebGL based approaches include: a campus
-information system by Hering et al.\ ~\cite{Hering2011}, a
-Geo-visualization system with ``browser-server'' architecture by Feng
-et al.\ ~\cite{Feng2011}, an open source software OpenWebGlobe
-developed by Loesch et al.\ , WebGL Earth project by Klokan
-Technologies~\cite{KlokanTechnologies2015} and Cesium project by
-Analitical Graphics~\cite{AGI2015}. Cesium also support ``time-dynamic
-graphical scenes''~\cite{CZML2015}
-
-\newpage
+\pagebreak
 \section{Methodology}\label{method}
+\subsection{Overview}
 The Dynamic Energy Map is created with a conceptual urban environment
-whose building density and land use pattern resembles an existing
-urban environment. The number of buildings in the model represents a
-typical sized community that can be served by a district energy
-system. 
+whose building density and land use pattern resembles a redevelopment
+project at Lower Hill District, Pittsburgh, PA~\cite{Ramesh2013}. The
+number of buildings in the model represents a typical sized community
+that can be served by a district energy system~\cite{IDEA2012}.
 
 The inputs to the dynamic energy map are the energy consumption data
 and the urban environment layout. For the conceptual setting, the
 energy data is retrieved from the simulation of DOE Benchmark
-buildings, the urban environment layout is created so that it follows
-a typical urban environment land use pattern. The output of the
-dynamic energy map is a sequence of 2D or 3D energy choropleth maps
-. An interface is designed to provide an interactive inspection of the
+buildings of new construction which comply with ASHRAE 90.1-2004
+Standard~\cite{DOE2015}.
+
+The urban environment layout is created so that it follows a typical
+urban environment land use pattern. The output of the dynamic energy
+map is a sequence of 2D or 3D energy choropleth maps images. 
+
+An interface is designed to provide an interactive inspection of the
 map sequence and create dynamic data plots (~\fref{fig:flow}). By
 replacing the simulated energy data with actual metered energy
 consumption data and the conceptual layout with a real urban
 environment layout, the same method can be directly applied to the
 analysis of a real project.
+
+The major functions of the current program include: 
+\begin{enumerate}[i.]
+\item  comparing heating and cooling demand to identify energy recovery opportunities 
+\item comparing heating and electricity demand to size co-generation system
+\end{enumerate}
 
 \begin{figure}[htbp]
   \centering
@@ -782,19 +748,26 @@ analysis of a real project.
   \label{fig:flow}
 \end{figure}
 
+\newpage
 \subsection{Input}
-\subsubsection{Energy Data}
-The energy profile used in the study is retrieved from simulation
-results of commercial building benchmark models developed by
-U.S. Department of Energy (DOE)~\cite{DOE2015}. The building types
-involved in the current project include: Large Office (LO), Medium
-Office (MO), Small Office (SO), Stand-alone Retail (SR), Supermarket
-(SU), Quick Service Restaurant (QR), Full Service Restaurant (FR),
-Large Hotel (LH) and Midrise Apartment (MA). The two-letter shorthand
-in the parenthesis after each building type is used in the building
-label for the dynamic map and the box plot labels in
-section~\ref{boxPlot}. The general information for the benchmark
-buildings are shown in \tref{tab:doeModel}:
+\subsubsection{Benchmark Models and Energy Data}
+In the Lower Hill District project preliminary district system
+feasibility analysis session, DOE benchmark buildings were substituted
+for buildings in the community model. This approach allows for a fast
+initial system assessment~\cite{baird2014}.
+
+Following the same approach, the energy profile used in the current
+study is retrieved from simulation results of commercial building
+benchmark buildings developed by U.S. Department of Energy
+(DOE)~\cite{DOE2015}. There are 16 building types in the benchmark
+models (\fref{tab:doeModel}). The building types involved in the
+current project include: Large Office (LO), Medium Office (MO), Small
+Office (SO), Stand-alone Retail (SR), Supermarket (SU), Quick Service
+Restaurant (QR), Full Service Restaurant (FR), Large Hotel (LH) and
+Midrise Apartment (MA). The two-letter shorthand in the parenthesis
+after each building type is used in the building label for the dynamic
+map display. The general information for the benchmark buildings are
+shown in \tref{tab:doeModel}:
 
 \begin{table}[h!]
   \centering
@@ -824,16 +797,206 @@ Midrise Apartment        &MA&  33,740	      & 4\\
 \label{tab:doeModel}
 \end{table}
 
-The default setting of the benchmark models are stand-alone, but the
-building in a community setting are imposed to influences from
-surrounding buildings and the ``stand-alone'' assumption is not
-realistic. To account for this issue, the model used in this study is
-assumed to be within an urban context, thus the presence of
-surrounding building should be reflected in the reference building
-models. The general assumption used in this study is a 20ft exterior
-shading on each side of each building.
+The benchmark buildings comply with the ASHRAE Standard 90.1-2004. The
+HVAC system types are shown in \tref{tab:hvac}. The major heating
+systems of the benchmark buildings are furnace and boilers, except
+that the small hotel and the warehouse has individual space heaters
+other than furnace. The cooling systems are chillers for Large Hotel
+(air-based) and Large Office (water-based) and PACU (packed
+air-conditioning unit) for other building types.~
 
-\subsubsection{3D GIS Model}
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Benchmark Building HVAC System}
+\label{tab:hvac}
+%\begin{tabular}{l|p{3cm}|p{4cm}|p{4cm}}
+\begin{longtable}{l|p{3cm}|p{4cm}|p{4cm}}
+  \hline
+  & Heating                                & Cooling                                                                     & Air                                                     \\
+  \hline
+  \hline
+  Small Office             & Furnace                                & PACU (packed air-conditioning unit)                                         & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Medium Office            & Furnace                                & PACU (packed air-conditioning unit)                                         & MZ VAV (multizone variable air volume)                  \\
+  \hline
+  Large Office             & Boiler                                 & Chiller (2) water cooled                                                    & MZ VAV (multizone variable air volume)                  \\
+  \hline
+  Primary School           & Boiler                                 & PACU (packed air-conditioning unit)                                         & CAV (constant air volume)                               \\
+  \hline
+  Secondary School         & Boiler                                 & Chiller (2) air cooled                                                      & MZ VAV (multizone variable air volume)                  \\
+  \hline
+  Stand-Alone Retail       & Furnace                                & PACU (packed air-conditioning unit)                                         & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Strip Mall               & Furnace                                & PACU (packed air-conditioning unit)                                         & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Suprmarket               & Furnace                                & PACU (packed air-conditioning unit)                                         & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Quick Service Restaurant & Furnace                                & PACU (packed air-conditioning unit)                                         & CAV (constant air volume)                               \\
+  \hline
+  Full Service Restaurant  & Furnace                                & PACU (packed air-conditioning unit)                                         & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Small Hotel              & ISH (individual space heater), furnace & IRAC (individual room air conditioner), PACU (packed air-conditioning unit) & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Large Hotel              & Boiler                                 & Chiller (2) air cooled                                                      & FCU (Fan Coil Unit) and VAV (variable air volume)       \\
+  \hline
+  Hospital                 & Boiler                                 & Chiller (2) water cooled                                                    & CAV (constant air volume) and VAV (variable air volume) \\
+  \hline
+  OutPatient Healthcare    & Furnace                                & PACU (packed air-conditioning unit)                                         & CAV (constant air volume) and VAV (variable air volume) \\
+  \hline
+  Warehouse                & ISH (individual space heater), furnace & PACU (packed air-conditioning unit)                                         & SZ CAV (single-zone constant air volume)                \\
+  \hline
+  Midrise Apartment        & Furnace                                & PACU-SS                                                                     & SZ CAV (single-zone constant air volume)               \\
+  \hline
+\end{longtable}
+\end{table}
+
+\pagebreak
+\paragraph{Input for Identifing Energy Recovery Opportunities}
+The major heat rejection sources include heating mode heat rejection
+and cooling mode heat rejection. The heat rejection in heating mode
+happens during the process of the mixing of conditioned and outside
+air. The heat rejection in cooling mode happens at the condensing
+process when the high temperature refrigerant gas condenses with one
+of the following heat rejection forms~\cite{Bhatia2015}:
+\begin{itemize}
+\item Air cooled unit: ambient air is blown through condensing coils
+  and removes heat from the gas refrigerant.
+\item Cooling tower: cooled water flow past the condensing unit and
+  takes away the heat from the gas refrigerant. The water is then
+  cooled through evaporation.
+\item Fluid cooler: water is sprayed on the condensing coil with fan
+  forced air flowing in the opposite direction as the water. It
+  causes evaporation cooling effect that takes away the heat from the
+  gas refrigerant. 
+\end{itemize}
+The heat ``condenser total heat of rejection''~\cite{Bhatia2015} (THR)
+in the condensing process equals to the ``net refrigeration effect''
+~\cite{Bhatia2015}(RE), which is the hourly cooling demand, plus the
+compressor input, it can be represented as the following equation:
+
+$$THR = RE * f$$
+
+$f$ is the ``Heat Rejection Factor'' and it is typically between 1.15
+and 1.25~\cite{Bhatia2015}. The water-based system has heat rejection
+factor closer to 1.15 and air-based system closer to
+1.25~\cite{Bhatia2015}.
+
+To help users identify energy recovery opportunities, the energy
+information needed to retrieve include: space heating energy demand
+and space cooling energy demand, which is an indicator for heat
+rejection that could be recovered and shared within a single building
+or a building group.
+
+From \tref{tab:heatFuel}, Large Hotel, Medium Office, Midrise
+Apartment, OutPatient Healthcare, Small Hotel and Stand-alone Retail
+use both electricity and natural gas for space heating, the rest of
+the building types uses only natural gas for space heating. We thus
+use the EnergyPlus simulation output parameters
+``heating:electricity'' and ``heating:gas'' to represent the space
+heating demand of reference buildings.
+\begin{table}[h]
+\centering
+\caption{Annual Total Heating Demand by Fuel Type}
+\label{tab:heatFuel}
+\begin{tabular}{lll}
+  \hline
+                       & Electricity {[}kBtu{]} & Gas {[}kBtu{]} \\
+  \hline
+  \hline
+FullServiceRestaurant  & 0.0                    & 856637.1       \\
+Hospital               & 0.0                    & 14045664.0     \\
+LargeHotel             & 843.6                  & 2960506.8      \\
+LargeOffice            & 0.0                    & 4741180.3      \\
+MediumOffice           & 450791.3               & 192226.8       \\
+MidriseApartment       & 56.9                   & 494959.6       \\
+OutPatient             & 199581.9               & 2881638.9      \\
+PrimarySchool          & 0.0                    & 1579186.5      \\
+QuickServiceRestaurant & 0.0                    & 383297.2       \\
+SecondarySchool        & 0.0                    & 7746443.0      \\
+SmallHotel             & 52129.9                & 450393.2       \\
+SmallOffice            & 0.0                    & 66631.5        \\
+Stand-aloneRetail      & 6966.5                 & 976583.4       \\
+StripMall              & 0.0                    & 1013188.1      \\
+SuperMarket            & 0.0                    & 3043905.2      \\
+Warehouse              & 0.0                    & 1039850.2     \\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{heatFuel.png}
+  \caption{Heating Fuel}
+  \label{fig:heatFuel}
+\end{figure}
+Electricity is the only fuel used for space cooling, thus the
+EnergyPlus output parameter ``cooling:electricity'' is used to
+represent space cooling demand. According to the suggested heat
+rejection factor~\cite{Bhatia2015}, the heat recovery potential will
+be calculated with $f = 1.15$ for Large Office and Hospital, and
+$f = 1.25$ for the remaining building types:
+$$\text{Heat Recovery Potential} = \text{cooling:electricity} \times f$$
+
+In summary, to facilitate identification of energy recovery
+opportunities for single buildings and within building groups, the
+hourly ``heating:electricity'', ``heating:gas'' and
+``cooling:electricity'' output will be extracted from energyPlus
+simulation of DOE Commercial benchmark buildings.
+
+\paragraph{Input for Sizing District Co-generation System}
+For the sizing of a district co-generation system, the relevant
+information needed are the total heating demand, and the total
+electricity demand. The general principle used in Lower Hill District
+project ~\cite{baird2014} is to use the minimum total heat demand
+(space heating and service hot water) over time to assess the minimum
+capacity of electricity generation ($E_{heat}$) such that its heat
+bi-product from electricity generation will always be consumed. The
+maximum total electricity demand ($E_{elec}$) is used for assessing
+the capacity of a backup system or a second phase system development
+by $C_{backup} = E_{elec} - E_{heat}$ where $C_{backup}$ is the
+capacity of electricity generation for the backup system or
+second-phase development.
+
+Heating demand assessed in the sizing of co-generation system is
+different from the energy recovery use case. It contains the space
+heating demand and the service hot water demand. From the summary
+files of benchmark models, the fuel used for providing service hot
+water is natural gas for all building types (\tref{tab:hotWater})
+\begin{table}[h!]
+\centering
+\caption{Service Hot Water by Fuel Type}
+\label{tab:hotWater}
+\begin{tabular}{l|l|l}
+  \hline
+                       &  Electricity {[}kBtu{]} & Gas {[}kBtu{]} \\
+  \hline
+  \hline
+FullServiceRestaurant  & 0 & 253664.3       \\
+Hospital               & 0 & 719402.7       \\
+LargeHotel             & 0 & 6793934.2      \\
+LargeOffice            & 0 & 231381.1       \\
+MediumOffice           & 0 & 34178.3        \\
+MidriseApartment       & 0 & 289719.3       \\
+OutPatient             & 0 & 44054.5        \\
+PrimarySchool          & 0 & 174768.0       \\
+QuickServiceRestaurant & 0 & 82071.5        \\
+SecondarySchool        & 0 & 441512.2       \\
+SmallHotel             & 0 & 394017.1       \\
+SmallOffice            & 0 & 10928.3        \\
+Stand-aloneRetail      & 0 & 0.0            \\
+StripMall              & 0 & 0.0            \\
+SuperMarket            & 0 & 23799.7        \\
+Warehouse              & 0 & 0.0            \\
+  \hline
+\end{tabular}
+\end{table}
+
+The output parameter ``electricity:facility'' was extracted to
+represent the total electricity demand.
+
+\pagebreak
+\subsubsection{3D GIS Model Geometry}
 The conceptual community model is constructed in
 CityEngine~\cite{cityEngine2015}. CityEngine is a software developed
 by Esri. It can aggregate geographic information into buildings and is
@@ -933,6 +1096,7 @@ urban density as the Mellon Arena Project (\fref{fig:sitePlan})
   \end{subfigure}
 \end{figure}   
 
+\begin{comment}
 \subsection{Data Collection and Analysis}
 \subsubsection{Simulation Data Analysis of the benchmark
   models}\label{boxPlot}
@@ -941,9 +1105,10 @@ and processed with python script. This data loading and processing
 module is used in both data analysis and the dynamic plot in the
 interface design.
 
-By analysing the simulation result of the Heating Energy (Gas) and the
-Cooling Energy (electricity), we observed a large variation between
-different building types.
+By analysing the EnergyPlus~\cite{EnergyPlus2015} simulation result of
+the Heating Energy (Gas) and the Cooling Energy (Electricity), we
+observed a large variation between different building types in these
+two types of thermal energy demand.
 
 Hourly heating demand of the benchmark building types involved in the
 current model range from 0 to 12000 kBtu. The majority (75\%) of all

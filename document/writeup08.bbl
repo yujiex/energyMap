@@ -11,6 +11,11 @@ Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
   practice}, chapter~10.
 \newblock Wiley, Hoboken, New Jersey, 2014.
 
+\bibitem{Bhatia2015}
+A.~Bhatia.
+\newblock Heat rejection options in hvac systems.
+\newblock University Lecture, 2015.
+
 \bibitem{Dobbelsteen2013}
 Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock Energy potential mapping: Visualising energy characteristics for the
@@ -22,6 +27,19 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock Trigeneration / cchp.
 \newblock web, July 2015.
 \newblock \url{https://www.clarke-energy.com/gas-engines/trigeneration/}.
+
+\bibitem{carbonBudgetUK}
+{Committee on Climate Change}.
+\newblock Carbon budgets and targets.
+\newblock web, August 2015.
+\newblock
+  \url{https://www.theccc.org.uk/tackling-climate-change/reducing-carbon-emissions/carbon-budgets-and-targets/}.
+
+\bibitem{StDenis20092088}
+Genevieve~St. Denis and Paul Parker.
+\newblock Community energy planning in canada: The role of renewable energy.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 13(8):2088 -- 2095,
+  2009.
 
 \bibitem{decentralHeatMap2011}
 {Department of Energy \& Climate Change}.
@@ -49,16 +67,68 @@ Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
 \newblock
   \url{https://www.gov.uk/government/news/cold-water-could-heat-one-million-homes}.
 
+\bibitem{Diaz2013campus}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Campus resolution.
+\newblock web, July 2015.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/campusresolution.html}.
+
+\bibitem{Diaz2013city}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock City resolution.
+\newblock web, July 2015.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/cityresolution.html}.
+
+\bibitem{Diaz2013com}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Community resolution.
+\newblock web, July 2015.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/communityresolution.html}.
+
+\bibitem{Diaz2013}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Towards smart cities: Energy mapping to identify opportunities for
+  future networks.
+\newblock web, July 2015.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/index.html}.
+
+\bibitem{Ecotricity2015}
+{Ecotricity}.
+\newblock The end of fossil fuels.
+\newblock web, August 2015.
+\newblock
+  \url{https://www.ecotricity.co.uk/our-green-energy/energy-independence/the-end-of-fossil-fuels}.
+
 \bibitem{esriGeodesign2012}
 {Esri}.
 \newblock Geodesign in practice: Designing a better world.
 \newblock Technical report, Esri, August 2013.
+
+\bibitem{ArcGIS2015}
+Esri.
+\newblock Arcgis.
+\newblock web, June 2015.
+\newblock \url{http://www.arcgis.com/features/}.
 
 \bibitem{cityEngine2015}
 Esri.
 \newblock City engine.
 \newblock web, June 2015.
 \newblock \url{http://www.esri.com/software/cityengine}.
+
+\bibitem{HEMesru2015}
+{ESRU, University of Strathclyde}.
+\newblock Hem training course.
+\newblock web, August 2015.
+\newblock \url{http://www.esru.strath.ac.uk/Courseware/Edem/content.htm}.
 
 \bibitem{Finney2012165}
 Karen~N. Finney, Vida~N. Sharifi, Jim Swithenbank, Andy Nolan, Simon White, and
@@ -79,6 +149,18 @@ Mark Jaccard, Lee Failing, and Trent Berry.
   greenhouse gas emission reduction.
 \newblock {\em Energy Policy}, 25(13):1065 -- 1074, 1997.
 
+\bibitem{Kathryn2015}
+Kathryn.
+\newblock When will fossil fuels run out.
+\newblock web, August 2015.
+\newblock
+  \url{http://www.carboncounted.co.uk/when-will-fossil-fuels-run-out.html}.
+
+\bibitem{IDEA2012}
+Michael King.
+\newblock Community energy: Planning, development and delivery.
+\newblock Technical report, IDEA, 2012.
+
 \bibitem{londonHeatMap}
 {Mayor of London}.
 \newblock London heat map.
@@ -91,6 +173,12 @@ Mark Jaccard, Lee Failing, and Trent Berry.
 \newblock web, August 2015.
 \newblock \url{http://www.londonheatmap.org.uk/Mapping/}.
 
+\bibitem{NASA2015}
+{NASA}.
+\newblock Climate change: How do we know?
+\newblock web, August 2015.
+\newblock \url{http://climate.nasa.gov/evidence/}.
+
 \bibitem{DOE2015}
 Office of~Energy Efficiency \& Renewable~Energy.
 \newblock Commercial reference buildings.
@@ -102,12 +190,6 @@ Office of~Energy Efficiency \& Renewable~Energy.
 {Ove Arup \& Partners Ltd}.
 \newblock Heat mapping study - london borough of barking and dagenham.
 \newblock Technical report, {Ove Arup \& Partners Ltd}, London, UK, March 2012.
-
-\bibitem{Owens199281}
-Susan~E. Owens.
-\newblock Land-use planning for energy efficiency.
-\newblock {\em Applied Energy}, 43(1–3):81 -- 114, 1992.
-\newblock Rational Use of Energy in Urban Regeneration.
 
 \bibitem{Ramesh2013}
 Shalini Ramesh, Khee~Poh Lam, Nina Baird, and Henry Johnstone.
@@ -122,5 +204,43 @@ Zoe Redgrove.
 \newblock Using the national heat map.
 \newblock web, October 2012.
 \newblock \url{http://tools.decc.gov.uk/nationalheatmap/}.
+
+\bibitem{veolia2014}
+{Veolia}.
+\newblock Sheffield erf virtual tour.
+\newblock web, July 2015.
+\newblock \url{http://veolia.co.uk/sheffield/about-us/about-us/videos}.
+
+\bibitem{exergyWiki2015}
+Wikipedia.
+\newblock Exergy.
+\newblock web, August 2015.
+\newblock
+  \url{https://en.wikipedia.org/wiki/Exergy#Applications_in_sustainability}.
+
+\bibitem{HeatmapWiki}
+{Wikipedia}.
+\newblock Heat map.
+\newblock web, July 2015.
+\newblock \url{https://en.wikipedia.org/wiki/Heat_map}.
+
+\bibitem{microCHP}
+{Wikipedia}.
+\newblock Micro combined heat and power.
+\newblock web, July 2015.
+\newblock \url{https://en.wikipedia.org/wiki/Micro_combined_heat_and_power}.
+
+\bibitem{wasteHeatEnviron}
+{World Future Society}.
+\newblock “waste heat” a potential threat to the climate.
+\newblock web, July 2015.
+\newblock \url{http://www.wfs.org/Oct-Nov09/Env1page.htm}.
+
+\bibitem{Tol2012551}
+Hakan İbrahim Tol and Svend Svendsen.
+\newblock A comparative study on substation types and network layouts in
+  connection with low-energy district heating systems.
+\newblock {\em Energy Conversion and Management}, 64:551 -- 561, 2012.
+\newblock \{IREC\} 2011, The International Renewable Energy Congress.
 
 \end{thebibliography}
