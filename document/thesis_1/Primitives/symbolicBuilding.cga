@@ -1,0 +1,291 @@
+/**
+ * File:    symbolicBuilding.cga
+ * Created: 31 May 2015 21:47:21 GMT
+ * Author:  yujiex
+ */
+
+version "2015.0"
+
+//the value here is not important, we just want to create an attribute to receive the corresponding value from the object attribute
+attr landuse = 1
+@Range(0, 8759)
+attr time = 0
+
+//Hourly Energy Information, x_01 holds the first 4380 hour energy data
+//x_02 holds the second 4380 hour energy data
+FullServiceRest_01 = "122;0;0;0;0;139;129;115;109;108;98;8    ..."
+FullServiceRest_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+hospital_01 = "778;911;881;878;849;848;779;764;694;619;551    ..."
+hospital_02 = "110;106;96;92;93;126;144;181;194;219;228;23    ..."
+LargeHotel_01 = "304;236;217;201;239;279;366;956;1172;986     ..."
+LargeHotel_02 = "230;216;227;226;196;233;274;267;268;362;2    ..."
+LargeOffice_01 = "1005;990;1279;865;1216;853;1221;841;986     ..."
+LargeOffice_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+MediumOffice_01 = "121;113;151;116;153;117;155;116;134;88     ..."
+MediumOffice_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0    ..."
+MidriseAppartment_01 = "154;183;182;183;182;180;177;173;16    ..."
+MidriseAppartment_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+OutPatient_01 = "76;64;83;68;92;160;164;141;132;123;115;11    ..."
+OutPatient_02 = "6;5;5;5;8;12;17;26;27;28;40;33;43;35;45;3    ..."
+PrimarySchool_01 = "200;207;262;174;250;174;254;107;127;69    ..."
+PrimarySchool_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+QuickServiceRest_01 = "68;0;21;34;38;78;69;64;62;57;49;40     ..."
+QuickServiceRest_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0    ..."
+SecondSchool_01 = "442;446;577;401;567;404;578;230;279;130    ..."
+SecondSchool_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0    ..."
+SmallHotel_01 = "70;85;87;89;91;91;87;79;60;53;50;46;43;38    ..."
+SmallHotel_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0    ..."
+SmallOffice_01 = "13;12;12;11;13;11;13;11;13;9;10;6;7;5;5     ..."
+SmallOffice_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+StandaloneRetail_01 = "47;60;66;68;66;62;266;200;172;137;1    ..."
+StandaloneRetail_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0    ..."
+StripMall_01 = "52;53;76;60;78;56;274;206;176;139;121;105     ..."
+StripMall_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+SuperMarket_01 = "177;250;181;294;264;190;885;774;558;515     ..."
+SuperMarket_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0     ..."
+WareHouse_01 = "293;328;379;324;377;321;377;319;356;277;29    ..."
+WareHouse_02 = "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0     ..."
+        
+//Concatenating the two energy profile into one list
+FullServiceRest = FullServiceRest_01 + FullServiceRest_02
+hospital = hospital_01 + hospital_02 
+LargeHotel = LargeHotel_01 + LargeHotel_02 
+LargeOffice = LargeOffice_01 + LargeOffice_02 
+MediumOffice = MediumOffice_01 + MediumOffice_02 
+MidriseAppartment = MidriseAppartment_01 + MidriseAppartment_02
+OutPatient = OutPatient_01 + OutPatient_02 
+PrimarySchool = PrimarySchool_01 + PrimarySchool_02
+QuickServiceRest = QuickServiceRest_01 + QuickServiceRest_02 
+SecondSchool = SecondSchool_01 + SecondSchool_02
+SmallHotel = SmallHotel_01 + SmallHotel_02
+SmallOffice = SmallOffice_01 + SmallOffice_02
+StandaloneRetail = StandaloneRetail_01 + StandaloneRetail_02
+StripMall = StripMall_01 + StripMall_02 
+SuperMarket = SuperMarket_01 + SuperMarket_02 
+WareHouse = WareHouse_01 + WareHouse_02
+
+# retrieve time-th item of the energy profile
+item01 = listItem(FullServiceRest, time)
+item02 = listItem(hospital, time)
+item03 = listItem(LargeHotel, time)
+item04 = listItem(LargeOffice, time)
+item05 = listItem(MediumOffice, time)
+item06 = listItem(MidriseAppartment, time)
+item07 = listItem(OutPatient, time)
+item08 = listItem(PrimarySchool, time)
+item09 = listItem(QuickServiceRest, time)
+item10 = listItem(SecondSchool, time)
+item11 = listItem(SmallHotel, time)
+item12 = listItem(SmallOffice, time)
+item13 = listItem(StandaloneRetail, time)
+item14 = listItem(StripMall, time)
+item15 = listItem(SuperMarket, time)
+item16 = listItem(WareHouse, time)
+
+# the max item of all the heat demand profiles
+maxItem = 3243
+height=4
+
+colorRatio_01 = (ln(maxItem) - ln(float(item01)))/ln(maxItem)
+colorRatio_02 = (ln(maxItem) - ln(float(item02)))/ln(maxItem)
+colorRatio_03 = (ln(maxItem) - ln(float(item03)))/ln(maxItem)
+colorRatio_04 = (ln(maxItem) - ln(float(item04)))/ln(maxItem)
+colorRatio_05 = (ln(maxItem) - ln(float(item05)))/ln(maxItem)
+colorRatio_06 = (ln(maxItem) - ln(float(item06)))/ln(maxItem)
+colorRatio_07 = (ln(maxItem) - ln(float(item07)))/ln(maxItem)
+colorRatio_08 = (ln(maxItem) - ln(float(item08)))/ln(maxItem)
+colorRatio_09 = (ln(maxItem) - ln(float(item09)))/ln(maxItem)
+colorRatio_10 = (ln(maxItem) - ln(float(item10)))/ln(maxItem)
+colorRatio_11 = (ln(maxItem) - ln(float(item11)))/ln(maxItem)
+colorRatio_12 = (ln(maxItem) - ln(float(item12)))/ln(maxItem)
+colorRatio_13 = (ln(maxItem) - ln(float(item13)))/ln(maxItem)
+colorRatio_14 = (ln(maxItem) - ln(float(item14)))/ln(maxItem)
+colorRatio_15 = (ln(maxItem) - ln(float(item15)))/ln(maxItem)
+colorRatio_16 = (ln(maxItem) - ln(float(item16)))/ln(maxItem)
+
+Lot -->
+        case landuse <= 1: //full service resturant
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_01))
+            extrude(1*height)
+            comp(f){top: top_fr | side: facade_fr}
+        case landuse > 1 && landuse <= 2:       
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_02))
+            //extrude(rand(8, 50))
+            extrude(5*height)
+        case landuse > 2 && landuse <= 3:   //Large Hotel
+            s('0.6, '1, '0.6)
+            center(xz)      
+            color(colorRamp("redToBlue", 1-colorRatio_03))
+            extrude(24)
+            comp(f){top: top_lh | side: facade_lh}
+        case landuse > 3 && landuse <= 4:    //Large Office
+            s('0.6, '1, '0.6)
+            center(xz)         
+            color(colorRamp("redToBlue", 1-colorRatio_04))
+            extrude(48)
+            comp(f){top: top_lo | side: facade_lo}
+        case landuse > 4 && landuse <= 5: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_05))
+            extrude(12)
+            comp(f){top: top_mo | side: facade_mo}            
+        case landuse > 5 && landuse <= 6: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_06))
+            //assuming residential is 3 to 6 stories high
+            //extrude(rand(12, 13))
+            extrude(16)
+            comp(f){top: top_ma | side: facade_ma}          
+        case landuse > 6 && landuse <= 7:
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_07))
+            //extrude(rand(8, 50))
+            extrude(12)
+        case landuse > 7 && landuse <= 8: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_08))
+            //extrude(rand(8, 50))
+            extrude(4)
+        case landuse > 8 && landuse <= 9: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_09))
+            extrude(4)
+            comp(f){top: top_qr | side: facade_qr}            
+        case landuse > 9 && landuse <= 10: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_10))
+            //extrude(rand(8, 50))
+            extrude(8)
+        case landuse > 10 && landuse <= 11: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_11))
+            extrude(16) 
+        case landuse > 11 && landuse <= 12:     //Small Office
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_12))
+            extrude(4)
+            comp(f){top: top_so | side: facade_so}
+        case landuse > 12 && landuse <= 13:     //Stand-alone Retail
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_13))
+            extrude(4)
+            comp(f){top: top_sr | side: facade_sr}            
+        case landuse > 13 && landuse <= 14: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_14))
+            //extrude(rand(8, 50))
+            extrude(4)
+        case landuse > 14 && landuse <= 15:     //Super Market
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_15))
+            extrude(4)
+            comp(f){top: top_su | side: facade_su} 
+        case landuse > 15 && landuse <= 16: 
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(colorRamp("redToBlue", 1-colorRatio_16))
+            extrude(4)
+        else: 
+            color(0, 5, 0) 
+	    
+//For adding labels on top of each building
+//01
+top_fr -->
+    split(y){'0.1:a_fr|'0.8:b_fr|'0.1:c_fr}
+b_fr -->
+    split(x){'0.1:e_fr|'0.8:f_fr|'0.1:g_fr}
+f_fr -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/FR.jpg")
+	projectUV(0)
+//03 Large Hotel
+top_lh -->
+    split(y){'0.1:a_lh|'0.8:b_lh|'0.1:c_lh}
+b_lh -->
+    split(x){'0.1:e_lh|'0.8:f_lh|'0.1:g_lh}
+f_lh -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/LH.jpg")
+	projectUV(0)
+//04 Large Office
+top_lo -->
+    split(y){'0.1:a_lo|'0.8:b_lo|'0.1:c_lo}
+b_lo -->
+    split(x){'0.1:e_lo|'0.8:f_lo|'0.1:g_lo}
+f_lo -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/LO.jpg")
+	projectUV(0)
+//05 Medium Office
+top_mo -->
+    split(y){'0.1:a_mo|'0.8:b_mo|'0.1:c_mo}
+b_mo -->
+    split(x){'0.1:e_mo|'0.8:f_mo|'0.1:g_mo}
+f_mo -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/MO.jpg")
+	projectUV(0)
+
+//06 Midrise Apartment	           
+top_ma -->
+    split(y){'0.1:a_ma|'0.8:b_ma|'0.1:c_ma}
+b_ma -->
+    split(x){'0.1:e_ma|'0.8:f_ma|'0.1:g_ma}
+f_ma -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/MA.jpg")
+	projectUV(0)
+	
+//09 Quick Service Resturant	           
+top_qr -->
+    split(y){'0.1:a_qr|'0.8:b_qr|'0.1:c_qr}
+b_qr -->
+    split(x){'0.1:e_qr|'0.8:f_qr|'0.1:g_qr}
+f_qr -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/QR.jpg")
+	projectUV(0)	
+
+//12 Small Office	           
+top_so -->
+    split(y){'0.1:a_so|'0.8:b_so|'0.1:c_so}
+b_so -->
+    split(x){'0.1:e_so|'0.8:f_so|'0.1:g_so}
+f_so -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/SO.jpg")
+	projectUV(0)
+//12 Stand-alone Retail	           
+top_sr -->
+    split(y){'0.1:a_sr|'0.8:b_sr|'0.1:c_sr}
+b_sr -->
+    split(x){'0.1:e_sr|'0.8:f_sr|'0.1:g_sr}
+f_sr -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/SR.jpg")
+	projectUV(0)
+	
+//15 Super Market           
+top_su -->
+    split(y){'0.1:a_su|'0.8:b_su|'0.1:c_su}
+b_su -->
+    split(x){'0.1:e_su|'0.8:f_su|'0.1:g_su}
+f_su -->	
+	setupProjection(0, scope.xy, scope.sx, scope.sy)	
+	texture("assets/SU.jpg")
+	projectUV(0)	

@@ -1,0 +1,150 @@
+% Appendix A
+\chapter{Implementing Dynamic Energy Map in
+  CityEngine} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use
+                  % \ref{AppendixA}
+
+\lhead{Appendix A. \emph{Implementing Dynamic Energy Map in CityEngine}} % This is for the header on each page - perhaps a shortened title
+\section{General Introduction}
+The following document records the method of using CityEngine to
+visualize the dynamic energy (heating energy in kwh for this document)
+changes with a slider bar embeded in the CityEngine software. To be
+more specific, users will be able to navigate through the 8760 hour of
+a year with a time slider and see the color-coded energy consumption
+data for all buildings in the community model for the hour the slider
+cursor rest at. The detailed rule file is included in \aref{AppendixB}.
+
+The general process is to find a base map if it is a real site or
+generate a random urban environment layout if it is a conceptual
+setting. Add attributes of ``landuse'' and ``time'' to the building
+lot. Then write a rule file with energy consumption data (or the color
+representation of each energy consumption data) for each building type
+held in string lists in the rule file and then apply the rule files to
+the building lot. Finally set the attribute of ``landuse'' and
+``time'' in the rule file to be driven by the value of the object
+attribute ``landuse'' and ``time''. The ``time'' attribute is to index
+into the string list of energy profile (in rule files) for each
+building type. For example, when the ``time'' attribute of all building
+blocks are set to 10, all the buildings in the community model will
+change its color to the color representing its heating energy
+consumption in the 10th hour (zero-indexing) of the year.
+
+Each step will be explained in more details in the following session.
+\section{Explaining Each Steps}
+\subsection{Create a Urban Environment Layout}
+If one is working with a real project, an OSM Map~\cite{OSM2015} will
+be a good choice for a base map. The OSM file contains many useful
+attribute such as street center line, building name, elevation etc. It
+is of xml format and is easy to manipulate as text files, which makes
+it easier to work with and less bulky comparing to ArcGIS gdb
+files. \fref{fig:osmCampus} is an example of the CMU Campus OSM Map.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{osmCampus.png}
+  \caption[CMU OSM Map]{CMU OSM Map~\cite{OSM2015}}
+  \label{fig:osmCampus}
+\end{figure}
+
+If it is a conceptual setting, then create a random city of proper
+size using ``grow street'' function with some clean-ups
+(\fref{fig:randCity}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{randCity.png}
+  \caption[Conceptual City Lots]{Conceptual City Generated with
+    CityEngine}
+  \label{fig:randCity}
+\end{figure}
+\subsection{Add Attributes to Building Lots}
+To implement the function of a time slider-bar that navigates and
+shows energy consumption for each building in each hour of the year,
+two additional attributes are needed: 1) ``time'' attribute of type
+float (ideally we would like it to be integer but there is no integer
+types in object attribute) ranges from 0 to 8760 (not inclusive) that
+represents the hour of a year and 2) ``landuse'' attribute of type
+float (since no integer type is available) that represents the land
+use type of the lot.
+
+Adding these two attribute could be done either inside an OSM base map
+or inside CityEngine.
+
+The typical way to add a building attribute can be done by selecting
+all building lots and right click one of the Object attributes and
+select "Add Object Attribute" to add new attributes.
+
+If an OSM base map is available with building footprint information,
+adding attributes can be achieved within OSM maps by one searching for
+\texttt{"<tag k="building" v="yes"/>"} and add two new tags after this
+line:
+\texttt{"<tag k="time" v="0"\/>"}\\
+\texttt{"<tag k="landuse" v="0"\/>"}\\
+
+\subsection{Importing Base Map (Optional)}
+If one is working on a real project, one can add an geo-referenced
+terrain image to make the model more realistic. In the following
+example, the terrain geo-tiff was retieved from PASDA
+website~\cite{PASDAImagery2013} according to the ``Allegheny County
+Imagery 2013 - Tile Index''. The image showing the area of interest is
+clipped in ArcMap and imported as a geo-referenced image (.tif) to
+CityEngine (\fref{fig:geotif}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{geotif.png}
+  \caption[Geo-tif in CityEngine]{Example of Geo-referenced Image in
+    CityEngine}
+  \label{fig:geotif}
+\end{figure}
+
+After importing geo-referenced image, OSM map could be imported and a
+working base was formed (\fref{fig:geotifOSM}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{geotifOSM.png}
+  \caption[Geo-tif with OSM Map]{Geo-tif with OSM Map}
+  \label{fig:geotifOSM}
+\end{figure}
+
+\subsection{Writing Rule File for Building Generation}
+We used ``time'' as the index into the string array. By setting the
+time attribute for each building, we will be able to index into the
+array of “energy” and make the energy displayed in its corresponding
+color.
+
+How to globally set all ``time'' attribute for each rule file is a key
+problem to solve to implement the time-navigation. Writing a python
+code for processing all the rule files as pure text files and apply
+rule files to its corresponding lot at each given ``time'' could be
+one solution, but there are two drawbacks 1) it is time and space
+consuming because as many as each 8760 rule files need to be
+generated 2) the ``slider-bar'' feature associated with the object
+attribute will not be available if implemented this way.
+
+We want to use object attribute (building lot) to drive the change of
+``time'' for rule files for each building. The way to create the
+connection between object attribute ``time'' and the building
+attribute defined in rule files is by setting the source of ``time''
+attribute (in rule file) by the building lot ``time'' attribute using
+``Connection Editor''.
+
+After the connection is established, one will select all buildings of
+interest in the community model and change the object attribute
+``time'' of all selected building lots to visually inspect the
+color-coded energy consumption of all selected buildings. The Campus
+example is depicted in \fref{fig:timeSliderCampus} and the community
+example is depicted in (Add figure here !!!)
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{timeSliderCampus.png}
+  \caption[Slider in Campus Example]{Slider in Campus Example}
+  \label{fig:timeSliderCampus}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{campusColor.png}
+  \caption[Finished Campus Example]{Finished Campus Example}
+  \label{fig:campusColor}
+\end{figure}

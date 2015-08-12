@@ -1,0 +1,24 @@
+\contentsline {chapter}{Contents}{i}{dummy.1}
+\contentsline {chapter}{List of Figures}{ii}{dummy.3}
+\contentsline {chapter}{List of Tables}{iii}{dummy.5}
+\contentsline {chapter}{Abbreviations}{iv}{dummy.7}
+\contentsline {chapter}{Symbols}{v}{dummy.10}
+\contentsline {chapter}{\numberline {1}Methodology}{1}{chapter.13}
+\contentsline {section}{\numberline {1.1}Overview}{1}{section.14}
+\contentsline {section}{\numberline {1.2}Input}{3}{section.20}
+\contentsline {subsection}{\numberline {1.2.1}Benchmark Models and Energy Data}{3}{subsection.21}
+\contentsline {subsubsection}{\numberline {1.2.1.1}Input for Identifing Energy Recovery Opportunities}{5}{subsubsection.25}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Input for Sizing District Co-generation System}{7}{subsubsection.30}
+\contentsline {subsection}{\numberline {1.2.2}3D GIS Model Geometry}{8}{subsection.32}
+\vspace {2em}
+\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{11}{appendix.37}
+\contentsline {section}{\numberline {A.1}General Introduction}{11}{section.38}
+\contentsline {section}{\numberline {A.2}Explaining Each Steps}{12}{section.39}
+\contentsline {subsection}{\numberline {A.2.1}Create a Urban Environment Layout}{12}{subsection.40}
+\contentsline {subsection}{\numberline {A.2.2}Add Attributes to Building Lots}{13}{subsection.43}
+\contentsline {subsection}{\numberline {A.2.3}Importing Base Map (Optional)}{13}{subsection.44}
+\contentsline {subsection}{\numberline {A.2.4}Writing Rule File for Building Generation}{14}{subsection.47}
+\contentsline {subsection}{\numberline {A.2.5}Deciding Data Encoding}{15}{subsection.48}
+\contentsline {subsection}{\numberline {A.2.6}Associating Rule Attribute with Object Attribute}{16}{subsection.54}
+\vspace {2em}
+\contentsline {chapter}{Bibliography}{19}{dummy.57}
