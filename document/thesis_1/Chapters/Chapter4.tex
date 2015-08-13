@@ -8,42 +8,51 @@
 
 %----------------------------------------------------------------------------------------
 \section{Overview}
-The Dynamic Energy Map is created with a conceptual urban environment
+The Dynamic Energy Map is created for a conceptual urban environment
 with the following properties:
 \begin{enumerate}[i.]
-\item Building density and land use pattern are realistic.  
+\item Of realistic building density and land use pattern.
   
-  To achieve this, the project used a redevelopment project at Lower
-  Hill District, Pittsburgh, PA~\cite{Ramesh2013} as a prototype and
-  is created based on extracted topological patterns from this
+  To achieve this, the current study used a redevelopment project at
+  Lower Hill District, Pittsburgh, PA~\cite{Ramesh2013} as a
+  prototype.  The land use of the conceptual urban environment is
+  created based on extracted topological patterns from this
   redevelopment projec.
 
-\item The number of buildings in the model represents a typical sized
+\item The number of buildings in the model represents a typical
   community that can be served by a district energy
   system~\cite{IDEA2012}.
   
   To achieve this, the original model created under crateria i. is
-  duplicated and thus there are 68 buildings in total, within the
-  range of a typical district energy system service capacity of 50 to
-  150~\cite{IDEA2012}.
+  duplicated and thus there are in total 68 buildings within the
+  community. This rangge is within the range of a typical district
+  energy system service capacity of 50 to 150~\cite{IDEA2012}.
 
 \end{enumerate}
 
-The inputs to the dynamic energy map are the energy consumption data
-and the urban environment layout. For the conceptual setting, the
-energy data is retrieved from the simulation of DOE Benchmark
-buildings of new construction which comply with ASHRAE 90.1-2004
-Standard~\cite{DOE2015}.
+The inputs to the dynamic energy map include the hourly energy
+consumption data and the urban environment layout. For the conceptual
+setting, the energy data is retrieved from the simulation of DOE
+Benchmark buildings of new construction which comply with ASHRAE
+90.1-2004 Standard~\cite{DOE2015}.
 
 The output of the dynamic energy map is a sequence of 2D or 3D energy
-choropleth maps images.
+choropleth map images.
 
 An interface is designed to provide an interactive inspection of the
-map sequence and create dynamic data plots (~\fref{fig:flow}). By
-replacing the simulated energy data with actual metered energy
-consumption data and the conceptual layout with a real urban
-environment layout, the same method can be directly applied to the
-analysis of a real project.
+map image sequence and the corresponding energy data plot of a single
+buildings, building groups and the community that assists:
+\begin{enumerate}[i.]
+\item Comparing heating and cooling demand to identify energy recovery
+  opportunities
+\item Comparing heating and electricity demand to size co-generation
+  system
+\end{enumerate}
+
+By replacing the simulated hourly energy demand data with actual
+metered energy consumption data and the conceptual layout with a real
+urban environment layout, the same method can be directly applied to
+the analysis of a real project.
 
 \begin{figure}[h!]
   \centering
@@ -51,15 +60,6 @@ analysis of a real project.
   \caption[General Work Flow]{General Work Flow}
   \label{fig:flow}
 \end{figure}
-
-The major functions of the current dynamic energy map interface
-include:
-\begin{enumerate}[i.]
-\item Comparing heating and cooling demand to identify energy recovery
-  opportunities
-\item Comparing heating and electricity demand to size co-generation
-  system
-\end{enumerate}
 
 Details in input output data and the interface design process will be
 explained in more details in the following sections.
@@ -289,6 +289,10 @@ different from the energy recovery use case in \sref{sec:inputRecover}
 demand. From the summary files of benchmark models, the fuel used for
 providing service hot water is natural gas for all building types
 (\tref{tab:hotWater})
+
+The output parameter ``electricity:facility'' was extracted to
+represent the total electricity demand.
+
 \begin{table}[h!]
 \centering
 \caption{Service Hot Water by Fuel Type}
@@ -318,8 +322,237 @@ Warehouse              & 0 & 0.0            \\
 \end{tabular}
 \end{table}
 
-The output parameter ``electricity:facility'' was extracted to
-represent the total electricity demand.
+\pagebreak
+\subsection{Simulation Data Analysis of the benchmark
+  models}\label{boxPlot}
+The output of EnergyPlus simulation of 16 benchmark buildings are
+read, processed and plotted with a python program. The data loading
+and processing utility is used in both data analysis and the dynamic
+plot in the interface design.
+
+The energy output retrieved from EnergyPlus include ``Heating:Gas'',
+``Heating:Electricity'', ``Cooling:Electricity'', ``Water
+Heater:WaterSystems:Gas'' and ``Electricity:Facility''. This section
+will include some basic aggregated analysis of the data distribution.
+The meaning of each output variable is listed in
+\tref{tab:outputMeaning}:
+\begin{table}[h!]
+\centering
+\caption{Table of EnergyPlus output and their meaning}
+\label{tab:outputMeaning}
+\begin{tabular}{l|l}
+  \hline
+EnergyPlus Output            & Meaning\\
+  \hline
+  \hline
+Heating:Gas                  & Total gas for space heating         \\
+Heating:Electricity          & Total electricity for space heating \\
+Water Heater:WaterSystem:Gas & Total gas for service hot water     \\
+Cooling:Electricity          & Total electricity for space cooling \\
+Electricity:Facility         & Total electricity                  \\
+  \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Single Output}
+By analysing the EnergyPlus ~\cite{EnergyPlus2015} simulation result
+of the output above, we anticipate to gain a basic understanding of
+the energy profile data distribution involved in the current
+project. We would also want to use this as a basis to compare with the
+additional analysis one can performed in a dynamic energy map in the
+following sections.
+
+To analyse general distribution of each output variable, we created a
+box plot for each of the five variables. By analyzing each single
+output, we discovered a great difference between different building
+types. 
+
+Hourly gas heating demand of the benchmark buildings range from 0 to
+14000 kBtu. The majority (75\%) of all hourly consumption are below
+2000 kBtu. All building types have a large amount of outliers above
+the 75\% quartile. This indicates gas heating demand of all building
+types are severely right skewed. Hospital has the highest median gas
+heating demand of about 1100 kBtu. Outpatient Health Care has the
+second larges hourly gas heating demand. In terms of peak demand,
+Secondary School and Large Office have the highest peak hourly gas
+heating demand (\fref{fig:HG}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{HG}
+  \caption[Heating:Gas Box Plot]{Heating:Gas Box Plot}
+  \label{fig:HG}
+\end{figure}%
+
+Hourly hot water demand of the benchmark buildings range from 0 to
+2500 kBtu, about 1/6 of the range of space heating gas demand. Most
+buildings have median hot water hourly demand below 100 kBtu, except
+that the median hot water demand of Large Hotel is around 700
+kBtu. From \tref{tab:hotWater}, we can see that Stand-alone Retail,
+Strip Mall and Warehouse has zero demand for service hot water. Large
+Hotel also have a large amount of outliers above the 75\%
+quartile. This indicates gas hot water demand of the Large Hotel is
+severely right skewed. Hospital has the second largest median gas hot
+water demand of about 100 kBtu. Large Hotel also stands out in peak
+demand. (\fref{fig:WH}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{WH}
+  \caption[Water Heater:WaterSystem:Gas Box Plot]{Water
+    Heater:WaterSystem:Gas Box Plot}
+  \label{fig:WH}
+\end{figure}%
+
+From \tref{tab:heatFuel}, only Large Hotel, Medium Office, Midrise
+Apartment, OutPatient Healthcare, Small Hotel and Stand-alone Retail
+use electricity besides natural gas for space heating. Hourly
+electricity heating demand of these buildings range from 0 to 1000
+kBtu. All of them has nearly zero median electricity heating demand
+and a large amount of outliers above (except for Midrise Apartment)
+the 75\% quartile. This indicates electricity heating demand of all
+the five building types are severely right skewed. Medium Office has
+the highest hourly electricity heating peak demand and Outpatient
+Healthcare has the second largest hourly electricity heating peak
+demand (\fref{fig:HE}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{HE}
+  \caption[Heating:Electricity Box Plot]{Heating:Electricity Box Plot}
+  \label{fig:HE}
+\end{figure}% 
+
+Hourly cooling demand benchmark building types range from 0 to 3000
+kBtu, which is about 20\% of that of the peak gas heating demand. The
+hospital has the largest median cooling demand of about 1500
+kBtu. Large Hotel has the second largest median cooling demand. Both
+Hospitals and Large Hotels do not have outliers, indicating their
+hourly cooling demand distributions are less skewed. On the contrary,
+all other building types have a large amount of outliers above the
+75\% quartile, indicating a severe right skew for their hourly cooling
+demand distribution. There are four building types with non-zero
+median hourly cooling demand: Hospital, Large Hotel, Outpatient Health
+Care and Small Hotel. This means they need space cooling for at least
+50\% of the year. The constant cooling demand creates the
+opportunities for energy recovery of cooling induced reject heat. The
+building types with zero median hourly cooling demand then require
+cooling only in the cooling season. In terms of hourly cooling peak
+demand, the Secondary School has the highest peak demand of about
+2700kBtu and Hospital has the second largest peak
+demand(\fref{fig:CE}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{CE}
+  \caption[Cooling:Electricity Box Plot]{Cooling:Electricity Box Plot}
+  \label{fig:CE}
+\end{figure}%
+
+The hourly electricity demand of benchmark buildings range from 0 to
+6000 kBtu, which is about 40\% of that of the peak heating
+demand. Comparing with other output variables, the electricity demand
+distribution has less outliers in general. The Hospital has the
+largest median hourly electricity demand (about 3400 kBtu). The Large
+Office has the second largest median hourly electricity demand (about
+1800 kBtu). Secondary School has the Largest electricity hourly peak
+demand.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{EF}
+  \caption[Electricity:Facility Box Plot]{Electricity:Facility Box
+    Plot}
+  \label{fig:EF}
+\end{figure}%
+
+\subsubsection{Space Heating Demand vs. Space Cooling Demand}
+Hourly space heating demand of the benchmark buildings mainly closely
+follows the distribution of gas heating demand, with minor demand
+increase in Medium Office and Outpatient Health Care (\fref{fig:SH}).
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{SH}
+  \caption[Space Heating Demand Box Plot]{Space Heating Demand Box
+    Plot}
+  \label{fig:SH}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{HG}
+  \caption[Heating:Gas Box Plot]{Heating:Gas Box Plot}
+  \label{fig:HG2}
+\end{subfigure}
+\caption[Comparing Heating:Gas and Space Heating]{Comparing
+  Heating:Gas and Space Heating}
+\end{figure}
+
+Comparing the space heating (Heating:Gas and Heating:Electricity) with
+space cooling (Cooling:Electricity), we can see that the heating peak
+demand is larger than cooling peak demand for all building types. The
+Hospital, Large Hotel and Outpatient Health Care have both the highest
+median space heating and cooling demand, indicating a potential for
+single building level energy recovery.
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{SH}
+  \caption[Space Heating Demand Box Plot]{Space Heating Demand Box
+    Plot}
+  \label{fig:SH}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{CE}
+  \caption[Cooling:Electricity Box Plot]{Cooling:Electricity Box Plot}
+  \label{fig:CE2}
+\end{subfigure}
+\caption[Comparing Space Heating and Space Cooling Demand]{Comparing
+  Space Heating and Space Cooling Demand}
+\end{figure}
+
+\subsubsection{Heating Demand vs. Electricity Demand}
+Comparing the heat and power demand of each benchmark building type
+with the ``heat to power ratio''(HTPR), one of the important
+parameters of a CHP plant. Depending on the prime mover types, a CHP
+plant can produce 0.6 to 10 unit of waste heat for one unit of
+electricity generation~\cite{introCHP2010}. From \fref{fig:HTPR}, we
+can see the range of HTPR is from 0 to 25 and the median of HTPR are
+all below 1. The building types with a high median HTPR include Large
+Hotel, Midrise Appartment, Outpatient Health Care and First Service
+Restaurant. Increase the number of buildings with high HTPR ratio is
+helpful in more fully reuse of the waste heat from power
+generation. In addiction, the large range of Heat to Power ratio also
+indicates the necessity of heat storage equipment.
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{H}
+  \caption[Heating Demand Box Plot]{Heating Demand Box
+    Plot}
+  \label{fig:H}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{EF}
+  \caption[Electricity Demand Box Plot]{Electricity Demand Box Plot}
+  \label{fig:EF2}
+\end{subfigure}
+\caption[Comparing Heating and Electricity Demand]{Comparing Heating
+  and Electricity Demand}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{HTPR}
+  \caption[Heat to Power Ratio Box Plot]{Heat to Power Ratio Box Plot}
+  \label{fig:HTPR}
+\end{figure}%
 
 \pagebreak
 \subsection{3D GIS Model Geometry}
@@ -405,7 +638,14 @@ The four major building sectors involved in the current project are
 residential, commercial, office and hotel. Their topological pattern
 is represented in Figure \ref{fig:mellonTop}. The conceptual model
 construction follows the building type topological pattern and the
-urban density as the Mellon Arena Project (\fref{fig:sitePlan})
+urban density as the Lower Hill District Project (\fref{fig:sitePlan})
+
+After the land use is assigned (\fref{fig:sitePlan}), one rule file is
+applied to all the building lots and generates building geometries by
+extruding the building lot (with an offset to the interior) according
+to the number of floors of the benchmark buildings. We intend to make
+the building geometry simple in order to highlight the color of each
+building that encodes its energy demand.
 
 \begin{figure}[h!]
   \centering
@@ -423,3 +663,53 @@ urban density as the Mellon Arena Project (\fref{fig:sitePlan})
   Office, \\13: Stand-alone Retail, 15: Super Market)
   \label{fig:sitePlan}
 \end{figure}
+
+\subsection{Aggregating Hourly Energy Data to 3D GIS Model}
+The authors have experimented with two approaches to aggregate energy
+profile data into the conceptual model constructed in CityEngine
+\begin{enumerate}
+\item Importing 3D models from CityEngine to ArcScene and aggregate
+  the energy data (in the form of a table) into the 3D feature with
+  ``one-to-many'' join. For more details please refer to Appendix X
+
+\item Write the energy profile data directly in the rule file for
+  building generation in CityEngine. 
+
+  The general method is to 
+
+\item Process the color encoding outside of CityEngine and write the
+  generated color encoding representations in CityEngine
+\end{enumerate}
+
+The second approach has the advantage of 1) ready-to-use data
+classification method and map symbol templates that facilitates
+choropleth map design 2) the ``time-slider'' function for creating a
+time-wise navigation and animated map. \fref{fig:arcgisTime} shows the
+interface slider and the dynamic map of heating energy demand for the
+conceptual model using ArcGIS. There are several problems of this
+approach: 1) its high requirement of computational power makes it
+infeasible to view on a normal PC. 2) The time dimension only exist
+inside the map file. Although the animated map can be exported, the
+output animation contains neither any form of temporal label nor the
+control of playback. 3) For 3D GIS model, it does not contain a proper
+function to extract single frames of map images, making it impossible
+to implement exterior interface that deals with 3D maps.
+
+The first approach, on the contrary, provides more flexibility but
+also requires much user-end work including: pre-processing of energy
+profile data, implementing data classification method and the
+bivariate color ramp. An interface is also needed for visualising the
+image sequence.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{arcgisTime}
+  \caption{ArcGIS Time Slider for Temperal Data Display}
+  \label{fig:arcgisTime}
+\end{figure}
+
+Due to limited time, the experimented GIS software are only restricted
+to ArcGIS and CityEngine. There could be better alternatives to
+achieve a dynamic map with more elegance. Find a better alternative
+software to implement a dynamic map could be part of the work of the
+next stage of the project.
