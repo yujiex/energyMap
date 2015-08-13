@@ -167,18 +167,12 @@ def plotDay_heat():
         dfHeat.ix[idx: min(idx + 24, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i+1])
     plt.show()
 
-# clear selected landuse for calculation
-def clearSelect():
-    landSelection = []
-    hmap.g.delete("a")
-
 # buttons to control advance and back
 buttonList = [{'text':'+24h', 'cmd':advance24h},
               {'text':'+1h', 'cmd':advance1h},
               {'text':'-24h', 'cmd':back24h},
               {'text':'-1h', 'cmd':back1h},
-              {'text':'heat', 'cmd':plotDay_heat},
-              {'text':'clear', 'cmd':clearSelect}]
+              {'text':'heat', 'cmd':plotDay_heat}]
 #             {'text':'play', 'cmd':play}]
 
 buttoncount = 0
@@ -252,10 +246,9 @@ def landName(event):
             landSelection.append(landInit)
             print 'Selection Set: {0}'.format(landSelection)
             print "landuse is {0}".format(landDict[key])
-            idx = allyear.get()
             if isSingle.get() == 1:
                 plt.figure()
-                dfHeat[bdtype][idx:(min(idx+24, 8760))].plot()
+                dfHeat[bdtype].plot()
                 plt.title(bdtype)
                 plt.xlabel('time')
                 plt.ylabel('Heating / Cooling Demand (kBtu)')
@@ -267,7 +260,7 @@ def landName(event):
                                             bdtypelst)
                 print list(selectHeatDF.columns.values)
                 selectHeatDF['agg'] = selectHeatDF.sum(axis = 1)
-                selectHeatDF['agg'][idx:(min(idx+24, 8760))].plot()
+                selectHeatDF['agg'].plot()
                 plt.title('Aggregate Demand')
                 plt.xlabel('time')
                 plt.ylabel('Heating / Cooling Demand (kBtu)')
@@ -354,6 +347,10 @@ ck3d = Checkbutton(master, width = 4, text = '3d', variable = is3d,
 ck3d.grid(row = row_button_0, column = col_button_0 + len(buttonList))
 
 '''
+# clear selected landuse for calculation
+def clearSelect():
+    landSelection = []
+    hmap.g.delete("a")
 clearButton = Button(master, width = 5, text = 'clear', command =
                      clearSelect)
 clearButton.grid(row = row_button_0, column = col_button_0 + 5)

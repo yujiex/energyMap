@@ -59,11 +59,11 @@ dfHeat_3d = pd.DataFrame(heatDict)
 coolDict = ld.profile2Dict("energyData/meterData/", "Cooling:Elec")
 dfCool = pd.DataFrame(coolDict)
 #print [[(x*hpermonth,(x + 1)*hpermonth) for x in y] for y in seasons]
-dfHeatSeason = [[dfHeat[x*hpermonth:(x + 1)*hpermonth] 
+dfHeatSeason = [[dfHeat[x*hpermonth:(x + 1)*hpermonth]
                  for x in y] for y in seasons]
 dfHeatSeason = [pd.concat(x) for x in dfHeatSeason]
 
-dfCoolSeason = [[dfCool[x*hpermonth:(x + 1)*hpermonth] 
+dfCoolSeason = [[dfCool[x*hpermonth:(x + 1)*hpermonth]
                  for x in y] for y in seasons]
 dfCoolSeason = [pd.concat(x) for x in dfCoolSeason]
 
@@ -231,8 +231,8 @@ def changeColor(event):
             f.create_text(size/2, size/2, fill = font_color, font =
                           bd_font, text = bdinit)
 
-#distribution = landequalLike()
-distribution = landsingleUse("LH")
+distribution = landequalLike()
+#distribution = landsingleUse("LH")
 (f_2d, l_2d, bd_count) = createBoard(dim, dim, size, distribution)
 countDict = dict(zip(bdTypelist, bd_count))
 del countDict["Green"]
@@ -260,7 +260,7 @@ def getmsg(dflist, cate):
         # total  demand max
         maxtotal = dfall['total'].max()
         mintotal = dfall['total'].min()
-        dif = maxtotal - mintotal 
+        dif = maxtotal - mintotal
         ratio = round(float(dif)/maxtotal, 3)
         if cate == "Heating":
             energy += ('Max Heaing Demand (Gas)/kBtu: {0}\n'+
@@ -344,9 +344,9 @@ for button in buttonList:
 
 # display heating cooling msg
 row_genmsg = 0
-col_genmsg = dim + category + 2 
+col_genmsg = dim + category + 2
 col_span_msg = 1
-row_span_msg = dim 
+row_span_msg = dim
 
 genmsg = Message(master, text = generalMsg(), font = ot_font, width =
                  category * size, fg = font_color)
