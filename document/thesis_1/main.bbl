@@ -1,9 +1,15 @@
-\begin{thebibliography}{45}
+\begin{thebibliography}{46}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Alberta Association, Canadian Institute of
+  Planners}(2009)]{aacip2009}
+{Alberta Association, Canadian Institute of Planners}.
+\newblock Responding to the energy challenge of canadian communities.
+\newblock \emph{Planning Journal}, pages 30--33, July 2009.
 
 \bibitem[of~Energy Efficiency \& Renewable~Energy(2015)]{DOE2015}
 Office of~Energy Efficiency \& Renewable~Energy.
@@ -39,12 +45,6 @@ Kathryn.
 \newblock
   \url{https://www.theccc.org.uk/tackling-climate-change/reducing-carbon-emissions/carbon-budgets-and-targets/}.
 
-\bibitem[{Alberta Association, Canadian Institute of
-  Planners}(2009)]{aacip2009}
-{Alberta Association, Canadian Institute of Planners}.
-\newblock Responding to the energy challenge of canadian communities.
-\newblock \emph{Planning Journal}, pages 30--33, July 2009.
-
 \bibitem[Jaccard et~al.(1997)Jaccard, Failing, and Berry]{Jaccard19971065}
 Mark Jaccard, Lee Failing, and Trent Berry.
 \newblock From equipment to infrastructure: community energy management and
@@ -70,6 +70,22 @@ Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
 \newblock \emph{Building information modeling: BIM in current and future
   practice}, chapter~10.
 \newblock Wiley, Hoboken, New Jersey, 2014.
+
+\bibitem[{Mayor of London}(2015{\natexlab{a}})]{londonHeatMap}
+{Mayor of London}.
+\newblock London heat map.
+\newblock web, August 2015{\natexlab{a}}.
+\newblock \url{http://www.londonheatmap.org.uk/Content/home.aspx}.
+
+\bibitem[Broersma et~al.(2013)Broersma, Fremouw, and
+  Dobbelsteen]{Dobbelsteen2013}
+Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
+\newblock Energy potential mapping: Visualising energy characteristics for the
+  exergetic optimisation of the built environment.
+\newblock \emph{Entropy}, 15\penalty0 (2):\penalty0 490, 2013.
+\newblock ISSN 1099-4300.
+\newblock \doi{10.3390/e15020490}.
+\newblock URL \url{http://www.mdpi.com/1099-4300/15/2/490}.
 
 \bibitem[{Esri}(2013)]{esriGeodesign2012}
 {Esri}.
@@ -130,16 +146,6 @@ Wikipedia.
 \newblock
   \url{https://en.wikipedia.org/wiki/Exergy#Applications_in_sustainability}.
 
-\bibitem[Broersma et~al.(2013)Broersma, Fremouw, and
-  Dobbelsteen]{Dobbelsteen2013}
-Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
-\newblock Energy potential mapping: Visualising energy characteristics for the
-  exergetic optimisation of the built environment.
-\newblock \emph{Entropy}, 15\penalty0 (2):\penalty0 490, 2013.
-\newblock ISSN 1099-4300.
-\newblock \doi{10.3390/e15020490}.
-\newblock URL \url{http://www.mdpi.com/1099-4300/15/2/490}.
-
 \bibitem[İbrahim Tol and Svendsen(2012)]{Tol2012551}
 Hakan İbrahim Tol and Svend Svendsen.
 \newblock A comparative study on substation types and network layouts in
@@ -163,12 +169,6 @@ Hakan İbrahim Tol and Svend Svendsen.
 \newblock Heat map.
 \newblock web, July 2015{\natexlab{a}}.
 \newblock \url{https://en.wikipedia.org/wiki/Heat_map}.
-
-\bibitem[{Mayor of London}(2015{\natexlab{a}})]{londonHeatMap}
-{Mayor of London}.
-\newblock London heat map.
-\newblock web, August 2015{\natexlab{a}}.
-\newblock \url{http://www.londonheatmap.org.uk/Content/home.aspx}.
 
 \bibitem[Finney et~al.(2012)Finney, Sharifi, Swithenbank, Nolan, White, and
   Ogden]{Finney2012165}
@@ -322,5 +322,12 @@ Esri.
 \newblock web, August 2015{\natexlab{b}}.
 \newblock
   \url{http://cehelp.esri.com/help/index.jsp?topic=/com.procedural.cityengine.help/html/manual/cga/basics/toc.html}.
+
+\bibitem[Esri(2015{\natexlab{c}})]{arcScene2015}
+Esri.
+\newblock 3d analyst and arcscene.
+\newblock web, August 2015{\natexlab{c}}.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html#//00q8000000p0000000}.
 
 \end{thebibliography}

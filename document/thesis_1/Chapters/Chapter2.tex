@@ -10,9 +10,11 @@
 
 Section \ref{staticEnergyMap} and section \ref{dynamicMap} provide an
 overview of the existing instances of static energy maps and dynamic
-energy maps. A list of summary of techniques used in the production of
-Static and Dynamic Energy Map instances are as in
-\tref{tab:mapSummary}:
+energy maps. The static maps examples are arranged in the order of
+increasing layers of information from heat mapping to energy potential
+mapping of various energy sources and sinks. A summary of techniques
+used to produce these Static and Dynamic Energy Map instances are
+shown in \tref{tab:mapSummary}:
 
 \begin{comment}
 Section \ref{mapDesign} and \ref{stDataAnalysis} provides
@@ -23,14 +25,14 @@ further development. \grey{(?? are not written)}
 
 \begin{table}[h!]
   \centering
-  \begin{tabular}{r|c| c }
+  \begin{tabular}{r|c|p{4cm}}
     \hline
 Project Name           &Type   & Software \\
     \hline
     \hline
 Calgary Map            &Static, Stand-alone &     ?    \\
     \hline
-London Heat Map        &Static, web, interactive &     ?    \\
+London Heat Map        &Static, web, interactive &ArcGIS WebApp\\
     \hline
 National Heat Map      &Static, web, interactive &Google Map API \\
     \hline
@@ -51,49 +53,6 @@ for Future Network     & &          \\
 \end{table}
 
 \section{Static Energy Map}\label{staticEnergyMap}
-\subsection{Calgary Energy Map}
-One of the early instances of Static Energy Mapping practices is the
-Energy Mapping Study of City of Calgary in 2008, carried out by
-Canadian Urban Institute. It aims at providing insights to achieve
-the goal of reducing 50\% of Green House Gas (GHG) emissions by
-2050~\cite{aacip2009}. It depicts 1) how building design strategies
-and land use planning can influence the city level energy use
-intensity 2) the availability of alternative energy sources and the
-opportunities to combine building level sustainable design technology
-with the community level energy system design. 
-
-Calgary energy map first compares energy use intensity (the annual
-total demand for thermal energy of space heating cooling, hot water
-and electricity per unit area~\cite{aacip2009}) in GJ/ha between two
-development cases: ``business as usual'' case and ``ultra-high
-efficiency'' case (\fref{fig:calgaryCmp}). The comparison demonstrated
-a 34\% reduction in energy use intensity from the former to the
-latter~\cite{aacip2009}.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.6\linewidth]{calgaryCmp.png}
-  \caption[Calgary Energy Demand Map]{Calgary Energy Map (Business as Usual, Ultra-High
-    Efficiency)~\cite{aacip2009}}
-  \label{fig:calgaryCmp}
-\end{figure}
-
-It also shows alternative energy sources of district energy, solar hot
-water, solar air, energy sharing and PV installation on the map
-(\fref{fig:calgaryAlter}). By overlaying the alternative technology
-map and the ``ultra-high efficiency'' map, it highlights the
-opportunities of using alternative renewable energy sources and
-district energy system to further improve the energy performance of
-high energy demand areas after high performance building design was
-applied~\cite{aacip2009}.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.3\linewidth]{calgaryAlter.png}
-  \caption{Calgary Energy Map Alternative Energy Source~\cite{aacip2009}}
-  \label{fig:calgaryAlter}
-\end{figure}
-
 \subsection{UK Heat Map}
 Under the goal of supplying 25\% of the total energy with
 decentralized energy (DE) by the year 2025, the Decentralised Energy
@@ -173,6 +132,50 @@ million buildings in the UK~\cite{waterHeatMap}.
   \label{fig:waterMap}
 \end{figure}
 
+
+\subsection{Calgary Energy Map}
+One of the early instances of Static Energy Mapping is the Energy
+Mapping Study of City of Calgary in 2008, carried out by Canadian
+Urban Institute. It aims at providing insights to achieve the goal of
+reducing 50\% of Green House Gas (GHG) emissions by
+2050~\cite{aacip2009}. It depicts 1) how building design strategies
+and land use planning can influence the city level energy use
+intensity 2) the availability of alternative energy sources and the
+opportunities to combine building level sustainable design technology
+with the community level energy system design.
+
+Calgary energy map first compares energy use intensity (the annual
+total demand for thermal energy of space heating cooling, hot water
+and electricity per unit area~\cite{aacip2009}) in GJ/ha between two
+development cases: ``business as usual'' case and ``ultra-high
+efficiency'' case (\fref{fig:calgaryCmp}). The comparison demonstrated
+a 34\% reduction in energy use intensity from the former to the
+latter~\cite{aacip2009}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{calgaryCmp.png}
+  \caption[Calgary Energy Demand Map]{Calgary Energy Map (Business as Usual, Ultra-High
+    Efficiency)~\cite{aacip2009}}
+  \label{fig:calgaryCmp}
+\end{figure}
+
+It also shows alternative energy sources of district energy, solar hot
+water, solar air, energy sharing and PV installation on the map
+(\fref{fig:calgaryAlter}). By overlaying the alternative technology
+map and the ``ultra-high efficiency'' map, it highlights the
+opportunities of using alternative renewable energy sources and
+district energy system to further improve the energy performance of
+high energy demand areas after high performance building design was
+applied~\cite{aacip2009}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\linewidth]{calgaryAlter.png}
+  \caption{Calgary Energy Map Alternative Energy Source~\cite{aacip2009}}
+  \label{fig:calgaryAlter}
+\end{figure}
+
 \subsection{Energy Potential Mapping}
 Dobbelsteen et al. described a framework of Energy Potential Mapping
 (EPM) that aggregates information of energy supply, demand and
@@ -199,8 +202,10 @@ color~\cite{Dobbelsteen2013}.
 \end{figure}
 
 \section{Dynamic Energy Map}\label{dynamicMap}
-As is discussed before, dynamic map includes time information in a
-map. Several existing approaches occur.
+Per definition of Dynamic Energy Map in the introduction, there are
+not instances that fully realized all the desired functions yet. In
+this section, we will discuss some valuable attempts towards realizing
+and exploring the power of dynamic energy mapping.
 
 \subsection{Lower Hill District Dynamic Mapping Project}
 In 2011 to 2012, the Dynamic Energy Map of the Lower Hill District,

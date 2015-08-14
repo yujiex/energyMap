@@ -1,2 +1,45 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Mixing Load Graph}}{8}{figure.caption.31}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces London Heat Map}}{11}{figure.caption.37}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces National Heat Map}}{12}{figure.caption.38}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Water Heat Map}}{12}{figure.caption.39}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Calgary Energy Demand Map}}{13}{figure.caption.41}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Calgary Energy Map Alternative Energy Source\nobreakspace {}\cite {aacip2009}\relax }}{14}{figure.caption.42}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Rotterdam Heat Map}}{15}{figure.caption.44}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Lower Hill District 3D GIS Map}}{16}{figure.caption.47}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Heating/Electricity Residential}}{16}{figure.caption.48}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Heat Demand Density}}{17}{figure.caption.50}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Monthly Heat Demand (Small Multiple)}}{17}{figure.caption.51}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Campus Animated Map}}{17}{figure.caption.52}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Dynamic Energy Map Display}}{20}{figure.caption.54}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces General Work Flow}}{22}{figure.caption.61}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Heating Fuel}}{26}{figure.caption.70}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Heating:Gas Box Plot}}{29}{figure.caption.77}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Water Heater:WaterSystem:Gas Box Plot}}{30}{figure.caption.78}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Heating:Electricity Box Plot}}{31}{figure.caption.79}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Cooling:Electricity Box Plot}}{31}{figure.caption.80}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Electricity:Facility Box Plot}}{32}{figure.caption.81}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Comparing Heating:Gas and Space Heating}}{32}{figure.caption.83}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Comparing Space Heating and Space Cooling Demand}}{33}{figure.caption.84}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparing Heating and Electricity Demand}}{33}{figure.caption.86}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Heat to Power Ratio Box Plot}}{34}{figure.caption.87}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Building Type Topology}}{36}{figure.caption.91}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Conceptual Model Site Plan}}{36}{figure.caption.92}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces ArcGIS Time Slider for Temperal Data Display\relax }}{38}{figure.caption.97}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces CMU OSM Map}}{40}{figure.caption.102}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Conceptual City Lots}}{40}{figure.caption.103}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Geo-tif in CityEngine}}{42}{figure.caption.106}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Geo-tif with OSM Map}}{42}{figure.caption.107}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Heating Demand Histogram of Conceptual City}}{43}{figure.caption.111}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Heating Demand of Conceptual City}}{44}{figure.caption.113}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Animation Demo of the Color Calculation}}{45}{figure.caption.114}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Slider in Campus Example}}{46}{figure.caption.116}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Finished Campus Example}}{46}{figure.caption.117}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Imported CSV}}{51}{figure.caption.126}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces 3D Dynamic Heat Map in ArcGIS}}{52}{figure.caption.129}

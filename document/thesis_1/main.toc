@@ -1,8 +1,8 @@
 \contentsline {chapter}{Contents}{i}{dummy.1}
-\contentsline {chapter}{List of Figures}{ii}{dummy.3}
-\contentsline {chapter}{List of Tables}{iii}{dummy.5}
-\contentsline {chapter}{Abbreviations}{iv}{dummy.7}
-\contentsline {chapter}{Symbols}{v}{dummy.10}
+\contentsline {chapter}{List of Figures}{iii}{dummy.3}
+\contentsline {chapter}{List of Tables}{v}{dummy.5}
+\contentsline {chapter}{Abbreviations}{vi}{dummy.7}
+\contentsline {chapter}{Symbols}{vii}{dummy.10}
 \contentsline {chapter}{\numberline {1}General Introduction}{1}{chapter.13}
 \contentsline {section}{\numberline {1.1}Project Overview}{1}{section.14}
 \contentsline {section}{\numberline {1.2}Objective and Problem Definition}{3}{section.19}
@@ -11,9 +11,44 @@
 \contentsline {subsection}{\numberline {1.3.2}Heat Map}{6}{subsection.26}
 \contentsline {subsection}{\numberline {1.3.3}Energy Map}{7}{subsection.27}
 \contentsline {subsection}{\numberline {1.3.4}Dynamic Energy Map}{7}{subsection.28}
-\contentsline {section}{\numberline {1.4}Why ``time'' dimension is important for an Energy Map}{8}{section.29}
+\contentsline {section}{\numberline {1.4}Why ``time'' dimension is important}{8}{section.29}
 \contentsline {subsection}{\numberline {1.4.1}Strong Temporal Variation of Energy Demand}{8}{subsection.30}
-\contentsline {subsection}{\numberline {1.4.2}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{9}{subsection.32}
+\contentsline {subsection}{\numberline {1.4.2}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{8}{subsection.32}
+\contentsline {chapter}{\numberline {2}Related Works}{10}{chapter.33}
+\contentsline {section}{\numberline {2.1}Static Energy Map}{10}{section.35}
+\contentsline {subsection}{\numberline {2.1.1}UK Heat Map}{10}{subsection.36}
+\contentsline {subsection}{\numberline {2.1.2}Calgary Energy Map}{13}{subsection.40}
+\contentsline {subsection}{\numberline {2.1.3}Energy Potential Mapping}{14}{subsection.43}
+\contentsline {section}{\numberline {2.2}Dynamic Energy Map}{14}{section.45}
+\contentsline {subsection}{\numberline {2.2.1}Lower Hill District Dynamic Mapping Project}{15}{subsection.46}
+\contentsline {subsection}{\numberline {2.2.2}Energy Mapping to Identify Opportunities for Future Networks Project}{16}{subsection.49}
+\contentsline {chapter}{\numberline {3}Building from Previous Work}{19}{chapter.53}
+\contentsline {chapter}{\numberline {4}Methodology}{21}{chapter.55}
+\contentsline {section}{\numberline {4.1}Overview}{21}{section.56}
+\contentsline {section}{\numberline {4.2}Input}{23}{section.62}
+\contentsline {subsection}{\numberline {4.2.1}Benchmark Models and Energy Data}{23}{subsection.63}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Input for Identifing Energy Recovery Opportunities}{25}{subsubsection.67}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Input for Sizing District Co-generation System}{27}{subsubsection.72}
+\contentsline {subsection}{\numberline {4.2.2}Simulation Data Analysis of the benchmark models}{28}{subsection.74}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Single Output}{28}{subsubsection.76}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Space Heating Demand vs. Space Cooling Demand}{32}{subsubsection.82}
+\contentsline {subsubsection}{\numberline {4.2.2.3}Heating Demand vs. Electricity Demand}{33}{subsubsection.85}
+\contentsline {subsection}{\numberline {4.2.3}3D GIS Model Geometry}{34}{subsection.88}
+\contentsline {subsection}{\numberline {4.2.4}Aggregating Hourly Energy Data to 3D GIS Model}{36}{subsection.93}
 \vspace {2em}
+\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{39}{appendix.98}
+\contentsline {section}{\numberline {A.1}General Introduction}{39}{section.99}
+\contentsline {section}{\numberline {A.2}Explaining Each Steps}{40}{section.100}
+\contentsline {subsection}{\numberline {A.2.1}Create a Urban Environment Layout}{40}{subsection.101}
+\contentsline {subsection}{\numberline {A.2.2}Add Attributes to Building Lots}{41}{subsection.104}
+\contentsline {subsection}{\numberline {A.2.3}Importing Base Map (Optional)}{41}{subsection.105}
+\contentsline {subsection}{\numberline {A.2.4}Writing Rule File for Building Generation}{42}{subsection.108}
+\contentsline {subsection}{\numberline {A.2.5}Deciding Data Encoding}{43}{subsection.109}
+\contentsline {subsection}{\numberline {A.2.6}Associating Rule Attribute with Object Attribute}{44}{subsection.115}
+\contentsline {subsection}{\numberline {A.2.7}Sharing the Map}{45}{subsection.119}
+\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in Stand-alone CityEngine}{48}{appendix.120}
+\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{50}{appendix.121}
+\contentsline {section}{\numberline {C.1}Introduction}{50}{section.122}
+\contentsline {section}{\numberline {C.2}Explaining Each Steps}{50}{section.123}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{10}{dummy.33}
+\contentsline {chapter}{Bibliography}{53}{dummy.130}

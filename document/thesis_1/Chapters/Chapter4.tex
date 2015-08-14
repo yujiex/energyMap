@@ -664,18 +664,17 @@ building that encodes its energy demand.
   \label{fig:sitePlan}
 \end{figure}
 
-\subsection{Aggregating Hourly Energy Data to 3D GIS Model}
+\subsection{Aggregating Hourly Energy Data to 3D GIS Model}\label{sec:aggregateTime}
 The authors have experimented with two approaches to aggregate energy
 profile data into the conceptual model constructed in CityEngine
-\begin{enumerate}
+\begin{enumerate}[1)]
 \item Importing 3D models from CityEngine to ArcScene and aggregate
   the energy data (in the form of a table) into the 3D feature with
   ``one-to-many'' join. For more details please refer to Appendix X
 
 \item Write the energy profile data directly in the rule file for
-  building generation in CityEngine. 
-
-  The general method is to 
+  building generation in CityEngine. For more details please refer to
+  \aref{AppendixA}
 
 \item Process the color encoding outside of CityEngine and write the
   generated color encoding representations in CityEngine
@@ -688,12 +687,27 @@ time-wise navigation and animated map. \fref{fig:arcgisTime} shows the
 interface slider and the dynamic map of heating energy demand for the
 conceptual model using ArcGIS. There are several problems of this
 approach: 1) its high requirement of computational power makes it
-infeasible to view on a normal PC. 2) The time dimension only exist
-inside the map file. Although the animated map can be exported, the
-output animation contains neither any form of temporal label nor the
-control of playback. 3) For 3D GIS model, it does not contain a proper
-function to extract single frames of map images, making it impossible
-to implement exterior interface that deals with 3D maps.
+infeasible to model or view on a typical PC. The authors only
+succeeded in importing the hourly energy profile data when using point
+features to represent building geometry. Even for the relatively
+simple 3D models in the current study, a relatively higher performance
+machine (Dell Precision T1600 Quad Core Intel Xeon, 3.10GHz RAM - 16GB
+was used) was used in importing the data, the authors only suceeded in
+importing one month of data, never for one year. This technical issue
+makes it impossible to using the current ArcGIS platform to implement
+high temporal resolution dynamic maps without either truncating time
+range or reducing the complexity for building geometry
+representation. 2) The time dimension only exist inside the map
+file. This means even one produced a dynamic energy map, one cannot
+share it without packing all related files and send to others. This
+requires the viewer end to have the same high performance
+computer. Although the animated map can be exported, the output
+animation contains neither any form of temporal label nor the control
+of playback. Without time legend, when and for how long the dynamic
+changes happen are not shown. 3) For 3D GIS model, it does not contain
+a proper function to extract single frames of map images, making it
+impossible to implement exterior interface that deals with 3D maps
+images.
 
 The first approach, on the contrary, provides more flexibility but
 also requires much user-end work including: pre-processing of energy
