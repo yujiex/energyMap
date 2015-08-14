@@ -4,7 +4,7 @@
 
 \label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
-\lhead{Appendix B. \emph{Rule for Map in CityEngine}} % This is for the header on each page - perhaps a shortened title
+\lhead{Appendix B. \emph{GIS Processing Log}} % This is for the header on each page - perhaps a shortened title
 
 The session records the version of rule file that implements dynamic
 energy map within CityEngine.

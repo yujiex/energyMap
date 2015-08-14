@@ -193,10 +193,10 @@ of the following heat rejection forms~\cite{Bhatia2015}:
 The ``condenser total heat of rejection''~\cite{Bhatia2015} (THR) in
 the condensing process equals to the ``net refrigeration effect''
 ~\cite{Bhatia2015}(RE, the hourly cooling demand), plus the compressor
-input, it can be represented with the following equation:
+input, it can be represented with the following equation~\cite{Bhatia2015}:
 
 \begin{equation}\label{eq:reject}
-THR = RE * f~\cite{Bhatia2015}
+THR = RE * f 
 \end{equation}
 
 $f$ is the ``Heat Rejection Factor'' and it is typically between 1.15
@@ -670,7 +670,8 @@ profile data into the conceptual model constructed in CityEngine
 \begin{enumerate}[1)]
 \item Importing 3D models from CityEngine to ArcScene and aggregate
   the energy data (in the form of a table) into the 3D feature with
-  ``one-to-many'' join. For more details please refer to Appendix X
+  ``one-to-many'' join. For more details please refer to
+  \aref{AppendixC}
 
 \item Write the energy profile data directly in the rule file for
   building generation in CityEngine. For more details please refer to
@@ -678,6 +679,11 @@ profile data into the conceptual model constructed in CityEngine
 
 \item Process the color encoding outside of CityEngine and write the
   generated color encoding representations in CityEngine
+
+  This method allows for more specialized symbol and color map
+  design. More specific information will be included in the interface
+  section X (interface design!!!).
+
 \end{enumerate}
 
 The second approach has the advantage of 1) ready-to-use data
@@ -727,3 +733,248 @@ to ArcGIS and CityEngine. There could be better alternatives to
 achieve a dynamic map with more elegance. Find a better alternative
 software to implement a dynamic map could be part of the work of the
 next stage of the project.
+
+\section{Output Map Images}
+Select all the building lot and change their names to ``LOT'' so that
+we’ll be able to use the python script to select them all with the
+filter ``\texttt{ce.withName(“’LOT’”)}''. Then the map images are
+extracted as snapshots from CityEngine with Python script by
+iteratively setting the time step and extract snapshot of that time
+step:
+
+\makeatletter
+\def\verbatim@font{\linespread{1}\tiny\ttfamily} \makeatother
+\begin{verbatim}
+'''
+Created on Jun 5, 2015
+@author: yujie
+'''
+from scripting import *
+import time
+
+# get a CityEngine instance
+ce = CE()
+
+def main():
+    x = ce.getObjectsFrom(ce.scene, ce.withName("'LOT'"))  # < 1s
+    for i in range(2):
+        for item in x:
+            ce.setAttribute(item, 'time', i) # 28 s
+            views = ce.getObjectsFrom(ce.get3DViews())  # < 1s
+        if i < 10:
+            views[0].snapshot(ce.toFSPath('images')+("/img000"+str(i)+".png"))
+        elif i < 100:
+            views[0].snapshot(ce.toFSPath('images')+("/img00"+str(i)+".png"))
+        elif i < 1000:
+            views[0].snapshot(ce.toFSPath('images')+("/img0"+str(i)+".png"))
+        else:
+            views[0].snapshot(ce.toFSPath('images')+("/img"+str(i)+".png"))
+
+if __name__ == '__main__':
+    main()
+\end{verbatim}
+After this step, a sequence of 8760 3D (if using perspective view) or
+2D (if using top view) energy images will be extracted and named
+according to their time stamp (``imgxxxx.png'' represents the energy
+demand for the xxxx-th hour)
+
+\section{Interface Specification}\label{interfaceSpec}
+\subsection{User Definition}
+First we want to specify a user profile in order to best convey the
+information with the Dynamic Energy Map.
+
+The potential category of user group for the Dynamic Map includes: 1)
+policy makers, 2) urban planners with the interest in executing
+community level energy strategys 3) researchers in energy related
+fields 4) public groups or individuals that are involved or interested
+in the decision making process of community energy planning.
+
+The target user for the current interface design is restricted to
+researchers in energy related fields. The assumption on this user
+group about their skill level and background knowledge is that 1) they
+have the basic ability to read and understand the layout of a map
+environment and can associate it with the urban environment setting
+they are associated with 2) they have the ability to correctly
+understand moderately complicated map legend and data plot 3) they
+have the basic understanding of related concept of building energy
+performance attribute and the general implications of these
+attributes. The assumptions about their intention is that they might
+have different research interest and focus. These assumptions implies
+the interface design should: 1) provide both qualitative and
+quantitative information; 2) allow for some degree of user control
+over data classification, legend selection and full control over time
+navigation
+
+\subsection{Goal Function}
+The goal function of the interface is in general defined as:
+``\textbf{Revealing the spatial-temporal heating, cooling and
+  electricity demand variation of the conceptual model with Dynamic
+  Energy Map}.''
+
+More specific key goal functions of the dynamic energy map in the
+current study is defined as:
+\begin{enumerate}[1)]
+\item Assisting users to visualize the time dependent hourly thermal
+  and electricity demand of each building, each builing sectors and
+  the whole community so that they can have a better understanding of
+  the importance and the potential of arranging land use pattern and
+  building density on the aggregated thermal energy and electricity
+  demand of single buildings, building sectors and the whole community.
+\item Assisting users to identify the energy recovery opportunities
+  through multi-dimensional visualization of the space heating and
+  cooling demand.
+\item Assisting the sizing of a district energy system CHP plant.
+\end{enumerate}
+
+\subsubsection{Function 1: Assisting Energy Recovery}
+To achieve this, the space heating and cooling demand should be
+represented on the same map that better reveals their correlation.
+
+For the interface design in the current study, the authors used a
+bivariate color ramp in energy data representation that depicts the
+space heating and space cooling on the same map
+(\fref{fig:legend2d}). Red represents high heating demand and blue
+represents high cooling demand. The closer the color cell is to the
+top, the less heating demand it has. The closer the color cell is to
+the left, the less cooling demand it has. The cells on the diagonal
+line (purple colored cells) represent the building has relatively
+similar heating and cooling demand. The cells to the upper right of
+the diagonal means it is heating dominated and the cells to the lower
+left of the diagonal means it is cooling dominated. The current
+breakpoints are decided through the ``Quantile
+method''~\cite{GIS_Jenks2014} for demonstration.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{legend2d}
+  \caption[Bi-Variate Color Ramp]{The bivariate color ramp displays
+    two variables at the same time: space heating and space
+    cooling. It better displays the co-relation between two variables}
+  \label{fig:legend2d}
+\end{figure}
+
+With the dynamic energy map, the user can first identify those purple
+colored buildings directly from the 2D or 3D map as candidate for
+building level energy recovering by redirecting the reject heat from
+its cooling device condensing coils or cooling towers to the space
+that needs heating.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{legend2d}
+  \caption[Bi-Variate Color Ramp]{The bivariate color ramp displays
+    two variables at the same time: space heating and space
+    cooling. It better displays the co-relation between two variables}
+  \label{fig:legend2d}
+\end{figure}
+
+\subsubsection{Function 1: Assisting Sizing of District Energy System}
+As is mentioned in section \ref{districtDesign}, with the Dynamic
+Energy Map that depict the spatial temporal load variation, one will
+idealy be able to 1) idendify anchor load building, 2) conduct better
+design of local load balancing, 3) identify energy recovery
+opportunities of the following forms: an individual building with
+mixed heating or adjacent buildings with opposite heating and cooling
+demand.
+
+\begin{enumerate}[1).]
+\item Identify anchor load building
+  
+  To achieve this function, the map should be able to make the
+  building with persistant high heating or cooling demand stand
+  out. Thus the design of color scheme that assigns vibrant colors to
+  high demand and white to low demand. The break points of ``high''
+  demand remains to be decided in further project development. For the
+  current implementation, the break point is acquired with quantile
+  classification method with.
+
+\item Local load balancing
+  
+  To achieve this, the first step would be to enable users to select a
+  subset of the existing buildings and the program will calculate the
+  aggregated load and plot the curve for the aggregated load of the
+  selected building group (within the specified time period).
+
+
+\end{enumerate}
+
+\subsection{Specification of the Major Operation}
+The desired major operations for the target user include: 
+\begin{itemize}
+\item Map display and data plot
+\item Navigation utilities that navigates through dynamic map and data
+  plot
+\item Provide default settings for choropleth map display
+\end{itemize}
+
+\subsubsection{Map display and data plot}
+For researchers or planners: The desired map display should be a 2D
+and 3D map (providing easy toggle between 2D and 3D map or align the
+two representations side by side) with graduated symbol or color
+representing the heating or cooling demand. The map display should
+also be coupled with corresponding data plot or data statistics that
+providing the quantitative insight that supports design decisions.
+
+For general public: The desired map display should be a 3D map
+. Instead of using data plot, a more intuitive bar chart of the
+aggregated demand could be more helpful in presenting a general
+idea. The bivariate choropleth map legend should also be replaced with
+two color ramps or even with only colors of extreme value. The data
+classification method should also be chosen so that the peak
+occurrence time is emphasized rather than the absolute energy
+consumption value.
+
+\subsubsection{Navigation utilities that navigates through dynamic map
+  and data plot}
+The ability to navigate through a series of map images and present
+dynamic data plot accordingly, is the basic function that differs
+the current work from a static map. Some desired behavior of the
+slider includes:
+\begin{itemize}
+\item Linear and cyclic time representation. According to section
+  \ref{anime}, the time has both linear and cyclic aspect. The time
+  navigation utility should provide both ``linear'' time navigation
+  and ``cyclic'' time navigation. This requires a global time
+  navigation that accounts for the linear aspect: it can go through
+  the whole time period with the highest time resolution. It also
+  requires a series of default time steps settings corresponding to
+  the natural recurring pattern of the energy usage profile
+\item Another desired feature is providing adjustable auto-play of the
+  map animation. The reasoning behind this is the debatable level of
+  user control in the study of Johnson and Nelson~\cite{Nelson1998},
+  when they argue that allowing arbitrary time control might degrade
+  the ability of animated map on conveying temporal pattern. This
+  feature is to be implemented in future development of the project.
+\end{itemize}
+
+\subsection{Provide default settings for choropleth map display}
+Creating several default settings for choropleth map display,
+i.e. provide choices for data classification and color mapping. For
+the current implementation, the variables in display is the heating
+and cooling energy consumption profile. The customization choices only
+restrict to the two classification method: even or quantile
+method. The color ramp is predefined to be a bivariate color ramp from
+white to red and blue. For later stages, a desired behavior would be
+to provide the full control of color settings.
+
+\subsection{Guidelines from Literature Study}
+Here we summarizes some of the design choices made according to
+related literature research on dynamic map design:
+\begin{itemize}
+\item Provide both 2D and 3D map display as a result of the debating
+  situation mentioned in section \ref{2d3d}.
+\item Choose bivariate choropleth map representation which has the
+  highest accuracy rate in map reading experiments~\cite{Elmer2012}.
+\item Providing the most commonly used data classification method:
+  Equal Interval and Quantile Interval~\ref{dataClassification}
+\item The number of classes for energy data classification is chosen
+  to be 7, less than the suggested value of 10 as a result of smaller
+  display size than 1024x768~\cite{doi:10.1559/1523040639298}
+\item Provide both linear and periodical navigation based on section
+  \ref{timeRepresent}
+\item Using the principle of ``dual coding''~\cite{Resch2014} to
+  assist legend reading by section \ref{anime}.
+\item Noise removal in map display of energy profile
+  data~\cite{Dorling1992}. This is done through the discrete color
+  scheme design.
+\end{itemize}

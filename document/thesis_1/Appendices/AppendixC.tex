@@ -61,7 +61,8 @@ the following session.
 \end{figure}
 
 \item After importing the table to the working file geodatabase, one
-  should use the ``convert time field'' to type ``date''.
+  should use the ``convert time field'' to covert the time column in
+  the imported csv table to type ``date''.
 
 \item Create the centroid for each building geometry footprint As is
   mentioned in \sref{sec:aggregateTime}, aggregating the energy data
@@ -69,7 +70,7 @@ the following session.
   the machine used in this example. So here the authors chose to
   aggregate the energy data into a simplefiled geometry representation
   of the buildings in the community model: the centroid of each
-  building. The steps of aggregation energy data to 3D building
+  building. The steps of aggregating energy data to 3D building
   features is the same as the steps of aggregating energy data to
   building centroid by just changing the layer to which the data is
   joined. An animated version of such aggregation can be accessed
@@ -80,12 +81,127 @@ the following session.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\linewidth]{animeArcGIS.png}
-  \caption[3D Dynamic Heat Map in ArcGIS]{Screen shot of a dynamic
+  \caption[3D Dynamic Heat Map in ArcGIS]{A screen shot of a dynamic
     energy map in ArcGIS, the legend on the left shows the hourly gas
     heating energy demand}
   \label{fig:animeArcGIS}
 \end{figure}
 
+The way to create building centroid is to first add two extra field in
+attribute table of the imported building lot feature class
+(``streetnetworkPaste'') and use ``Calculate Geometry'' to retrieve
+the x, y coordinate of the centroid for each building lot
+(\fref{fig:cenTable}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{cenTable.png}
+  \caption[Calculated Centroid]{Calculated Centroid}
+  \label{fig:cenTable}
+\end{figure}
+
+Then export the table to the working gdb and use ``make x y event
+layer'' tool to create a point feature (``cen'')
+(\fref{fig:cenFeature})
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{cenFeature.png}
+  \caption[Created Centroid Feature]{The centroid feature is created
+    with the x y table}
+  \label{fig:cenFeature}
+\end{figure}
+
+\item Import the centroid layer (``cen'') to the working gdb. 
+
+  This step important, because in the documentation about ``join'',
+  ``When you create a join in such a case (one-to-many or many-to-
+  many), there are differences between how tools and other
+  layer-specific settings work depending on the data source. If you
+  are using geodatabase data to create the join, all matching records
+  are returned. If you are using nondatabase data, like shapefiles or
+  dBASE tables, to create the join, only the first matching record is
+  returned.''~\cite{GISjoin2014} If we do not import it to gdb file,
+  the record that retains are only one row for each building type,
+  which is not desirable for the current situation. In order to retain
+  all 8760 matching records for each building type, importing the
+  feature class and table to gdb is crutial.
+
+\item Add ``Attribute Index'' to the feature class to the centroid
+  layer to be joint.
+  
+  The index acted as search keys in the database. Adding index makes
+  searching of matching data faster. In our current case, the search
+  key should be ``landuse''
+  
+\item Use ``Add join'' tool to join the centroid and the energy
+  profile table with ``landuse'' as a matching field
+
+  After the add join, when opening the ``attribute table'' of the
+  centroid layer, one could not see all the matching records, but one
+  can still have a feeling they are retained because the model will
+  become very slow. 
+
+\item Use ``copy features'' tool to copy the joint centroid layer to a
+  new layer, then all the matching features are visible
+  (``cent\_CopyFeatures'') (\fref{fig:aggTable})
+  
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{aggTable.png}
+  \caption[Table with Time]{The copied table retains all 8760 building
+    energy information of the buildings in the community model, there
+    are in total $8760 \times 34 = 297840$ rows of data entries in the
+    table because there are 34 buildings in the community model}
+  \label{fig:aggTable}
+\end{figure}
+
+An alternative of ``add join $+$ copy features'' of creating a feature
+class that aggregates the spatial geometry and the temporal energy
+demand is through the tool ``make query table'', detailed explanation
+of this tool is explained in \cite{queryTable2012}.
+
+\item Change the symbol to be graduated symbols, with ``Quantile
+  method'' as the current classification method to ensure a larger
+  variation in symbol changes for demonstration purpose. The ``sample
+  size'' of classification breakpoint should be reset so that it is at
+  not smaller than the total number of data points (number of rows in
+  the final attribute table) 
+  
+\item Enable ``time'' on the final layer (``cent\_CopyFeatures'') with
+  aggregated time, energy data and geometry.
+
+\item Add the time-column as an Attribute Index to the final layer and
+  one can configure the animation play back to play the animated
+  maps. 
+
+  Although it is surprising that this step is not done automatically,
+  this step is crucial. If one does not add it, one may find the
+  render of the image in the slider very slow even though one set the
+  ``playback'' to fast.
 \end{enumerate}
 
+\subsection{Final Output}
+In order to make the symbol more visible, an orthogonal top view was
+chosen as the map view port. The building geometry layer is for
+providing a spatial context, thus a transparent filling was applied to
+this layer. \fref{fig:centroidMap} shows a screen shot of the animated
+map interface inside stand-alone ArcScene. The exported animation
+version could be found
+\href{http://www.armechxyj.com/energy-mapping.html#slowAnime}{through
+  this link}.
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{centroidMap.png}
+  \caption[Dynamic Map in ArcScene with Building Centroid]{A
+    screenshot of the dynamic map interface in ArcScene 10.2, the
+    hourly heating energy are represented as a graduated-sized point
+    symbol with larger size for larger demand}
+  \label{fig:centroidMap}
+\end{figure}
+
+One issue regarding using ArcScene as the generator of images for 3D
+visualization is that the ``DataFrame'' module in image exporting does
+not work for ArcScene, this means we cannot export 3D map image
+sequences for later post processing and display. This acts as another
+drawback that disables us from using ArcGIS in producing map images
+for implementing a dynamic energy map.

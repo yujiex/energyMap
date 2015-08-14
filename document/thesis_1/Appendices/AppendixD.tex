@@ -1,0 +1,270 @@
+% Appendix D
+\chapter{Rule File Used in Final Dynamic Map Interface} % Main appendix title
+
+\label{AppendixD} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix D. \emph{Rule for Final Map}} % This is for the header on each page - perhaps a shortened title
+
+The session records the final version of rule file that implements the
+bi-variate choropleth map used in the final version of the interface
+design.
+
+\makeatletter
+\def\verbatim@font{\linespread{1}\tiny\ttfamily}
+\makeatother
+
+\begin{multicols}{2}
+\begin{verbatim}
+/**
+ * File:    symbolicBuilding.cga
+ * Created: 31 May 2015 21:47:21 GMT
+ * Author:  yujiex
+ */
+
+version "2015.0"
+
+attr landuse = 1
+@Range(0, 8759)
+attr time = 0
+
+//The following color encoding can be replaced for different
+//use case (different encoding method or energy profile)
+SmallOffice_01 = "#FFD5D5;#FFD5D5;#FFD5D5;#FFD5D5;#FFD5D5  ..."
+SmallOffice_02 = "#FFFFFF;#D5D5FF;#AAAAFF;#AAAAFF;#AAAAFF  ..."
+FullServiceRestaurant_01 = "#FF2B2B;#FFFFFF;#FFFFFF;#FFFFFF..."
+FullServiceRestaurant_02 = "#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF..."
+MidriseApartment_01 = "#FF2B2B;#FF0000;#FF0000;#FF0000     ..."
+MidriseApartment_02 = "#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF     ..."
+LargeOffice_01 = "#FF0000;#FF0000;#FF0000;#FF0000;#FF0000  ..."
+LargeOffice_02 = "#0000FF;#0000FF;#0000FF;#0000FF;#0000FF  ..."
+SuperMarket_01 = "#FF0000;#FF0000;#FF0000;#FF0000;#FF0000  ..."
+SuperMarket_02 = "#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF  ..."
+MediumOffice_01 = "#FFD5D5;#FFD5D5;#FFAAAA;#FFD5D5;#FFAAAA ..."
+MediumOffice_02 = "#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF ..."
+StandaloneRetail_01 = "#FF8080;#FF8080;#FF8080;#FF8080     ..."
+StandaloneRetail_02 = "#2B2BFF;#2B2BFF;#2B2BFF;#2B2BFF     ..."
+LargeHotel_01 = "#DC07DC;#DC07DC;#C61CC6;#D52BAA;#C61CC6   ..."
+LargeHotel_02 = "#0000FF;#0000FF;#0000FF;#2B00FF;#0000FF   ..."
+QuickServiceRestaurant_01 = "#FF8080;#FFFFFF;#FFD5D5       ..."
+QuickServiceRestaurant_02 = "#5555FF;#5555FF;#5555FF       ..."
+
+FullServiceRestaurant =(FullServiceRestaurant_01 + 
+                        FullServiceRestaurant_02)
+//Hospital = Hospital_01 + Hospital_02
+LargeHotel = LargeHotel_01 + LargeHotel_02
+LargeOffice = LargeOffice_01 + LargeOffice_02
+MediumOffice = MediumOffice_01 + MediumOffice_02
+MidriseApartment = MidriseApartment_01 + MidriseApartment_02
+//OutPatient = OutPatient_01 + OutPatient_02
+//PrimarySchool = PrimarySchool_01 + PrimarySchool_02
+QuickServiceRestaurant = (QuickServiceRestaurant_01 + 
+                          QuickServiceRestaurant_02)
+//SecondarySchool = SecondarySchool_01 + SecondarySchool_02
+//SmallHotel = SmallHotel_01 + SmallHotel_02
+SmallOffice = SmallOffice_01 + SmallOffice_02
+StandaloneRetail = StandaloneRetail_01 + StandaloneRetail_02
+//StripMall = StripMall_01 + StripMall_02
+SuperMarket = SuperMarket_01 + SuperMarket_02
+//Warehouse = Warehouse_01 + Warehouse_02
+
+# retrieve time-th item of the energy profile
+item01 = listItem(FullServiceRestaurant, time)
+//item02 = listItem(Hospital, time)
+item03 = listItem(LargeHotel, time)
+item04 = listItem(LargeOffice, time)
+item05 = listItem(MediumOffice, time)
+item06 = listItem(MidriseApartment, time)
+//item07 = listItem(OutPatient, time)
+//item08 = listItem(PrimarySchool, time)
+item09 = listItem(QuickServiceRestaurant, time)
+//item10 = listItem(SecondarySchool, time)
+//item11 = listItem(SmallHotel, time)
+item12 = listItem(SmallOffice, time)
+item13 = listItem(StandaloneRetail, time)
+//item14 = listItem(StripMall, time)
+item15 = listItem(SuperMarket, time)
+//item16 = listItem(Warehouse, time)
+
+# the max item of all the heat demand profiles
+height=4
+
+Lot -->
+        case landuse <= 1: //full service resturant
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item01)
+            extrude(1*height)
+            comp(f){top: top_fr | side: facade_fr}
+        case landuse > 1 && landuse <= 2:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item02)
+            extrude(5*height)
+        case landuse > 2 && landuse <= 3: //Large Hotel
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item03)
+            extrude(24)
+            comp(f){top: top_lh | side: facade_lh}
+        case landuse > 3 && landuse <= 4: //Large Office
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item04)
+            extrude(48)
+            comp(f){top: top_lo | side: facade_lo}
+        case landuse > 4 && landuse <= 5:
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item05)
+            extrude(12)
+            comp(f){top: top_mo | side: facade_mo}
+        case landuse > 5 && landuse <= 6:
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item06)
+            extrude(16)
+            comp(f){top: top_ma | side: facade_ma}
+        case landuse > 6 && landuse <= 7:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item07)
+            extrude(12)
+        case landuse > 7 && landuse <= 8:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item08)
+            extrude(4)
+        case landuse > 8 && landuse <= 9:
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item09)
+            extrude(4)
+            comp(f){top: top_qr | side: facade_qr}
+        case landuse > 9 && landuse <= 10:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item10)
+            extrude(8)
+        case landuse > 10 && landuse <= 11:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item11)
+            extrude(16)
+        case landuse > 11 && landuse <= 12: //Small Office
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item12)
+            extrude(4)
+            comp(f){top: top_so | side: facade_so}
+        case landuse > 12 && landuse <= 13: //Standalone Retail
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item13)
+            extrude(4)
+            comp(f){top: top_sr | side: facade_sr}
+        case landuse > 13 && landuse <= 14:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item14)
+            extrude(4)
+        case landuse > 14 && landuse <= 15: //Super Market
+            s('0.6, '1, '0.6)
+            center(xz)
+            color(item15)
+            extrude(4)
+            comp(f){top: top_su | side: facade_su}
+        case landuse > 15 && landuse <= 16:
+            s('0.6, '1, '0.6)
+            center(xz)
+            //color(item16)
+            extrude(4)
+        else:
+            color(0, 5, 0)
+            //color(255, 255, 255)
+//01
+top_fr -->
+    split(y){'0.1:a_fr|'0.8:b_fr|'0.1:c_fr}
+b_fr -->
+    split(x){'0.1:e_fr|'0.8:f_fr|'0.1:g_fr}
+f_fr -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/FR.jpg")
+	projectUV(0)
+//03 Large Hotel
+top_lh -->
+    split(y){'0.1:a_lh|'0.8:b_lh|'0.1:c_lh}
+b_lh -->
+    split(x){'0.1:e_lh|'0.8:f_lh|'0.1:g_lh}
+f_lh -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/LH.jpg")
+	projectUV(0)
+//04 Large Office
+top_lo -->
+    split(y){'0.1:a_lo|'0.8:b_lo|'0.1:c_lo}
+b_lo -->
+    split(x){'0.1:e_lo|'0.8:f_lo|'0.1:g_lo}
+f_lo -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/LO.jpg")
+	projectUV(0)
+//05 Medium Office
+top_mo -->
+    split(y){'0.1:a_mo|'0.8:b_mo|'0.1:c_mo}
+b_mo -->
+    split(x){'0.1:e_mo|'0.8:f_mo|'0.1:g_mo}
+f_mo -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/MO.jpg")
+	projectUV(0)
+
+//06 Midrise Apartment
+top_ma -->
+    split(y){'0.1:a_ma|'0.8:b_ma|'0.1:c_ma}
+b_ma -->
+    split(x){'0.1:e_ma|'0.8:f_ma|'0.1:g_ma}
+f_ma -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/MA.jpg")
+	projectUV(0)
+
+//09 Quick Service Resturant
+top_qr -->
+    split(y){'0.1:a_qr|'0.8:b_qr|'0.1:c_qr}
+b_qr -->
+    split(x){'0.1:e_qr|'0.8:f_qr|'0.1:g_qr}
+f_qr -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/QR.jpg")
+	projectUV(0)
+
+//12 Small Office
+top_so -->
+    split(y){'0.1:a_so|'0.8:b_so|'0.1:c_so}
+b_so -->
+    split(x){'0.1:e_so|'0.8:f_so|'0.1:g_so}
+f_so -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/SO.jpg")
+	projectUV(0)
+//12 Standalone Retail
+top_sr -->
+    split(y){'0.1:a_sr|'0.8:b_sr|'0.1:c_sr}
+b_sr -->
+    split(x){'0.1:e_sr|'0.8:f_sr|'0.1:g_sr}
+f_sr -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/SR.jpg")
+	projectUV(0)
+
+//15 Super Market
+top_su -->
+    split(y){'0.1:a_su|'0.8:b_su|'0.1:c_su}
+b_su -->
+    split(x){'0.1:e_su|'0.8:f_su|'0.1:g_su}
+f_su -->
+	setupProjection(0, scope.xy, scope.sx, scope.sy)
+	texture("assets/SU.jpg")
+	projectUV(0)
+\end{verbatim}
+\end{multicols}
