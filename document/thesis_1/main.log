@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  14 AUG 2015 13:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  14 AUG 2015 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -883,7 +883,7 @@ Chapter 1.
 
 
 
-] <Pictures/flow.png, id=241, 901.3675pt x 250.9375pt>
+] <Pictures/flow.png, id=237, 901.3675pt x 250.9375pt>
 File: Pictures/flow.png Graphic file (type png)
 
 <use Pictures/flow.png>
@@ -997,7 +997,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
  [5]
-<Pictures/heatFuel.png, id=284, 464.4853pt x 324.46219pt>
+<Pictures/heatFuel.png, id=280, 464.4853pt x 324.46219pt>
 File: Pictures/heatFuel.png Graphic file (type png)
 
 <use Pictures/heatFuel.png>
@@ -1008,84 +1008,84 @@ Package pdftex.def Info: Pictures/heatFuel.png used on input line 251.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7]
-Overfull \hbox (14.61148pt too wide) in paragraph at lines 333--356
+Overfull \hbox (14.61148pt too wide) in paragraph at lines 334--357
 []\OT1/cmr/m/n/10.95 The en-ergy out-put re-trieved from En-er-gy-Plus in-clude
  ``Heat-ing:Gas'', ``Heat-ing:Electricity'',
  []
 
 
-Overfull \hbox (5.78043pt too wide) in paragraph at lines 333--356
+Overfull \hbox (5.78043pt too wide) in paragraph at lines 334--357
 \OT1/cmr/m/n/10.95 ``Cool-ing:Electricity'', ``Wa-ter Heater:WaterSystems:Gas''
  and ``Elec-tric-ity:Facility''. This
  []
 
-[8] <Pictures/HG.png, id=310, 578.16pt x 433.62pt>
+[8] <Pictures/HG.png, id=306, 578.16pt x 433.62pt>
 File: Pictures/HG.png Graphic file (type png)
  <use Pictures/HG.png>
-Package pdftex.def Info: Pictures/HG.png used on input line 381.
+Package pdftex.def Info: Pictures/HG.png used on input line 382.
 (pdftex.def)             Requested size: 292.22987pt x 219.17155pt.
 
-<Pictures/WH.png, id=314, 578.16pt x 433.62pt>
+<Pictures/WH.png, id=310, 578.16pt x 433.62pt>
 File: Pictures/WH.png Graphic file (type png)
  <use Pictures/WH.png>
-Package pdftex.def Info: Pictures/WH.png used on input line 399.
+Package pdftex.def Info: Pictures/WH.png used on input line 400.
 (pdftex.def)             Requested size: 292.22987pt x 219.17155pt.
- [9 <./Pictures/HG.png>] <Pictures/HE.png, id=322, 578.16pt x 433.62pt>
+ [9 <./Pictures/HG.png>] <Pictures/HE.png, id=318, 578.16pt x 433.62pt>
 File: Pictures/HE.png Graphic file (type png)
 
 <use Pictures/HE.png>
-Package pdftex.def Info: Pictures/HE.png used on input line 419.
+Package pdftex.def Info: Pictures/HE.png used on input line 420.
 (pdftex.def)             Requested size: 292.22987pt x 219.17155pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Pictures/CE.png, id=324, 578.16pt x 433.62pt>
+<Pictures/CE.png, id=320, 578.16pt x 433.62pt>
 File: Pictures/CE.png Graphic file (type png)
  <use Pictures/CE.png>
-Package pdftex.def Info: Pictures/CE.png used on input line 444.
+Package pdftex.def Info: Pictures/CE.png used on input line 445.
 (pdftex.def)             Requested size: 292.22987pt x 219.17155pt.
  [10 <./Pictures/WH.png>] [11 <./Pictures/HE.png> <./Pictures/CE.png>]
-<Pictures/EF.png, id=336, 578.16pt x 433.62pt>
+<Pictures/EF.png, id=332, 578.16pt x 433.62pt>
 File: Pictures/EF.png Graphic file (type png)
  <use Pictures/EF.png>
-Package pdftex.def Info: Pictures/EF.png used on input line 460.
+Package pdftex.def Info: Pictures/EF.png used on input line 461.
 (pdftex.def)             Requested size: 292.22987pt x 219.17155pt.
 
-<Pictures/SH.png, id=338, 578.16pt x 433.62pt>
+<Pictures/SH.png, id=334, 578.16pt x 433.62pt>
 File: Pictures/SH.png Graphic file (type png)
  <use Pictures/SH.png>
-Package pdftex.def Info: Pictures/SH.png used on input line 475.
+Package pdftex.def Info: Pictures/SH.png used on input line 476.
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 File: Pictures/HG.png Graphic file (type png)
 
 <use Pictures/HG.png>
-Package pdftex.def Info: Pictures/HG.png used on input line 483.
+Package pdftex.def Info: Pictures/HG.png used on input line 484.
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 File: Pictures/SH.png Graphic file (type png)
  <use Pictures/SH.png>
-Package pdftex.def Info: Pictures/SH.png used on input line 501.
+Package pdftex.def Info: Pictures/SH.png used on input line 502.
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 File: Pictures/CE.png Graphic file (type png)
  <use Pictures/CE.png>
-Package pdftex.def Info: Pictures/CE.png used on input line 509.
+Package pdftex.def Info: Pictures/CE.png used on input line 510.
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
- [12 <./Pictures/EF.png> <./Pictures/SH.png>] <Pictures/H.png, id=347, 578.16pt
+ [12 <./Pictures/EF.png> <./Pictures/SH.png>] <Pictures/H.png, id=343, 578.16pt
  x 433.62pt>
 File: Pictures/H.png Graphic file (type png)
 
 <use Pictures/H.png>
-Package pdftex.def Info: Pictures/H.png used on input line 534.
+Package pdftex.def Info: Pictures/H.png used on input line 535.
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 File: Pictures/EF.png Graphic file (type png)
  <use Pictures/EF.png>
-Package pdftex.def Info: Pictures/EF.png used on input line 542.
+Package pdftex.def Info: Pictures/EF.png used on input line 543.
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 
-<Pictures/HTPR.png, id=348, 578.16pt x 433.62pt>
+<Pictures/HTPR.png, id=344, 578.16pt x 433.62pt>
 File: Pictures/HTPR.png Graphic file (type png)
  <use Pictures/HTPR.png>
-Package pdftex.def Info: Pictures/HTPR.png used on input line 552.
+Package pdftex.def Info: Pictures/HTPR.png used on input line 553.
 (pdftex.def)             Requested size: 292.22987pt x 219.17155pt.
 
 
@@ -1093,41 +1093,41 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [13 <./Pictures/H.png>]
 
-LaTeX Warning: Reference `AppendixA' on page 14 undefined on input line 571.
+LaTeX Warning: Reference `AppendixA' on page 14 undefined on input line 572.
 
-<Pictures/mellonArena.png, id=361, 654.445pt x 397.485pt>
+<Pictures/mellonArena.png, id=357, 654.445pt x 397.485pt>
 File: Pictures/mellonArena.png Graphic file (type png)
 
 <use Pictures/mellonArena.png>
-Package pdftex.def Info: Pictures/mellonArena.png used on input line 586.
+Package pdftex.def Info: Pictures/mellonArena.png used on input line 587.
 (pdftex.def)             Requested size: 208.73653pt x 126.7793pt.
 
-<Pictures/mellonPie.png, id=362, 354.32375pt x 288.07625pt>
+<Pictures/mellonPie.png, id=358, 354.32375pt x 288.07625pt>
 File: Pictures/mellonPie.png Graphic file (type png)
 
 <use Pictures/mellonPie.png>
-Package pdftex.def Info: Pictures/mellonPie.png used on input line 593.
+Package pdftex.def Info: Pictures/mellonPie.png used on input line 594.
 (pdftex.def)             Requested size: 125.24318pt x 101.826pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [14 <./Pictures/HTPR.png>]
-<Pictures/mellonTop.png, id=376, 1255.69125pt x 601.24625pt>
+<Pictures/mellonTop.png, id=372, 1255.69125pt x 601.24625pt>
 File: Pictures/mellonTop.png Graphic file (type png)
 
 <use Pictures/mellonTop.png>
-Package pdftex.def Info: Pictures/mellonTop.png used on input line 652.
+Package pdftex.def Info: Pictures/mellonTop.png used on input line 653.
 (pdftex.def)             Requested size: 417.47307pt x 199.88892pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Pictures/sitePlan.png, id=377, 621.07031pt x 271.0125pt>
+<Pictures/sitePlan.png, id=373, 621.07031pt x 271.0125pt>
 File: Pictures/sitePlan.png Graphic file (type png)
 
 <use Pictures/sitePlan.png>
-Package pdftex.def Info: Pictures/sitePlan.png used on input line 659.
+Package pdftex.def Info: Pictures/sitePlan.png used on input line 660.
 (pdftex.def)             Requested size: 417.47307pt x 182.16876pt.
 
 
@@ -1136,85 +1136,197 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [15 <./Pictures/mellonArena.png (PNG copy)> <./Pictures/mellonPie.png (PNG copy
 )>]
 
-LaTeX Warning: Reference `AppendixC' on page 16 undefined on input line 674.
+LaTeX Warning: Reference `AppendixC' on page 16 undefined on input line 675.
 
 
-LaTeX Warning: Reference `AppendixA' on page 16 undefined on input line 678.
+LaTeX Warning: Reference `AppendixA' on page 16 undefined on input line 679.
 
 [16 <./Pictures/mellonTop.png (PNG copy)> <./Pictures/sitePlan.png>]
-<Pictures/arcgisTime.png, id=388, 934.49126pt x 714.67pt>
+<Pictures/arcgisTime.png, id=384, 934.49126pt x 714.67pt>
 File: Pictures/arcgisTime.png Graphic file (type png)
 
 <use Pictures/arcgisTime.png>
-Package pdftex.def Info: Pictures/arcgisTime.png used on input line 726.
+Package pdftex.def Info: Pictures/arcgisTime.png used on input line 727.
 (pdftex.def)             Requested size: 208.73653pt x 159.62697pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [17] [18 <./Pictures/arcgisTime.png (PNG copy)>] [19]
-Overfull \hbox (5.62334pt too wide) in paragraph at lines 823--826
+Overfull \hbox (5.62334pt too wide) in paragraph at lines 824--827
 []\OT1/cmr/m/n/10.95 Assisting users to iden-tify the en-ergy re-cov-ery op-por
 -tu-ni-ties through multi-dimensional
  []
 
+<Pictures/legend2d.png, id=404, 762.85pt x 396.48125pt>
+File: Pictures/legend2d.png Graphic file (type png)
 
-LaTeX Warning: Reference `districtDesign' on page 20 undefined on input line 82
-9.
-
-[20]
-
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 869.
-
-[21]
-
-LaTeX Warning: Reference `anime' on page 22 undefined on input line 915.
-
-[22]
-
-LaTeX Warning: Reference `2d3d' on page 23 undefined on input line 945.
+<use Pictures/legend2d.png>
+Package pdftex.def Info: Pictures/legend2d.png used on input line 851.
+(pdftex.def)             Requested size: 208.73653pt x 108.48517pt.
 
 
-LaTeX Warning: Reference `dataClassification' on page 23 undefined on input lin
-e 949.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Pictures/recover2d.png, id=406, 599.23875pt x 339.2675pt>
+File: Pictures/recover2d.png Graphic file (type png)
+
+<use Pictures/recover2d.png>
+Package pdftex.def Info: Pictures/recover2d.png used on input line 872.
+(pdftex.def)             Requested size: 292.22987pt x 165.45047pt.
+
+<Pictures/recover3d.png, id=407, 527.9725pt x 355.3275pt>
+File: Pictures/recover3d.png Graphic file (type png)
+
+<use Pictures/recover3d.png>
+Package pdftex.def Info: Pictures/recover3d.png used on input line 881.
+(pdftex.def)             Requested size: 292.22987pt x 196.67232pt.
 
 
-LaTeX Warning: Reference `timeRepresent' on page 23 undefined on input line 954
-.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20] [21 <./Pictures/legend2d.png> <./Pictures/recover2d.png> <./Pictures/recov
+er3d.png>] <Pictures/recoverGr2d.png, id=425, 551.05875pt x 325.215pt>
+File: Pictures/recoverGr2d.png Graphic file (type png)
+
+<use Pictures/recoverGr2d.png>
+Package pdftex.def Info: Pictures/recoverGr2d.png used on input line 910.
+(pdftex.def)             Requested size: 292.22987pt x 172.46733pt.
+
+<Pictures/recoverGr3d.png, id=426, 595.22375pt x 400.49625pt>
+File: Pictures/recoverGr3d.png Graphic file (type png)
+
+<use Pictures/recoverGr3d.png>
+Package pdftex.def Info: Pictures/recoverGr3d.png used on input line 919.
+(pdftex.def)             Requested size: 292.22987pt x 196.62376pt.
+ [22 <./Pictures/recoverGr2d.png> <./Pictures/recoverGr3d.png>] <Pictures/seeLo
+ad.png, id=439, 866.23625pt x 499.8675pt>
+File: Pictures/seeLoad.png Graphic file (type png)
+
+<use Pictures/seeLoad.png>
+Package pdftex.def Info: Pictures/seeLoad.png used on input line 982.
+(pdftex.def)             Requested size: 292.22987pt x 168.63316pt.
 
 
-LaTeX Warning: Reference `anime' on page 23 undefined on input line 956.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [23]
+[23] <Pictures/plotAll.png, id=447, 853.1875pt x 485.815pt>
+File: Pictures/plotAll.png Graphic file (type png)
+
+<use Pictures/plotAll.png>
+Package pdftex.def Info: Pictures/plotAll.png used on input line 1002.
+(pdftex.def)             Requested size: 292.22987pt x 166.39804pt.
+
+<Pictures/seeAggDemand.png, id=449, 832.10875pt x 481.8pt>
+File: Pictures/seeAggDemand.png Graphic file (type png)
+
+<use Pictures/seeAggDemand.png>
+Package pdftex.def Info: Pictures/seeAggDemand.png used on input line 1015.
+(pdftex.def)             Requested size: 292.22987pt x 169.20595pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Excluding 'comment' comment.) [24 <./Pictures/seeLoad.png> <./Pictures/plotAll.
+png>] [25 <./Pictures/seeAggDemand.png>]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
 (./main.bbl
-Underfull \hbox (badness 5741) in paragraph at lines 9--14
+Underfull \hbox (badness 1038) in paragraph at lines 29--34
+[]\OT1/cmr/m/n/10.95 Committee on Cli-mate Change.  Car-bon bud-gets and tar-ge
+ts.  web, Au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--34
+\OT1/cmr/m/n/10.95 gust 2015.  [][]$\OT1/cmtt/m/n/10.95 https : / / www . thecc
+c . org . uk / tackling-[]climate-[]change /
+ []
+
+[26
+
+
+]
+Underfull \hbox (badness 5741) in paragraph at lines 109--114
 []\OT1/cmr/m/n/10.95 Office of En-ergy Ef-fi-ciency & Re-new-able En-ergy.  Com
 -mer-cial ref-er-
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 9--14
+Underfull \hbox (badness 2384) in paragraph at lines 109--114
 \OT1/cmr/m/n/10.95 ence build-ings.  web, June 2015.  [][]$\OT1/cmtt/m/n/10.95 
 http : / / energy . gov / eere / buildings /
  []
 
-[24
+
+Underfull \hbox (badness 1552) in paragraph at lines 126--130
+[]\OT1/cmr/m/n/10.95 Clarke En-ergy.  Tri-gen-er-a-tion / cchp.  web, July 2015
+.  [][]$\OT1/cmtt/m/n/10.95 https : / / www .
+ []
+
+[27] [28]
+Underfull \hbox (badness 1281) in paragraph at lines 215--220
+[]\OT1/cmr/m/n/10.95 Department of En-ergy and Cli-mate Change.  Cold wa-ter co
+uld heat one
+ []
 
 
-])
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+[]\OT1/cmr/m/n/10.95 Arrate Gomez Diaz, Leonard Gray, Iain Mac-Fadyen, Preetcha
+-ran
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 254--260
+\OT1/cmr/m/n/10.95 Singh, and Nikithaa Suresh.  Com-mu-nity res-o-lu-tion.  web
+, July 2015.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+[][]$\OT1/cmtt/m/n/10.95 http : / / www . esru . strath . ac . uk / EandE / Web
+ _ sites / 12-[]13 / SmartCities /
+ []
+
+[29]
+Underfull \hbox (badness 1596) in paragraph at lines 299--304
+[]\OT1/cmr/m/n/10.95 Esri.  Clas-si-fy-ing nu-mer-i-cal fields for grad-u-ated 
+sym-bol-ogy.  web, Oc-to-
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 327--332
+[]\OT1/cmr/m/n/10.95 Esri.  At-tributes, sources and con-nec-tions.  web, Au-gu
+st 2015.  [][]$\OT1/cmtt/m/n/10.95 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--332
+\OT1/cmtt/m/n/10.95 / / cehelp . esri . com / help / index . jsp ? topic = /com
+ . procedural . cityengine .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--353
+[]\OT1/cmr/m/n/10.95 Esri.  A quick tip on per-form-ing a 1:m join.  web, May
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--353
+\OT1/cmr/m/n/10.95 2012.  [][]$\OT1/cmtt/m/n/10.95 http : / / blogs . esri . co
+m / esri / supportcenter / 2012 / 05 / 10 /
+ []
+
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 319.
- [25]
+ [30]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 319.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 319.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 319.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C2C9252882A6B7DF38EA3F79E511D91D;5971.
+(rerunfilecheck)             Checksum: FEC944F69E2EBE4D2F6EFFC3B7842E35;5043.
 
 
 LaTeX Warning: There were undefined references.
@@ -1225,13 +1337,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 319.
  ) 
 Here is how much of TeX's memory you used:
- 13460 strings out of 495028
- 188885 string characters out of 6181498
- 279139 words of memory out of 5000000
- 16339 multiletter control sequences out of 15000+600000
+ 13648 strings out of 495028
+ 192767 string characters out of 6181498
+ 281609 words of memory out of 5000000
+ 16482 multiletter control sequences out of 15000+600000
  13552 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,12n,45p,532b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,45p,451b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -1244,10 +1356,10 @@ amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (31 pages, 1258435 bytes).
+Output written on main.pdf (36 pages, 2280206 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
- 123 named destinations out of 1000 (max. 500000)
- 292 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 672 PDF objects out of 1000 (max. 8388607)
+ 574 compressed objects within 6 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 308 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -252,6 +252,7 @@ Warehouse              & 0.0                    & 1039850.2     \\
   \caption[Heating Fuel]{Heating Fuel}
   \label{fig:heatFuel}
 \end{figure}
+
 Electricity is the only fuel used for space cooling~\cite{DOE2015},
 thus the EnergyPlus output parameter ``cooling:electricity'' is used
 to represent space cooling demand. According to the suggested heat
@@ -554,6 +555,71 @@ indicates the necessity of heat storage equipment.
   \label{fig:HTPR}
 \end{figure}%
 
+\subsubsection{Aggregated Demand Distribution}
+This section analyzes the energy demand distribution of all the input
+of heating cooling and electricity.  
+
+\pagebreak
+\begin{itemize}
+\item Heating:
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Heating:Gas}
+  \caption[Gas Heating Demand]{Gas Heating Demand}
+  \label{fig:original-Heating:Gas}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Heating:Gas}
+  \caption[Gas Heating Demand]{Gas Heating Demand in Log Scale}
+  \label{fig:log-Scale-Heating:Gas}
+\end{subfigure}
+  \caption[Gas Heating Demand]{Gas Heating Demand in Log Scale}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Heating:Electricity}
+  \caption[Electricity Heating Demand]{Electricity Heating Demand}
+  \label{fig:original-Heating:Electricity}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Heating:Electricity}
+  \caption[Electricity Heating Demand]{Electricity Heating Demand in Log Scale}
+  \label{fig:log-Scale-Heating:Electricity}
+\end{subfigure}
+  \caption[Electricity Heating Demand]{Electricity Heating Demand in Log Scale}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Water Heater}
+  \caption[Service Hot Water Demand]{Service Hot Water Demand}
+  \label{fig:original-Water Heater}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Water Heater}
+  \caption[Service Hot Water Demand]{Service Hot Water Demand in Log Scale}
+  \label{fig:log-Scale-Water Heater}
+\end{subfigure}
+  \caption[Service Hot Water Demand]{Service Hot Water Demand in Log Scale}
+\end{figure}
+
+\item Cooling
+\item Electricity
+\end{itemize}
 \pagebreak
 \subsection{3D GIS Model Geometry}
 The conceptual community model is constructed in
@@ -831,17 +897,18 @@ To achieve this, the space heating and cooling demand should be
 represented on the same map that better reveals their correlation.
 
 For the interface design in the current study, the authors used a
-bivariate color ramp in energy data representation that depicts the
-space heating and space cooling on the same map
-(\fref{fig:legend2d}). Red represents high heating demand and blue
-represents high cooling demand. The closer the color cell is to the
-top, the less heating demand it has. The closer the color cell is to
-the left, the less cooling demand it has. The cells on the diagonal
-line (purple colored cells) represent the building has relatively
-similar heating and cooling demand. The cells to the upper right of
-the diagonal means it is heating dominated and the cells to the lower
-left of the diagonal means it is cooling dominated. The current
-breakpoints are decided through the ``Quantile
+bivariate color ramp in space heating and cooling energy demand data
+representation that depicts the hourly space heating and space cooling
+demand on the same map (\fref{fig:legend2d}). Red represents high
+heating demand and blue represents high cooling demand. The closer the
+color cell is to the top, the less cooling demand it has. The closer
+the color cell is to the left, the less heating demand it has. The
+cells on the diagonal line (purple colored cells) represent the
+building has relatively similar amount of heating and cooling
+demand. The cells to the upper right of the diagonal represents
+buildings that are heating dominated and the cells to the lower left
+of the diagonal represent buildings that are cooling dominated. The
+current breakpoints are decided through the ``Quantile
 method''~\cite{GIS_Jenks2014} for demonstration.
 
 \begin{figure}[h!]
@@ -849,33 +916,96 @@ method''~\cite{GIS_Jenks2014} for demonstration.
   \includegraphics[width=0.5\linewidth]{legend2d}
   \caption[Bi-Variate Color Ramp]{The bivariate color ramp displays
     two variables at the same time: space heating and space
-    cooling. It better displays the co-relation between two variables}
+    cooling. It better displays the co-relation between these two
+    variables and thus helps users to identify energy recovery
+    opportunities}
   \label{fig:legend2d}
 \end{figure}
 
-With the dynamic energy map, the user can first identify those purple
-colored buildings directly from the 2D or 3D map as candidate for
-building level energy recovering by redirecting the reject heat from
-its cooling device condensing coils or cooling towers to the space
-that needs heating.
+With the dynamic energy map, the user can first identify single
+buildings with coincident cooling and heating demand: users will be
+able to identify those purple colored buildings directly from the 2D
+or 3D map as candidates for building level energy recovering by
+redirecting the reject heat from its cooling device condensing coils
+or cooling towers to the space that needs heating
+(\fref{fig:recoverSig}).
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.5\linewidth]{legend2d}
-  \caption[Bi-Variate Color Ramp]{The bivariate color ramp displays
-    two variables at the same time: space heating and space
-    cooling. It better displays the co-relation between two variables}
-  \label{fig:legend2d}
+  \begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{recover2d}
+  \caption[Energy Recovery Single Building, 2D]{2D map display that
+    helps user to identify the energy recovery opportunities for
+    single buildings}
+  \label{fig:recover2d}
+\end{subfigure}
+~
+\begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{recover3d}
+  \caption[Energy Recovery Single Building, 3D]{3D map display that
+    helps user to identify the energy recovery opportunities for
+    single buildings}
+  \label{fig:recover3d}
+\end{subfigure}
+\caption[Single Building Energy Recovery]{Dynamic Energy Map helps
+  user to identify the energy recovery opportunities for single
+  buildings}
+\label{fig:recoverSig}
 \end{figure}
 
+The user can identify a group of adjacent buildings for reject heat
+sharing: in the following example, the center building is with high
+cooling demand (since it is blue) and the surrounding buildings are
+with medium or high heating demand (they are with a redish color). By
+transmitting the reject heat from the center building to the
+surrounding buildings, the total energy consumption of the building
+group (within the dotted circle) could be reduced. In the following
+example, if the land use is planed so that Large Office (LO) is
+directly next to Stand-alone Retail (SR) and Supermarket (SU), it
+would be easier for the cooling reject heat from LO to be captured and
+transmitted to SU and SR with less distance and thus with less
+transmission loss (\fref{fig:recoverGr}).
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{recoverGr2d}
+  \caption[Energy Recovery Building Group, 2D]{2D map display that
+    helps user to identify the energy recovery opportunities for
+    building groups}
+  \label{fig:recoverGr2d}
+\end{subfigure}
+~
+\begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{recoverGr3d}
+  \caption[Energy Recovery Building Group, 3D]{3D map display that
+    helps user to identify the energy recovery opportunities for
+    building groups}
+  \label{fig:recoverGr3d}
+\end{subfigure}
+\caption[Building Group Energy Recovery]{Dynamic Energy Map helps user
+  to identify the energy recovery opportunities for building groups}
+\label{fig:recoverGr}
+\end{figure}
+
+The dynamic energy map also provides the quantitative insight on how
+much heat recovery one could achieve: per \eref{eq:recover} and the
+analysis in \sref{sec:inputRecover}, the heat recovery potential of
+each building or building group will be calculated with $f = 1.15$ for
+Large Office and Hospital, and $f = 1.25$ for the remaining building
+types. A heat demand plot will be shown for the total heating energy
+demand before and after the recovering of the reject heat for single
+buildings or building groups (neet to be implemented)
+
 \subsubsection{Function 1: Assisting Sizing of District Energy System}
-As is mentioned in section \ref{districtDesign}, with the Dynamic
-Energy Map that depict the spatial temporal load variation, one will
-idealy be able to 1) idendify anchor load building, 2) conduct better
-design of local load balancing, 3) identify energy recovery
-opportunities of the following forms: an individual building with
-mixed heating or adjacent buildings with opposite heating and cooling
-demand.
+With the Dynamic Energy Map that depict the spatial temporal load
+variation, one will idealy be able to 1) idendify anchor load
+buildings, 2) conduct better design of local load balancing, 3) size
+the co-generation CHP plant
 
 \begin{enumerate}[1).]
 \item Identify anchor load building
@@ -887,6 +1017,17 @@ demand.
   demand remains to be decided in further project development. For the
   current implementation, the break point is acquired with quantile
   classification method with.
+  
+  Although with the box plot of heating demand (\fref{fig:H}), the
+  buildings with high consistent heating demand can be seen through
+  its high median and 25 percentile, but a more intuitive
+  interpretation is still needed to convey information to people with
+  less statistical background. From the animated version of the
+  dynamic energy map
+  (\href{http://www.armechxyj.com/energy-mapping.html#redblueAnime2d}{link
+    to 2d map},
+  \href{http://www.armechxyj.com/energy-mapping.html#redblueAnime3d}{link
+    to 3d map})
 
 \item Local load balancing
   
@@ -894,35 +1035,106 @@ demand.
   subset of the existing buildings and the program will calculate the
   aggregated load and plot the curve for the aggregated load of the
   selected building group (within the specified time period).
+  
+  The user will first identify some cluster of buildings, in which
+  there is a pattern of building that turn red one after another but
+  not together. Then they can check the building demand profile by
+  clicking on the building footprint in the 2D map
+  (\fref{fig:seeLoad}).
 
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{seeLoad.png}
+    \caption[Check Energy Demand]{Users can check the building energy
+      demand (thermal or electricity) by clicking on the building foot
+      print in the 2D map and the interface will show the plot of the
+      energy demand profile within a period (the example is showing
+      the demand for a 24h hour period)}
+    \label{fig:seeLoad}
+  \end{figure}
+  
+  Alternatively, they can first open the window that displays the 24h
+  period energy demand graph (hourly gas heating energy in the
+  following example) for all of the 16 benchmark buildings and see if
+  there are some building types that has their demand compensating
+  each other (so they have a rough idea of what is a ``good building
+  combination'' (\fref{fig:plotAll}) at this time that could be a
+  candidate for load balancing) and they will look at the map and
+  search for this ``good combination''.
 
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{plotAll.png}
+    \caption[See All Demand Plot]{Users can plot all building energy
+      demand profile (heating gas demand for the example) and search
+      for ``good cobimations'' that have compensate load profile}
+    \label{fig:plotAll}
+  \end{figure}
+  
+  After the qualitative experimentation, users can select a group of
+  building by clicking on the building foot print and the program will
+  output a graph of aggregated load (\fref{fig:seeAggDemand}).
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{seeAggDemand.png}
+    \caption[Plot Aggregated Demand]{In this example, users selected
+      the Stand-alone Retail and the Large Office and plots of each
+      single building and the aggregated demand of the two buildings
+      are displayed}
+    \label{fig:seeAggDemand}
+  \end{figure}
+  
 \end{enumerate}
 
+\begin{comment}
 \subsection{Specification of the Major Operation}
 The desired major operations for the target user include: 
 \begin{itemize}
-\item Map display and data plot
+\item Map display and careful choice of default settings for
+  choropleth map display
 \item Navigation utilities that navigates through dynamic map and data
   plot
-\item Provide default settings for choropleth map display
+\item 
+\item Provide various plot routines that supplies quantitative
+  information
 \end{itemize}
 
 \subsubsection{Map display and data plot}
-For researchers or planners: The desired map display should be a 2D
-and 3D map (providing easy toggle between 2D and 3D map or align the
-two representations side by side) with graduated symbol or color
-representing the heating or cooling demand. The map display should
-also be coupled with corresponding data plot or data statistics that
-providing the quantitative insight that supports design decisions.
+Although the major target user group for the current project is
+researchers and planners, we can briefly discuss an interface for
+public user for future extending the project to adatp to different
+user groups' need. In the study of Resch et al.\ suggest that the
+interface for general public should ``ensure that the amount of
+information shown to the users at any given time, and its complexity,
+are reduced''~\cite{Resch2014}. Thus we could imagine the desired map
+display for the current project should be a 3D map. The bivariate
+choropleth map legend should also be replaced with two color ramps or
+even with only colors of extreme value. Quantitative information
+display should be reduced to one bar chart or zoomable data plot of
+the aggregated demand. The data classification method should also be
+chosen so that the peak occurrence time is emphasized rather than the
+absolute energy consumption value. One sample design for such a map is
+shown in \fref{fig:forPublic} (The data plot is not added in this
+example).
 
-For general public: The desired map display should be a 3D map
-. Instead of using data plot, a more intuitive bar chart of the
-aggregated demand could be more helpful in presenting a general
-idea. The bivariate choropleth map legend should also be replaced with
-two color ramps or even with only colors of extreme value. The data
-classification method should also be chosen so that the peak
-occurrence time is emphasized rather than the absolute energy
-consumption value.
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{forPublic.png}
+    \caption[Animated Map for Public]{This version of animated map
+      aims at revealing the dynamic changes of building heating and
+      cooling energy demand and their non-conincident heating and
+      cooling peak arrival for general public}
+    \label{fig:forPublic}
+  \end{figure}
+  
+For researchers or planners: The desired map display should be a 2D
+and 3D map. They can toggle between the two display mode and can
+perform different operations. The heating or cooling demand are
+represented as a graduated symbol (univariate case) or color
+(bivariate case). The map display should also be coupled with
+corresponding data plot or data statistics that provides the
+quantitative insight that supports design decisions.
 
 \subsubsection{Navigation utilities that navigates through dynamic map
   and data plot}
@@ -930,7 +1142,9 @@ The ability to navigate through a series of map images and present
 dynamic data plot accordingly, is the basic function that differs
 the current work from a static map. Some desired behavior of the
 slider includes:
+
 \begin{itemize}
+
 \item Linear and cyclic time representation. According to section
   \ref{anime}, the time has both linear and cyclic aspect. The time
   navigation utility should provide both ``linear'' time navigation
@@ -978,3 +1192,83 @@ related literature research on dynamic map design:
   data~\cite{Dorling1992}. This is done through the discrete color
   scheme design.
 \end{itemize}
+
+\section{Interface Design}\label{interfaceDesign}
+\subsection {General Layout}
+The interface for dynamic map display includes three major sections: a
+series of sliders for controling images are on the left and the data
+plot of energy profile of building sectors and aggregated demand are
+on the right.
+
+The main window on the top left is used for displaying the 2D dynamic
+map of the conceptual model. The lower left of the window displays the
+current time for the image and dynamic plot in display. The lower left
+section contains a series of sliders for controling interactive
+navigation of image and plot sequences. The right hand side of the
+interface contains the dynamic data plot of the four major building
+sectors: Hotel, Office, Residencial and Commercial buildings. The
+lower right are the aggregated heating / cooling demand profile for
+the whole site. The left column are the heating energy consumption in
+natural gas and the right column are the cooling energy consumption in
+electricity. On the lower right there are four buttons providing two
+default forward and backward navigation, 1h and
+24h. (\fref{fig:interfaceLayout}).
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{interface0720}
+  \caption{Dynamic Map Interface Layout (3D map)}
+  \label{fig:interface0720}
+\end{subfigure}
+~
+\begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{interface2d}
+  \caption{Dynamic Map Interface Layout (2D map)}
+  \label{fig:interface2d}
+\end{subfigure}
+\caption{Dynamic Map Interface Layout}
+\label{fig:interfaceLayout}
+\end{figure}
+Between the aggregated heat demand and the sliders, there is a
+choropleth legend. According to section \ref{anime}, the comparison of
+the map and the legend becomes tricky for dynamic maps. In order to
+assist this task, tick marks of ``x'' are added to the legend to
+indicate the color appeared in the map \fref{fig:legend}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\linewidth]{legend}
+  \caption{Bivariate Color Legend with Tick Mark Indicators}
+  \label{fig:legend}
+\end{figure}
+
+\subsection {Navigation Function}
+The navigation function is achieved with the four slider and the four
+buttons above the sliders on the lower left of the window. The top
+slider labeled with ``Year round'' has a range of 0 to 8760 (not
+inclusive). the change of 1 in the slider position corresponds to the
+change of 1 hour in time, which results in the display of the image of
+the next or previous hour in time. The slider labeled with ``month''
+has a range of 1 to 12, which corresponds to the 12 months in year,
+the change of the month slider results the jump of 1 month forward or
+backward in time. This function is intended to provide easy comparison
+of montyly variation of the energy consumption behavior. Similarly,
+the change of the ``date'' and ``hour'' slider corresponds to the time
+change of one day or one hour respectively. The four buttons provides
+a separate control intended to provide micro level adjustment of time.
+
+\subsection {Dynamic Plot}
+The input images to the main window is generated from the CityEngine
+model. The graph is ploted by reading in simulation data from
+EnergyPlus. The starting point (left end) of the plot corresponds to
+the position indicated by the slider. 
+
+\subsection {Implementation tools and strategy}
+The softwares or platform involved in the project include EnergyPlus
+for building simulation, CityEngine for 3D modeling and image
+generation, Python 2.7 for interface design. The interface is written
+in Python2.7 with standard Tkinter graphic package including the data
+plot section.
+
+\end{comment}

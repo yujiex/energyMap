@@ -19,11 +19,8 @@
 \contentsline {section}{\numberline {1.4}Interface Specification}{19}{section.57}
 \contentsline {subsection}{\numberline {1.4.1}User Definition}{19}{subsection.58}
 \contentsline {subsection}{\numberline {1.4.2}Goal Function}{19}{subsection.59}
-\contentsline {subsection}{\numberline {1.4.3}Specification of the Major Operation}{21}{subsection.70}
-\contentsline {subsubsection}{\numberline {1.4.3.1}Map display and data plot}{21}{subsubsection.71}
-\contentsline {subsubsection}{\numberline {1.4.3.2}Navigation utilities that navigates through dynamic map and data plot}{22}{subsubsection.72}
-\contentsline {subsection}{\numberline {1.4.4}Provide default settings for choropleth map display}{22}{subsection.73}
-\contentsline {subsection}{\numberline {1.4.5}Guidelines from Literature Study}{23}{subsection.74}
+\contentsline {subsubsection}{\numberline {1.4.2.1}Function 1: Assisting Energy Recovery}{20}{subsubsection.63}
+\contentsline {subsubsection}{\numberline {1.4.2.2}Function 1: Assisting Sizing of District Energy System}{23}{subsubsection.67}
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{24}{dummy.75}
+\contentsline {chapter}{Bibliography}{26}{dummy.73}
