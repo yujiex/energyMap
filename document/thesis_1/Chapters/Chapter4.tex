@@ -1,6 +1,8 @@
 % Chapter 4
 
 \chapter{Methodology} % Main chapter title
+% IMPORTANT: uncomment the section enclosed by "%%%%%%%%%%%%%%%%%%%%%"
+% for final document
 
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
@@ -555,9 +557,24 @@ indicates the necessity of heat storage equipment.
   \label{fig:HTPR}
 \end{figure}%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{comment}
 \subsubsection{Aggregated Demand Distribution}
-This section analyzes the energy demand distribution of all the input
-of heating cooling and electricity.  
+This section analyzes the energy demand distribution of the hourly
+energy demand (gas heating, electricity heating, service hot water,
+cooling and electricity demand) of all buildings in the community. All
+histogram show the distribution are very right skewed, so we paired
+the histogram of the original data with a histogram with log
+scaling. Interestingly, the log-scale distribution of gas heating
+demand, space heating demand looks like normal distribution while the
+others do not.
+
+The difference in data distribution might influence the data
+classification and energy data color-encoding, which then influences
+the map display design, but for current display, they are not taken
+into consideration yet. A closer look at how different energy data
+distribution can be better visually inspected could one of the topics
+for the next stage of the project.
 
 \pagebreak
 \begin{itemize}
@@ -578,7 +595,7 @@ of heating cooling and electricity.
   \caption[Gas Heating Demand]{Gas Heating Demand in Log Scale}
   \label{fig:log-Scale-Heating:Gas}
 \end{subfigure}
-  \caption[Gas Heating Demand]{Gas Heating Demand in Log Scale}
+  \caption[Gas Heating Demand Log]{Gas Heating Demand in Log Scale}
 \end{figure}
 
 \begin{figure}[h!]
@@ -596,30 +613,108 @@ of heating cooling and electricity.
   \caption[Electricity Heating Demand]{Electricity Heating Demand in Log Scale}
   \label{fig:log-Scale-Heating:Electricity}
 \end{subfigure}
-  \caption[Electricity Heating Demand]{Electricity Heating Demand in Log Scale}
+  \caption[Electricity Heating Demand Log]{Electricity Heating Demand in Log Scale}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \begin{subfigure}{0.4\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{original-Water Heater}
+  \includegraphics[width=\linewidth]{original-Water-Heater}
   \caption[Service Hot Water Demand]{Service Hot Water Demand}
   \label{fig:original-Water Heater}
 \end{subfigure}
 ~
 \begin{subfigure}{0.4\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{log-Scale-Water Heater}
+  \includegraphics[width=\linewidth]{log-Scale-Water-Heater}
   \caption[Service Hot Water Demand]{Service Hot Water Demand in Log Scale}
-  \label{fig:log-Scale-Water Heater}
+  \label{fig:log-Scale-Water-Heater}
 \end{subfigure}
-  \caption[Service Hot Water Demand]{Service Hot Water Demand in Log Scale}
+  \caption[Service Hot Water Demand Log]{Service Hot Water Demand in Log Scale}
 \end{figure}
 
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Space-Heating}
+  \caption[Space Heating Demand]{Space Heating Demand}
+  \label{fig:original-Space-Heating}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Space-Heating}
+  \caption[Space Heating Demand]{Space Heating Demand in Log Scale}
+  \label{fig:log-Scale-Space-Heating}
+\end{subfigure}
+  \caption[Space Heating Demand Log]{Space Heating Demand in Log Scale}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Heating}
+  \caption[Heating Demand]{Heating Demand}
+  \label{fig:original-Heating}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Heating}
+  \caption[Heating Demand]{Heating Demand in Log Scale}
+  \label{fig:log-Scale-Heating}
+\end{subfigure}
+  \caption[Heating Demand Log]{Heating Demand in Log Scale}
+\end{figure}
+
+\pagebreak
 \item Cooling
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Cooling:Electricity}
+  \caption[Electricity Cooling Demand]{Electricity Cooling Demand}
+  \label{fig:original-Cooling:Electricity}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Cooling:Electricity}
+  \caption[Electricity Cooling Demand]{Electricity Cooling Demand in Log Scale}
+  \label{fig:log-Scale-Cooling:Electricity}
+\end{subfigure}
+  \caption[Electricity Cooling Demand Log]{Electricity Cooling Demand in Log Scale}
+\end{figure}
+
+\pagebreak
 \item Electricity
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{original-Electricity:Facility}
+  \caption[Electricity  Demand]{Electricity Demand}
+  \label{fig:original-Electricity:Facility}
+\end{subfigure}
+~
+\begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{log-Scale-Electricity:Facility}
+  \caption[Electricity  Demand]{Electricity  Demand in Log Scale}
+  \label{fig:log-Scale-Electricity:Facility}
+\end{subfigure}
+  \caption[Electricity  Demand Log]{Electricity Demand in Log Scale}
+\end{figure}
+
 \end{itemize}
+%\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \pagebreak
 \subsection{3D GIS Model Geometry}
 The conceptual community model is constructed in
@@ -851,7 +946,7 @@ information with the Dynamic Energy Map.
 
 The potential category of user group for the Dynamic Map includes: 1)
 policy makers, 2) urban planners with the interest in executing
-community level energy strategys 3) researchers in energy related
+community level energy strategies 3) researchers in energy related
 fields 4) public groups or individuals that are involved or interested
 in the decision making process of community energy planning.
 
@@ -877,15 +972,16 @@ The goal function of the interface is in general defined as:
   electricity demand variation of the conceptual model with Dynamic
   Energy Map}.''
 
-More specific key goal functions of the dynamic energy map in the
+More specific sub-goal-functions of the dynamic energy map in the
 current study is defined as:
 \begin{enumerate}[1)]
 \item Assisting users to visualize the time dependent hourly thermal
-  and electricity demand of each building, each builing sectors and
-  the whole community so that they can have a better understanding of
-  the importance and the potential of arranging land use pattern and
-  building density on the aggregated thermal energy and electricity
-  demand of single buildings, building sectors and the whole community.
+  energy and electricity demand of each building, each builing sectors
+  and the whole community so that they can have a better understanding
+  of the importance and the potential of arranging land use pattern
+  and building density on the aggregated thermal energy and
+  electricity demand of single buildings, building sectors and the
+  whole community.
 \item Assisting users to identify the energy recovery opportunities
   through multi-dimensional visualization of the space heating and
   cooling demand.
@@ -1087,7 +1183,6 @@ the co-generation CHP plant
   
 \end{enumerate}
 
-\begin{comment}
 \subsection{Specification of the Major Operation}
 The desired major operations for the target user include: 
 \begin{itemize}
@@ -1194,6 +1289,29 @@ related literature research on dynamic map design:
 \end{itemize}
 
 \section{Interface Design}\label{interfaceDesign}
+The following section provides the detailed information of the design
+of the interactive dynamic energy demand map interface.
+
+\subsection{Guidelines from Literature Study}
+Here we summarizes some of the design choices made according to
+related literature research on dynamic map design in \cref{Chapter5}:
+\begin{itemize}
+\item Provide both 2D and 3D map display as a result of the debating
+  situation mentioned in \sref{2d3d}.
+\item Choose bivariate choropleth map representation which has the
+  highest accuracy rate in map reading experiments \sref{symbolChosen}.
+\item Providing the most commonly used data classification method:
+  Equal Interval and Quantile Interval \sref{dataClassification}
+\item The number of classes for energy data classification is chosen
+  to be 7, less than the suggested value of 10 as a result of smaller
+  display size than 1024x768 \sref{symbolChosen}
+\item Provide both linear and periodical navigation based on section
+  \sref{timeRepresent}
+\item Noise removal in map display of energy profile
+  data~\cite{Dorling1992}. This is done through the discrete color
+  scheme design.
+\end{itemize}
+
 \subsection {General Layout}
 The interface for dynamic map display includes three major sections: a
 series of sliders for controling images are on the left and the data
@@ -1231,6 +1349,7 @@ default forward and backward navigation, 1h and
 \caption{Dynamic Map Interface Layout}
 \label{fig:interfaceLayout}
 \end{figure}
+
 Between the aggregated heat demand and the sliders, there is a
 choropleth legend. According to section \ref{anime}, the comparison of
 the map and the legend becomes tricky for dynamic maps. In order to
@@ -1270,5 +1389,3 @@ for building simulation, CityEngine for 3D modeling and image
 generation, Python 2.7 for interface design. The interface is written
 in Python2.7 with standard Tkinter graphic package including the data
 plot section.
-
-\end{comment}

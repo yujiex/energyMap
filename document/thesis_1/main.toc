@@ -1,26 +1,77 @@
 \contentsline {chapter}{Contents}{i}{dummy.1}
-\contentsline {chapter}{List of Figures}{ii}{dummy.3}
-\contentsline {chapter}{List of Tables}{iii}{dummy.5}
-\contentsline {chapter}{Abbreviations}{iv}{dummy.7}
-\contentsline {chapter}{Symbols}{v}{dummy.10}
-\contentsline {chapter}{\numberline {1}Methodology}{1}{chapter.13}
-\contentsline {section}{\numberline {1.1}Overview}{1}{section.14}
-\contentsline {section}{\numberline {1.2}Input}{3}{section.20}
-\contentsline {subsection}{\numberline {1.2.1}Benchmark Models and Energy Data}{3}{subsection.21}
-\contentsline {subsubsection}{\numberline {1.2.1.1}Input for Identifing Energy Recovery Opportunities}{5}{subsubsection.25}
-\contentsline {subsubsection}{\numberline {1.2.1.2}Input for Sizing District Co-generation System}{7}{subsubsection.30}
-\contentsline {subsection}{\numberline {1.2.2}Simulation Data Analysis of the benchmark models}{8}{subsection.32}
-\contentsline {subsubsection}{\numberline {1.2.2.1}Single Output}{8}{subsubsection.34}
-\contentsline {subsubsection}{\numberline {1.2.2.2}Space Heating Demand vs. Space Cooling Demand}{12}{subsubsection.40}
-\contentsline {subsubsection}{\numberline {1.2.2.3}Heating Demand vs. Electricity Demand}{13}{subsubsection.43}
-\contentsline {subsection}{\numberline {1.2.3}3D GIS Model Geometry}{14}{subsection.46}
-\contentsline {subsection}{\numberline {1.2.4}Aggregating Hourly Energy Data to 3D GIS Model}{16}{subsection.51}
-\contentsline {section}{\numberline {1.3}Output Map Images}{18}{section.56}
-\contentsline {section}{\numberline {1.4}Interface Specification}{19}{section.57}
-\contentsline {subsection}{\numberline {1.4.1}User Definition}{19}{subsection.58}
-\contentsline {subsection}{\numberline {1.4.2}Goal Function}{19}{subsection.59}
-\contentsline {subsubsection}{\numberline {1.4.2.1}Function 1: Assisting Energy Recovery}{20}{subsubsection.63}
-\contentsline {subsubsection}{\numberline {1.4.2.2}Function 1: Assisting Sizing of District Energy System}{23}{subsubsection.67}
+\contentsline {chapter}{List of Figures}{iv}{dummy.3}
+\contentsline {chapter}{List of Tables}{vi}{dummy.5}
+\contentsline {chapter}{Abbreviations}{vii}{dummy.7}
+\contentsline {chapter}{Symbols}{viii}{dummy.10}
+\contentsline {chapter}{\numberline {1}General Introduction}{1}{chapter.13}
+\contentsline {section}{\numberline {1.1}Project Overview}{1}{section.14}
+\contentsline {section}{\numberline {1.2}Objective and Problem Definition}{3}{section.19}
+\contentsline {section}{\numberline {1.3}Related Concepts}{5}{section.24}
+\contentsline {subsection}{\numberline {1.3.1}District Energy System}{5}{subsection.25}
+\contentsline {subsection}{\numberline {1.3.2}Heat Map}{6}{subsection.26}
+\contentsline {subsection}{\numberline {1.3.3}Energy Map}{7}{subsection.27}
+\contentsline {subsection}{\numberline {1.3.4}Dynamic Energy Map}{7}{subsection.28}
+\contentsline {section}{\numberline {1.4}Why ``time'' dimension is important}{8}{section.29}
+\contentsline {subsection}{\numberline {1.4.1}Strong Temporal Variation of Energy Demand}{8}{subsection.30}
+\contentsline {subsection}{\numberline {1.4.2}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{8}{subsection.32}
+\contentsline {chapter}{\numberline {2}Related Works}{10}{chapter.33}
+\contentsline {section}{\numberline {2.1}Static Energy Map}{10}{section.35}
+\contentsline {subsection}{\numberline {2.1.1}UK Heat Map}{10}{subsection.36}
+\contentsline {subsection}{\numberline {2.1.2}Calgary Energy Map}{13}{subsection.40}
+\contentsline {subsection}{\numberline {2.1.3}Energy Potential Mapping}{14}{subsection.43}
+\contentsline {section}{\numberline {2.2}Dynamic Energy Map}{14}{section.45}
+\contentsline {subsection}{\numberline {2.2.1}Lower Hill District Dynamic Mapping Project}{15}{subsection.46}
+\contentsline {subsection}{\numberline {2.2.2}Energy Mapping to Identify Opportunities for Future Networks Project}{16}{subsection.49}
+\contentsline {chapter}{\numberline {3}Building from Previous Work}{19}{chapter.53}
+\contentsline {chapter}{\numberline {4}Methodology}{21}{chapter.55}
+\contentsline {section}{\numberline {4.1}Overview}{21}{section.56}
+\contentsline {section}{\numberline {4.2}Input}{23}{section.62}
+\contentsline {subsection}{\numberline {4.2.1}Benchmark Models and Energy Data}{23}{subsection.63}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Input for Identifing Energy Recovery Opportunities}{25}{subsubsection.67}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Input for Sizing District Co-generation System}{27}{subsubsection.72}
+\contentsline {subsection}{\numberline {4.2.2}Simulation Data Analysis of the benchmark models}{28}{subsection.74}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Single Output}{28}{subsubsection.76}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Space Heating Demand vs. Space Cooling Demand}{32}{subsubsection.82}
+\contentsline {subsubsection}{\numberline {4.2.2.3}Heating Demand vs. Electricity Demand}{33}{subsubsection.85}
+\contentsline {subsubsection}{\numberline {4.2.2.4}Aggregated Demand Distribution}{34}{subsubsection.88}
+\contentsline {subsection}{\numberline {4.2.3}3D GIS Model Geometry}{38}{subsection.96}
+\contentsline {subsection}{\numberline {4.2.4}Aggregating Hourly Energy Data to 3D GIS Model}{40}{subsection.101}
+\contentsline {section}{\numberline {4.3}Output Map Images}{42}{section.106}
+\contentsline {section}{\numberline {4.4}Interface Specification}{42}{section.107}
+\contentsline {subsection}{\numberline {4.4.1}User Definition}{42}{subsection.108}
+\contentsline {subsection}{\numberline {4.4.2}Goal Function}{43}{subsection.109}
+\contentsline {subsubsection}{\numberline {4.4.2.1}Function 1: Assisting Energy Recovery}{44}{subsubsection.113}
+\contentsline {subsubsection}{\numberline {4.4.2.2}Function 1: Assisting Sizing of District Energy System}{46}{subsubsection.117}
+\contentsline {subsection}{\numberline {4.4.3}Specification of the Major Operation}{49}{subsection.123}
+\contentsline {subsubsection}{\numberline {4.4.3.1}Map display and data plot}{49}{subsubsection.124}
+\contentsline {subsubsection}{\numberline {4.4.3.2}Navigation utilities that navigates through dynamic map and data plot}{50}{subsubsection.126}
+\contentsline {subsection}{\numberline {4.4.4}Provide default settings for choropleth map display}{51}{subsection.127}
+\contentsline {subsection}{\numberline {4.4.5}Guidelines from Literature Study}{51}{subsection.128}
+\contentsline {section}{\numberline {4.5}Interface Design}{51}{section.129}
+\contentsline {subsection}{\numberline {4.5.1}Guidelines from Literature Study}{52}{subsection.130}
+\contentsline {subsection}{\numberline {4.5.2}General Layout}{52}{subsection.131}
+\contentsline {subsection}{\numberline {4.5.3}Navigation Function}{54}{subsection.134}
+\contentsline {subsection}{\numberline {4.5.4}Dynamic Plot}{54}{subsection.135}
+\contentsline {subsection}{\numberline {4.5.5}Implementation tools and strategy}{54}{subsection.136}
+\contentsline {chapter}{\numberline {5}Literature Study on Map Design and Data Visualization}{55}{chapter.137}
+\contentsline {section}{\numberline {5.1}Overview}{55}{section.138}
+\contentsline {section}{\numberline {5.2}Works on Map Design}{55}{section.139}
+\contentsline {subsubsection}{\numberline {5.2.0.1}2D vs. 3D}{55}{subsubsection.140}
+\contentsline {subsection}{\numberline {5.2.1}Bivariate Map Design}{56}{subsection.141}
+\contentsline {section}{\numberline {5.3}Works on Dynamic (Space-time) Map Design}{57}{section.143}
+\contentsline {subsection}{\numberline {5.3.1}Symbol Chosen}{57}{subsection.144}
+\contentsline {subsection}{\numberline {5.3.2}Time Representation}{58}{subsection.145}
+\contentsline {subsection}{\numberline {5.3.3}Animated Maps}{59}{subsection.146}
+\contentsline {section}{\numberline {5.4}Data Classification}{60}{section.147}
 \vspace {2em}
+\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{61}{appendix.149}
+\contentsline {section}{\numberline {A.1}General Introduction}{61}{section.150}
+\contentsline {section}{\numberline {A.2}Explaining Each Steps}{62}{section.151}
+\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in CityEngine}{69}{appendix.171}
+\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{71}{appendix.172}
+\contentsline {section}{\numberline {C.1}Introduction}{71}{section.173}
+\contentsline {section}{\numberline {C.2}Explaining Each Steps}{71}{section.174}
+\contentsline {subsection}{\numberline {C.2.1}Final Output}{75}{subsection.191}
+\contentsline {chapter}{\numberline {D}Rule File Used in Final Dynamic Map Interface}{77}{appendix.193}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{26}{dummy.73}
+\contentsline {chapter}{Bibliography}{79}{dummy.194}

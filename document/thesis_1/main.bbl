@@ -1,9 +1,16 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{62}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[of~Energy Efficiency \& Renewable~Energy(2015)]{DOE2015}
+Office of~Energy Efficiency \& Renewable~Energy.
+\newblock Commercial reference buildings.
+\newblock web, June 2015.
+\newblock
+  \url{http://energy.gov/eere/buildings/commercial-reference-buildings}.
 
 \bibitem[{NASA}(2015)]{NASA2015}
 {NASA}.
@@ -104,13 +111,6 @@ Shalini Ramesh, Khee~Poh Lam, Nina Baird, and Henry Johnstone.
 \newblock Idea report: The district energy industry.
 \newblock Technical report, IDEA, IDEA Report: The District Energy Industry,
   August 2005.
-
-\bibitem[of~Energy Efficiency \& Renewable~Energy(2015)]{DOE2015}
-Office of~Energy Efficiency \& Renewable~Energy.
-\newblock Commercial reference buildings.
-\newblock web, June 2015.
-\newblock
-  \url{http://energy.gov/eere/buildings/commercial-reference-buildings}.
 
 \bibitem[{Ove Arup \& Partners Ltd}(2012)]{lhmreport2012}
 {Ove Arup \& Partners Ltd}.
@@ -299,6 +299,101 @@ Esri.
 {Esri}.
 \newblock Classifying numerical fields for graduated symbology.
 \newblock web, October 2012{\natexlab{a}}.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
+
+\bibitem[Resch et~al.(2014)Resch, Wohlfahrt, and Wosniok]{Resch2014}
+Bernd Resch, Ralf Wohlfahrt, and Christoph Wosniok.
+\newblock Web-based 4d visualization of marine geo-data using webgl.
+\newblock \emph{Cartography and Geographic Information Science}, 41\penalty0
+  (3):\penalty0 235--247, 2014.
+\newblock \doi{10.1080/15230406.2014.901901}.
+\newblock URL \url{http://dx.doi.org/10.1080/15230406.2014.901901}.
+
+\bibitem[Johnson and Nelson(1998)]{Nelson1998}
+Harry Johnson and Elisabeth~S. Nelson.
+\newblock Using flow maps to visualize time-series data: Comparing the
+  effectiveness of a paper map series, a computer map series, and animation.
+\newblock \emph{Cartographic Perspectives}, 19\penalty0 (30):\penalty0 47--64,
+  1998.
+
+\bibitem[Elmer(2012)]{Elmer2012}
+Martin~E. Elmer.
+\newblock Symbol considerations for bivariate thematic mapping.
+\newblock diploma thesis, University of Wisconsin-Madison, 2012.
+
+\bibitem[Dong et~al.(2012)Dong, Ran, and Wang]{doi:10.1559/1523040639298}
+Weihua Dong, Jing Ran, and Jue Wang.
+\newblock Effectiveness and efficiency of map symbols for dynamic geographic
+  information visualization.
+\newblock \emph{Cartography and Geographic Information Science}, 39\penalty0
+  (2):\penalty0 98--106, 2012.
+\newblock \doi{10.1559/1523040639298}.
+\newblock URL \url{http://dx.doi.org/10.1559/1523040639298}.
+
+\bibitem[Dorling and Openshaw(1992)]{Dorling1992}
+D.~Dorling and S.~Openshaw.
+\newblock Using computer animation to visualize space - time patterns.
+\newblock \emph{Planning and Design}, 19:\penalty0 639--650, July 1992.
+
+\bibitem[Brownrigg(2005)]{Brownrigg2005}
+Richard Brownrigg.
+\newblock \emph{{Data Visualization with Spacetime Maps}}.
+\newblock PhD thesis, University of Kansas, May 2005.
+
+\bibitem[Tufte(1983)]{Tufte83}
+Edward~R. Tufte.
+\newblock \emph{The visual display of quantitative information}.
+\newblock Graphics Press, Cheshire, Conn. (Box 430, Cheshire 06410), 1983.
+
+\bibitem[MacEachren et~al.(1998)MacEachren, Boscoe, Haug, and
+  Pickle]{McEachern1998}
+Alan~M. MacEachren, Francis~P. Boscoe, Daniel Haug, and Linda~W. Pickle.
+\newblock Geographic visualization: Designing manipulable maps for exploring
+  temporally varying georeferenced statistics.
+\newblock In \emph{Proceedings of the IEEE Information Visualization
+  Symposium}, pages 87--94, International Plea Conference, October 1998.
+
+\bibitem[Harrower and Fabrikant(2008)]{Harrower2008}
+Mark Harrower and Sara Fabrikant.
+\newblock \emph{The Role of Map Animation for Geographic Visualization}, pages
+  49--65.
+\newblock John Wiley \& Sons, Ltd, 2008.
+\newblock ISBN 9780470987643.
+\newblock \doi{10.1002/9780470987643.ch4}.
+\newblock URL \url{http://dx.doi.org/10.1002/9780470987643.ch4}.
+
+\bibitem[Peuquet(1994)]{Peuquet1994}
+Donna~J. Peuquet.
+\newblock It's about time: A conceptual framework for the representation of
+  temporal dynamics in geographic information systems.
+\newblock \emph{Annals of the Association of American Geographers}, 84\penalty0
+  (3):\penalty0 pp. 441--461, 1994.
+\newblock ISSN 00045608.
+\newblock URL \url{http://www.jstor.org/stable/2563777}.
+
+\bibitem[Lowe(2004)]{Lowe2004}
+Richard Lowe.
+\newblock User-controllable animated diagrams: The solution for learning
+  dynamic content?
+\newblock In AlanF. Blackwell, Kim Marriott, and Atsushi Shimojima, editors,
+  \emph{Diagrammatic Representation and Inference}, volume 2980 of
+  \emph{Lecture Notes in Computer Science}, pages 355--359. Springer Berlin
+  Heidelberg, 2004.
+\newblock ISBN 978-3-540-21268-3.
+\newblock \doi{10.1007/978-3-540-25931-2_38}.
+\newblock URL \url{http://dx.doi.org/10.1007/978-3-540-25931-2_38}.
+
+\bibitem[Barton et~al.(2008)Barton, Aros, Landa, and Cepicky]{GRASSGIS2008}
+Michael Barton, Daniel~Cavelo Aros, Martin Landa, and Jachym Cepicky.
+\newblock d.vect.thematic - displays thematic vector map.
+\newblock web, August 2008.
+\newblock \url{http://grass.osgeo.org/grass64/manuals/d.vect.thematic.html}.
+
+\bibitem[del Cerro~Murciano(2011)]{gvGIS2011}
+Joaquin~Jose del Cerro~Murciano.
+\newblock gvsig desktop 1.11 user manual (pdf version).
+\newblock web, December 2011.
 \newblock
   \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
 
