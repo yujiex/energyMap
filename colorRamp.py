@@ -1,5 +1,6 @@
 from Tkinter import *
 import pandas as pd
+import util_loadData as ld
 
 import myString as ms
 import util_array as ar
@@ -28,7 +29,7 @@ def mixColor(lists):
     # weighted average
     wt_mix_rgb = ar.wt_sumLists(lists)
     wt_mix_rgb = [[int(round(y, 0)) for y in x] for x in wt_mix_rgb]
-    # change "wt_mix_rgb" to other value: 
+    # change "wt_mix_rgb" to other value:
     # ave_rgb, round_rgb to see their effect
     mix_hex = [rgb2hex(x[0], x[1], x[2]) for x in wt_mix_rgb]
     return mix_hex
@@ -70,8 +71,10 @@ def colorRamp_2d(num_points, rgb_origin, rgb_x, rgb_y):
 
 def test_colorRamp_2d():
     num_points = 7
-    color_2d = colorRamp_2d(num_points,
-                            [255, 255, 255], [255, 0, 0], [0, 0, 255])
+    ori_color = [255, 255, 255]
+    x_color = [255, 0, 0]
+    y_color = [0, 255, 0]
+    color_2d = colorRamp_2d(num_points, ori_color, x_color, y_color)
     for i in range(num_points):
         for j in range(num_points):
             f = Canvas(master, width = 50, height = 50)
@@ -79,15 +82,19 @@ def test_colorRamp_2d():
             f.grid(row = i, column = j)
 
 def createColorScheme(master, cate, row_off, col_off, gridsize,
-                      method):
+                      method, topic):
     bd_font = "TkDefault 7 bold"
     ot_font = "TkDefault 6"
     font_color = "gray45"
     defaultbg = master.cget('bg')
     (heat_breakpt,cool_breakpt,coloridDict) = data2breakpoints(cate,
-                                                               method)
-    colorGrid = colorRamp_2d(cate, [255, 255, 255],
-                             [255, 0, 0], [0, 0, 255])
+                                                               method, topic)
+    if topic == "energy recovery":
+        colorGrid = colorRamp_2d(cate, [255, 255, 255],
+                                 [255, 0, 0], [0, 0, 255])
+    else:
+        colorGrid = colorRamp_2d(cate, [255, 255, 255],
+                                 [255, 0, 0], [0, 255, 0])
 
     heat_label = Canvas(master, width = gridsize, height = gridsize/2)
     heat_label.grid(row = row_off, column = col_off + cate + 2)
@@ -99,8 +106,8 @@ def createColorScheme(master, cate, row_off, col_off, gridsize,
     ht_dmd_label = Canvas(master, width = w_ht_dmd, height = h_ht_dmd)
     ht_dmd_label.grid(row = row_off, column = col_off + 2, columnspan
                       = cate)
-    ht_dmd_label.create_text(w_ht_dmd/2, h_ht_dmd/2, 
-                             text = "HEAT DEMAND", font = bd_font, 
+    ht_dmd_label.create_text(w_ht_dmd/2, h_ht_dmd/2,
+                             text = "HEAT DEMAND", font = bd_font,
                              fill = font_color)
 
     zero_label = Canvas(master, width = gridsize, height = gridsize/2)
@@ -204,9 +211,15 @@ def test_colorRamp():
         f.create_rectangle(0, 0, 50, 50, fill = palette_mix[i])
         f.grid(row = 2, column = i)
 
-def data2breakpoints(cate, method):
-    heatDict = ld.profile2Dict("energyData/meterData/", "Heating:Gas")
-    coolDict = ld.profile2Dict("energyData/meterData/", "Cooling:Elec")
+def data2breakpoints(cate, method, topic):
+    (x, y) = ld.read2dicts()
+    allDict = dict(zip(x, y))
+    if (topic == "energy recovery"):
+        heatDict = allDict["Space Heating"]
+        coolDict = allDict["Cooling:Electricity"]
+    else:
+        heatDict = allDict["Heating"]
+        coolDict = allDict["Electricity:Facility"]
     countDict = ld.bdCountDict
     totalheat = ld.total_count(countDict, heatDict)
     totalheat = [x for x in totalheat if x != 0.0]
@@ -225,11 +238,23 @@ def data2breakpoints(cate, method):
 
 import util_loadData as ld
 import csv
-def writeColor(method, category, dirname, istocga, length=None):
+def writeColor(topic, method, category, dirname, istocga, length=None):
     (breakpt_heat, breakpt_cool, x) = data2breakpoints(category,
-                                                       "quantile")
-    colorGrid = colorRamp_2d(category, [255, 255, 255],
-                             [255, 0, 0], [0, 0, 255])
+                                                       "quantile", topic)
+    (x, y) = ld.read2dicts()
+    allDict = dict(zip(x, y))
+    if (topic == "energy recovery"):
+        heatDict = allDict["Space Heating"]
+        coolDict = allDict["Cooling:Electricity"]
+        colorGrid = colorRamp_2d(category, [255, 255, 255],
+                                 [255, 0, 0], [0, 0, 255])
+    else:
+        heatDict = allDict["Heating"]
+        coolDict = allDict["Electricity:Facility"]
+        colorGrid = colorRamp_2d(category, [255, 255, 255],
+                                 [255, 0, 0], [0, 255, 0])
+    countDict = ld.bdCountDict
+
 #   length = 20
     if length is None:
         length = 8760
@@ -248,14 +273,14 @@ def writeColor(method, category, dirname, istocga, length=None):
             colorDict[key] = color_profile
     if not istocga:
         for key in colorDict:
-            filename = dirname + key + "Color.txt"
+            filename = dirname + key + topic + "Color.txt"
             with open (filename, "w") as wt:
                 mywriter = csv.writer(wt, delimiter=";")
                 mywriter.writerow(colorDict[key])
             print("write to file: " + filename)
     else: # write to a file directly pasted to cga
         half = length/2
-        filename = dirname + "Color.txt"
+        filename = dirname + topic + "Color.txt"
         with open (filename, "w") as wt:
             mywriter = csv.writer(wt, delimiter=";")
             for key in colorDict:
@@ -352,9 +377,9 @@ test_colorRamp()
 test_rgb2hex()
 test_colorInterp()
 testReal_2d()
-writeColor("quantile", 7, "color/convert/", True)
-test_colorRamp_2d()
 testReal()
-createColorScheme(master, 7, 0, 0, 30, "quantile")
+test_colorRamp_2d()
+createColorScheme(master, 7, 0, 0, 30, "quantile", "CHP")
 mainloop()
 '''
+#writeColor("CHP", "quantile", 7, "color/convert/", True)

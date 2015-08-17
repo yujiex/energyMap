@@ -38,11 +38,11 @@ def imgName2hour(name):
 
 # turn integer value hour (restricted to 4 digit) to image name
 # make the path directory be images/imgxxxx.gif
-def hour2imgName(hour, is3d):
+def hour2imgName(hour, dim):
 #   dirname = 'images/'  # snapshot round one
 #   dirname = 'imagesRedBlue/'
     dirname = 'images2d/'
-    if (is3d == 1):
+    if (dim == "3D"):
         dirname = 'imagesRedBlue/'
     if hour < 10:
         return dirname + 'img000' + str(hour) + '.gif'

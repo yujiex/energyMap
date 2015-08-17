@@ -3,7 +3,7 @@ from Tkinter import *
 import csv
 import ast
 from util_time import *
-import plotGraph
+import plotGraphCHP
 import util_loadData as ld
 import colorRamp as cr
 import util_geo as geo
@@ -14,15 +14,15 @@ from ggplot import *
 
 # ###############
 # global setting of user interface
-w_photo = plotGraph.w_photo
-h_photo = plotGraph.h_photo
-photo_tb = plotGraph.photo_tb
-photo_lr = plotGraph.photo_lr
-w_window = plotGraph.w_window
-h_window = plotGraph.h_window
-h_slider = plotGraph.h_slider
-w_graph = plotGraph.graph_width
-h_graph = plotGraph.graph_height
+w_photo = plotGraphCHP.w_photo
+h_photo = plotGraphCHP.h_photo
+photo_tb = plotGraphCHP.photo_tb
+photo_lr = plotGraphCHP.photo_lr
+w_window = plotGraphCHP.w_window
+h_window = plotGraphCHP.h_window
+h_slider = plotGraphCHP.h_slider
+w_graph = plotGraphCHP.graph_width
+h_graph = plotGraphCHP.graph_height
 
 h_slider = 10
 w_slider = w_window
@@ -89,7 +89,7 @@ def display(idx, time, imgName):
     hmap.titleX(time, "TkDefaultFont", "L")
 
     # display curves
-    plotGraph.plotAll(idx, lbound, ubound, lbound_total, ubound_total)
+    plotGraphCHP.plotAll(idx, lbound, ubound, lbound_total, ubound_total)
 
 # control month, date, hour slider
 def printimg3(event):
@@ -197,11 +197,10 @@ def showLegend():
                 rowspan = h_span_colorscheme, columnspan =
                 w_span_colorscheme)
     x = cr.createColorScheme(legendWd, category, row_colorscheme,
-                             col_colorscheme, s_colorcell,
-                             "quantile", "energy recovery")
+                            col_colorscheme, s_colorcell, "quantile", "CHP")
     (color_2d, coloridDict) = x
     colorGrid = cr.colorRamp_2d(category, [255, 255, 255],
-                                [255, 0, 0], [0, 0, 255])
+                                [255, 0, 0], [0, 255, 0])
 
     size = s_colorcell
     for i in range(category):
@@ -246,10 +245,10 @@ for row in buttonList:
 showTxt()
 
 # create a canvas and display images on canvas
-hmap = plotGraph.ImgPlot("Dynamic Heat Map", row_photo, col_photo,
-                         h_span_photo, w_span_photo, w_window,
-                         h_window, photo_lr, photo_lr, photo_tb,
-                         photo_tb, master)
+hmap = plotGraphCHP.ImgPlot("Dynamic Heat Map", row_photo, col_photo,
+                            h_span_photo, w_span_photo, w_window,
+                            h_window, photo_lr, photo_lr, photo_tb,
+                            photo_tb, master)
 '''
 def callback(event):
     with open ('landCord.txt', 'a') as wt:
@@ -363,8 +362,7 @@ def landName(event):
                 sr = pd.Series([selectDF['agg'][idx%step + i*step]
                                 for i in range(numPeriod)])
                 g2 = sr.plot(ax = axarr[1],
-                             title = '{0} with step {1}'.format(title,
-                                                                period))
+                             title = '{0} with step {1}'. format(title, period))
                 g2.set_xlim(0, numPeriod - 1)
                 g2.axvline(idx//step, color = 'red', linestyle='--')
                 g2.annotate('current', xy = (idx//step, sr[idx//step]))
@@ -380,7 +378,7 @@ hmap.g.bind("<Button-1>", landName)
 
 n_row = 4
 n_col = 2
-x = plotGraph.createAll(master, n_row, n_col, row_graph_0,
+x = plotGraphCHP.createAll(master, n_row, n_col, row_graph_0,
                         col_graph_0, h_span_graph, w_span_graph,
                         h_span_plotagg, w_span_graph)
 (lbound, ubound, lbound_total, ubound_total) = x

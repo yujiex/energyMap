@@ -284,7 +284,7 @@ cool_breakpt = ld.breakpt(totalcool, category, "quantile", False)
 
 # create 2d colorRamp
 colorGrid = cl.colorRamp_2d(category,[255, 255, 255],
-                            [255, 0, 0], [0, 0, 255])
+                            [255, 0, 0], [0, 255, 0])
 color_2d = createColorScheme(category, 0, dim, size)
 
 heatColorDict = {}

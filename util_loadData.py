@@ -204,12 +204,21 @@ def read2dicts():
     for key in dictArr[0]:
         dictHE[key] = [x / (y) for (x, y) in zip(dictHeat[key],
                                                  dictArr[4][key])]
+    dictRecover = {}
+    for key in dictArr[0]:
+        if key == "Large Office" or key == "Hospital":
+            dictRecover[key] = [x * 1.15 for x in dictArr[3][key]]
+        else:
+            dictRecover[key] = [x * 1.25 for x in dictArr[3][key]]
+
     dictArr.append(dictSpaceHeat)
     dictArr.append(dictHeat)
     dictArr.append(dictHE)
+    dictArr.append(dictRecover)
     categories.append("Space Heating")
     categories.append("Heating")
     categories.append("Heating To Power Ratio")
+    categories.append("Heat Recover")
     return (categories, dictArr)
 
 def test_plotBoxDict():
@@ -274,7 +283,6 @@ def readLand():
     bdSectorDict = dict(zip(df['Building Type'], df['Sector']))
     return [bdCountDict, bdTypeDict, areaDict, initialDict,
             bdSectorDict]
-
 [bdCountDict, bdTypeDict, areaDict, initialDict, bdSectorDict] = readLand()
 
 # return an array with num_building copies of profile for each
@@ -286,7 +294,6 @@ def total_count(cnt_dict, energy_dict):
         assert(key in energy_dict)
         acc = acc + cnt_dict[key] * energy_dict[key]
     return acc
-import operator
 
 def generalMsg():
     x = readLand()
@@ -527,7 +534,7 @@ def writeSector(dirname):
     (categories, dictArr) = read2dicts()
 
     suffixs = ["_h_gas", "_h_elec", "_water", "_c_elec", "_elec", "_spaceheat",
-               "_heat", "_h2p"]
+               "_heat", "_h2p", "_recov"]
 
     length = len(categories)
     for i in range(length):
@@ -561,7 +568,6 @@ def main():
 #   plotAll()
 #   testClassify()
 #   writeSector("energyData/")
-#   writeSector("energyData/", "cooling")
 #   test_total_count()
 #   test_breakpt()
 #   test_plotBoxDict()
