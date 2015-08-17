@@ -182,12 +182,12 @@ class DataPlot(CanvasWtMargin):
 
 graphList = []
 
-sectorList = ["Hotel", "Office", "Residencial", "Commercial", "Total"]
-titleList = [[i + " Heat Demand (Gas/kbtu)",
-              i + " Cool Demand (Electricity/kbtu)"]
+sectorList = ["Hotel", "Office", "Residencial", "Commercial", "Community"]
+titleList = [["Total " + i + " Heating Demand (kbtu)",
+              "Total " + i + " Cooling Demand (kbtu)"]
              for i in sectorList]
-pathList = [["energyData/" + i + "_gas.csv", "energyData/" + i +
-             "_elec.csv"] for i in sectorList]
+pathList = [["energyData/" + i + "_spaceheat.csv", "energyData/" + i +
+             "_c_elec.csv"] for i in sectorList]
 
 # create all data plot object
 def createAll(master, num_row_gr, num_col_gr, row_gr_0, col_gr_0,

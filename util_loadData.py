@@ -185,10 +185,12 @@ def test_plotBar():
     plotBar(coolDict, "mean/coolBar.png", label, title)
     '''
 
-dirdata = "energyData/meterData/"
-categories = ["Heating:Gas", "Heating:Electricity", "Water Heater",
-              "Cooling:Electricity", "Electricity:Facility"]
-def test_plotBoxDict():
+# read the energy profiles to dictionaries of dictionary
+# level 1 key is categories, level 2 key is building type
+def read2dicts():
+    dirdata = "energyData/meterData/"
+    categories = ["Heating:Gas", "Heating:Electricity", "Water Heater",
+                  "Cooling:Electricity", "Electricity:Facility"]
     dictArr = [profile2Dict(dirdata, x) for x in categories]
     dictSpaceHeat = {}
     for key in dictArr[0]:
@@ -201,16 +203,17 @@ def test_plotBoxDict():
     dictHE = {}
     for key in dictArr[0]:
         dictHE[key] = [x / (y) for (x, y) in zip(dictHeat[key],
-#       dictHE[key] = [x - y for (x, y) in zip(dictArr[0][key],
                                                  dictArr[4][key])]
-
     dictArr.append(dictSpaceHeat)
     dictArr.append(dictHeat)
     dictArr.append(dictHE)
     categories.append("Space Heating")
     categories.append("Heating")
     categories.append("Heating To Power Ratio")
+    return (categories, dictArr)
 
+def test_plotBoxDict():
+    (categories, dictArr) = read2dicts()
     labels = [x + "/kBtu" for x in categories]
     titles = [x + " Demand Box Plot" for x in categories]
     inits = ["".join([x for x in y if x.isupper()]) for y in categories]
@@ -219,25 +222,26 @@ def test_plotBoxDict():
         plotBoxDict(dictArr[i], "box/"+inits[i]+".png", labels[i], titles[i])
 
 def plotHist(arr, category, save_dir):
+
     arr = [x for x in arr if x != 0]
     maxi = max(arr)
-    col1 = 'ori-'+category
-    col2 = 'linear-'+category
-    col3 = 'log-'+category
-    col4 = 'log-ori'+category
-    df = pd.DataFrame(pd.Series(arr), columns = [col1])
-    df[col2] = (maxi - df[col1])/maxi
-    df[col3] = (np.log(maxi) - np.log(df[col1]))/np.log(maxi)
-    df[col4] = np.log(df[col1])
+    col1 = 'original-'+category
+#   col2 = 'linear-'+category
+#   col3 = 'log-'+category
+    col4 = 'log-Scale-'+category
+    df = pd.DataFrame(pd.Series(arr), columns = [col1]) #original
+#   df[col2] = (maxi - df[col1])/maxi
+#   df[col3] = (np.log(maxi) - np.log(df[col1]))/np.log(maxi)
+    df[col4] = np.log(df[col1])                         #logscale
 
     p1 = ggplot(aes(x = col1), data = df) + geom_histogram()
-    p2 = ggplot(aes(x = col2), data = df) + geom_histogram()
-    p3 = ggplot(aes(x = col3), data = df) + geom_histogram()
+#   p2 = ggplot(aes(x = col2), data = df) + geom_histogram()
+#   p3 = ggplot(aes(x = col3), data = df) + geom_histogram()
     p4 = ggplot(aes(x = col4), data = df) + geom_histogram()
-    ggsave(plot = p1, filename = col1 + "no0.png", path = save_dir)
-    ggsave(plot = p2, filename = col2 + "no0.png", path = save_dir)
-    ggsave(plot = p3, filename = col3 + "no0.png", path = save_dir)
-    ggsave(plot = p4, filename = col3 + "no0.png", path = save_dir)
+    ggsave(plot = p1, filename = col1 + ".png", path = save_dir)
+#   ggsave(plot = p2, filename = col2 + "no0.png", path = save_dir)
+#   ggsave(plot = p3, filename = col3 + "no0.png", path = save_dir)
+    ggsave(plot = p4, filename = col4 + ".png", path = save_dir)
 
 # two version of making plot
 # use ggplot must use default binwidth, if changed the figure is weird
@@ -260,80 +264,18 @@ def plotHistDict(key, diction, category, save_dir):
     P.savefig(save_dir + key + "-" + category + ".png")
     plt.close()
 '''
-# number of each building type instances in the conceptual model
-bdCountDict = {
-        "SmallOffice":4,
-        "FullServiceRestaurant":4,
-        "MidriseApartment":32,
-        "LargeOffice":6,
-        "Hospital":0,
-        "SecondarySchool":0,
-        "OutPatient":0,
-        "SuperMarket":2,
-        "QuickServiceRestaurant":6,
-        "StripMall":0,
-        "PrimarySchool":0,
-        "Stand-aloneRetail":4,
-        "LargeHotel":2,
-        "Warehouse":0,
-        "SmallHotel":0,
-        "MediumOffice":4}
+def readLand():
+    df = pd.read_csv("input/landusePattern2.csv")
+    #print df
+    bdCountDict = dict(zip(df['Building Type'], df['Number']))
+    bdTypeDict = dict(zip(df['Building Type'], df['TypeID']))
+    areaDict = dict(zip(df['Building Type'], df['TotalArea']))
+    initialDict = dict(zip(df['Building Type'], df['Initial']))
+    bdSectorDict = dict(zip(df['Building Type'], df['Sector']))
+    return [bdCountDict, bdTypeDict, areaDict, initialDict,
+            bdSectorDict]
 
-# a correspondance of the landuse number in the model and building type
-bdTypeDict = {
-        "SmallOffice":12,
-        "FullServiceRestaurant":1,
-        "MidriseApartment":6,
-        "LargeOffice":4,
-        "Hospital":2,
-        "SecondarySchool":10,
-        "OutPatient":7,
-        "SuperMarket":15,
-        "QuickServiceRestaurant":9,
-        "StripMall":14,
-        "PrimarySchool":8,
-        "Stand-aloneRetail":13,
-        "LargeHotel":3,
-        "Warehouse":16,
-        "SmallHotel":11,
-        "MediumOffice":5}
-
-initialDict = {
-        "SmallOffice":"SO",
-        "FullServiceRestaurant":"FR",
-        "MidriseApartment":"MA",
-        "LargeOffice":"LO",
-        "Hospital":"HO",
-        "SecondarySchool":"SS",
-        "OutPatient":"OP",
-        "SuperMarket":"SU",
-        "QuickServiceRestaurant":"QR",
-        "StripMall":"SM",
-        "PrimarySchool":"PS",
-        "Stand-aloneRetail":"SR",
-        "LargeHotel":"LH",
-        "Warehouse":"WH",
-        "SmallHotel":"SH",
-        "MediumOffice":"MO"}
-
-# define the building sector of each building type
-bdSectorDict = {
-        "SmallOffice":"Office",
-        "FullServiceRestaurant":"Commercial",
-        "MidriseApartment":"Residencial",
-        "LargeOffice":"Office",
-        "Hospital":"Other",
-        "SecondarySchool":"Education",
-        "OutPatient":"Other",
-        "SuperMarket":"Commercial",
-        "QuickServiceRestaurant":"Commercial",
-        "StripMall":"Commercial",
-        "PrimarySchool":"Education",
-        "Stand-aloneRetail":"Commercial",
-        "LargeHotel":"Hotel",
-        "Warehouse":"Commercial",
-        "SmallHotel":"Hotel",
-        "MediumOffice":"Office"}
+[bdCountDict, bdTypeDict, areaDict, initialDict, bdSectorDict] = readLand()
 
 # return an array with num_building copies of profile for each
 # building type e.g. If there are 3 hospitals in the model, 3 copies
@@ -344,6 +286,28 @@ def total_count(cnt_dict, energy_dict):
         assert(key in energy_dict)
         acc = acc + cnt_dict[key] * energy_dict[key]
     return acc
+import operator
+
+def generalMsg():
+    x = readLand()
+    bd_count = x[0].values()
+    area = x[2].values()
+    bdinitlist = x[3].values()
+    typelist = [key for key in x[3]]
+    bdtypemsg = ['{0:<} : {1:<}'.format(x, y) for (x, y) in
+                 zip(bdinitlist, typelist)]
+    '''
+    titlemsg = '{0:<7} {1:<} \n'.format("Count", "Area(sf)")
+    bdtypemsg = ['{0:<7} {1:<}   {2:<} : {3:<}'.format(n, a, x, y) for
+                 (n, a, x, y) in zip(bd_count, area, bdinitlist,
+                                     typelist)]
+    '''
+    bdtypemsg = "\n".join(bdtypemsg)
+#   return titlemsg + bdtypemsg
+    return bdtypemsg
+
+def test_generalMsg():
+    print generalMsg()
 
 def test_total_count():
     dict1 = {'a':1, 'b':2}
@@ -367,15 +331,37 @@ def testPlot():
 def plotAll():
     # load data into dictionary
     # inefficient version
-    heatDict = profile2Dict("energyData/meterData/", "Heating:Gas")
-    coolDict = profile2Dict("energyData/meterData/", "Cooling:Elec")
 
-    maxheat = max(max(heatDict.values()))
-    maxcool = max(max(coolDict.values()))
+    dirdata = "energyData/meterData/"
+    categories = ["Heating:Gas", "Heating:Electricity", "Water Heater",
+                  "Cooling:Electricity", "Electricity:Facility"]
+    dictArr = [profile2Dict(dirdata, x) for x in categories]
+    maxs = [max(max(d.values())) for d in dictArr]
 
+    dictSpaceHeat = {}
+    for key in dictArr[0]:
+        dictSpaceHeat[key] = [x + y for (x, y) in zip(dictArr[0][key],
+                                                      dictArr[1][key])]
+    dictHeat = {}
+    for key in dictArr[0]:
+        dictHeat[key] = [x + y + z for (x, y, z) in
+                         zip(dictArr[0][key],dictArr[1][key],dictArr[2][key])]
+    dictHE = {}
+    for key in dictArr[0]:
+        dictHE[key] = [x / (y) for (x, y) in zip(dictHeat[key],
+                                                 dictArr[4][key])]
+
+    dictArr.append(dictSpaceHeat)
+    dictArr.append(dictHeat)
+    dictArr.append(dictHE)
+    categories.append("Space-Heating")
+    categories.append("Heating")
+    categories.append("Heating-To-Power-Ratio")
+    '''
     idxlist = list(range(8760))
     heatDict['time (hour)'] = idxlist
     coolDict['time (hour)'] = idxlist
+    '''
     '''
     # Heating
     for key in heatDict:
@@ -396,10 +382,17 @@ def plotAll():
 
     '''
     # plot the total building energy distribution
+    length = len(dictArr)
+    for i in range(length):
+        acc = total_count(bdCountDict, dictArr[i])
+        plotHist(acc, categories[i], "hist/")
+
+    '''
     acc = total_count(bdCountDict, heatDict)
     plotHist(acc, "Heating:Gas(kBtu)", "hist/")
     acc = total_count(bdCountDict, coolDict)
     plotHist(acc, "Cooling:Electricity(kBtu)", "hist/")
+    '''
 
 # classify "data" (list) into "num_category" groups using "method"
 # wtnumpy: if with numpy, say True, otherwise say False
@@ -528,49 +521,52 @@ def formatGIS():
 
 # write to csv files of energy profile
 # used in dynamic data plot in main interface
-def writeSector(dirname, category):
+def writeSector(dirname):
     sectorList = ["Hotel", "Office", "Residencial", "Commercial"]
     # category are "Heating:Gas" or "Cooling:Elec"
-    if category == "heating":
-        diction = profile2Dict("energyData/meterData/", "Heating:Gas")
-        filesuffix = "_gas.csv"
-    else:
-        diction = profile2Dict("energyData/meterData/", "Cooling:Elec")
-        filesuffix = "_elec.csv"
-    for sector in sectorList:
-        filename = dirname + sector + filesuffix
-        with open (filename, "w") as wt:
+    (categories, dictArr) = read2dicts()
+
+    suffixs = ["_h_gas", "_h_elec", "_water", "_c_elec", "_elec", "_spaceheat",
+               "_heat", "_h2p"]
+
+    length = len(categories)
+    for i in range(length):
+        diction = dictArr[i]
+        for sector in sectorList:
+            filename = dirname + sector + suffixs[i] + ".csv"
+            with open (filename, "w") as wt:
+                mywriter = csv.writer(wt, delimiter=",")
+                bdList = [] # building types in the sector
+                for key in diction:
+                    if (sector == bdSectorDict[key]):
+                        bdList.append(key)
+                # element in result list = diction[bd] * bdCountDict[bd]
+                energylist = [diction[x] for x in bdList]
+                countlist = [bdCountDict[x] for x in bdList]
+                row = ar.scaleSum(energylist, countlist)
+                mywriter.writerow(row)
+        energylist = []
+        countlist = []
+        for key in diction:
+            energylist.append(diction[key])
+            countlist.append(bdCountDict[key])
+        filename = dirname + "Community" + suffixs[i] + ".csv"
+        with open(filename, "w") as wt:
             mywriter = csv.writer(wt, delimiter=",")
-            bdList = [] # building types in the sector
-            for key in diction:
-                if (sector == bdSectorDict[key]):
-                    bdList.append(key)
-            # element in result list = diction[bd] * bdCountDict[bd]
-            energylist = [diction[x] for x in bdList]
-            countlist = [bdCountDict[x] for x in bdList]
             row = ar.scaleSum(energylist, countlist)
             mywriter.writerow(row)
-    energylist = []
-    countlist = []
-    for key in diction:
-        energylist.append(diction[key])
-        countlist.append(bdCountDict[key])
-    filename = dirname + "Total" + filesuffix
-    with open(filename, "w") as wt:
-        mywriter = csv.writer(wt, delimiter=",")
-        row = ar.scaleSum(energylist, countlist)
-        mywriter.writerow(row)
 
 def main():
 #   testPlot()
 #   plotAll()
 #   testClassify()
-#   writeSector("energyData/", "heating")
+#   writeSector("energyData/")
 #   writeSector("energyData/", "cooling")
 #   test_total_count()
 #   test_breakpt()
-    test_plotBoxDict()
+#   test_plotBoxDict()
 #   test_plotBar()
+#   test_generalMsg()
     return 0
 
 main()

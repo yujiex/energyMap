@@ -26,7 +26,6 @@ h_graph = plotGraph.graph_height
 h_slider = 10
 w_slider = w_window
 w_button = 3
-w_ckbutton = 6
 w_scale = 10
 
 category = 7
@@ -35,7 +34,7 @@ h_span_colorscheme = w_span_colorscheme
 w_span_button = 1
 w_span_mdh = 1
 w_span_photo = w_span_mdh + w_span_colorscheme
-h_span_button = 11
+h_span_button = 1
 h_span_mdh = h_span_colorscheme / 3
 w_span_year = w_span_photo
 h_span_year = 1
@@ -83,7 +82,38 @@ def back24h():
 def back1h():
     allyear.set(allyear.get() - 1)
 
+'''
+def play():
+    x = allyear.get()
+    for idx in range (x, 8760):
+        print("idx = %d" % idx)
+        sleep(0.5)
+        imgName = hour2imgName(idx)
+        mdh = hour2mdh(idx)
+        t_month = mdh[0]
+        t_date = mdh[1]
+        t_hour = mdh[2]
+        time = mdh2str(t_month, t_date, t_hour)
+        size = s_colorcell
+        display(idx, time, imgName)
+'''
+
 def display(idx, time, imgName):
+    size = s_colorcell
+    for i in range(category):
+        for j in range(category):
+            f = color_2d[i][j]
+            f.create_rectangle(0, 0, size, size, fill =
+                               colorGrid[i][j], outline = defaultbg)
+
+    # tick mark in 2d color ramp
+    for key in coloridDict:
+        (h, c) = coloridDict[key][idx]
+        g = color_2d[c][h]
+        g.create_rectangle(0, 0, size, size, fill = colorGrid[c][h],
+                           outline = defaultbg)
+        g.create_text(size/2, size/2, fill = font_color,
+                      font = bd_font, text = "x")
     hmap.plotImg(imgName)
     hmap.titleX(time, "TkDefaultFont", "L")
 
@@ -114,19 +144,13 @@ def printimg(event):
 
 master = Tk()
 w = str(w_graph * 2 + w_window + 10)
-master.geometry(w+'x700+0+0')
+master.geometry(w+'x675+0+0')
 master.title("Dynamic Heat Map")
 defaultbg = master.cget('bg')
 bd_font = "TkDefault 8 bold"
 nm_font = "TkDefault 8"
 ot_font = "TkDefault 6"
 font_color = "gray45"
-
-# variables of check buttons
-is3d = IntVar()
-isSingle = IntVar()
-is3d.set(1)
-isSingle.set(1)
 
 bdTypelist = ["Green", "FullServiceRestaurant", "Hospital",
               "LargeHotel", "LargeOffice", "MediumOffice",
@@ -143,83 +167,29 @@ def plotDay_heat():
         dfHeat.ix[idx: min(idx + 24, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i+1])
     plt.show()
 
-def plotDay_cool():
-    idx = allyear.get()
-    f, axarr = plt.subplots(4, 4, sharex=True, sharey = True)
-    for i in range(16):
-        dfCool.ix[idx: min(idx + 24, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i+1])
-    plt.show()
-
 # clear selected landuse for calculation
 def clearSelect():
     landSelection = []
     hmap.g.delete("a")
 
-def showTxt():
-    msg = ld.generalMsg()
-    heatmsg = Message(master,text = msg, font = bd_font, width =
-                      category * s_colorcell, fg = font_color)
-    heatmsg.grid(row = row_colorscheme, column = col_colorscheme,
-                rowspan = h_span_colorscheme, columnspan =
-                w_span_colorscheme)
-# show legend in a separate window
-
-def showLegend():
-    legendWd = Tk()
-    # 2d legend object
-    l_size = w_photo/4
-    legend = Canvas(legendWd, width = l_size, height = l_size)
-    legend.grid(row = row_colorscheme, column = col_colorscheme,
-                rowspan = h_span_colorscheme, columnspan =
-                w_span_colorscheme)
-    x = cr.createColorScheme(legendWd, category, row_colorscheme,
-                            col_colorscheme, s_colorcell, "quantile")
-    (color_2d, coloridDict) = x
-    colorGrid = cr.colorRamp_2d(category, [255, 255, 255],
-                                [255, 0, 0], [0, 0, 255])
-
-    size = s_colorcell
-    for i in range(category):
-        for j in range(category):
-            f = color_2d[i][j]
-            f.create_rectangle(0, 0, size, size, fill =
-                            colorGrid[i][j], outline = defaultbg)
-
-    # tick mark in 2d color ramp
-    idx = allyear.get()
-    for key in coloridDict:
-        (h, c) = coloridDict[key][idx]
-        g = color_2d[c][h]
-        g.create_rectangle(0, 0, size, size, fill = colorGrid[c][h],
-                        outline = defaultbg)
-        g.create_text(size/2, size/2, fill = font_color,
-                    font = bd_font, text = "x")
-    legendWd.mainloop()
-
 # buttons to control advance and back
-buttonList = [[{'text':'+24h', 'cmd':advance24h},
-               {'text':'+1h', 'cmd':advance1h},
-               {'text':'-24h', 'cmd':back24h},
-               {'text':'-1h', 'cmd':back1h}],
-              [{'text':'heat', 'cmd':plotDay_heat},
-               {'text':'cool', 'cmd':plotDay_cool},
-               {'text':'legend', 'cmd':showLegend},
-               {'text':'clear', 'cmd':clearSelect}]]
+buttonList = [{'text':'+24h', 'cmd':advance24h},
+              {'text':'+1h', 'cmd':advance1h},
+              {'text':'-24h', 'cmd':back24h},
+              {'text':'-1h', 'cmd':back1h},
+              {'text':'heat', 'cmd':plotDay_heat},
+              {'text':'clear', 'cmd':clearSelect}]
+#             {'text':'play', 'cmd':play}]
 
-rowcount = 0
-for row in buttonList:
-    buttoncount = 0
-    for button in row:
-        button = Button(master, text = button['text'], command =
-                        button['cmd'], width = w_button, font = bd_font,
-                        fg = font_color)
-        button.grid(row = row_button_0 + rowcount, column =
-                    col_button_0 + buttoncount, rowspan =
-                    h_span_button, columnspan = w_span_button)
-        buttoncount += 1
-    rowcount += 1
-
-showTxt()
+buttoncount = 0
+for button in buttonList:
+    button = Button(master, text = button['text'], command =
+                    button['cmd'], width = w_button, font = bd_font,
+                    fg = font_color)
+    button.grid(row = row_button_0, column = col_button_0 +
+                buttoncount, rowspan = h_span_button, columnspan =
+                w_span_button)
+    buttoncount += 1
 
 # create a canvas and display images on canvas
 hmap = plotGraph.ImgPlot("Dynamic Heat Map", row_photo, col_photo,
@@ -244,11 +214,9 @@ def readLandShape():
             landDict[key] = land
     return landDict
 
-(x, y) = ld.read2dicts()
-allDict = dict(zip(x, y))
-heatDict = allDict["Space Heating"]
+heatDict = ld.profile2Dict("energyData/meterData/", "Heating:Gas")
 dfHeat = pd.DataFrame(heatDict)
-coolDict = allDict["Cooling:Electricity"]
+coolDict = ld.profile2Dict("energyData/meterData/", "Cooling:Elec")
 dfCool = pd.DataFrame(coolDict)
 landDict = readLandShape()
 initialDict = {
@@ -368,29 +336,32 @@ for i in range(12):
     monthTick.create_text(26 + w_slider/12*i, 7, text = monthList[i],
                           font = nm_font, fill = font_color)
 
+# 2d legend object
+l_size = w_photo/4
+legend = Canvas(master, width = l_size, height = l_size)
+legend.grid(row = row_colorscheme, column = col_colorscheme, rowspan =
+            h_span_colorscheme, columnspan = w_span_colorscheme)
+x = cr.createColorScheme(master, category, row_colorscheme,
+                         col_colorscheme, s_colorcell, "quantile")
+(color_2d, coloridDict) = x
+colorGrid = cr.colorRamp_2d(category, [255, 255, 255],
+                            [255, 0, 0], [0, 0, 255])
+
 # check button
+is3d = IntVar()
+ck3d = Checkbutton(master, width = 4, text = '3d', variable = is3d,
+                   onvalue = 1, offvalue = 0)
+ck3d.grid(row = row_button_0, column = col_button_0 + len(buttonList))
+
 '''
 clearButton = Button(master, width = 5, text = 'clear', command =
                      clearSelect)
 clearButton.grid(row = row_button_0, column = col_button_0 + 5)
 '''
 
-ckbuttonList = [[{'text':'3d', 'var':is3d},
-                 {'text':'single', 'var':isSingle}],
-                []]
-
-rowcount = 0
-col_ckbutton_0 = col_button_0 + len(buttonList[0])
-for row in ckbuttonList:
-    buttoncount = 0
-    for button in row:
-        button = Checkbutton(master, text = button['text'], variable =
-                             button['var'], width = w_ckbutton, font =
-                             bd_font, fg = font_color, anchor = W)
-        button.grid(row = row_button_0 + rowcount, column =
-                    col_ckbutton_0 + buttoncount, rowspan =
-                    h_span_button, columnspan = w_span_button)
-        buttoncount += 1
-    rowcount += 1
-
+isSingle = IntVar()
+showSingle = Checkbutton(master, width = 4, text = 'single',
+                         variable = isSingle, onvalue = 1, offvalue =
+                         0)
+showSingle.grid(row = row_button_0, column = col_button_0 + len(buttonList) + 1)
 mainloop()
