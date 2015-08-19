@@ -558,7 +558,7 @@ indicates the necessity of heat storage equipment.
 \end{figure}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{comment}
+\begin{comment}
 \subsubsection{Aggregated Demand Distribution}
 This section analyzes the energy demand distribution of the hourly
 energy demand (gas heating, electricity heating, service hot water,
@@ -712,7 +712,7 @@ for the next stage of the project.
 \end{figure}
 
 \end{itemize}
-%\end{comment}
+\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
@@ -1265,127 +1265,3 @@ restrict to the two classification method: even or quantile
 method. The color ramp is predefined to be a bivariate color ramp from
 white to red and blue. For later stages, a desired behavior would be
 to provide the full control of color settings.
-
-\subsection{Guidelines from Literature Study}
-Here we summarizes some of the design choices made according to
-related literature research on dynamic map design:
-\begin{itemize}
-\item Provide both 2D and 3D map display as a result of the debating
-  situation mentioned in section \ref{2d3d}.
-\item Choose bivariate choropleth map representation which has the
-  highest accuracy rate in map reading experiments~\cite{Elmer2012}.
-\item Providing the most commonly used data classification method:
-  Equal Interval and Quantile Interval~\ref{dataClassification}
-\item The number of classes for energy data classification is chosen
-  to be 7, less than the suggested value of 10 as a result of smaller
-  display size than 1024x768~\cite{doi:10.1559/1523040639298}
-\item Provide both linear and periodical navigation based on section
-  \ref{timeRepresent}
-\item Using the principle of ``dual coding''~\cite{Resch2014} to
-  assist legend reading by section \ref{anime}.
-\item Noise removal in map display of energy profile
-  data~\cite{Dorling1992}. This is done through the discrete color
-  scheme design.
-\end{itemize}
-
-\section{Interface Design}\label{interfaceDesign}
-The following section provides the detailed information of the design
-of the interactive dynamic energy demand map interface.
-
-\subsection{Guidelines from Literature Study}
-Here we summarizes some of the design choices made according to
-related literature research on dynamic map design in \cref{Chapter5}:
-\begin{itemize}
-\item Provide both 2D and 3D map display as a result of the debating
-  situation mentioned in \sref{2d3d}.
-\item Choose bivariate choropleth map representation which has the
-  highest accuracy rate in map reading experiments \sref{symbolChosen}.
-\item Providing the most commonly used data classification method:
-  Equal Interval and Quantile Interval \sref{dataClassification}
-\item The number of classes for energy data classification is chosen
-  to be 7, less than the suggested value of 10 as a result of smaller
-  display size than 1024x768 \sref{symbolChosen}
-\item Provide both linear and periodical navigation based on section
-  \sref{timeRepresent}
-\item Noise removal in map display of energy profile
-  data~\cite{Dorling1992}. This is done through the discrete color
-  scheme design.
-\end{itemize}
-
-\subsection {General Layout}
-The interface for dynamic map display includes three major sections: a
-series of sliders for controling images are on the left and the data
-plot of energy profile of building sectors and aggregated demand are
-on the right.
-
-The main window on the top left is used for displaying the 2D dynamic
-map of the conceptual model. The lower left of the window displays the
-current time for the image and dynamic plot in display. The lower left
-section contains a series of sliders for controling interactive
-navigation of image and plot sequences. The right hand side of the
-interface contains the dynamic data plot of the four major building
-sectors: Hotel, Office, Residencial and Commercial buildings. The
-lower right are the aggregated heating / cooling demand profile for
-the whole site. The left column are the heating energy consumption in
-natural gas and the right column are the cooling energy consumption in
-electricity. On the lower right there are four buttons providing two
-default forward and backward navigation, 1h and
-24h. (\fref{fig:interfaceLayout}).
-\begin{figure}[h!]
-  \centering
-  \begin{subfigure}{0.7\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{interface0720}
-  \caption{Dynamic Map Interface Layout (3D map)}
-  \label{fig:interface0720}
-\end{subfigure}
-~
-\begin{subfigure}{0.7\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{interface2d}
-  \caption{Dynamic Map Interface Layout (2D map)}
-  \label{fig:interface2d}
-\end{subfigure}
-\caption{Dynamic Map Interface Layout}
-\label{fig:interfaceLayout}
-\end{figure}
-
-Between the aggregated heat demand and the sliders, there is a
-choropleth legend. According to section \ref{anime}, the comparison of
-the map and the legend becomes tricky for dynamic maps. In order to
-assist this task, tick marks of ``x'' are added to the legend to
-indicate the color appeared in the map \fref{fig:legend}.
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.7\linewidth]{legend}
-  \caption{Bivariate Color Legend with Tick Mark Indicators}
-  \label{fig:legend}
-\end{figure}
-
-\subsection {Navigation Function}
-The navigation function is achieved with the four slider and the four
-buttons above the sliders on the lower left of the window. The top
-slider labeled with ``Year round'' has a range of 0 to 8760 (not
-inclusive). the change of 1 in the slider position corresponds to the
-change of 1 hour in time, which results in the display of the image of
-the next or previous hour in time. The slider labeled with ``month''
-has a range of 1 to 12, which corresponds to the 12 months in year,
-the change of the month slider results the jump of 1 month forward or
-backward in time. This function is intended to provide easy comparison
-of montyly variation of the energy consumption behavior. Similarly,
-the change of the ``date'' and ``hour'' slider corresponds to the time
-change of one day or one hour respectively. The four buttons provides
-a separate control intended to provide micro level adjustment of time.
-
-\subsection {Dynamic Plot}
-The input images to the main window is generated from the CityEngine
-model. The graph is ploted by reading in simulation data from
-EnergyPlus. The starting point (left end) of the plot corresponds to
-the position indicated by the slider. 
-
-\subsection {Implementation tools and strategy}
-The softwares or platform involved in the project include EnergyPlus
-for building simulation, CityEngine for 3D modeling and image
-generation, Python 2.7 for interface design. The interface is written
-in Python2.7 with standard Tkinter graphic package including the data
-plot section.

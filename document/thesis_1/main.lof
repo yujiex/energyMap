@@ -26,43 +26,51 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Comparing Space Heating and Space Cooling Demand}}{33}{figure.caption.84}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Comparing Heating and Electricity Demand}}{33}{figure.caption.86}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Heat to Power Ratio Box Plot}}{34}{figure.caption.87}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Gas Heating Demand Log}}{35}{figure.caption.89}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Electricity Heating Demand Log}}{35}{figure.caption.90}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Service Hot Water Demand Log}}{35}{figure.caption.91}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Space Heating Demand Log}}{36}{figure.caption.92}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Heating Demand Log}}{36}{figure.caption.93}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Electricity Cooling Demand Log}}{36}{figure.caption.94}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Electricity Demand Log}}{37}{figure.caption.95}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Building Type Topology}}{39}{figure.caption.99}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Conceptual Model Site Plan}}{40}{figure.caption.100}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces ArcGIS Time Slider for Temperal Data Display\relax }}{41}{figure.caption.105}
-\contentsline {figure}{\numberline {4.23}{\ignorespaces Bi-Variate Color Ramp}}{44}{figure.caption.114}
-\contentsline {figure}{\numberline {4.24}{\ignorespaces Single Building Energy Recovery}}{45}{figure.caption.115}
-\contentsline {figure}{\numberline {4.25}{\ignorespaces Building Group Energy Recovery}}{46}{figure.caption.116}
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Check Energy Demand}}{47}{figure.caption.120}
-\contentsline {figure}{\numberline {4.27}{\ignorespaces See All Demand Plot}}{48}{figure.caption.121}
-\contentsline {figure}{\numberline {4.28}{\ignorespaces Plot Aggregated Demand}}{48}{figure.caption.122}
-\contentsline {figure}{\numberline {4.29}{\ignorespaces Animated Map for Public}}{50}{figure.caption.125}
-\contentsline {figure}{\numberline {4.30}{\ignorespaces Dynamic Map Interface Layout\relax }}{53}{figure.caption.132}
-\contentsline {figure}{\numberline {4.31}{\ignorespaces Bivariate Color Legend with Tick Mark Indicators\relax }}{53}{figure.caption.133}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Building Type Topology}}{36}{figure.caption.91}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Conceptual Model Site Plan}}{36}{figure.caption.92}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces ArcGIS Time Slider for Temperal Data Display\relax }}{38}{figure.caption.97}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Bi-Variate Color Ramp}}{41}{figure.caption.106}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Single Building Energy Recovery}}{41}{figure.caption.107}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Building Group Energy Recovery}}{42}{figure.caption.108}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Check Energy Demand}}{44}{figure.caption.112}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces See All Demand Plot}}{44}{figure.caption.113}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Plot Aggregated Demand}}{45}{figure.caption.114}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Animated Map for Public}}{46}{figure.caption.117}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Bivariate Map Symbol Tested}}{57}{figure.caption.142}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Animated Map with Continues Encoding}}{50}{figure.caption.123}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Animated Map with Discrete Encoding}}{50}{figure.caption.124}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Dynamic Map Interface Layout\relax }}{51}{figure.caption.127}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Option Menu}}{52}{figure.caption.128}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Map Display of 2D and 3D}}{54}{figure.caption.130}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Bivariate Map Symbol Tested}}{55}{figure.caption.133}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Bivariate Map Legend}}{55}{figure.caption.134}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Single Plots of 16 Building Types}}{58}{figure.caption.142}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Community Plot}}{58}{figure.caption.143}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Show Plot for One Building}}{59}{figure.caption.145}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Show Plot for a Group of Buildings}}{59}{figure.caption.146}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Data Plot with Duration / Step of One Day}}{60}{figure.caption.148}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Data Plot with Different Duration / Step}}{61}{figure.caption.149}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Identify Buildings with High Cooling Demand}}{62}{figure.caption.152}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Calculate Energy Recovery Potential}}{62}{figure.caption.153}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Legend for Heat and Power Map}}{63}{figure.caption.155}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Interface for CHP Sizing}}{63}{figure.caption.156}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Comparing Community Heating and Electricity Demand}}{63}{figure.caption.157}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces CMU OSM Map}}{62}{figure.caption.153}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Conceptual City Lots}}{62}{figure.caption.154}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Geo-tif in CityEngine}}{63}{figure.caption.157}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Geo-tif with OSM Map}}{64}{figure.caption.158}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Heating Demand Histogram of Conceptual City}}{65}{figure.caption.162}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Heating Demand of Conceptual City}}{66}{figure.caption.164}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Animation Demo of the Color Calculation}}{66}{figure.caption.165}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Slider in Campus Example}}{67}{figure.caption.167}
-\contentsline {figure}{\numberline {A.9}{\ignorespaces Finished Campus Example}}{67}{figure.caption.168}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces CMU OSM Map}}{66}{figure.caption.163}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Conceptual City Lots}}{66}{figure.caption.164}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Geo-tif in CityEngine}}{67}{figure.caption.167}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Geo-tif with OSM Map}}{68}{figure.caption.168}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Heating Demand Histogram of Conceptual City}}{69}{figure.caption.172}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Heating Demand of Conceptual City}}{70}{figure.caption.174}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Animation Demo of the Color Calculation}}{70}{figure.caption.175}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Slider in Campus Example}}{71}{figure.caption.177}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Finished Campus Example}}{71}{figure.caption.178}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Imported CSV}}{72}{figure.caption.177}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces 3D Dynamic Heat Map in ArcGIS}}{73}{figure.caption.180}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Calculated Centroid}}{73}{figure.caption.181}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Created Centroid Feature}}{74}{figure.caption.182}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Table with Time}}{75}{figure.caption.187}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Dynamic Map in ArcScene with Building Centroid}}{76}{figure.caption.192}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Imported CSV}}{76}{figure.caption.187}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces 3D Dynamic Heat Map in ArcGIS}}{77}{figure.caption.190}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Calculated Centroid}}{77}{figure.caption.191}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Created Centroid Feature}}{78}{figure.caption.192}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Table with Time}}{79}{figure.caption.197}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Dynamic Map in ArcScene with Building Centroid}}{80}{figure.caption.202}
 \addvspace {10\p@ }
