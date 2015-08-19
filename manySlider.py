@@ -98,13 +98,14 @@ def printimg3(event):
     evt_hour = (hour.get())
     idx = mdh2hour(evt_month, evt_date, evt_hour, numdays)
     allyear.set(idx)
-    imgName = hour2imgName(idx, master.dimVar.get())
+    imgName = hour2imgName(idx, master.dimVar.get(), "recovery")
     time = mdh2str(evt_month, evt_date, evt_hour)
     display(idx, time, imgName)
 
 def printimg(event):
     idx = allyear.get()
-    imgName = hour2imgName(idx, master.dimVar.get())
+    imgName = hour2imgName(idx, master.dimVar.get(), "recovery")
+
     mdh = hour2mdh(idx)
     t_month = mdh[0]
     t_date = mdh[1]
@@ -259,7 +260,7 @@ def callback(event):
 # reading a table with landuse and coordinates
 def readLandShape():
     landDict = {}
-    with open ('land.txt', 'r') as rd:
+    with open ('input/land.txt', 'r') as rd:
         rows = csv.reader(rd)
         for row in rows:
             key = str(row[1:])

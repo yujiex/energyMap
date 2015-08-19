@@ -1,0 +1,17 @@
+"Building Type",Initial,Number,SingleArea,TotalArea,TypeID,Sector
+LargeOffice,LO,6,498588,2991528,4,Office
+MidriseApartment,MA,32,33740,1079680,6,Residencial
+LargeHotel,LH,2,122120,244240,3,Hotel
+MediumOffice,MO,4,53628,214512,5,Office
+Stand-aloneRetail,SR,4,24962,99848,13,Commercial
+SuperMarket,SU,2,45000,90000,15,Commercial
+SmallOffice,SO,4,5500,22000,12,Office
+FullServiceRestaurant,FR,4,5500,22000,1,Commercial
+QuickServiceRestaurant,QR,6,2500,15000,9,Commercial
+Warehouse,WH,0,52045,0,16,Commercial
+StripMall,SM,0,22500,0,14,Commercial
+SmallHotel,SH,0,43200,0,11,Hotel
+SecondarySchool,SS,0,210887,0,10,Education
+PrimarySchool,PS,0,73960,0,8,Education
+OutPatient,OP,0,40946,0,7,Other
+Hospital,HO,0,241351,0,2,Other

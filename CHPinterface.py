@@ -98,13 +98,13 @@ def printimg3(event):
     evt_hour = (hour.get())
     idx = mdh2hour(evt_month, evt_date, evt_hour, numdays)
     allyear.set(idx)
-    imgName = hour2imgName(idx, master.dimVar.get())
+    imgName = hour2imgName(idx, master.dimVar.get(), "CHP")
     time = mdh2str(evt_month, evt_date, evt_hour)
     display(idx, time, imgName)
 
 def printimg(event):
     idx = allyear.get()
-    imgName = hour2imgName(idx, master.dimVar.get())
+    imgName = hour2imgName(idx, master.dimVar.get(), "CHP")
     mdh = hour2mdh(idx)
     t_month = mdh[0]
     t_date = mdh[1]
@@ -116,7 +116,7 @@ def printimg(event):
 master = Tk()
 w = str(w_graph * 2 + w_window + 10)
 master.geometry(w+'x700+0+0')
-master.title("Dynamic Heat Map")
+master.title("Dynamic Heat Power Map")
 defaultbg = master.cget('bg')
 bd_font = "TkDefault 8 bold"
 nm_font = "TkDefault 8"
@@ -249,16 +249,10 @@ hmap = plotGraphCHP.ImgPlot("Dynamic Heat Map", row_photo, col_photo,
                             h_span_photo, w_span_photo, w_window,
                             h_window, photo_lr, photo_lr, photo_tb,
                             photo_tb, master)
-'''
-def callback(event):
-    with open ('landCord.txt', 'a') as wt:
-        wt.write ('{0}, {1}, '.format(event.x, event.y))
-        print event.x, event.y
-'''
 # reading a table with landuse and coordinates
 def readLandShape():
     landDict = {}
-    with open ('land.txt', 'r') as rd:
+    with open ('input/landCHP.txt', 'r') as rd:
         rows = csv.reader(rd)
         for row in rows:
             key = str(row[1:])
@@ -374,7 +368,12 @@ def landName(event):
             return
     print "invalid selection"
 
+def callback(event):
+    with open ('landCord.txt', 'a') as wt:
+        wt.write ('{0}, {1}, '.format(event.x, event.y))
+        print event.x, event.y
 hmap.g.bind("<Button-1>", landName)
+#hmap.g.bind("<Button-1>", callback)
 
 n_row = 4
 n_col = 2
