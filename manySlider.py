@@ -136,14 +136,9 @@ master.dimVar = StringVar(master)
 master.dimVar.set("2D")
 
 # option widget for plotting profiles for single building or building groups
-bdTypelist = ["Green", "FullServiceRestaurant", "Hospital",
-              "LargeHotel", "LargeOffice", "MediumOffice",
-              "MidriseApartment", "OutPatient", "PrimarySchool",
-              "QuickServiceRestaurant", "SecondarySchool",
-              "SmallHotel", "SmallOffice", "Stand-aloneRetail",
-              "StripMall", "SuperMarket", "Warehouse"]
-bdinitlist = ["", "FR", "HO", "LH", "LO", "MO", "MA", "OP", "PS", "QR",
-              "SS", "SH", "SO", "SR", "SM", "SU", "WH"]
+[bdCountDict, bdTypeDict, areaDict, initDict, bdSectorDict,bdFilenameDict] = ld.readLand()
+bdTypelist = [key for key in bdCountDict]
+bdinitlist = [initDict[key] for key in initDict]  # key is building type
 
 def plotBuilding():
     dirname = "energyData/Community_"
@@ -156,7 +151,8 @@ def plotBuilding():
     if num == "single":
         f, axarr = plt.subplots(4, 4, sharex=True, sharey = True)
         for i in range(16):
-            g = dfSpaceHeat.ix[idx: min(idx + step, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i+1])
+            print '{0}, {1}'.format(i/4, i%4)
+            g = dfSpaceHeat.ix[idx: min(idx + step, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
             g.set_xlim(idx, min(idx + step, 8760) - 1)
     else:
         f, axarr = plt.subplots(2, 1, sharex=False, sharey = False)
@@ -270,30 +266,13 @@ def readLandShape():
 
 (x, y) = ld.read2dicts()
 allDict = dict(zip(x, y))
-allDict["Space Heating"]
 dfSpaceHeat = pd.DataFrame(allDict["Space Heating"])
-dfHeat = pd.DataFrame(allDict["Space Heating"])
-dfElec = pd.DataFrame(allDict["Space Heating"])
+dfHeat = pd.DataFrame(allDict["Heating"])
+dfElec = pd.DataFrame(allDict["Electricity:Facility"])
 dfCool = pd.DataFrame(allDict["Cooling:Electricity"])
 dfRecover = pd.DataFrame(allDict["Heat Recover"])
 landDict = readLandShape()
-initialDict = {
-        "SO":"SmallOffice",
-        "FR":"FullServiceRestaurant",
-        "MA":"MidriseApartment",
-        "LO":"LargeOffice",
-        "HO":"Hospital",
-        "SS":"SecondarySchool",
-        "OP":"OutPatient",
-        "SU":"SuperMarket",
-        "QR":"QuickServiceRestaurant",
-        "SM":"StripMall",
-        "PS":"PrimarySchool",
-        "SR":"Stand-aloneRetail",
-        "LH":"LargeHotel",
-        "WH":"Warehouse",
-        "SH":"SmallHotel",
-        "MO":"MediumOffice"}
+initialDict = dict([(initDict[key], key) for key in initDict])
 
 landSelection = []
 

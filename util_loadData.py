@@ -20,6 +20,20 @@ import matplotlib.pyplot as plt
 import pylab as P  # fur save figure
 from ggplot import *
 
+def readLand():
+    df = pd.read_csv("input/landusePattern2013.csv")
+    #print df
+    bdCountDict = dict(zip(df['Building Type'], df['Number']))
+    bdTypeDict = dict(zip(df['Building Type'], df['TypeID']))
+    areaDict = dict(zip(df['Building Type'], df['TotalArea']))
+    initialDict = dict(zip(df['Building Type'], df['Initial']))
+    bdSectorDict = dict(zip(df['Building Type'], df['Sector']))
+    # get building type from file name
+    bdFilenameDict= dict(zip(df['Filename'], df['Building Type']))
+    return [bdCountDict, bdTypeDict, areaDict, initialDict,
+            bdSectorDict, bdFilenameDict]
+[bdCountDict, bdTypeDict, areaDict, initialDict, bdSectorDict, bdFilenameDict] = readLand()
+
 # source:http://code.activestate.com/recipes/511478-finding-the-percentile-of-the-values/ of the following function
 # this function is used for remove the dependency of numpy
 def percentile(N, percent, key=lambda x:x):
@@ -54,14 +68,16 @@ def getFileList(dirName):
     return filelist
 
 def test_getFileList():
-    getFileList("energyData/meterData/")
+    getFileList("energyData/meterData2013/")
 
 # return building type associated with EnergyPlus simulation file:
 # sample file name:
 # RefBldgFullServiceRestaurantPost1980_v1.3_5.0_5A_USA_IL_CHICAGO-OHAREMeter.csv
 def getBdType(filename):
 #   return myString.midStr(filename, "RefBldg", "Post")
-    return myString.midStr(filename, "RefBldg", "New")
+#   return myString.midStr(filename, "RefBldg", "New")
+    infile = myString.midStr(filename, "_", "_")
+    return bdFilenameDict[infile]
 
 # read column of filename file with subHeader as a sub string of some Header
 # return pair: (title, data), title = fun(filename)
@@ -133,6 +149,11 @@ def profile2Dict(dirName, subHeader):
     diction = dict(pairList)
     return diction
 
+def test_profile2Dict():
+    heatDict = profile2Dict("energyData/meterData2013/", "Heating:Gas")
+    for key in heatDict:
+        print '{0}:{1}'.format(key, heatDict[key][:10])
+
 # #### #### #### #### #### #### #### #### #### #### ####
 # Data Plot Generation
 # #### #### #### #### #### #### #### #### #### #### ####
@@ -167,8 +188,8 @@ def plotBar(diction, save_name, label, title):
     plt.close()
 
 def test_plotBar():
-    heatDict = profile2Dict("energyData/meterData/", "Heating:Gas")
-    coolDict = profile2Dict("energyData/meterData/", "Cooling:Elec")
+    heatDict = profile2Dict("energyData/meterData2013/", "Heating:Gas")
+    coolDict = profile2Dict("energyData/meterData2013/", "Cooling:Elec")
     todel = []
     for key in heatDict:
         if bdCountDict[key] == 0:
@@ -188,8 +209,10 @@ def test_plotBar():
 # read the energy profiles to dictionaries of dictionary
 # level 1 key is categories, level 2 key is building type
 def read2dicts():
-    dirdata = "energyData/meterData/"
-    categories = ["Heating:Gas", "Heating:Electricity", "Water Heater",
+    dirdata = "energyData/meterData2013/"
+    categories = ["Heating:Gas", "Heating:Electricity",
+                  "Water Heater:WaterSystems:Gas",
+                  "Water Heater:WaterSystems:Electricity",
                   "Cooling:Electricity", "Electricity:Facility"]
     dictArr = [profile2Dict(dirdata, x) for x in categories]
     dictSpaceHeat = {}
@@ -198,27 +221,34 @@ def read2dicts():
                                                       dictArr[1][key])]
     dictHeat = {}
     for key in dictArr[0]:
-        dictHeat[key] = [x + y + z for (x, y, z) in
-                         zip(dictArr[0][key],dictArr[1][key],dictArr[2][key])]
-    dictHE = {}
+        dictHeat[key] = [x + y + z + zz for (x, y, z, zz) in
+                         zip(dictArr[0][key],dictArr[1][key],
+                             dictArr[2][key], dictArr[3][key])]
+    dictHE = {} # heat power ratio
     for key in dictArr[0]:
         dictHE[key] = [x / (y) for (x, y) in zip(dictHeat[key],
-                                                 dictArr[4][key])]
+                                                 dictArr[5][key])]
     dictRecover = {}
     for key in dictArr[0]:
-        if key == "Large Office" or key == "Hospital":
+        if key == "Large Office" or key == "Hospital" or key == "HighriseApartment":
             dictRecover[key] = [x * 1.15 for x in dictArr[3][key]]
         else:
             dictRecover[key] = [x * 1.25 for x in dictArr[3][key]]
+    dictWaterHeat = {}
+    for key in dictArr[0]:
+        dictWaterHeat[key] = [x + y for (x, y) in zip(dictArr[2][key],
+                                                      dictArr[3][key])]
 
     dictArr.append(dictSpaceHeat)
     dictArr.append(dictHeat)
     dictArr.append(dictHE)
     dictArr.append(dictRecover)
+    dictArr.append(dictWaterHeat)
     categories.append("Space Heating")
     categories.append("Heating")
     categories.append("Heating To Power Ratio")
     categories.append("Heat Recover")
+    categories.append("Water Heating")
     return (categories, dictArr)
 
 def test_plotBoxDict():
@@ -247,10 +277,10 @@ def plotHist(arr, category, save_dir):
 #   p2 = ggplot(aes(x = col2), data = df) + geom_histogram()
 #   p3 = ggplot(aes(x = col3), data = df) + geom_histogram()
     p4 = ggplot(aes(x = col4), data = df) + geom_histogram()
-    ggsave(plot = p1, filename = col1 + ".png", path = save_dir)
+    ggsave(plot = p1, filename = col1 + ".png", path = save_dir, width = 5, height = 5, dpi = 100) # reduce dpi to save compile time
 #   ggsave(plot = p2, filename = col2 + "no0.png", path = save_dir)
 #   ggsave(plot = p3, filename = col3 + "no0.png", path = save_dir)
-    ggsave(plot = p4, filename = col4 + ".png", path = save_dir)
+    ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = 5, height = 5, dpi = 100)
 
 # two version of making plot
 # use ggplot must use default binwidth, if changed the figure is weird
@@ -273,18 +303,6 @@ def plotHistDict(key, diction, category, save_dir):
     P.savefig(save_dir + key + "-" + category + ".png")
     plt.close()
 '''
-def readLand():
-    df = pd.read_csv("input/landusePattern2.csv")
-    #print df
-    bdCountDict = dict(zip(df['Building Type'], df['Number']))
-    bdTypeDict = dict(zip(df['Building Type'], df['TypeID']))
-    areaDict = dict(zip(df['Building Type'], df['TotalArea']))
-    initialDict = dict(zip(df['Building Type'], df['Initial']))
-    bdSectorDict = dict(zip(df['Building Type'], df['Sector']))
-    return [bdCountDict, bdTypeDict, areaDict, initialDict,
-            bdSectorDict]
-[bdCountDict, bdTypeDict, areaDict, initialDict, bdSectorDict] = readLand()
-
 # return an array with num_building copies of profile for each
 # building type e.g. If there are 3 hospitals in the model, 3 copies
 # of hospital data point in the returned array
@@ -325,7 +343,7 @@ def test_total_count():
     assert(total_count(dict1, dict2) == [3, 3])
 
 def testPlot():
-    heatDict = profile2Dict("energyData/meterData/", "Heating:Gas")
+    heatDict = profile2Dict("energyData/meterData2013/", "Heating:Gas")
     maxheat = max(max(heatDict.values()))
     for key in heatDict:
         count = 0
@@ -339,31 +357,7 @@ def plotAll():
     # load data into dictionary
     # inefficient version
 
-    dirdata = "energyData/meterData/"
-    categories = ["Heating:Gas", "Heating:Electricity", "Water Heater",
-                  "Cooling:Electricity", "Electricity:Facility"]
-    dictArr = [profile2Dict(dirdata, x) for x in categories]
-    maxs = [max(max(d.values())) for d in dictArr]
-
-    dictSpaceHeat = {}
-    for key in dictArr[0]:
-        dictSpaceHeat[key] = [x + y for (x, y) in zip(dictArr[0][key],
-                                                      dictArr[1][key])]
-    dictHeat = {}
-    for key in dictArr[0]:
-        dictHeat[key] = [x + y + z for (x, y, z) in
-                         zip(dictArr[0][key],dictArr[1][key],dictArr[2][key])]
-    dictHE = {}
-    for key in dictArr[0]:
-        dictHE[key] = [x / (y) for (x, y) in zip(dictHeat[key],
-                                                 dictArr[4][key])]
-
-    dictArr.append(dictSpaceHeat)
-    dictArr.append(dictHeat)
-    dictArr.append(dictHE)
-    categories.append("Space-Heating")
-    categories.append("Heating")
-    categories.append("Heating-To-Power-Ratio")
+    (categories, dictArr) = read2dicts()
     '''
     idxlist = list(range(8760))
     heatDict['time (hour)'] = idxlist
@@ -501,7 +495,7 @@ def testClassify():
     testArrays.append(arr)
     arr = [math.log(x + 1) for x in range(100)]
     testArrays.append(arr)
-    heatDict = profile2Dict("energyData/meterData/", "Heating:Gas")
+    heatDict = profile2Dict("energyData/meterData2013/", "Heating:Gas")
     arr = heatDict["LargeHotel"][:100]
     testArrays.append(arr)
 
@@ -533,8 +527,8 @@ def writeSector(dirname):
     # category are "Heating:Gas" or "Cooling:Elec"
     (categories, dictArr) = read2dicts()
 
-    suffixs = ["_h_gas", "_h_elec", "_water", "_c_elec", "_elec", "_spaceheat",
-               "_heat", "_h2p", "_recov"]
+    suffixs = ["_h_gas", "_h_elec", "_water_gas", "_water_elec", "_c_elec",
+               "_elec", "_spaceheat", "_heat", "_h2p", "_recov", "_water"]
 
     length = len(categories)
     for i in range(length):
@@ -573,6 +567,7 @@ def main():
 #   test_plotBoxDict()
 #   test_plotBar()
 #   test_generalMsg()
+#   test_profile2Dict()
     return 0
 
 main()

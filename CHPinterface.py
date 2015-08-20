@@ -135,15 +135,9 @@ master.dimVar = StringVar(master)
 master.dimVar.set("2D")
 
 # option widget for plotting profiles for single building or building groups
-bdTypelist = ["Green", "FullServiceRestaurant", "Hospital",
-              "LargeHotel", "LargeOffice", "MediumOffice",
-              "MidriseApartment", "OutPatient", "PrimarySchool",
-              "QuickServiceRestaurant", "SecondarySchool",
-              "SmallHotel", "SmallOffice", "Stand-aloneRetail",
-              "StripMall", "SuperMarket", "Warehouse"]
-bdinitlist = ["", "FR", "HO", "LH", "LO", "MO", "MA", "OP", "PS", "QR",
-              "SS", "SH", "SO", "SR", "SM", "SU", "WH"]
-
+[bdCountDict, bdTypeDict, areaDict, initDict, bdSectorDict,bdFilenameDict] = ld.readLand()
+bdTypelist = [key for key in bdCountDict]
+bdinitlist = [initDict[key] for key in initDict]  # key is building type
 def plotBuilding():
     dirname = "energyData/Community_"
     fileDict = {"space heat" : "spaceheat.csv", "cool" : "c_elec.csv",
@@ -155,7 +149,7 @@ def plotBuilding():
     if num == "single":
         f, axarr = plt.subplots(4, 4, sharex=True, sharey = True)
         for i in range(16):
-            g = dfSpaceHeat.ix[idx: min(idx + step, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i+1])
+            g = dfSpaceHeat.ix[idx: min(idx + step, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
             g.set_xlim(idx, min(idx + step, 8760) - 1)
     else:
         f, axarr = plt.subplots(2, 1, sharex=False, sharey = False)
