@@ -1,17 +1,9 @@
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Map Technology Summary Table\relax }}{10}{table.caption.34}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces DOE Benchmark Building General Information\nobreakspace {}\cite {DOE2015}\relax }}{23}{table.caption.64}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Benchmark Building HVAC System\relax }}{24}{table.caption.65}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Annual Total Heating Demand by Fuel Type\nobreakspace {}\cite {DOE2015}\relax }}{26}{table.caption.69}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Service Hot Water by Fuel Type\relax }}{28}{table.caption.73}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Table of EnergyPlus output and their meaning\relax }}{28}{table.caption.75}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Mapping of Mellon Arena to Building Types of DOE benchmark model\relax }}{35}{table.caption.90}
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Data Classification Method (o: yes, x: no)\relax }}{56}{table.caption.136}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces DOE Benchmark Building General Information\nobreakspace {}\cite {DOE2015}\relax }}{3}{table.caption.22}
+\contentsline {table}{\numberline {1.2}{\ignorespaces Benchmark Building HVAC System\relax }}{5}{table.caption.23}
+\contentsline {table}{\numberline {1.4}{\ignorespaces Annual Total Heating Demand by Fuel Type\nobreakspace {}\cite {DOE2015}\relax }}{7}{table.caption.27}
+\contentsline {table}{\numberline {1.5}{\ignorespaces Service Hot Water by Fuel Type\relax }}{9}{table.caption.31}
+\contentsline {table}{\numberline {1.6}{\ignorespaces Table of EnergyPlus output and their meaning\relax }}{9}{table.caption.33}
+\contentsline {table}{\numberline {1.7}{\ignorespaces Mapping of Mellon Arena to Building Types of DOE benchmark model\relax }}{21}{table.caption.57}
+\contentsline {table}{\numberline {1.8}{\ignorespaces Data Classification Method (o: yes, x: no)\relax }}{24}{table.caption.67}
 \addvspace {10\p@ }

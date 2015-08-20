@@ -7,16 +7,17 @@
 \lhead{Chapter 6. \emph{Interface Design}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
-This section provides detailed illustration of the non-interactive and
-interactive dynamic energy map implementation and design
-choices. After a general overview explaining possible approaches to
-add the time dimension in an energy map, the non-interactive energy
-map (map animation) approach was presented. For the non-interactive
-animation, we briefly discussed the advantages and disadvantages
-between different symbol or color representation on the effectiveness
-of information convey.
+This section provides detailed illustration of the non-interactive
+(map animation) and interactive dynamic energy map implementation and
+design choices regarding the interactive dynamic energy map. The
+section starts with a general overview that explains possible
+approaches to add the time dimension in an energy map. Then the
+non-interactive energy map (map animation) approach was presented. For
+the non-interactive animation, we briefly discussed the advantages and
+disadvantages between different symbol or color representation on the
+effectiveness of information convey.
 
-Then a detailed explanation of the dynamic energy map interface is
+Then a detailed documentation of the dynamic energy map interface is
 presented. In this section, we first explained the layout and
 functions of each components of the interace and how each component is
 designed based on literature studies of dynamic map design. Then we
@@ -62,7 +63,7 @@ project.
 \section{(Non-interactive) Map Animation} \label{anime} 
 
 Map animation was introduced to cartography in
-1930s~\cite{Harrower2008}. Its major application of include: 1)
+1930s~\cite{Harrower2008}. Its major application include: 1)
 demonstrating the dynamic process of geographic events (weather maps
 in weather forecasting is such an example) 2) assisting pattern
 recognition and knowledge development for scientific researches. The
@@ -72,10 +73,10 @@ maps~\cite{Dorling1992}.  Animated maps are proven to be more powerful
 in conveying the spatial-temporal pattern than static
 maps~\cite{McEachern1998}.
 
-The authors used a continuous color encoding method in the creation of
+We used a continuous color encoding method in the creation of
 non-interactive animation of a univariate gas heating energy demand
 map. A red to blue color ramp is used in the map display. Each color
-within this red-to-blue color scheme is represented as a real number
+within this red-to-blue color ramp is represented as a real number
 between 0 and 1 with 0 representing pure red and 1 representing pure
 blue. A log-scaling was performed to the energy data to ``flatten''
 the distribution. Then the normalized distance between the current
@@ -95,17 +96,18 @@ animation can be viewed and downloaded
 
 In the dynamic energy map interface design, we applied a discrete
 color encoding with a seven-class bivariate choropleth representation
-because it can create a legend that can depict more specific quantity
-information. An animation with this discrete color scheme is also
-created and can be viewed and downloaded
+This allows for a quantitative legend that can depict more specific
+energy demand information. An animation with this discrete color
+scheme is also created and can be viewed and downloaded
 \href{http://www.armechxyj.com/energy-mapping.html#redblueAnime3d}{through
-  this link}. Although the initial conditions of the map instances
-using the continuous and discrete encoding method are different, we
-ovserved that the continuous color encoding method seems to be better
-in demonstrating the general pattern of energy changing
-behavior. Further evaluations are needed to compare these two
-approaches and justify the design choice of a discrete or continuous
-color scheme.
+  this link}. 
+
+Although the initial conditions of the map instances using the
+continuous and discrete encoding method are different, we observed
+that the continuous color encoding method seems to be better in
+demonstrating the general pattern of energy changing behavior. Further
+evaluations are needed to compare these two approaches and justify the
+design choice of a discrete or continuous color scheme.
 
 \begin{figure}[h!]
   \centering
@@ -114,20 +116,13 @@ color scheme.
     Discrete Encoding}
   \label{fig:anime0002}
 \end{figure}
-
-Dong et al.\ assessed the effectiveness of symbol design and frame
-rate on the effectiveness of dynamic map display with two performance
-measurements: deviation and response time. They identified the optimal
-class numbers is 15 for graduated size symbol and is 10 for graduated
-color symbol on a 1024x768 display. The optimal frame rate identified
-in the study is 3 for color symbol maps and 6 for size symbol
-maps. They also suggest to reduce class number and frame rate if the
-display size is smaller than
-1024x768~\cite{doi:10.1559/1523040639298}. 
-
-The non-interactive animated map display has size of
-$1213 \times 950$, a little larger than that of the suggested display,
-we thus chose the frame rate to be 4 per second.
+Dong et al.\ identified that the optimal frame rate for a color symbol
+map is 3 per second for a $1024 \times 768$
+display~\cite{doi:10.1559/1523040639298}. They suggested to increase
+frame rate for larger display size. The non-interactive animated map
+display has size of $1213 \times 950$, a little larger than that of
+the suggested display, we thus chose the frame rate to be 4 per
+second.
 
 \section{Interactive Dynamic Map Interface}
 \subsection{General Layout}
@@ -154,8 +149,8 @@ The general layout of the dynamic map interface is displayed in
 
 \begin{itemize}
 \item A main map display on the upper left that shows the 2D or 3D
-  version of the dynamic energy map with energy data encoded as the
-  color of buildings. 
+  view of the dynamic energy map with energy data encoded as the color
+  of buildings.
 
 \item Four sliders that controls the linear and periodical navigation
   of the map image display and data plot.
@@ -290,53 +285,6 @@ button and a legend used for encoding the 2D and 3D map will be
 displayed. To assist legend reading and color comparison between the
 map and the legend, tick marks of ``x'' are added to the legend to
 indicate the color appeared in the map \fref{fig:legend}.
-
-\subsubsection{Data Classification}\label{dataClassification}
-A function from energy data value to its color representation should
-be decided in order to visualize energy data in a map display. A
-common approach is to create a series of graduated color or symbol and
-classify the data into a few groups and assign each group one color or
-symbol in the series of symbols. In order to write the data
-classification routine for the demonstration of dynamic energy map in
-the current study, the authors conducted a brief survey of the
-commonly used GIS software for commonly applied data classification
-methods. The software surveyed in the study include:
-ArcGIS~\cite{GIS_Jenks2014}, GRASS GIS~\cite{GRASSGIS2008},
-gvGIS~\cite{gvGIS2011}, and QGIS. The data classification method
-adopted by the surveyed software in creating a thematic map include:
-1) equal interval, 2) quantile 3) Jenks 4) Standard Deviation 5)
-pretty breaks and 6) manual interval (use context specific break point
-values). The common data classification method shared by all surveyed
-instances are ``Equal Interval'', ``Quantile'' and ``User
-Defined''. Therefore we chose to implement the ``Equal Interval'' and
-``Quantile'' method in the current project.
-
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{r|c c c c c c}
-    \hline
-           & Equal Interval & Quantile & Jenks & Pretty Breaks & StDev & User Defined\\
-    \hline
-    ArcGIS &      o        &    o     &  o    & x &  o  &   o  \\
- GRASS GIS &      o        &    o     &  x    & x &  o  &   o  \\
-     GVSIG &      o        &    o     &  o    & x &  x  &   o  \\
-      QGIS &      o        &    o     &  o    & o &  o  &   o  \\
-    \hline
-  \end{tabular}
-  \caption{Data Classification Method (o: yes, x: no)}
-  \label{tab:classify}
-\end{table}
-
-From the distribution of energy data point in \cref{Chapter4}, we
-observed a severe right skew of the energy data distribution of single
-buildings and the community, if using the ``Equal Interval'' method,
-the display will lack variation between different frames because the
-majority of data points will be concentrated in low-energy demand
-end. For ``User Defined'' breakpoints, further study or survey will be
-necessary to decide the set of robust breakpoints based on specific
-building energy context. The ``Quantile'' method is thus chosen as the
-data classification method for the demonstration of the functions of
-the dynamic energy map interface.
 
 \subsection{Time Sliders and Navigation Buttons}
 The lower left section contains a series of sliders for controlling
@@ -527,15 +475,84 @@ heat. As is explained in \sref{sec:inputRecover}, the ammount of
 cooling induced reject heat is positively corelated to the cooling
 demand. Thus a building with high cooling demand will also has a large
 amount of reject heat. The reject heat from this building or group of
-buildings could be recovered by itself or be transmitted to other
-buildings that has space heating demand so that the total space
-heating demand of the group of buildings could be reduced.
+buildings could be recovered by itself or be transmitted to
+surrounding buildings that has space heating demand so that the total
+space heating demand of the group of buildings could be reduced.
 
-With the dynamic energy map, the buildings colored in one of the
-colors in the bottom rows of the legend are buildings with high
-cooling demand. With the dynamic energy map, one can identify
-the potential reject heat suppliers and consumers over time
-(\fref{fig:highCooling}).
+For the interface design in the current study, the authors used a
+bivariate color ramp in space heating and cooling energy demand data
+representation that depicts the hourly space heating and space cooling
+demand on the same map (\fref{fig:legend2d}). Red represents high
+heating demand and blue represents high cooling demand. The closer the
+color cell is to the top, the less cooling demand it has. The closer
+the color cell is to the left, the less heating demand it has. The
+cells on the diagonal line (purple colored cells) represent the
+building has relatively similar amount of heating and cooling
+demand. The cells to the upper right of the diagonal represents
+buildings that are heating dominated and the cells to the lower left
+of the diagonal represent buildings that are cooling dominated. The
+current breakpoints are decided through the ``Quantile
+method''~\cite{GIS_Jenks2014} for demonstration.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{legend2d}
+  \caption[Bi-Variate Color Ramp]{The bivariate color ramp displays
+    two variables at the same time: space heating and space
+    cooling. It better displays the co-relation between these two
+    variables and thus helps users to identify energy recovery
+    opportunities}
+  \label{fig:legend2d}
+\end{figure}
+
+With the dynamic energy map, the user can first identify single
+buildings with coincident cooling and heating demand: users will be
+able to identify those purple colored buildings directly from the 2D
+or 3D map as candidates for building level energy recovering by
+redirecting the reject heat from its cooling device condensing coils
+or cooling towers to the space that needs heating
+(\fref{fig:recoverSig}).
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{recover2d}
+  \caption[Energy Recovery Single Building, 2D]{2D map display that
+    helps user to identify the energy recovery opportunities for
+    single buildings}
+  \label{fig:recover2d}
+\end{subfigure}
+~
+\begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{recover3d}
+  \caption[Energy Recovery Single Building, 3D]{3D map display that
+    helps user to identify the energy recovery opportunities for
+    single buildings}
+  \label{fig:recover3d}
+\end{subfigure}
+\caption[Single Building Energy Recovery]{Dynamic Energy Map helps
+  user to identify the energy recovery opportunities for single
+  buildings}
+\label{fig:recoverSig}
+\end{figure}
+
+The user can identify a group of adjacent buildings for reject heat
+sharing. First, the buildings colored in one of the colors in the
+bottom rows of the legend are buildings with high cooling demand. With
+the dynamic energy map, one can identify the potential reject heat
+suppliers and consumers over time (\fref{fig:highCooling}).
+
+In the following example, Large Office and Large Hotel is with high
+cooling demand (since their color are on the bottom row of the legend)
+and the surrounding buildings (two Midrise Apartment, two Full Service
+Restaurant and one Small Office) have space heating demand (they are
+with a redish color). By transmitting the reject heat from the Large
+Office and the Large Hotel in the center to the surrounding buildings,
+the total energy consumption of the building group (within the red
+dotted circle) could be reduced. 
+(\fref{fig:recoverGr}).
 
 \begin{figure}[h!]
   \centering
@@ -547,10 +564,22 @@ the potential reject heat suppliers and consumers over time
   \label{fig:highCooling}
 \end{figure}
 
-Users can then calculate the ``energy recovery potential'' in the
-dynamic energy map with a specified time duration and step
-(\fref{fig:ERP}).
+The dynamic energy map also provides the quantitative insight on how
+much heat recovery one could achieve: per \eref{eq:recover} and the
+analysis in \sref{sec:inputRecover}, the heat recovery potential of
+each building or building group will be calculated with $f = 1.15$ for
+Large Office, Hospital and High-rise Apartment, and $f = 1.25$ for the
+remaining building types. 
 
+Users can then calculate the ``energy recovery potential'' of the
+center buildings (Large Office and Large Hotel in this example) and
+the total space heating demand of surrounding buildings (two
+FirstService Resturant, two Midrise Apartment and one Small Office) in
+the dynamic energy map with a specified time duration and step In
+\fref{fig:ERP}, the energy recovery potential and space heating demand
+for the next week is compared.
+
+%%%%%%%%%%%%%%Book Mark
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\linewidth]{ERP.png}
@@ -564,6 +593,94 @@ dynamic energy map with a specified time duration and step
 \end{figure}
 
 \subsection{Use Case II: Sizing CHP Plant}
+With the Dynamic Energy Map that depict the spatial temporal load
+variation, one will idealy be able to 1) idendify anchor load
+buildings, 2) conduct better design of local load balancing, 3) size
+the co-generation CHP plant
+
+\begin{enumerate}[1).]
+\item Identify anchor load building
+  
+  To achieve this function, the map should be able to make the
+  building with persistant high heating or cooling demand stand
+  out. Thus the design of color scheme that assigns vibrant colors to
+  high demand and white to low demand. The break points of ``high''
+  demand remains to be decided in further project development. For the
+  current implementation, the break point is acquired with quantile
+  classification method with.
+  
+  Although with the box plot of heating demand (\fref{fig:H}), the
+  buildings with high consistent heating demand can be seen through
+  its high median and 25 percentile, but a more intuitive
+  interpretation is still needed to convey information to people with
+  less statistical background. From the animated version of the
+  dynamic energy map
+  (\href{http://www.armechxyj.com/energy-mapping.html#redblueAnime2d}{link
+    to 2d map},
+  \href{http://www.armechxyj.com/energy-mapping.html#redblueAnime3d}{link
+    to 3d map})
+
+\item Local load balancing
+  
+  To achieve this, the first step would be to enable users to select a
+  subset of the existing buildings and the program will calculate the
+  aggregated load and plot the curve for the aggregated load of the
+  selected building group (within the specified time period).
+  
+  The user will first identify some cluster of buildings, in which
+  there is a pattern of building that turn red one after another but
+  not together. Then they can check the building demand profile by
+  clicking on the building footprint in the 2D map
+  (\fref{fig:seeLoad}).
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{seeLoad.png}
+    \caption[Check Energy Demand]{Users can check the building energy
+      demand (thermal or electricity) by clicking on the building foot
+      print in the 2D map and the interface will show the plot of the
+      energy demand profile within a period (the example is showing
+      the demand for a 24h hour period)}
+    \label{fig:seeLoad}
+  \end{figure}
+  
+  Alternatively, they can first open the window that displays the 24h
+  period energy demand graph (hourly gas heating energy in the
+  following example) for all of the 16 benchmark buildings and see if
+  there are some building types that has their demand compensating
+  each other (so they have a rough idea of what is a ``good building
+  combination'' (\fref{fig:plotAll}) at this time that could be a
+  candidate for load balancing) and they will look at the map and
+  search for this ``good combination''.
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{plotAll.png}
+    \caption[See All Demand Plot]{Users can plot all building energy
+      demand profile (heating gas demand for the example) and search
+      for ``good cobimations'' that have compensate load profile}
+    \label{fig:plotAll}
+  \end{figure}
+  
+  After the qualitative experimentation, users can select a group of
+  building by clicking on the building foot print and the program will
+  output a graph of aggregated load (\fref{fig:seeAggDemand}).
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{seeAggDemand.png}
+    \caption[Plot Aggregated Demand]{In this example, users selected
+      the Stand-alone Retail and the Large Office and plots of each
+      single building and the aggregated demand of the two buildings
+      are displayed}
+    \label{fig:seeAggDemand}
+  \end{figure}
+  
+\end{enumerate}
+
+
+
+
 Two variables are crucial in sizing a CHP plant: 1) the heating demand
 including space heating and service hot water 2) electricity
 demand. For the current dynamic energy map interface, a 2D/3D

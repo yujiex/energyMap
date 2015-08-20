@@ -1,76 +1,48 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Mixing Load Graph}}{8}{figure.caption.31}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces General Work Flow}}{2}{figure.caption.19}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Heating Fuel}}{7}{figure.caption.28}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Heating:Gas Box Plot}}{10}{figure.caption.35}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Service Hot Water Box Plot}}{11}{figure.caption.36}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Comparing Heating:Gas and Space Heating}}{11}{figure.caption.37}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Heating:Electricity Box Plot}}{12}{figure.caption.38}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Cooling:Electricity Box Plot}}{13}{figure.caption.39}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Electricity:Facility Box Plot}}{13}{figure.caption.40}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Comparing Heating:Gas and Space Heating}}{14}{figure.caption.42}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Comparing Space Heating and Space Cooling Demand}}{14}{figure.caption.43}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Comparing Heating and Electricity Demand}}{15}{figure.caption.45}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Heat to Power Ratio Box Plot}}{15}{figure.caption.46}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Gas Heating Demand Log}}{17}{figure.caption.48}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Electricity Heating Demand Log}}{17}{figure.caption.49}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Service Hot Water Demand Log}}{17}{figure.caption.50}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Space Heating Demand Log}}{18}{figure.caption.51}
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Heating Demand Log}}{18}{figure.caption.52}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Electricity Cooling Demand Log}}{18}{figure.caption.53}
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Electricity Demand Log}}{19}{figure.caption.54}
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Building Type Topology}}{21}{figure.caption.58}
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Conceptual Model Site Plan}}{22}{figure.caption.59}
+\contentsline {figure}{\numberline {1.23}{\ignorespaces ArcGIS Time Slider for Temperal Data Display\relax }}{23}{figure.caption.65}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces London Heat Map}}{11}{figure.caption.37}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces National Heat Map}}{12}{figure.caption.38}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Water Heat Map}}{12}{figure.caption.39}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Calgary Energy Demand Map}}{13}{figure.caption.41}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Calgary Energy Map Alternative Energy Source\nobreakspace {}\cite {aacip2009}\relax }}{14}{figure.caption.42}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Rotterdam Heat Map}}{15}{figure.caption.44}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Lower Hill District 3D GIS Map}}{16}{figure.caption.47}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Heating/Electricity Residential}}{16}{figure.caption.48}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Heat Demand Density}}{17}{figure.caption.50}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Monthly Heat Demand (Small Multiple)}}{17}{figure.caption.51}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Campus Animated Map}}{17}{figure.caption.52}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Dynamic Energy Map Display}}{20}{figure.caption.54}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces General Work Flow}}{22}{figure.caption.61}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Heating Fuel}}{26}{figure.caption.70}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Heating:Gas Box Plot}}{29}{figure.caption.77}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Water Heater:WaterSystem:Gas Box Plot}}{30}{figure.caption.78}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Heating:Electricity Box Plot}}{31}{figure.caption.79}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Cooling:Electricity Box Plot}}{31}{figure.caption.80}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Electricity:Facility Box Plot}}{32}{figure.caption.81}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Comparing Heating:Gas and Space Heating}}{32}{figure.caption.83}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Comparing Space Heating and Space Cooling Demand}}{33}{figure.caption.84}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparing Heating and Electricity Demand}}{33}{figure.caption.86}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Heat to Power Ratio Box Plot}}{34}{figure.caption.87}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Building Type Topology}}{36}{figure.caption.91}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Conceptual Model Site Plan}}{36}{figure.caption.92}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces ArcGIS Time Slider for Temperal Data Display\relax }}{38}{figure.caption.97}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Bi-Variate Color Ramp}}{41}{figure.caption.106}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Single Building Energy Recovery}}{41}{figure.caption.107}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Building Group Energy Recovery}}{42}{figure.caption.108}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Check Energy Demand}}{44}{figure.caption.112}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces See All Demand Plot}}{44}{figure.caption.113}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Plot Aggregated Demand}}{45}{figure.caption.114}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Animated Map for Public}}{46}{figure.caption.117}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Animated Map with Continues Encoding}}{50}{figure.caption.123}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Animated Map with Discrete Encoding}}{50}{figure.caption.124}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Dynamic Map Interface Layout\relax }}{51}{figure.caption.127}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Option Menu}}{52}{figure.caption.128}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Map Display of 2D and 3D}}{54}{figure.caption.130}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Bivariate Map Symbol Tested}}{55}{figure.caption.133}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Bivariate Map Legend}}{55}{figure.caption.134}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Single Plots of 16 Building Types}}{58}{figure.caption.142}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Community Plot}}{58}{figure.caption.143}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Show Plot for One Building}}{59}{figure.caption.145}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Show Plot for a Group of Buildings}}{59}{figure.caption.146}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Data Plot with Duration / Step of One Day}}{60}{figure.caption.148}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Data Plot with Different Duration / Step}}{61}{figure.caption.149}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Identify Buildings with High Cooling Demand}}{62}{figure.caption.152}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Calculate Energy Recovery Potential}}{62}{figure.caption.153}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Legend for Heat and Power Map}}{63}{figure.caption.155}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Interface for CHP Sizing}}{63}{figure.caption.156}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Comparing Community Heating and Electricity Demand}}{63}{figure.caption.157}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces CMU OSM Map}}{66}{figure.caption.163}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Conceptual City Lots}}{66}{figure.caption.164}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Geo-tif in CityEngine}}{67}{figure.caption.167}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Geo-tif with OSM Map}}{68}{figure.caption.168}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Heating Demand Histogram of Conceptual City}}{69}{figure.caption.172}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Heating Demand of Conceptual City}}{70}{figure.caption.174}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Animation Demo of the Color Calculation}}{70}{figure.caption.175}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Slider in Campus Example}}{71}{figure.caption.177}
-\contentsline {figure}{\numberline {A.9}{\ignorespaces Finished Campus Example}}{71}{figure.caption.178}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Imported CSV}}{76}{figure.caption.187}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces 3D Dynamic Heat Map in ArcGIS}}{77}{figure.caption.190}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Calculated Centroid}}{77}{figure.caption.191}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Created Centroid Feature}}{78}{figure.caption.192}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Table with Time}}{79}{figure.caption.197}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Dynamic Map in ArcScene with Building Centroid}}{80}{figure.caption.202}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Animated Map with Continues Encoding}}{30}{figure.caption.77}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Animated Map with Discrete Encoding}}{30}{figure.caption.78}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Dynamic Map Interface Layout\relax }}{32}{figure.caption.81}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Option Menu}}{32}{figure.caption.82}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Map Display of 2D and 3D}}{34}{figure.caption.84}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Bivariate Map Symbol Tested}}{35}{figure.caption.87}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Bivariate Map Legend}}{35}{figure.caption.88}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Single Plots of 16 Building Types}}{37}{figure.caption.94}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Community Plot}}{38}{figure.caption.95}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Show Plot for One Building}}{38}{figure.caption.97}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Show Plot for a Group of Buildings}}{39}{figure.caption.98}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Data Plot with Duration / Step of One Day}}{40}{figure.caption.100}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Data Plot with Different Duration / Step}}{40}{figure.caption.101}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Bi-Variate Color Ramp}}{41}{figure.caption.104}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Single Building Energy Recovery}}{42}{figure.caption.105}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Building Group Energy Recovery}}{43}{figure.caption.106}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Identify Buildings with High Cooling Demand}}{44}{figure.caption.107}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Calculate Energy Recovery Potential}}{44}{figure.caption.108}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Check Energy Demand}}{45}{figure.caption.112}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces See All Demand Plot}}{46}{figure.caption.113}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Plot Aggregated Demand}}{46}{figure.caption.114}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Legend for Heat and Power Map}}{47}{figure.caption.115}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Interface for CHP Sizing}}{47}{figure.caption.116}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Comparing Community Heating and Electricity Demand}}{48}{figure.caption.117}

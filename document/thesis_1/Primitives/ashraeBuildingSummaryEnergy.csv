@@ -1,0 +1,38 @@
+Heating,,,,,,,,
+"Building Type","Electricity [GJ]","Natural Gas [GJ]","Electricity [kBtu]","Natural Gas [kBtu]",,"Building Type","Electricity [kBtu]","Natural Gas [kBtu]"
+"Small Office",8.64,5.97,8189.1,5658.5,,"Small Office",8189.1,5658.5
+"Medium Office",208.69,278.76,197799.9,264213.5,,"Medium Office",197799.9,264213.5
+"Large Office",10.8,5325.81,10236.4,5047893.3,,"Large Office",10236.4,5047893.3
+"Stand-alone Retail",0,182.05,0,172550.1,,"Stand-alone Retail",0,172550.1
+"Strip Mall",0,554.38,0,525450.8,,"Strip Mall",0,525450.8
+"Primary School",0,1159.52,0,1099012.8,,"Primary School",0,1099012.8
+"Secondary School",0,858.13,0,813350.2,,"Secondary School",0,813350.2
+"Outpatient Healthcare",306.45,498.23,290458.5,472230.9,,"Outpatient Healthcare",290458.5,472230.9
+Hospital,849.96,7168.16,805606.5,6794103.9,,Hospital,805606.5,6794103.9
+"Small Hotel",280.71,118.29,266061.7,112117.3,,"Small Hotel",266061.7,112117.3
+"Large Hotel",0,1932.47,0,1831627.9,,"Large Hotel",0,1831627.9
+"Warehouse (non-refrigerated)",0,680.66,0,645141.1,,"Warehouse (non-refrigerated)",0,645141.1
+"Quick Service Restaurant",0,575.89,0,545838.3,,"Quick Service Restaurant",0,545838.3
+"Full Service Restaurant",0,790.81,0,749543.2,,"Full Service Restaurant",0,749543.2
+"Mid-rise Apartment",0,395.97,0,375307.1,,"Mid-rise Apartment",0,375307.1
+"High-rise Apartment",242.36,877.39,229712.9,831605.2,,"High-rise Apartment",229712.9,831605.2
+,,,,,,,,
+,,,,,,,,
+"Hot Water",,,,,,"Hot Water",,
+"Building Type","Electricity [GJ]","Natural Gas [GJ]","Electricity [kBtu]","Natural Gas [kBtu]",,"Building Type","Electricity [kBtu]","Natural Gas [kBtu]"
+"Small Office",18.01,0,17070.2,0,,"Small Office",17070.2,0
+"Medium Office",0,80.28,0,76090.7,,"Medium Office",0,76090.7
+"Large Office",0,573.14,0,543231.8,,"Large Office",0,543231.8
+"Stand-alone Retail",0,96.13,0,91113.6,,"Stand-alone Retail",0,91113.6
+"Strip Mall",64.86,0,61475.4,0,,"Strip Mall",61475.4,0
+"Primary School",25.84,126.42,24491.6,119823,,"Primary School",24491.6,119823
+"Secondary School",154.41,528.59,146352.4,501006.6,,"Secondary School",146352.4,501006.6
+"Outpatient Healthcare",0,133.49,0,126524.1,,"Outpatient Healthcare",0,126524.1
+Hospital,26.48,1265.2,25098.2,1199178.1,,Hospital,25098.2,1199178.1
+"Small Hotel",0,637.04,0,603797.3,,"Small Hotel",0,603797.3
+"Large Hotel",90.74,2163.12,86004.9,2050241.9,,"Large Hotel",86004.9,2050241.9
+"Warehouse (non-refrigerated)",26.08,0,24719.1,0,,"Warehouse (non-refrigerated)",24719.1,0
+"Quick Service Restaurant",0,198.85,0,188473.4,,"Quick Service Restaurant",0,188473.4
+"Full Service Restaurant",75.49,344.9,71550.7,326902.1,,"Full Service Restaurant",71550.7,326902.1
+"Mid-rise Apartment",416.66,0,394917.4,0,,"Mid-rise Apartment",394917.4,0
+"High-rise Apartment",0,1177.92,0,1116452.6,,"High-rise Apartment",0,1116452.6

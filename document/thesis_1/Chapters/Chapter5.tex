@@ -143,3 +143,100 @@ providing the full freedom of adjusting this feature can enhance
 pattern understanding~\cite{Nelson1998}. But others argue that this
 control will reduce time animation to still images and impair its
 ability in conveying temporal changes ~\cite{Lowe2004}.
+
+
+
+\section{not sure if to include}
+
+\subsection{Specification of the Major Operation}
+The desired major operations for the target user include: 
+\begin{itemize}
+\item Map display and careful choice of default settings for
+  choropleth map display
+\item Navigation utilities that navigates through dynamic map and data
+  plot
+\item Provide various plot routines that supplies quantitative
+  information
+\end{itemize}
+
+\subsubsection{Map display and data plot}
+Although the major target user group for the current project is
+researchers and planners, we can briefly discuss an interface for
+public user for future extending the project to adatp to different
+user groups' need. In the study of Resch et al.\ suggest that the
+interface for general public should ``ensure that the amount of
+information shown to the users at any given time, and its complexity,
+are reduced''~\cite{Resch2014}. Thus we could imagine the desired map
+display for the current project should be a 3D map. The bivariate
+choropleth map legend should also be replaced with two color ramps or
+even with only colors of extreme value. Quantitative information
+display should be reduced to one bar chart or zoomable data plot of
+the aggregated demand. The data classification method should also be
+chosen so that the peak occurrence time is emphasized rather than the
+absolute energy consumption value. One sample design for such a map is
+shown in \fref{fig:forPublic} (The data plot is not added in this
+example).
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{forPublic.png}
+    \caption[Animated Map for Public]{This version of animated map
+      aims at revealing the dynamic changes of building heating and
+      cooling energy demand and their non-conincident heating and
+      cooling peak arrival for general public}
+    \label{fig:forPublic}
+  \end{figure}
+  
+For researchers or planners: The desired map display should be a 2D
+and 3D map. They can toggle between the two display mode and can
+perform different operations. The heating or cooling demand are
+represented as a graduated symbol (univariate case) or color
+(bivariate case). The map display should also be coupled with
+corresponding data plot or data statistics that provides the
+quantitative insight that supports design decisions.
+
+\subsubsection{Navigation utilities that navigates through dynamic map
+  and data plot}
+The ability to navigate through a series of map images and present
+dynamic data plot accordingly, is the basic function that differs
+the current work from a static map. Some desired behavior of the
+slider includes:
+
+\begin{itemize}
+
+\item Linear and cyclic time representation. According to section
+  \ref{anime}, the time has both linear and cyclic aspect. The time
+  navigation utility should provide both ``linear'' time navigation
+  and ``cyclic'' time navigation. This requires a global time
+  navigation that accounts for the linear aspect: it can go through
+  the whole time period with the highest time resolution. It also
+  requires a series of default time steps settings corresponding to
+  the natural recurring pattern of the energy usage profile
+\item Another desired feature is providing adjustable auto-play of the
+  map animation. The reasoning behind this is the debatable level of
+  user control in the study of Johnson and Nelson~\cite{Nelson1998},
+  when they argue that allowing arbitrary time control might degrade
+  the ability of animated map on conveying temporal pattern. This
+  feature is to be implemented in future development of the project.
+\end{itemize}
+
+\subsection{Provide default settings for choropleth map display}
+Creating several default settings for choropleth map display,
+i.e. provide choices for data classification and color mapping. For
+the current implementation, the variables in display is the heating
+and cooling energy consumption profile. The customization choices only
+restrict to the two classification method: even or quantile
+method. The color ramp is predefined to be a bivariate color ramp from
+white to red and blue. For later stages, a desired behavior would be
+to provide the full control of color settings.
+
+
+Dong et al.\ assessed the effectiveness of symbol design and frame
+rate on the effectiveness of dynamic map display with two performance
+measurements: deviation and response time. They identified the optimal
+class numbers is 15 for graduated size symbol and is 10 for graduated
+color symbol on a 1024x768 display. The optimal frame rate identified
+in the study is 3 for color symbol maps and 6 for size symbol
+maps. They also suggest to reduce class number and frame rate if the
+display size is smaller than
+1024x768~\cite{doi:10.1559/1523040639298}. 

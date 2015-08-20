@@ -1,76 +1,43 @@
 \contentsline {chapter}{Contents}{i}{dummy.1}
-\contentsline {chapter}{List of Figures}{iv}{dummy.3}
-\contentsline {chapter}{List of Tables}{vi}{dummy.5}
-\contentsline {chapter}{Abbreviations}{vii}{dummy.7}
-\contentsline {chapter}{Symbols}{viii}{dummy.10}
-\contentsline {chapter}{\numberline {1}General Introduction}{1}{chapter.13}
-\contentsline {section}{\numberline {1.1}Project Overview}{1}{section.14}
-\contentsline {section}{\numberline {1.2}Objective and Problem Definition}{3}{section.19}
-\contentsline {section}{\numberline {1.3}Related Concepts}{5}{section.24}
-\contentsline {subsection}{\numberline {1.3.1}District Energy System}{5}{subsection.25}
-\contentsline {subsection}{\numberline {1.3.2}Heat Map}{6}{subsection.26}
-\contentsline {subsection}{\numberline {1.3.3}Energy Map}{7}{subsection.27}
-\contentsline {subsection}{\numberline {1.3.4}Dynamic Energy Map}{7}{subsection.28}
-\contentsline {section}{\numberline {1.4}Why ``time'' dimension is important}{8}{section.29}
-\contentsline {subsection}{\numberline {1.4.1}Strong Temporal Variation of Energy Demand}{8}{subsection.30}
-\contentsline {subsection}{\numberline {1.4.2}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{8}{subsection.32}
-\contentsline {chapter}{\numberline {2}Related Works}{10}{chapter.33}
-\contentsline {section}{\numberline {2.1}Static Energy Map}{10}{section.35}
-\contentsline {subsection}{\numberline {2.1.1}UK Heat Map}{10}{subsection.36}
-\contentsline {subsection}{\numberline {2.1.2}Calgary Energy Map}{13}{subsection.40}
-\contentsline {subsection}{\numberline {2.1.3}Energy Potential Mapping}{14}{subsection.43}
-\contentsline {section}{\numberline {2.2}Dynamic Energy Map}{14}{section.45}
-\contentsline {subsection}{\numberline {2.2.1}Lower Hill District Dynamic Mapping Project}{15}{subsection.46}
-\contentsline {subsection}{\numberline {2.2.2}Energy Mapping to Identify Opportunities for Future Networks Project}{16}{subsection.49}
-\contentsline {chapter}{\numberline {3}Building from Previous Work}{19}{chapter.53}
-\contentsline {chapter}{\numberline {4}Methodology}{21}{chapter.55}
-\contentsline {section}{\numberline {4.1}Overview}{21}{section.56}
-\contentsline {section}{\numberline {4.2}Input}{23}{section.62}
-\contentsline {subsection}{\numberline {4.2.1}Benchmark Models and Energy Data}{23}{subsection.63}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Input for Identifing Energy Recovery Opportunities}{25}{subsubsection.67}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Input for Sizing District Co-generation System}{27}{subsubsection.72}
-\contentsline {subsection}{\numberline {4.2.2}Simulation Data Analysis of the benchmark models}{28}{subsection.74}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Single Output}{28}{subsubsection.76}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Space Heating Demand vs. Space Cooling Demand}{32}{subsubsection.82}
-\contentsline {subsubsection}{\numberline {4.2.2.3}Heating Demand vs. Electricity Demand}{33}{subsubsection.85}
-\contentsline {subsection}{\numberline {4.2.3}3D GIS Model Geometry}{34}{subsection.88}
-\contentsline {subsection}{\numberline {4.2.4}Aggregating Hourly Energy Data to 3D GIS Model}{36}{subsection.93}
-\contentsline {section}{\numberline {4.3}Output Map Images}{38}{section.98}
-\contentsline {section}{\numberline {4.4}Interface Specification}{39}{section.99}
-\contentsline {subsection}{\numberline {4.4.1}User Definition}{39}{subsection.100}
-\contentsline {subsection}{\numberline {4.4.2}Goal Function}{39}{subsection.101}
-\contentsline {subsubsection}{\numberline {4.4.2.1}Function 1: Assisting Energy Recovery}{40}{subsubsection.105}
-\contentsline {subsubsection}{\numberline {4.4.2.2}Function 1: Assisting Sizing of District Energy System}{43}{subsubsection.109}
-\contentsline {subsection}{\numberline {4.4.3}Specification of the Major Operation}{45}{subsection.115}
-\contentsline {subsubsection}{\numberline {4.4.3.1}Map display and data plot}{45}{subsubsection.116}
-\contentsline {subsubsection}{\numberline {4.4.3.2}Navigation utilities that navigates through dynamic map and data plot}{46}{subsubsection.118}
-\contentsline {subsection}{\numberline {4.4.4}Provide default settings for choropleth map display}{47}{subsection.119}
-\contentsline {chapter}{\numberline {5}Interface Design}{48}{chapter.120}
-\contentsline {section}{\numberline {5.1}Overview}{48}{section.121}
-\contentsline {section}{\numberline {5.2}(Non-interactive) Map Animation}{49}{section.122}
-\contentsline {section}{\numberline {5.3}Interactive Dynamic Map Interface}{51}{section.125}
-\contentsline {subsection}{\numberline {5.3.1}General Layout}{51}{subsection.126}
-\contentsline {subsection}{\numberline {5.3.2}Main Display Window}{53}{subsection.129}
-\contentsline {subsection}{\numberline {5.3.3}Bivariate Map Legend}{53}{subsection.131}
-\contentsline {subsubsection}{\numberline {5.3.3.1}Symbol Chosen}{53}{subsubsection.132}
-\contentsline {subsubsection}{\numberline {5.3.3.2}Data Classification}{55}{subsubsection.135}
-\contentsline {subsection}{\numberline {5.3.4}Time Sliders and Navigation Buttons}{56}{subsection.137}
-\contentsline {subsection}{\numberline {5.3.5}Data Plot}{57}{subsection.138}
-\contentsline {subsubsection}{\numberline {5.3.5.1}Methods to Show Plot}{57}{subsubsection.139}
-\contentsline {subsubsection}{\numberline {5.3.5.2}Providing Temporal Context in Data Plot}{59}{subsubsection.147}
-\contentsline {section}{\numberline {5.4}Use Case Demonstrations}{61}{section.150}
-\contentsline {subsection}{\numberline {5.4.1}Use Case I: Identification of Energy Recovery Opportunity}{61}{subsection.151}
-\contentsline {subsection}{\numberline {5.4.2}Use Case II: Sizing CHP Plant}{62}{subsection.154}
-\contentsline {section}{\numberline {5.5}Implementation tools and strategy}{64}{section.158}
+\contentsline {chapter}{List of Figures}{iii}{dummy.3}
+\contentsline {chapter}{List of Tables}{v}{dummy.5}
+\contentsline {chapter}{Abbreviations}{vi}{dummy.7}
+\contentsline {chapter}{Symbols}{vii}{dummy.10}
+\contentsline {chapter}{\numberline {1}Methodology}{1}{chapter.13}
+\contentsline {section}{\numberline {1.1}Overview}{1}{section.14}
+\contentsline {section}{\numberline {1.2}Input}{3}{section.20}
+\contentsline {subsection}{\numberline {1.2.1}Benchmark Models and Energy Data}{3}{subsection.21}
+\contentsline {subsubsection}{\numberline {1.2.1.1}Input for Identifing Energy Recovery Opportunities}{6}{subsubsection.25}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Input for Sizing District Co-generation System}{8}{subsubsection.30}
+\contentsline {subsection}{\numberline {1.2.2}Simulation Data Analysis of the benchmark models}{9}{subsection.32}
+\contentsline {subsubsection}{\numberline {1.2.2.1}Single Output}{10}{subsubsection.34}
+\contentsline {subsubsection}{\numberline {1.2.2.2}Space Heating Demand vs. Space Cooling Demand}{14}{subsubsection.41}
+\contentsline {subsubsection}{\numberline {1.2.2.3}Heating Demand vs. Electricity Demand}{14}{subsubsection.44}
+\contentsline {subsubsection}{\numberline {1.2.2.4}Aggregated Demand Distribution}{15}{subsubsection.47}
+\contentsline {subsection}{\numberline {1.2.3}3D GIS Model Geometry}{20}{subsection.55}
+\contentsline {subsection}{\numberline {1.2.4}Aggregating Hourly Energy Data to 3D GIS Model}{22}{subsection.60}
+\contentsline {subsubsection}{\numberline {1.2.4.1}Comparing Different Approaches}{22}{subsubsection.61}
+\contentsline {subsubsection}{\numberline {1.2.4.2}Data Classification}{24}{subsubsection.66}
+\contentsline {section}{\numberline {1.3}Output Map Images}{25}{section.68}
+\contentsline {section}{\numberline {1.4}Interface Specification}{26}{section.69}
+\contentsline {subsection}{\numberline {1.4.1}User Definition}{26}{subsection.70}
+\contentsline {subsection}{\numberline {1.4.2}Goal Function}{27}{subsection.71}
+\contentsline {chapter}{\numberline {2}Interface Design}{28}{chapter.74}
+\contentsline {section}{\numberline {2.1}Overview}{28}{section.75}
+\contentsline {section}{\numberline {2.2}(Non-interactive) Map Animation}{29}{section.76}
+\contentsline {section}{\numberline {2.3}Interactive Dynamic Map Interface}{31}{section.79}
+\contentsline {subsection}{\numberline {2.3.1}General Layout}{31}{subsection.80}
+\contentsline {subsection}{\numberline {2.3.2}Main Display Window}{33}{subsection.83}
+\contentsline {subsection}{\numberline {2.3.3}Bivariate Map Legend}{34}{subsection.85}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Symbol Chosen}{34}{subsubsection.86}
+\contentsline {subsection}{\numberline {2.3.4}Time Sliders and Navigation Buttons}{35}{subsection.89}
+\contentsline {subsection}{\numberline {2.3.5}Data Plot}{36}{subsection.90}
+\contentsline {subsubsection}{\numberline {2.3.5.1}Methods to Show Plot}{36}{subsubsection.91}
+\contentsline {subsubsection}{\numberline {2.3.5.2}Providing Temporal Context in Data Plot}{38}{subsubsection.99}
+\contentsline {section}{\numberline {2.4}Use Case Demonstrations}{40}{section.102}
+\contentsline {subsection}{\numberline {2.4.1}Use Case I: Identification of Energy Recovery Opportunity}{40}{subsection.103}
+\contentsline {subsection}{\numberline {2.4.2}Use Case II: Sizing CHP Plant}{44}{subsection.109}
+\contentsline {section}{\numberline {2.5}Implementation tools and strategy}{47}{section.118}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{65}{appendix.159}
-\contentsline {section}{\numberline {A.1}General Introduction}{65}{section.160}
-\contentsline {section}{\numberline {A.2}Explaining Each Steps}{66}{section.161}
-\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in CityEngine}{73}{appendix.181}
-\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{75}{appendix.182}
-\contentsline {section}{\numberline {C.1}Introduction}{75}{section.183}
-\contentsline {section}{\numberline {C.2}Explaining Each Steps}{75}{section.184}
-\contentsline {subsection}{\numberline {C.2.1}Final Output}{79}{subsection.201}
-\contentsline {chapter}{\numberline {D}Rule File Used in Final Dynamic Map Interface}{81}{appendix.203}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{83}{dummy.204}
+\contentsline {chapter}{Bibliography}{49}{dummy.119}
