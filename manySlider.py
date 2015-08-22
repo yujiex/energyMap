@@ -71,6 +71,8 @@ hour_start = 0
 hour_end = 8759
 interval = (hour_end - hour_start) / 10
 
+def getAve(lst):
+    return sum(lst)/len(lst)
 # functions to control buttons to jump forward and backward
 def advance24h():
     allyear.set(allyear.get() + 24)
@@ -117,7 +119,7 @@ def printimg(event):
 master = Tk()
 w = str(w_graph * 2 + w_window + 10)
 master.geometry(w+'x700+0+0')
-master.title("Dynamic Heat Map")
+master.title("Dynamic Heating-Cooling Map")
 defaultbg = master.cget('bg')
 bd_font = "TkDefault 8 bold"
 nm_font = "TkDefault 8"
@@ -172,7 +174,7 @@ def plotBuilding():
                 elif stat == "total":
                     data = pd.Series([(df.ix[y * step:(y + 1)*step, i]).sum()
                                       for y in range(numPeriod)])
-                windowTitle = 'Single Building {0} {1}'.format(stat, title)
+                windowTitle = 'Single Building {0} {1}'.format(stat.capitalize(), title)
                 g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
                 g.set_xlim(0, numPeriod + 1)
     else:
@@ -188,17 +190,15 @@ def plotBuilding():
         elif stat == "peak":
             sr2 = pd.Series([max(sr[i*step:(i + 1)*step])
                             for i in range(numPeriod)])
-            title = '{0} {1} '.format(stat, period+"ly", title)
+            title = '{0} {1} '.format(stat.capitalize(), (period+"ly").capitalize(), title)
         elif stat == "total":
             sr2 = pd.Series([sum(sr[i*step:(i + 1)*step])
                             for i in range(numPeriod)])
-            title = '{0} {1} '.format(stat, period+"ly", title)
+            title = '{0} {1} '.format(stat.capitalize(), (period+"ly").capitalize(), title)
         elif stat == "average":
-            def getAve(lst):
-                return sum(lst)/len(lst)
             sr2 = pd.Series([getAve(sr[i*step:(i + 1)*step])
                             for i in range(numPeriod)])
-            title = '{0} {1} {2}'.format(stat, period+"ly", title)
+            title = '{0} {1} {2}'.format(stat.capitalize(), period+"ly", title)
 
         g2 = sr2.plot(ax = axarr[1], title = title)
         g2.set_xlim(0, numPeriod - 1)
@@ -370,17 +370,15 @@ def landName(event):
                 elif stat == "peak":
                     sr = pd.Series([max(building[i*step:(i + 1)*step])
                                     for i in range(numPeriod)])
-                    title = '{0} {1} '.format(stat, period+"ly", title)
+                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 elif stat == "total":
                     sr = pd.Series([sum(building[i*step:(i + 1)*step])
                                     for i in range(numPeriod)])
-                    title = '{0} {1} '.format(stat, period+"ly", title)
+                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 elif stat == "average":
-                    def getAve(lst):
-                        return sum(lst)/len(lst)
                     sr = pd.Series([getAve(building[i*step:(i + 1)*step])
                                     for i in range(numPeriod)])
-                    title = '{0} {1} {2}'.format(stat, period+"ly", title)
+                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 g2 = sr.plot(ax = axarr[1],title = title)
                 g2.set_xlim(0, numPeriod - 1)
                 g2.axvline(idx//step, color = 'red', linestyle='--')
@@ -394,11 +392,22 @@ def landName(event):
                 selectDF['agg'] = selectDF.sum(axis = 1)
                 g1 = selectDF['agg'][idx:(min(idx+step, 8760))].plot(ax = axarr[0], title = title)
                 g1.set_xlim(idx, min(idx+step, 8760) - 1)
-                sr = pd.Series([selectDF['agg'][idx%step + i*step]
-                                for i in range(numPeriod)])
-                g2 = sr.plot(ax = axarr[1],
-                             title = '{0} with step {1}'.format(title,
-                                                                period))
+                if stat == "exact":
+                    sr = pd.Series([selectDF['agg'][idx%step + i*step]
+                                    for i in range(numPeriod)])
+                    title = '{0} with step {1}'.format(title, period)
+                else:
+                    if stat == "peak":
+                        sr = pd.Series([max(selectDF['agg'][i*step:(i+1)*step])
+                                       for i in range(numPeriod)])
+                    elif stat == "average":
+                        sr = pd.Series([getAve(selectDF['agg'][i*step:(i+1)*step]) for i in range(numPeriod)])
+                    elif stat == "total":
+                        sr = pd.Series([sum(selectDF['agg'][i*step:(i+1)*step])
+                                       for i in range(numPeriod)])
+
+                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
+                g2 = sr.plot(ax = axarr[1], title = title)
                 g2.set_xlim(0, numPeriod - 1)
                 g2.axvline(idx//step, color = 'red', linestyle='--')
                 g2.annotate('current', xy = (idx//step, sr[idx//step]))
