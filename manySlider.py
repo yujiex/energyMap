@@ -134,6 +134,8 @@ master.timeVar = StringVar(master)
 master.timeVar.set("day")
 master.dimVar = StringVar(master)
 master.dimVar.set("2D")
+master.statVar = StringVar(master)
+master.statVar.set("exact")
 
 # option widget for plotting profiles for single building or building groups
 [bdCountDict, bdTypeDict, areaDict, initDict, bdSectorDict,bdFilenameDict] = ld.readLand()
@@ -145,29 +147,65 @@ def plotBuilding():
     fileDict = {"space heat" : "spaceheat.csv", "cool" : "c_elec.csv",
                 "recover" : "recov.csv", "electricity" : "elec.csv",
                 "heat" : "heat.csv"}
-    (num, choice, period, step, title) = plotMethod()
+    typeDict = {"space heat" : dfSpaceHeat, "cool" : dfCool,"heat" : dfHeat,
+                "recover" : dfRecover, "electricity" : dfElec}
+    (num, choice, period, step, title, stat) = plotMethod()
     filename = dirname + fileDict[choice]
+    df = typeDict[choice]
     idx = allyear.get()
+    numPeriod = 8760 // step
     if num == "single":
         f, axarr = plt.subplots(4, 4, sharex=True, sharey = True)
         for i in range(16):
-            print '{0}, {1}'.format(i/4, i%4)
-            g = dfSpaceHeat.ix[idx: min(idx + step, 8760), i].plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
-            g.set_xlim(idx, min(idx + step, 8760) - 1)
+            if stat == "exact":
+                data = df.ix[idx: min(idx + step, 8760), i]
+                windowTitle = "Single Building " + title
+                g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
+                g.set_xlim(idx, min(idx + step, 8760) - 1)
+            else:
+                if stat == "peak":
+                    data = pd.Series([(df.ix[y * step:(y + 1)*step, i]).max()
+                                      for y in range(numPeriod)])
+                elif stat == "average":
+                    data = pd.Series([(df.ix[y * step:(y + 1)*step, i]).mean()
+                                      for y in range(numPeriod)])
+                elif stat == "total":
+                    data = pd.Series([(df.ix[y * step:(y + 1)*step, i]).sum()
+                                      for y in range(numPeriod)])
+                windowTitle = 'Single Building {0} {1}'.format(stat, title)
+                g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
+                g.set_xlim(0, numPeriod + 1)
     else:
         f, axarr = plt.subplots(2, 1, sharex=False, sharey = False)
         sr = pd.Series(np.genfromtxt(filename, delimiter = ','))
 
-        numPeriod = 8760 // step
         g1 = sr[idx:(min(idx+step, 8760))].plot(ax = axarr[0], title = title)
         g1.set_xlim(idx, min(idx+step, 8760) - 1)
-        sr2 = pd.Series([sr[idx%step + i*step] for i in range(numPeriod)])
-        g2 = sr2.plot(ax = axarr[1],
-                      title = '{0} with step {1}'.format(title,
-                                                        period))
+
+        if stat == "exact":
+            sr2 = pd.Series([sr[idx%step + i*step] for i in range(numPeriod)])
+            title = '{0} with step {1}'.format(title, period)
+        elif stat == "peak":
+            sr2 = pd.Series([max(sr[i*step:(i + 1)*step])
+                            for i in range(numPeriod)])
+            title = '{0} {1} '.format(stat, period+"ly", title)
+        elif stat == "total":
+            sr2 = pd.Series([sum(sr[i*step:(i + 1)*step])
+                            for i in range(numPeriod)])
+            title = '{0} {1} '.format(stat, period+"ly", title)
+        elif stat == "average":
+            def getAve(lst):
+                return sum(lst)/len(lst)
+            sr2 = pd.Series([getAve(sr[i*step:(i + 1)*step])
+                            for i in range(numPeriod)])
+            title = '{0} {1} {2}'.format(stat, period+"ly", title)
+
+        g2 = sr2.plot(ax = axarr[1], title = title)
         g2.set_xlim(0, numPeriod - 1)
         g2.axvline(idx//step, color = 'red', linestyle='--')
         g2.annotate('current', xy = (idx//step, sr[idx//step]))
+        windowTitle = "Community " + title
+    f.canvas.set_window_title(windowTitle)
     plt.show()
 
 # clear selected landuse for calculation
@@ -289,9 +327,10 @@ def plotMethod():
     num = master.numVar.get()
     choice = master.typeVar.get()
     period = master.timeVar.get()
+    stat = master.statVar.get()
     step = stepDict[period]
     title = titleDict[num] + titleDict[choice]
-    return (num, choice, period, step, title)
+    return (num, choice, period, step, title, stat)
 
 def landName(event):
     titleDict = {"space heat" : "Space Heating Demand (kBtu)",
@@ -313,7 +352,7 @@ def landName(event):
             print 'Selection Set: {0}'.format(landSelection)
             print "landuse is {0}".format(landDict[key])
             idx = allyear.get()
-            (num, choice, period, step, title) = plotMethod()
+            (num, choice, period, step, title, stat) = plotMethod()
             numPeriod = 8760 // step
 
             # plot for single building
@@ -323,11 +362,26 @@ def landName(event):
                 g1 = typeDict[choice][bdtype][idx:(min(idx+step, 8760))].plot(ax = axarr[0], title = title)
                 g1.set_xlim(idx, min(idx+step, 8760) - 1)
 
-                sr = pd.Series([typeDict[choice][bdtype][idx%step + i*step]
-                                for i in range(numPeriod)])
-                g2 = sr.plot(ax = axarr[1],
-                             title = '{0} with step {1}'.format(title,
-                                                                period))
+                building = typeDict[choice][bdtype]
+                if stat == "exact":
+                    sr = pd.Series([building[idx%step + i*step]
+                                    for i in range(numPeriod)])
+                    title = '{0} with step {1}'.format(title, period)
+                elif stat == "peak":
+                    sr = pd.Series([max(building[i*step:(i + 1)*step])
+                                    for i in range(numPeriod)])
+                    title = '{0} {1} '.format(stat, period+"ly", title)
+                elif stat == "total":
+                    sr = pd.Series([sum(building[i*step:(i + 1)*step])
+                                    for i in range(numPeriod)])
+                    title = '{0} {1} '.format(stat, period+"ly", title)
+                elif stat == "average":
+                    def getAve(lst):
+                        return sum(lst)/len(lst)
+                    sr = pd.Series([getAve(building[i*step:(i + 1)*step])
+                                    for i in range(numPeriod)])
+                    title = '{0} {1} {2}'.format(stat, period+"ly", title)
+                g2 = sr.plot(ax = axarr[1],title = title)
                 g2.set_xlim(0, numPeriod - 1)
                 g2.axvline(idx//step, color = 'red', linestyle='--')
                 g2.annotate('current', xy = (idx//step, sr[idx//step]))
@@ -416,30 +470,6 @@ for i in range(12):
     monthTick.create_text(26 + w_slider/12*i, 7, text = monthList[i],
                           font = nm_font, fill = font_color)
 
-# check button
-'''
-clearButton = Button(master, width = 5, text = 'clear', command =
-                     clearSelect)
-clearButton.grid(row = row_button_0, column = col_button_0 + 5)
-'''
-
-
-'''
-ckbuttonList = [[{'text':'3d', 'var':is3d}], []]
-rowcount = 0
-col_ckbutton_0 = col_button_0 + len(buttonList[0])
-for row in ckbuttonList:
-    buttoncount = 0
-    for button in row:
-        button = Checkbutton(master, text = button['text'], variable =
-                             button['var'], width = w_ckbutton, font =
-                             bd_font, fg = font_color, anchor = W)
-        button.grid(row = row_button_0 + rowcount, column =
-                    col_ckbutton_0 + buttoncount, rowspan =
-                    h_span_button, columnspan = w_span_button)
-        buttoncount += 1
-    rowcount += 1
-'''
 optbuttonList = [{'opt': ['single', 'group', 'community'],
                   'var':master.numVar},
                  {'opt': ['2D', '3D'], 'var' : master.dimVar},
@@ -452,7 +482,9 @@ for item in optbuttonList:
     opt.grid(row = row_button_0, column = col_opt_0 + count, rowspan = h_span_button, columnspan = w_span_button, sticky = "ew")
     count += 1
 optbuttonList = [{'opt': ['heat', 'cool', 'recover', 'space heat',
-                          'electricity'], 'var':master.typeVar}]
+                          'electricity'], 'var':master.typeVar},
+                 {'opt': ['exact', 'average', 'peak', 'total'],
+                  'var':master.statVar}]
 count = 0
 for item in optbuttonList:
     opt = OptionMenu(master, item['var'], *item['opt'])

@@ -69,6 +69,21 @@ def colorRamp_2d(num_points, rgb_origin, rgb_x, rgb_y):
     arr = [[rgb2hex(x[0], x[1], x[2]) for x in y] for y in arr]
     return arr
 
+def colorRamp_1d(num_points, rgb_0, rgb_t):
+    arr = colorInterp(num_points, rgb_0, rgb_t)
+    arr = [rgb2hex(x[0], x[1], x[2]) for x in arr]
+    return arr
+
+def test_colorRamp_1d():
+    num_points = 7
+    rgb_0 = [255, 255, 255]
+    rgb_t = [255, 0, 0]
+    x = colorRamp_1d(num_points, rgb_0, rgb_t)
+    for j in range(num_points):
+        f = Canvas(master, width = 50, height = 50)
+        f.create_rectangle(0, 0, 50, 50, fill = x[j])
+        f.grid(row = 0, column = j)
+
 def test_colorRamp_2d():
     num_points = 7
     ori_color = [255, 255, 255]
@@ -238,6 +253,7 @@ def data2breakpoints(cate, method, topic):
 
 import util_loadData as ld
 import csv
+
 def writeColor(topic, method, category, dirname, istocga, length=None):
     (breakpt_heat, breakpt_cool, x) = data2breakpoints(category,
                                                        "quantile", topic)
@@ -248,17 +264,23 @@ def writeColor(topic, method, category, dirname, istocga, length=None):
         coolDict = allDict["Cooling:Electricity"]
         colorGrid = colorRamp_2d(category, [255, 255, 255],
                                  [255, 0, 0], [0, 0, 255])
+        colorHeat = colorRamp_1d(category, [255, 255, 255], [255, 0, 0])
+        colorCool = colorRamp_1d(category, [255, 255, 255], [0, 0, 255])
     else:
         heatDict = allDict["Heating"]
         coolDict = allDict["Electricity:Facility"]
         colorGrid = colorRamp_2d(category, [255, 255, 255],
                                  [255, 0, 0], [0, 255, 0])
+        colorHeat = colorRamp_1d(category, [255, 255, 255], [255, 0, 0])
+        colorCool = colorRamp_1d(category, [255, 255, 255], [0, 255, 0])
     countDict = ld.bdCountDict
 
 #   length = 20
     if length is None:
         length = 8760
     colorDict = {}
+    colorHeatDict = {}
+    colorCoolDict = {}
     for key in heatDict:
         # breakpoint calculated with "quantile" method cannot be used
         # to classify other data
@@ -266,11 +288,16 @@ def writeColor(topic, method, category, dirname, istocga, length=None):
             heat_class = ar.bucket(heatDict[key], breakpt_heat)
             cool_class = ar.bucket(coolDict[key], breakpt_cool)
             color_profile = []
+            color_pro_heat = []
+            color_pro_cool = []
             for i in range(length):
                 heatId = heat_class[i]
                 coolId = cool_class[i]
                 color_profile.append(colorGrid[coolId][heatId])
-            colorDict[key] = color_profile
+                color_pro_heat.append(colorHeat[heatId])
+                color_pro_cool.append(colorHeat[coolId])
+            colorHeatDict[key] = color_pro_heat
+            colorCoolDict[key] = color_pro_cool
     if not istocga:
         for key in colorDict:
             filename = dirname + key + topic + "Color.txt"
@@ -291,6 +318,38 @@ def writeColor(topic, method, category, dirname, istocga, length=None):
                 mywriter.writerow(mix)
 
                 mix = colorDict[key][half:]
+                mix[0] = key + "_02 = '" + mix[0]
+                mix[-1] = mix[-1] + "'"
+                mywriter.writerow(mix)
+                print("write to row: " + key)
+
+        filename = dirname + topic + "-heat-Color.txt"
+        with open (filename, "w") as wt:
+            mywriter = csv.writer(wt, delimiter=";")
+            for key in colorHeatDict:
+                # in classification, max value might not be encountered
+                mix = colorHeatDict[key][:half]
+                mix[0] = key + "_01 = '" + mix[0]
+                mix[-1] = mix[-1] + "'"
+                mywriter.writerow(mix)
+
+                mix = colorHeatDict[key][half:]
+                mix[0] = key + "_02 = '" + mix[0]
+                mix[-1] = mix[-1] + "'"
+                mywriter.writerow(mix)
+                print("write to row: " + key)
+
+        filename = dirname + topic + "-cool-Color.txt"
+        with open (filename, "w") as wt:
+            mywriter = csv.writer(wt, delimiter=";")
+            for key in colorCoolDict:
+                # in classification, max value might not be encountered
+                mix = colorHeatDict[key][:half]
+                mix[0] = key + "_01 = '" + mix[0]
+                mix[-1] = mix[-1] + "'"
+                mywriter.writerow(mix)
+
+                mix = colorCoolDict[key][half:]
                 mix[0] = key + "_02 = '" + mix[0]
                 mix[-1] = mix[-1] + "'"
                 mywriter.writerow(mix)
@@ -379,7 +438,9 @@ test_colorInterp()
 testReal_2d()
 testReal()
 test_colorRamp_2d()
+test_colorRamp_1d()
 createColorScheme(master, 7, 0, 0, 30, "quantile", "CHP")
 mainloop()
 '''
+#writeColor("energy recovery", "quantile", 7, "color/convert/", True)
 #writeColor("CHP", "quantile", 7, "color/convert/", True)
