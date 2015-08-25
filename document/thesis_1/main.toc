@@ -1,43 +1,28 @@
-\contentsline {chapter}{Contents}{i}{dummy.1}
-\contentsline {chapter}{List of Figures}{iii}{dummy.3}
-\contentsline {chapter}{List of Tables}{v}{dummy.5}
-\contentsline {chapter}{Abbreviations}{vi}{dummy.7}
-\contentsline {chapter}{Symbols}{vii}{dummy.10}
-\contentsline {chapter}{\numberline {1}Methodology}{1}{chapter.13}
-\contentsline {section}{\numberline {1.1}Overview}{1}{section.14}
-\contentsline {section}{\numberline {1.2}Input}{3}{section.20}
-\contentsline {subsection}{\numberline {1.2.1}Benchmark Models and Energy Data}{3}{subsection.21}
-\contentsline {subsubsection}{\numberline {1.2.1.1}Input for Identifing Energy Recovery Opportunities}{6}{subsubsection.25}
-\contentsline {subsubsection}{\numberline {1.2.1.2}Input for Sizing District Co-generation System}{8}{subsubsection.30}
-\contentsline {subsection}{\numberline {1.2.2}Simulation Data Analysis of the benchmark models}{9}{subsection.32}
-\contentsline {subsubsection}{\numberline {1.2.2.1}Single Output}{10}{subsubsection.34}
-\contentsline {subsubsection}{\numberline {1.2.2.2}Space Heating Demand vs. Space Cooling Demand}{14}{subsubsection.41}
-\contentsline {subsubsection}{\numberline {1.2.2.3}Heating Demand vs. Electricity Demand}{14}{subsubsection.44}
-\contentsline {subsubsection}{\numberline {1.2.2.4}Aggregated Demand Distribution}{15}{subsubsection.47}
-\contentsline {subsection}{\numberline {1.2.3}3D GIS Model Geometry}{20}{subsection.55}
-\contentsline {subsection}{\numberline {1.2.4}Aggregating Hourly Energy Data to 3D GIS Model}{22}{subsection.60}
-\contentsline {subsubsection}{\numberline {1.2.4.1}Comparing Different Approaches}{22}{subsubsection.61}
-\contentsline {subsubsection}{\numberline {1.2.4.2}Data Classification}{24}{subsubsection.66}
-\contentsline {section}{\numberline {1.3}Output Map Images}{25}{section.68}
-\contentsline {section}{\numberline {1.4}Interface Specification}{26}{section.69}
-\contentsline {subsection}{\numberline {1.4.1}User Definition}{26}{subsection.70}
-\contentsline {subsection}{\numberline {1.4.2}Goal Function}{27}{subsection.71}
-\contentsline {chapter}{\numberline {2}Interface Design}{28}{chapter.74}
-\contentsline {section}{\numberline {2.1}Overview}{28}{section.75}
-\contentsline {section}{\numberline {2.2}(Non-interactive) Map Animation}{29}{section.76}
-\contentsline {section}{\numberline {2.3}Interactive Dynamic Map Interface}{31}{section.79}
-\contentsline {subsection}{\numberline {2.3.1}General Layout}{31}{subsection.80}
-\contentsline {subsection}{\numberline {2.3.2}Main Display Window}{33}{subsection.83}
-\contentsline {subsection}{\numberline {2.3.3}Bivariate Map Legend}{34}{subsection.85}
-\contentsline {subsubsection}{\numberline {2.3.3.1}Symbol Chosen}{34}{subsubsection.86}
-\contentsline {subsection}{\numberline {2.3.4}Time Sliders and Navigation Buttons}{35}{subsection.89}
-\contentsline {subsection}{\numberline {2.3.5}Data Plot}{36}{subsection.90}
-\contentsline {subsubsection}{\numberline {2.3.5.1}Methods to Show Plot}{36}{subsubsection.91}
-\contentsline {subsubsection}{\numberline {2.3.5.2}Providing Temporal Context in Data Plot}{38}{subsubsection.99}
-\contentsline {section}{\numberline {2.4}Use Case Demonstrations}{40}{section.102}
-\contentsline {subsection}{\numberline {2.4.1}Use Case I: Identification of Energy Recovery Opportunity}{40}{subsection.103}
-\contentsline {subsection}{\numberline {2.4.2}Use Case II: Sizing CHP Plant}{44}{subsection.109}
-\contentsline {section}{\numberline {2.5}Implementation tools and strategy}{47}{section.118}
+\contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}
+\vspace {1em}
+\contentsline {chapter}{Abstract}{ii}{dummy.2}
+\vspace {1em}
+\contentsline {chapter}{Contents}{iii}{dummy.3}
+\contentsline {chapter}{List of Figures}{iv}{dummy.5}
+\contentsline {chapter}{List of Tables}{v}{dummy.7}
+\contentsline {chapter}{Abbreviations}{vi}{dummy.9}
+\contentsline {chapter}{Symbols}{vii}{dummy.12}
+\contentsline {chapter}{\numberline {1}Interface Design}{1}{chapter.15}
+\contentsline {section}{\numberline {1.1}Overview}{1}{section.16}
+\contentsline {section}{\numberline {1.2}(Non-interactive) Map Animation}{2}{section.17}
+\contentsline {section}{\numberline {1.3}Interactive Dynamic Map Interface}{6}{section.24}
+\contentsline {subsection}{\numberline {1.3.1}General Layout}{6}{subsection.25}
+\contentsline {subsection}{\numberline {1.3.2}Main Display Window}{7}{subsection.27}
+\contentsline {subsection}{\numberline {1.3.3}Bivariate Map Legend}{8}{subsection.29}
+\contentsline {subsubsection}{\numberline {1.3.3.1}Symbol Chosen}{8}{subsubsection.30}
+\contentsline {subsection}{\numberline {1.3.4}Time Sliders and Navigation Buttons}{10}{subsection.33}
+\contentsline {subsection}{\numberline {1.3.5}Data Plot}{11}{subsection.34}
+\contentsline {subsubsection}{\numberline {1.3.5.1}Methods to Show Plot}{11}{subsubsection.35}
+\contentsline {subsubsection}{\numberline {1.3.5.2}Providing Temporal Context in Data Plot}{13}{subsubsection.43}
+\contentsline {section}{\numberline {1.4}Use Case Demonstrations}{16}{section.46}
+\contentsline {subsection}{\numberline {1.4.1}Use Case I: Identification of Energy Recovery Opportunity}{16}{subsection.47}
+\contentsline {subsection}{\numberline {1.4.2}Use Case II: Sizing CHP Plant}{18}{subsection.51}
+\contentsline {section}{\numberline {1.5}Implementation tools and strategy}{18}{section.53}
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{49}{dummy.119}
+\contentsline {chapter}{Bibliography}{19}{dummy.54}

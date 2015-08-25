@@ -132,75 +132,7 @@ Each step will be explained in more details in the following session.
 
 \item{Deciding Data Encoding}
 
-  The first approach for representing energy information with color is
-  to encode it with a graduated color symbol from red to blue, with
-  red indicating low heating demand and blue indicating high heating
-  demand. Each color within this red-to-blue color scheme is
-  represented as a real number between 0 and 1 with 0 representing
-  pure red and 1 representing pure blue. The first approach to
-  calculate the corresponding color for each heating energy value is
-  to calculate the normalized distance between the current value and
-  the maximum value (\eref{eq:linear}).
-
-  \begin{equation}\label{eq:linear} 
-    {E_{current} – E_{max} \over E_{max}}
-  \end{equation}
-
-  $E_{current}$ is the energy consumption for the current time spot,
-  $E_{max}$ is the maximum energy consumption over the year. The
-  problem for this approach is that the color changing is not visible
-  enough as a result of a extremely right skewed energy data (with
-  each data point representing the hourly energy consumption of a
-  certain building in the community at a certain hour of a year)
-  distribution (\fref{fig:heatOri}).
-
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{heatOri.png}
-    \caption[Heating Demand Histogram of Conceptual City]{A histogram
-      of hourly energy consumption per building, for the 68 buildings
-      in the community}
-    \label{fig:heatOri}
-  \end{figure}
-
-  By directly applying this normalized color scheme, the color
-  distribution on a map will be very un-even, with most of the
-  buildings colored with the red color for most of the time.
-
-  Kolter and Ferreira has used discovered that the annual total energy
-  consumption of the 6500 buildings in Cambridge MA area follows a
-  ``log-normal'' distribution~\cite{Zico2011}. By applying similar log
-  scaling for the hourly heating energy data of the community, we
-  found that the hourly heating energy distribution also roughly
-  follows a normal distribution (\fref{fig:heatLog}). We apply log
-  scaling to make the distribution less skewed and calculate the color
-  from energy ($E_{current}$) as follows:
-
-  \begin{equation}\label{eq:log} 
-    {\ln(E_{current}) – \ln(E_{max}) \over \ln(E_{max})}
-  \end{equation}
-
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{heatLog.png}
-    \caption[Heating Demand of Conceptual City]{Heating Demand of
-      Conceptual City}
-    \label{fig:heatLog}
-  \end{figure}
-
-  \fref{fig:img0002} is one snapshot of the conceptual urban
-  environment model under the log scaled calculation method in
-  \eref{eq:log}.
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{img0002.png}
-    \caption[Animation Demo of the Color Calculation]{Animated
-      demonstration of the log-scaled dynamic energy heating demand
-      map}
-    \label{fig:img0002}
-    \href{http://www.armechxyj.com/energy-mapping.html/#colorAnime}{Click
-      here to go to the animation link}.
-  \end{figure}
+  Please refer to \sref{anime} for more detail.
 
 \item{Associating Rule Attribute with Object Attribute} 
 

@@ -1,0 +1,39 @@
+% Chapter 7
+
+\chapter{Findings and Discussion} % Main chapter title
+
+\label{Chapter7} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter 7. \emph{Findings and Discussion}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+"Findings and Discussion" section that describes your insights about
+energy mapping, data needed, challenges of data display, issues of
+showing the supply side, software limitations, etc. Your discussion of
+limitations (6.2) can go here.  This seems like a short list of
+limitations based on some of our discussions.  What about the
+differences between mapping largely developed areas versus someplace
+like Mellon Arena site?
+
+\section{Insight about energy mapping}
+\begin{itemize}
+\item insights about energy mapping
+\item data needed
+\end{itemize}
+\section{Limitations and Further Development}
+\begin{itemize}
+\item Need supply side information and more detailed demand side
+  information
+  \begin{itemize}
+  \item Renewable supply temporal information
+  \item Energy quality (exergy) information of the supply and demand
+    side
+  \end{itemize}
+\item Dependence on existing model
+  \begin{itemize}
+  \item User could not perform design and comparing the land use
+    design on community energy planning because the current
+    implementation relies on an existing modeling software for 3D
+    image generation.
+  \end{itemize}
+\end{itemize}

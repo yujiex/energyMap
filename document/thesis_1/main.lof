@@ -1,48 +1,18 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces General Work Flow}}{2}{figure.caption.19}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Heating Fuel}}{7}{figure.caption.28}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Heating:Gas Box Plot}}{10}{figure.caption.35}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Service Hot Water Box Plot}}{11}{figure.caption.36}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Comparing Heating:Gas and Space Heating}}{11}{figure.caption.37}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Heating:Electricity Box Plot}}{12}{figure.caption.38}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Cooling:Electricity Box Plot}}{13}{figure.caption.39}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Electricity:Facility Box Plot}}{13}{figure.caption.40}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Comparing Heating:Gas and Space Heating}}{14}{figure.caption.42}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Comparing Space Heating and Space Cooling Demand}}{14}{figure.caption.43}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Comparing Heating and Electricity Demand}}{15}{figure.caption.45}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Heat to Power Ratio Box Plot}}{15}{figure.caption.46}
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Gas Heating Demand Log}}{17}{figure.caption.48}
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Electricity Heating Demand Log}}{17}{figure.caption.49}
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Service Hot Water Demand Log}}{17}{figure.caption.50}
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Space Heating Demand Log}}{18}{figure.caption.51}
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Heating Demand Log}}{18}{figure.caption.52}
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Electricity Cooling Demand Log}}{18}{figure.caption.53}
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Electricity Demand Log}}{19}{figure.caption.54}
-\contentsline {figure}{\numberline {1.21}{\ignorespaces Building Type Topology}}{21}{figure.caption.58}
-\contentsline {figure}{\numberline {1.22}{\ignorespaces Conceptual Model Site Plan}}{22}{figure.caption.59}
-\contentsline {figure}{\numberline {1.23}{\ignorespaces ArcGIS Time Slider for Temperal Data Display\relax }}{23}{figure.caption.65}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Animated Map with Continues Encoding}}{30}{figure.caption.77}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Animated Map with Discrete Encoding}}{30}{figure.caption.78}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Dynamic Map Interface Layout\relax }}{32}{figure.caption.81}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Option Menu}}{32}{figure.caption.82}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Map Display of 2D and 3D}}{34}{figure.caption.84}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Bivariate Map Symbol Tested}}{35}{figure.caption.87}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Bivariate Map Legend}}{35}{figure.caption.88}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Single Plots of 16 Building Types}}{37}{figure.caption.94}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Community Plot}}{38}{figure.caption.95}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Show Plot for One Building}}{38}{figure.caption.97}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Show Plot for a Group of Buildings}}{39}{figure.caption.98}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Data Plot with Duration / Step of One Day}}{40}{figure.caption.100}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Data Plot with Different Duration / Step}}{40}{figure.caption.101}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Bi-Variate Color Ramp}}{41}{figure.caption.104}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Single Building Energy Recovery}}{42}{figure.caption.105}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Building Group Energy Recovery}}{43}{figure.caption.106}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Identify Buildings with High Cooling Demand}}{44}{figure.caption.107}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Calculate Energy Recovery Potential}}{44}{figure.caption.108}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Check Energy Demand}}{45}{figure.caption.112}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces See All Demand Plot}}{46}{figure.caption.113}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Plot Aggregated Demand}}{46}{figure.caption.114}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Legend for Heat and Power Map}}{47}{figure.caption.115}
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Interface for CHP Sizing}}{47}{figure.caption.116}
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Comparing Community Heating and Electricity Demand}}{48}{figure.caption.117}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Heating Demand Histogram of Conceptual City}}{4}{figure.caption.19}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Heating Demand of Conceptual City}}{4}{figure.caption.21}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Animation Demo of the Color Calculation}}{5}{figure.caption.22}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Dynamic Map Interface Layout\relax }}{6}{figure.caption.26}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Map Display of 2D and 3D}}{9}{figure.caption.28}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Bivariate Map Symbol Tested}}{10}{figure.caption.31}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Bivariate Map Legend}}{10}{figure.caption.32}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Single Plots of 16 Building Types}}{12}{figure.caption.38}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Community Plot}}{13}{figure.caption.39}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Show Plot for One Building}}{13}{figure.caption.41}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Show Plot for a Group of Buildings}}{14}{figure.caption.42}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Data Plot with Duration / Step of One Day}}{15}{figure.caption.44}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Data Plot with Different Duration / Step}}{15}{figure.caption.45}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Heating-Cooling Map Legend Illustration}}{16}{figure.caption.48}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Identify Buildings with High Cooling Demand}}{17}{figure.caption.49}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Calculate Energy Recovery Potential}}{17}{figure.caption.50}
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Comparing Community Heating and Electricity Demand}}{18}{figure.caption.52}

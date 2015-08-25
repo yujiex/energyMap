@@ -1,0 +1,22 @@
+Does your chosen audience for this application -- researchers --
+reflect the uses you identify for community energy maps?
+
+Differ shalini's work from henry's work.
+
+total heat of rejection = sum of compressor capacity + motor power
+
+add "the" to all building type name: the Large Hotel etc.
+
+explain how box plot influence mapping at the end of box plot analysis
+and before aggregate demand: 
+
+    how it suggest buildings that could
+    better be in close approximation buildings that are good for CHP base
+    load buildings that present challenges to CHP (peaky demand)
+    about the use of gas??
+
+section non-interactive map animation, what is the basis for your
+choices related to energy mapping?
+
+add more content to the "principles of 2D map design" after Bertin
+
