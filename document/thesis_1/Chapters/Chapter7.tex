@@ -7,39 +7,111 @@
 \lhead{Chapter 7. \emph{Findings and Discussion}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
-"Findings and Discussion" section that describes your insights about
-energy mapping, data needed, challenges of data display, issues of
-showing the supply side, software limitations, etc. Your discussion of
-limitations (6.2) can go here.  This seems like a short list of
-limitations based on some of our discussions.  What about the
-differences between mapping largely developed areas versus someplace
-like Mellon Arena site?
+\section{Insight of energy mapping with time information}
+The document presents an approach of implementing a dynamic energy map
+with a focus on visualization of high spatial-temporal energy demand
+data of single buildings, building groups and the whole
+community. 
 
-\section{Insight about energy mapping}
+In order to visualize the energy demand data to better convey the
+dynamic energy demand changing, a detailed analysis of the input
+demand data profile of each building type and the aggregated community
+was conducted in \sref{boxPlot}. From this analysis, we observed a
+great variation in the demand profile distribution between different
+building types and a strong skew of the energy demand profile of the
+whole community. Log scaling and data classification with the quantile
+method was adopted to cope with this skewed data distribution in the
+design of the conversion from energy demand to their color encoding.
+
+An interface is designed to visualize the 2D/3D map images that
+encodes energy demand information with a bivariate choropleth
+legend. A series of data plot functions accompany the map image
+display to provide quantitative information. The data plot provides
+different level of temporal and spatial aggregation method that serve
+more generic purpose of data analysis and visualization so that it
+suits the need of the target user group: researchers in energy related
+fields who have different research interests and focuses.
+
+% bookmark
+Through the dynamic energy map, many detailed spatial temporal energy
+demand pattern can be revealed:
 \begin{itemize}
-\item insights about energy mapping
-\item data needed
+\item The daily peak energy demand arrival time is different for
+  different building types
+\item The aggregation of peak demand is not a simple addition of peak
+  demand of the peak of each component building's peak demand
+\item The reject heat supply peak is different from the space heat
+  demand peak
+\item The heating and electricity demand for the community have very
+  different weekly demand behavior
 \end{itemize}
 \section{Limitations and Further Development}
-\begin{itemize}
-\item the break point is acquired with quantile classification method
-  discussed in \sref{dataClassification}. Further analysis of suitable
-  equipment sizing based break point would be added in future
-  development of the project.
+The current project presented a initial implementation of a dynamic
+energy map with the focus on spatial-temporal energy profile
+visualization. Due to limited time and resources, there are many to be
+realized in the next stage development:
 
-  \item Need supply side information and more detailed demand side
-    information
-  \begin{itemize}
-  \item Renewable supply temporal information
-  \item Energy quality (exergy) information of the supply and demand
-    side
-  \end{itemize}
-\item Dependence on existing model
-  \begin{itemize}
-  \item User could not perform design and comparing the land use
-    design on community energy planning because the current
-    implementation relies on an existing modeling software for 3D
-    image generation.
-  \item Not fully control over data classification and legend selection
-  \end{itemize}
+\begin{itemize}
+\item Input data
+
+  Community level energy simulation is not used in the energy profile
+  generation. This leads to simplified assumptions of micro-climate in
+  an urban environment. The building height and urban density could
+  influence the exterior shading and could influence buildings'
+  heating and cooling demand. The urban environment configurations of
+  urban density and the spatial distribution of building height could
+  potentially be conveyed with the dynamic energy map with 3D map
+  sequences. However as a result of the stand-alone assumption, this
+  layer of information is not demonstrated in the dynamic energy map
+  in the current project.
+
+  The current project focuses mainly on the demand side information,
+  except that the cooling-induced reject heat is calculated. One of
+  the major goal of energy mapping is to make the energy supply meet
+  the energy demand. In order to fully realize the function of an
+  energy map, adding supply side information is crutial. In the
+  further development of the project, supply side information
+  especially renewable energy supply assessment should be added to the
+  dynamic energy map. This could pose new challenges of map design and
+  data visualization as a result of the added layers of
+  information. Further investment of proper spatial-temporal data
+  visualization method could also become another topic of the next
+  stage development of the project.
+
+  The matching of energy demand and supply include not only matching
+  in energy quantity but also energy quality in terms of exergy
+  ~\cite{Dobbelsteen2013}. The current map interface does not contain
+  exergy information. Further development could add exergy information
+  in order to facilitate the design of energy cascading.
+
+  When 
+
+\item Visualization
+
+  In the data classification step, the break point is acquired with
+  quantile classification method as is discussed in
+  \sref{dataClassification}. Further analysis of building science
+  context based break point selection, such as critical value for
+  mechanical equipment sizing or minimum recoverable heat considering
+  transmission loss etc., should be taken into consideration in the
+  next stage development of the project.
+  
+\item Data Sharing
+  
+  As is envisioned in the study of Baird et al.\ , an on-line platform
+  is needed to facilitate data access, model sharing and advanced
+  analysis~\cite{baird2014}. The current implementation of the dynamic
+  energy map is a stand-alone tool. Bringing the current dynamic map
+  to be an online map could be the next stage development.
+
+\item Technical issue
+
+  As a result of the dependence on an existing modeling software for
+  image generation, user could not create community design and compare
+  design alternatives on the current interface; user control over data
+  classification and legend selection are not realized either. To
+  solve this problem, a 3D model importing and rendering function
+  should be added to the current map to facilitate the
+  performance-based community energy planning.
+
 \end{itemize}

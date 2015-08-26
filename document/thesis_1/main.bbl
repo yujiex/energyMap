@@ -1,9 +1,406 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{74}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{NASA}(2015)]{NASA2015}
+{NASA}.
+\newblock Climate change: How do we know?
+\newblock web, August 2015.
+\newblock \url{http://climate.nasa.gov/evidence/}.
+
+\bibitem[{Ecotricity}(2015)]{Ecotricity2015}
+{Ecotricity}.
+\newblock The end of fossil fuels.
+\newblock web, August 2015.
+\newblock
+  \url{https://www.ecotricity.co.uk/our-green-energy/energy-independence/the-end-of-fossil-fuels}.
+
+\bibitem[Kathryn(2015)]{Kathryn2015}
+Kathryn.
+\newblock When will fossil fuels run out.
+\newblock web, August 2015.
+\newblock
+  \url{http://www.carboncounted.co.uk/when-will-fossil-fuels-run-out.html}.
+
+\bibitem[{Committee on Climate Change}(2015)]{carbonBudgetUK}
+{Committee on Climate Change}.
+\newblock Carbon budgets and targets.
+\newblock web, August 2015.
+\newblock
+  \url{https://www.theccc.org.uk/tackling-climate-change/reducing-carbon-emissions/carbon-budgets-and-targets/}.
+
+\bibitem[{Alberta Association, Canadian Institute of
+  Planners}(2009)]{aacip2009}
+{Alberta Association, Canadian Institute of Planners}.
+\newblock Responding to the energy challenge of canadian communities.
+\newblock \emph{Planning Journal}, pages 30--33, July 2009.
+
+\bibitem[Damassa et~al.(2014)Damassa, Ge, and Fransen]{ghgReduce2014}
+Thomas Damassa, Mengpin Ge, and Taryn Fransen.
+\newblock The u.s. greenhouse gas reduction targets.
+\newblock web, September 2014.
+\newblock
+  \url{http://www.wri.org/publication/us-greenhouse-gas-reduction-targets}.
+
+\bibitem[Jaccard et~al.(1997)Jaccard, Failing, and Berry]{Jaccard19971065}
+Mark Jaccard, Lee Failing, and Trent Berry.
+\newblock From equipment to infrastructure: community energy management and
+  greenhouse gas emission reduction.
+\newblock \emph{Energy Policy}, 25\penalty0 (13):\penalty0 1065 -- 1074, 1997.
+\newblock ISSN 0301-4215.
+\newblock \doi{http://dx.doi.org/10.1016/S0301-4215(97)00091-8}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0301421597000918}.
+
+\bibitem[Denis and Parker(2009)]{StDenis20092088}
+Genevieve~St. Denis and Paul Parker.
+\newblock Community energy planning in canada: The role of renewable energy.
+\newblock \emph{Renewable and Sustainable Energy Reviews}, 13\penalty0
+  (8):\penalty0 2088 -- 2095, 2009.
+\newblock ISSN 1364-0321.
+\newblock \doi{http://dx.doi.org/10.1016/j.rser.2008.09.030}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S1364032108001767}.
+
+\bibitem[Baird et~al.(2014)Baird, Ramesh, Johnstone, and Lam]{baird2014}
+Nina Baird, Shalini Ramesh, Henry Johnstone, and Khee~Poh Lam.
+\newblock \emph{Building information modeling: BIM in current and future
+  practice}, chapter~10.
+\newblock Wiley, Hoboken, New Jersey, 2014.
+
+\bibitem[{Mayor of London}(2015{\natexlab{a}})]{londonHeatMap}
+{Mayor of London}.
+\newblock London heat map.
+\newblock web, August 2015{\natexlab{a}}.
+\newblock \url{http://www.londonheatmap.org.uk/Content/home.aspx}.
+
+\bibitem[Broersma et~al.(2013)Broersma, Fremouw, and
+  Dobbelsteen]{Dobbelsteen2013}
+Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
+\newblock Energy potential mapping: Visualising energy characteristics for the
+  exergetic optimisation of the built environment.
+\newblock \emph{Entropy}, 15\penalty0 (2):\penalty0 490, 2013.
+\newblock ISSN 1099-4300.
+\newblock \doi{10.3390/e15020490}.
+\newblock URL \url{http://www.mdpi.com/1099-4300/15/2/490}.
+
+\bibitem[{Esri}(2013)]{esriGeodesign2012}
+{Esri}.
+\newblock Geodesign in practice: Designing a better world.
+\newblock Technical report, Esri, August 2013.
+
+\bibitem[Esri(2015)]{cityEngine2015}
+Esri.
+\newblock City engine.
+\newblock web, June 2015.
+\newblock \url{http://www.esri.com/software/cityengine}.
+
+\bibitem[Ramesh et~al.(2013)Ramesh, Lam, Baird, and Johnstone]{Ramesh2013}
+Shalini Ramesh, Khee~Poh Lam, Nina Baird, and Henry Johnstone.
+\newblock Urban energy information modelling: An interactive platform to
+  communicate simulationbased high fidelity building energy analysis using
+  geographical information systems (gis).
+\newblock In \emph{13th Conference of International Building Performance
+  Simulation Association}, pages 1136--1143, Chambéry, France,, August 2013.
+
+\bibitem[{International District Energy Association}(2005)]{IDEA2005}
+{International District Energy Association}.
+\newblock Idea report: The district energy industry.
+\newblock Technical report, IDEA, IDEA Report: The District Energy Industry,
+  August 2005.
+
+\bibitem[of~Energy Efficiency \&
+  Renewable~Energy(2015{\natexlab{a}})]{DOEprototype}
+Office of~Energy Efficiency \& Renewable~Energy.
+\newblock Commercial prototype building models.
+\newblock web, August 2015{\natexlab{a}}.
+\newblock
+  \url{https://www.energycodes.gov/commercial-prototype-building-models}.
+
+\bibitem[{Ove Arup \& Partners Ltd}(2012)]{lhmreport2012}
+{Ove Arup \& Partners Ltd}.
+\newblock Heat mapping study - london borough of barking and dagenham.
+\newblock Technical report, {Ove Arup \& Partners Ltd}, London, UK, March 2012.
+
+\bibitem[{Department of Energy \& Climate Change}(2011)]{decentralHeatMap2011}
+{Department of Energy \& Climate Change}.
+\newblock Decentralised energy masterplanning.
+\newblock Technical report, DECC, London, UK, September 2011.
+
+\bibitem[{Clarke Energy}(2015)]{cchp2015}
+{Clarke Energy}.
+\newblock Trigeneration / cchp.
+\newblock web, July 2015.
+\newblock \url{https://www.clarke-energy.com/gas-engines/trigeneration/}.
+
+\bibitem[King(2012)]{IDEA2012}
+Michael King.
+\newblock Community energy: Planning, development and delivery.
+\newblock Technical report, IDEA, 2012.
+
+\bibitem[{World Future Society}(2015)]{wasteHeatEnviron}
+{World Future Society}.
+\newblock "waste heat" a potential threat to the climate.
+\newblock web, July 2015.
+\newblock \url{http://www.wfs.org/Oct-Nov09/Env1page.htm}.
+
+\bibitem[Wikipedia(2015)]{exergyWiki2015}
+Wikipedia.
+\newblock Exergy.
+\newblock web, August 2015.
+\newblock
+  \url{https://en.wikipedia.org/wiki/Exergy#Applications_in_sustainability}.
+
+\bibitem[İbrahim Tol and Svendsen(2012)]{Tol2012551}
+Hakan İbrahim Tol and Svend Svendsen.
+\newblock A comparative study on substation types and network layouts in
+  connection with low-energy district heating systems.
+\newblock \emph{Energy Conversion and Management}, 64:\penalty0 551 -- 561,
+  2012.
+\newblock ISSN 0196-8904.
+\newblock \doi{http://dx.doi.org/10.1016/j.enconman.2012.04.022}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0196890412002622}.
+\newblock \{IREC\} 2011, The International Renewable Energy Congress.
+
+\bibitem[{Veolia}(2015)]{veolia2014}
+{Veolia}.
+\newblock Sheffield erf virtual tour.
+\newblock web, July 2015.
+\newblock \url{http://veolia.co.uk/sheffield/about-us/about-us/videos}.
+
+\bibitem[{Wikipedia}(2015{\natexlab{a}})]{HeatmapWiki}
+{Wikipedia}.
+\newblock Heat map.
+\newblock web, July 2015{\natexlab{a}}.
+\newblock \url{https://en.wikipedia.org/wiki/Heat_map}.
+
+\bibitem[{Department of Energy and Climate
+  Change}(2015{\natexlab{a}})]{heatMap2015}
+{Department of Energy and Climate Change}.
+\newblock About the national heat map.
+\newblock web, June 2015{\natexlab{a}}.
+\newblock
+  \url{http://tools.decc.gov.uk/en/content/cms/heatmap/about\_map/about\_map.aspx}.
+
+\bibitem[{Scottish Government}(2015)]{scotlandHeatmap}
+{Scottish Government}.
+\newblock Scotland heat map.
+\newblock web, August 2015.
+\newblock \url{http://heatmap.scotland.gov.uk/}.
+
+\bibitem[Finney et~al.(2012)Finney, Sharifi, Swithenbank, Nolan, White, and
+  Ogden]{Finney2012165}
+Karen~N. Finney, Vida~N. Sharifi, Jim Swithenbank, Andy Nolan, Simon White, and
+  Simon Ogden.
+\newblock Developments to an existing city-wide district energy network –
+  part i: Identification of potential expansions using heat mapping.
+\newblock \emph{Energy Conversion and Management}, 62\penalty0 (0):\penalty0
+  165 -- 175, 2012.
+\newblock ISSN 0196-8904.
+\newblock \doi{http://dx.doi.org/10.1016/j.enconman.2012.03.006}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S019689041200132X}.
+
+\bibitem[{Sustainable CUNY}(2015)]{NYCSolarMap}
+{Sustainable CUNY}.
+\newblock Nyc solar map, July 2015.
+\newblock \url{http://www.nycsolarmap.com/}.
+
+\bibitem[{City of Minneapolis Sustainability}(2015)]{findSolar2015}
+{City of Minneapolis Sustainability}.
+\newblock Find my solar suitability, August 2015.
+\newblock
+  \url{http://cityoflakes.maps.arcgis.com/apps/PublicInformation/index.html?appid=80f875cef4104f788e635a9bfeb62d3c}.
+
+\bibitem[{Mayor of London}(2015{\natexlab{b}})]{londonHeatMapMap}
+{Mayor of London}.
+\newblock London heat map.
+\newblock web, August 2015{\natexlab{b}}.
+\newblock \url{http://www.londonheatmap.org.uk/Mapping/}.
+
+\bibitem[{Department of Energy and Climate Change}(2013)]{heatMapLocal2012}
+{Department of Energy and Climate Change}.
+\newblock National heat map, guide to point data for local authorities.
+\newblock web, August 2013.
+\newblock
+  \url{https://www.cse.org.uk/downloads/file/national_heat_map_data_guide.pdf}.
+
+\bibitem[Redgrove(2012)]{heatMap2012}
+Zoe Redgrove.
+\newblock Using the national heat map.
+\newblock web, October 2012.
+\newblock \url{http://tools.decc.gov.uk/nationalheatmap/}.
+
+\bibitem[{Department of Energy and Climate
+  Change}(2015{\natexlab{b}})]{waterHeatMap}
+{Department of Energy and Climate Change}.
+\newblock Cold water could heat one million homes.
+\newblock web, March 2015{\natexlab{b}}.
+\newblock
+  \url{https://www.gov.uk/government/news/cold-water-could-heat-one-million-homes}.
+
+\bibitem[Diaz et~al.(2015{\natexlab{a}})Diaz, Gray, MacFadyen, Singh, and
+  Suresh]{Diaz2013}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Towards smart cities: Energy mapping to identify opportunities for
+  future networks.
+\newblock web, July 2015{\natexlab{a}}.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/index.html}.
+
+\bibitem[{ESRU, University of Strathclyde}(2015)]{HEMesru2015}
+{ESRU, University of Strathclyde}.
+\newblock Hem training course.
+\newblock web, August 2015.
+\newblock \url{http://www.esru.strath.ac.uk/Courseware/Edem/content.htm}.
+
+\bibitem[Diaz et~al.(2015{\natexlab{b}})Diaz, Gray, MacFadyen, Singh, and
+  Suresh]{Diaz2013campus}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Campus resolution.
+\newblock web, July 2015{\natexlab{b}}.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/campusresolution.html}.
+
+\bibitem[{Wikipedia}(2015{\natexlab{b}})]{microCHP}
+{Wikipedia}.
+\newblock Micro combined heat and power.
+\newblock web, July 2015{\natexlab{b}}.
+\newblock \url{https://en.wikipedia.org/wiki/Micro_combined_heat_and_power}.
+
+\bibitem[Diaz et~al.(2015{\natexlab{c}})Diaz, Gray, MacFadyen, Singh, and
+  Suresh]{Diaz2013com}
+Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
+  Nikithaa Suresh.
+\newblock Community resolution.
+\newblock web, July 2015{\natexlab{c}}.
+\newblock
+  \url{http://www.esru.strath.ac.uk/EandE/Web_sites/12-13/SmartCities/communityresolution.html}.
+
+\bibitem[{Python Software Foundation}(2015)]{python2015}
+{Python Software Foundation}.
+\newblock Python.
+\newblock web, August 2015.
+\newblock \url{https://www.python.org/}.
+
+\bibitem[{Tkinter}(2014)]{Tkinter2014}
+{Tkinter}.
+\newblock Tkinter.
+\newblock web, August 2014.
+\newblock \url{https://wiki.python.org/moin/TkInter}.
+
+\bibitem[{pandas}(2015)]{pandas2015}
+{pandas}.
+\newblock pandas.
+\newblock web, August 2015.
+\newblock \url{http://pandas.pydata.org/}.
+
+\bibitem[{NumPy Developers}(2015)]{NumPy2015}
+{NumPy Developers}.
+\newblock Numpy.
+\newblock web, August 2015.
+\newblock \url{http://www.numpy.org/}.
+
+\bibitem[{matplotlib development team}(2015)]{matplotlib2015}
+{matplotlib development team}.
+\newblock matplotlib.
+\newblock web, June 2015.
+\newblock \url{http://matplotlib.org/}.
+
+\bibitem[{\^{y}hat}(2015)]{ggplot2015}
+{\^{y}hat}.
+\newblock ggplot from \^{y}hat.
+\newblock web, August 2015.
+\newblock \url{http://ggplot.yhathq.com/}.
+
+\bibitem[{ImageMagick Studio}(2015)]{ImageMagick2015}
+{ImageMagick Studio}.
+\newblock Imagemagick.
+\newblock web, August 2015.
+\newblock \url{http://www.imagemagick.org/script/index.php}.
+
+\bibitem[{FFmpeg team}(2015)]{FFmpeg2015}
+{FFmpeg team}.
+\newblock Ffmpeg.
+\newblock web, August 2015.
+\newblock \url{https://www.ffmpeg.org/}.
+
+\bibitem[of~Energy Efficiency \& Renewable~Energy(2015{\natexlab{b}})]{DOE2015}
+Office of~Energy Efficiency \& Renewable~Energy.
+\newblock Commercial reference buildings.
+\newblock web, June 2015{\natexlab{b}}.
+\newblock
+  \url{http://energy.gov/eere/buildings/commercial-reference-buildings}.
+
+\bibitem[Bhatia(2015)]{Bhatia2015}
+A.~Bhatia.
+\newblock Heat rejection options in hvac systems.
+\newblock University Lecture, 2015.
+
+\bibitem[of~Energy Efficiency \&
+  Renewable~Energy(2015{\natexlab{c}})]{coolingTower2015}
+Office of~Energy Efficiency \& Renewable~Energy.
+\newblock How cooling towers work.
+\newblock web, August 2015{\natexlab{c}}.
+\newblock
+  \url{http://business.edf.org/projects/featured/water-efficiency-and-att/how-cooling-towers-work/}.
+
+\bibitem[{DOE}(2015)]{EnergyPlus2015}
+{DOE}.
+\newblock Energyplus energy simulation software.
+\newblock web, April 2015.
+\newblock \url{http://apps1.eere.energy.gov/buildings/energyplus/}.
+
+\bibitem[{Carbon Trust}(2010)]{introCHP2010}
+{Carbon Trust}.
+\newblock Introducing combined heat and power.
+\newblock Technical report, Carbon Trust, UK, September 2010.
+
+\bibitem[{Esri}(2015)]{Esri2015}
+{Esri}.
+\newblock esri.
+\newblock web, August 2015.
+\newblock \url{http://www.esri.com/}.
+
+\bibitem[Esri(2015{\natexlab{a}})]{ArcGIS2015}
+Esri.
+\newblock Arcgis.
+\newblock web, June 2015{\natexlab{a}}.
+\newblock \url{http://www.arcgis.com/features/}.
+
+\bibitem[Resch et~al.(2014)Resch, Wohlfahrt, and Wosniok]{Resch2014}
+Bernd Resch, Ralf Wohlfahrt, and Christoph Wosniok.
+\newblock Web-based 4d visualization of marine geo-data using webgl.
+\newblock \emph{Cartography and Geographic Information Science}, 41\penalty0
+  (3):\penalty0 235--247, 2014.
+\newblock \doi{10.1080/15230406.2014.901901}.
+\newblock URL \url{http://dx.doi.org/10.1080/15230406.2014.901901}.
+
+\bibitem[{Esri}(2012{\natexlab{a}})]{GIS_Jenks2014}
+{Esri}.
+\newblock Classifying numerical fields for graduated symbology.
+\newblock web, October 2012{\natexlab{a}}.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
+
+\bibitem[Barton et~al.(2008)Barton, Aros, Landa, and Cepicky]{GRASSGIS2008}
+Michael Barton, Daniel~Cavelo Aros, Martin Landa, and Jachym Cepicky.
+\newblock d.vect.thematic - displays thematic vector map.
+\newblock web, August 2008.
+\newblock \url{http://grass.osgeo.org/grass64/manuals/d.vect.thematic.html}.
+
+\bibitem[del Cerro~Murciano(2011)]{gvGIS2011}
+Joaquin~Jose del Cerro~Murciano.
+\newblock gvsig desktop 1.11 user manual (pdf version).
+\newblock web, December 2011.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
 
 \bibitem[Dorling and Openshaw(1992)]{Dorling1992}
 D.~Dorling and S.~Openshaw.
@@ -51,48 +448,68 @@ Richard Lowe.
 \newblock \doi{10.1007/978-3-540-25931-2_38}.
 \newblock URL \url{http://dx.doi.org/10.1007/978-3-540-25931-2_38}.
 
-\bibitem[Resch et~al.(2014)Resch, Wohlfahrt, and Wosniok]{Resch2014}
-Bernd Resch, Ralf Wohlfahrt, and Christoph Wosniok.
-\newblock Web-based 4d visualization of marine geo-data using webgl.
-\newblock \emph{Cartography and Geographic Information Science}, 41\penalty0
-  (3):\penalty0 235--247, 2014.
-\newblock \doi{10.1080/15230406.2014.901901}.
-\newblock URL \url{http://dx.doi.org/10.1080/15230406.2014.901901}.
+\bibitem[Kolter and Jr.(2011)]{Zico2011}
+J.~Zico Kolter and Joseph~Ferreira Jr.
+\newblock A large-scale study on predicting and contextualizing building energy
+  usage.
+\newblock In \emph{Proceedings of the Twenty-Fifth AAAI Conference on
+  Artificial Intelligence}, pages 7--11, San Francisco, California, USA, August
+  2011. AAAI Press.
 
-\bibitem[Dong et~al.(2012)Dong, Ran, and Wang]{doi:10.1559/1523040639298}
-Weihua Dong, Jing Ran, and Jue Wang.
-\newblock Effectiveness and efficiency of map symbols for dynamic geographic
-  information visualization.
-\newblock \emph{Cartography and Geographic Information Science}, 39\penalty0
-  (2):\penalty0 98--106, 2012.
-\newblock \doi{10.1559/1523040639298}.
-\newblock URL \url{http://dx.doi.org/10.1559/1523040639298}.
+\bibitem[Bertin(1983)]{Bertin1983}
+Jacques Bertin.
+\newblock \emph{Semiology of graphics: Diagrams, networks, maps}.
+\newblock University of Wisconsin Press, Madison, Wis, 1983.
 
 \bibitem[Tufte(1983)]{Tufte83}
 Edward~R. Tufte.
 \newblock \emph{The visual display of quantitative information}.
 \newblock Graphics Press, Cheshire, Conn. (Box 430, Cheshire 06410), 1983.
 
-\bibitem[Broersma et~al.(2013)Broersma, Fremouw, and
-  Dobbelsteen]{Dobbelsteen2013}
-Siebe Broersma, Michiel Fremouw, and Andy van~den Dobbelsteen.
-\newblock Energy potential mapping: Visualising energy characteristics for the
-  exergetic optimisation of the built environment.
-\newblock \emph{Entropy}, 15\penalty0 (2):\penalty0 490, 2013.
-\newblock ISSN 1099-4300.
-\newblock \doi{10.3390/e15020490}.
-\newblock URL \url{http://www.mdpi.com/1099-4300/15/2/490}.
-
 \bibitem[Elmer(2012)]{Elmer2012}
 Martin~E. Elmer.
 \newblock Symbol considerations for bivariate thematic mapping.
 \newblock diploma thesis, University of Wisconsin-Madison, 2012.
 
-\bibitem[{Esri}(2012)]{GIS_Jenks2014}
-{Esri}.
-\newblock Classifying numerical fields for graduated symbology.
-\newblock web, October 2012.
+\bibitem[{Open Steet Map contriutors}(2015)]{OSM2015}
+{Open Steet Map contriutors}.
+\newblock Open steet map.
+\newblock web, July 2015.
+\newblock \url{http://www.openstreetmap.org/#map=16/40.4431/-79.9430}.
+
+\bibitem[{Pennsylvania Spatial Data Access}(2015)]{PASDAImagery2013}
+{Pennsylvania Spatial Data Access}.
+\newblock Allegheny county imagery 2013.
+\newblock web, July 2015.
 \newblock
-  \url{http://resources.arcgis.com/en/help/main/10.1/index.html\#//00s50000001r000000}.
+  \url{http://www.pasda.psu.edu/uci/MetadataDisplay.aspx?entry=PASDA&file=AlleghenyCountyImagery2013.xml&dataset=1242}.
+
+\bibitem[Esri(2015{\natexlab{b}})]{cityEngineAttConect2015}
+Esri.
+\newblock Attributes, sources and connections.
+\newblock web, August 2015{\natexlab{b}}.
+\newblock
+  \url{http://cehelp.esri.com/help/index.jsp?topic=/com.procedural.cityengine.help/html/manual/cga/basics/toc.html}.
+
+\bibitem[Esri(2015{\natexlab{c}})]{arcScene2015}
+Esri.
+\newblock 3d analyst and arcscene.
+\newblock web, August 2015{\natexlab{c}}.
+\newblock
+  \url{http://resources.arcgis.com/en/help/main/10.1/index.html#//00q8000000p0000000}.
+
+\bibitem[{Esri}(2014)]{GISjoin2014}
+{Esri}.
+\newblock About joining and relating tables.
+\newblock web, March 2014.
+\newblock
+  \url{http://resources.arcgis.com/EN/HELP/MAIN/10.1/index.html#//005s0000002n000000}.
+
+\bibitem[{Esri}(2012{\natexlab{b}})]{queryTable2012}
+{Esri}.
+\newblock A quick tip on performing a 1:m join.
+\newblock web, May 2012{\natexlab{b}}.
+\newblock
+  \url{http://blogs.esri.com/esri/supportcenter/2012/05/10/a-quick-tip-on-performing-a-1m-join/}.
 
 \end{thebibliography}

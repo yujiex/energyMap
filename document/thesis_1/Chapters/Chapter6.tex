@@ -467,7 +467,7 @@ map interface:
   print. Each new click of a building footprint will add a new copy of
   that building to the selection set. The selection set can be cleared
   by pressing the ``clear'' button. If ``single'' option is chosen in
-  the option menu before clicking on a building's foot print, a data
+  the option menu before clicking on a building's footprint, a data
   plot will be created for the building the viewer just clicked on
   (\fref{fig:clickSingle}). If ``group'' is chosen in the option menu,
   each click of a building's footprint will create a data plot for the
@@ -604,11 +604,10 @@ demonstration.
   \label{fig:legend2d}
 \end{figure}
 
-%%bookmark
 With the dynamic energy map, the buildings colored in one of the
 colors in the bottom rows of the legend are buildings with high
-cooling demand. With the dynamic energy map, one can identify
-the potential reject heat suppliers and consumers over time
+cooling demand. With the dynamic energy map, users can identify the
+potential reject heat suppliers and consumers over time
 (\fref{fig:highCooling}).
 
 \begin{figure}[h!]
@@ -622,8 +621,30 @@ the potential reject heat suppliers and consumers over time
 \end{figure}
 
 Users can then calculate the ``energy recovery potential'' in the
-dynamic energy map with a specified time duration and step
-(\fref{fig:ERP}).
+dynamic energy map with a specified time duration and step.  In the
+example of \fref{fig:ERP}, users identify the Large Office and the
+Large Hotel as reject heat suppliers and calculated their aggregated
+energy recovery potential for the 16th week of the year in the graph
+on the left. Then they calculated the space heating energy demand of
+the group of surrounding buildings of reject heat suppliers: two First
+Service Restaurants, two Midrise Apartment and one Small Hotel. 
+
+By comparing the two graphs, users can see that the peak of the energy
+recovery potential is about four times of the peak of the space
+heating demand of the group of surrounding buildings. They can also
+observe that there are two peaks for space heating demand of the
+surrounding building group but only one peak for the energy recovery
+potential. There are some difference in the weekly pattern of the
+reject heat supply and the space heating demand: the last two days of
+the week has very little reject heat but the space heating demand is
+relatively high. We can also see that the peak of reject heat does not
+occur at the same time with the space heating demand peak: in the
+2800th hour, reject heat (in the graph on the left) reaches its peak
+while space heating demand on the right is zero. With the dynamic
+energy map, users can identify complicated non-coincidence in the
+supply and demand of reject heat. This information could help users
+conduct more detailed heat recovery strategies and assess the thermal
+energy storage devices.
 
 \begin{figure}[h!]
   \centering
@@ -638,28 +659,149 @@ dynamic energy map with a specified time duration and step
 \end{figure}
 
 \subsection{Use Case II: Sizing CHP Plant}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.7\linewidth]{heatPowerDemand.png}
-  \caption[Comparing Community Heating and Electricity Demand]{In this
-    example, the users compare the week-wise heating and electricity
-    demand}
-  \label{fig:heatPowerDemand}
-\end{figure}
+With the Dynamic Energy Map that depict the spatial temporal load
+variation, one will idealy be able to 1) idendify anchor load
+buildings, 2) conduct better design of local load balancing, 3) size
+the co-generation CHP plant
 
-\section {Implementation tools and strategy}
-The software or platform involved in the project include EnergyPlus
-for building simulation, CityEngine for 3D modeling and image
-generation. 
+\begin{itemize}
+\item Identify anchor load buildings
+  
+  To achieve this function, the map should be able to make the
+  building with persistant high heating or cooling demand stand
+  out. Thus the color scheme assigns vibrant colors to high demand and
+  white to low demand. The break points of ``high'' demand remains to
+  be decided in further project development. For the current
+  implementation, the break point is acquired with the quantile
+  classification method.
 
-Imagemagic is used for converting and resizing images. For the
-creation of animated maps, ``ffmepeg'' was used for connect image
-sequences to animation.
+  Although with the box plot of heating demand (\fref{fig:SH}), the
+  buildings with high consistently high heating demand through its
+  high median and 25 percentile, a more intuitive interpretation is
+  still needed to convey information to people with less statistical
+  background. From the animated version of the dynamic energy map
+  (link to 2d map, link to 3d map) the Large Office, the Large Hotel
+  and the Midrise Apartment forms a high heat demand region, these
+  could be potential locations for making a connection to a district
+  system.
 
-Python 2.7 for interface design. The interface is written
-in Python2.7 with standard Tkinter graphic package including the data
-plot section. Pandas and numpy packages are used in data
-manipulation. Matplotlib and ggplot are used for creating data plots.
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{heatPowerDemand.png}
+    \caption[Comparing Community Heating and Electricity Demand]{In
+      this example, the users compare the week-wise heating and
+      electricity demand}
+    \label{fig:heatPowerDemand}
+  \end{figure}
+\item Size a CHP plant 
+
+  Two variables are crucial in sizing a CHP plant: 1) the heating
+  demand including space heating and service hot water 2) electricity
+  demand. For the current dynamic energy map interface, a 2D/3D
+  choropleth map are presented in the main map display window with the
+  heating demand and electricity demand encoded with a seven-class
+  bivariate choropleth legend as in \fref{fig:CHPHeating}. The dynamic
+  plot on the right of the interface depicts the heating and
+  electricity demand of the four building sectors and the community .
+
+  The user can also inspect heating energy and power demand of he
+  community with different time span and different aggregation
+  method. For example, they can compare the heating and power demand
+  for a week and see if the demand align. In \fref{fig:CHPHeating},
+  users can see the peak heating demand for the ninth week is about
+  the same level as the peak demand for the electricity. However,
+  their weekly behavior is different: the heating demand for the
+  second half of the week are relatively low but the electricity
+  demand is relatively high. The lower graph also shows that the
+  annual peak demand of electricity occurs during the time when the
+  community has the lowest heating demand. This poses the challenge
+  for the district energy system with Co-generation local plant and
+  the necessity for thermal energy storage devices in a district
+  energy system.
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{legendCHP.png}
+    \caption[Legend for Heat and Power Map]{Legend for Heat and Power
+      Map}
+    \label{fig:legendCHP}
+  \end{figure}
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{CHPHeating.png}
+    \caption[Interface for CHP Sizing]{In this example, the users
+      compare the week-wise heating and electricity demand}
+    \label{fig:CHPHeating}
+  \end{figure}
+
+\item Local load balancing
+
+  Apart from the information for the minimum and maximum value of the
+  heating and electricity demand of the community, more specific
+  heating and electricity demand of single buildings and building
+  groups are also available. This could be used to design micro-scale
+  CHP equipment or to locate thermal energy storage devices and to
+  size their storage capacity.  For the micro-scale CHP equipment
+  design, a load balancing in the level of a building group could make
+  the micro-scale CHP equipment operate in its high efficiency output
+  for a longer period.
+  
+  To achieve this, the program enable users to select a subset of the
+  existing buildings and creates the aggregated heating load plot for
+  the selected building group (within the specified time period). 
+
+  The user will first identify some cluster of buildings, in which
+  there is a pattern of building that turn red sequentially but not
+  simultaneously. Then they can check the building demand profile by
+  clicking on the building footprint in the 2D map
+  (\fref{fig:seeLoad}).
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{seeLoad.png}
+    \caption[Check Heating Load]{Users can check the building energy
+      demand (thermal or electricity) by clicking on the building foot
+      print in the 2D map and the interface will show the plot of the
+      energy demand profile within a period (the example is showing
+      the demand for a 24h hour period)}
+    \label{fig:seeLoad}
+  \end{figure}
+
+  Alternatively, they can first open the window that displays the 24h
+  period energy demand graph (hourly gas heating energy in the
+  following example) for all of the 16 prototype buildings and see if
+  there are some building types that have demand complimentary (so
+  they have a rough idea of what is a ``good building combination''
+  (\fref{fig:plotAll}) at this time that could be a candidate for load
+  balancing) and they will look at the map and search for this ``good
+  combination''.
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{plotAll.png}
+    \caption[Check All Heating Load Plot]{Users can plot all building
+      energy demand profile (heating gas demand for the example) and
+      search for ``good cobimations'' that have compensate load
+      profile}
+    \label{fig:plotAll}
+  \end{figure}
+
+  After the qualitative experimentation, users can select a group of
+  building by clicking on the building footprint and the program will
+  output a graph of aggregated load
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{seeAggDemand.png}
+    \caption[Plot Aggregated Demand]{In this example, users selected
+      the Stand-alone Retail and the Large Office and plots of each
+      single building and the aggregated demand of the two buildings
+      are displayed}
+    \label{fig:plotAll}
+  \end{figure}
+
+\end{itemize}
 
 \begin{comment}
 \section{Future Trends}
