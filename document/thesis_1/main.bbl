@@ -1,9 +1,22 @@
-\begin{thebibliography}{74}
+\begin{thebibliography}{78}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Alberta Association, Canadian Institute of
+  Planners}(2009)]{aacip2009}
+{Alberta Association, Canadian Institute of Planners}.
+\newblock Responding to the energy challenge of canadian communities.
+\newblock \emph{Planning Journal}, pages 30--33, July 2009.
+
+\bibitem[of~Energy Efficiency \& Renewable~Energy(2015{\natexlab{a}})]{DOE2015}
+Office of~Energy Efficiency \& Renewable~Energy.
+\newblock Commercial reference buildings.
+\newblock web, June 2015{\natexlab{a}}.
+\newblock
+  \url{http://energy.gov/eere/buildings/commercial-reference-buildings}.
 
 \bibitem[{NASA}(2015)]{NASA2015}
 {NASA}.
@@ -31,12 +44,6 @@ Kathryn.
 \newblock web, August 2015.
 \newblock
   \url{https://www.theccc.org.uk/tackling-climate-change/reducing-carbon-emissions/carbon-budgets-and-targets/}.
-
-\bibitem[{Alberta Association, Canadian Institute of
-  Planners}(2009)]{aacip2009}
-{Alberta Association, Canadian Institute of Planners}.
-\newblock Responding to the energy challenge of canadian communities.
-\newblock \emph{Planning Journal}, pages 30--33, July 2009.
 
 \bibitem[Damassa et~al.(2014)Damassa, Ge, and Fransen]{ghgReduce2014}
 Thomas Damassa, Mengpin Ge, and Taryn Fransen.
@@ -113,10 +120,10 @@ Shalini Ramesh, Khee~Poh Lam, Nina Baird, and Henry Johnstone.
   August 2005.
 
 \bibitem[of~Energy Efficiency \&
-  Renewable~Energy(2015{\natexlab{a}})]{DOEprototype}
+  Renewable~Energy(2015{\natexlab{b}})]{DOEprototype}
 Office of~Energy Efficiency \& Renewable~Energy.
 \newblock Commercial prototype building models.
-\newblock web, August 2015{\natexlab{a}}.
+\newblock web, August 2015{\natexlab{b}}.
 \newblock
   \url{https://www.energycodes.gov/commercial-prototype-building-models}.
 
@@ -331,13 +338,6 @@ Arrate~Gomez Diaz, Leonard Gray, Iain MacFadyen, Preetcharan Singh, and
 \newblock web, August 2015.
 \newblock \url{https://www.ffmpeg.org/}.
 
-\bibitem[of~Energy Efficiency \& Renewable~Energy(2015{\natexlab{b}})]{DOE2015}
-Office of~Energy Efficiency \& Renewable~Energy.
-\newblock Commercial reference buildings.
-\newblock web, June 2015{\natexlab{b}}.
-\newblock
-  \url{http://energy.gov/eere/buildings/commercial-reference-buildings}.
-
 \bibitem[Bhatia(2015)]{Bhatia2015}
 A.~Bhatia.
 \newblock Heat rejection options in hvac systems.
@@ -470,6 +470,42 @@ Edward~R. Tufte.
 Martin~E. Elmer.
 \newblock Symbol considerations for bivariate thematic mapping.
 \newblock diploma thesis, University of Wisconsin-Madison, 2012.
+
+\bibitem[Ratti et~al.(2005)Ratti, Baker, and Steemers]{Ratti2005762}
+Carlo Ratti, Nick Baker, and Koen Steemers.
+\newblock Energy consumption and urban texture.
+\newblock \emph{Energy and Buildings}, 37\penalty0 (7):\penalty0 762 -- 776,
+  2005.
+\newblock ISSN 0378-7788.
+\newblock \doi{http://dx.doi.org/10.1016/j.enbuild.2004.10.010}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0378778804003391}.
+
+\bibitem[Steemers(2003)]{Steemers20033}
+Koen Steemers.
+\newblock Energy and the city: density, buildings and transport.
+\newblock \emph{Energy and Buildings}, 35\penalty0 (1):\penalty0 3 -- 14, 2003.
+\newblock ISSN 0378-7788.
+\newblock \doi{http://dx.doi.org/10.1016/S0378-7788(02)00075-0}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0378778802000750}.
+\newblock Special issue on urban research.
+
+\bibitem[Şiir Kılkış(2014)]{K20141077}
+Şiir Kılkış.
+\newblock Energy system analysis of a pilot net-zero exergy district.
+\newblock \emph{Energy Conversion and Management}, 87:\penalty0 1077 -- 1092,
+  2014.
+\newblock ISSN 0196-8904.
+\newblock \doi{http://dx.doi.org/10.1016/j.enconman.2014.05.014}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0196890414004257}.
+
+\bibitem[Wikipedia(2015)]{kmean2015}
+Wikipedia.
+\newblock k-means clustering.
+\newblock web, August 2015.
+\newblock \url{https://en.wikipedia.org/wiki/K-means_clustering}.
 
 \bibitem[{Open Steet Map contriutors}(2015)]{OSM2015}
 {Open Steet Map contriutors}.

@@ -17,15 +17,15 @@
 \contentsline {subsection}{\numberline {1.3.4}Dynamic Energy Map}{8}{subsection.30}
 \contentsline {section}{\numberline {1.4}Why ``time'' dimension is important}{8}{section.31}
 \contentsline {subsection}{\numberline {1.4.1}Strong Temporal Variation of Energy Demand}{8}{subsection.32}
-\contentsline {subsection}{\numberline {1.4.2}More Detailed Description of Energy Behavior Supports Better Design}{9}{subsection.34}
+\contentsline {subsection}{\numberline {1.4.2}More Detailed Description of Energy Behavior Supports Better Design}{8}{subsection.34}
 \contentsline {subsection}{\numberline {1.4.3}Aggregation of Peak Value Becomes Tricky for Data with Time Variation}{9}{subsection.35}
 \contentsline {chapter}{\numberline {2}Related Works}{11}{chapter.36}
 \contentsline {section}{\numberline {2.1}Static Energy Map}{11}{section.37}
 \contentsline {subsection}{\numberline {2.1.1}London Heat Map}{11}{subsection.38}
-\contentsline {subsubsection}{\numberline {2.1.1.1}National Heat Map}{12}{subsubsection.40}
-\contentsline {subsubsection}{\numberline {2.1.1.2}Water Source Heat Map}{13}{subsubsection.42}
-\contentsline {subsection}{\numberline {2.1.2}Calgary Energy Map}{13}{subsection.44}
-\contentsline {subsection}{\numberline {2.1.3}Energy Potential Mapping}{14}{subsection.47}
+\contentsline {subsection}{\numberline {2.1.2}National Heat Map}{12}{subsection.40}
+\contentsline {subsection}{\numberline {2.1.3}Water Source Heat Map}{13}{subsection.42}
+\contentsline {subsection}{\numberline {2.1.4}Calgary Energy Map}{13}{subsection.44}
+\contentsline {subsection}{\numberline {2.1.5}Energy Potential Mapping}{14}{subsection.47}
 \contentsline {section}{\numberline {2.2}Dynamic Energy Map}{16}{section.49}
 \contentsline {subsection}{\numberline {2.2.1}Lower Hill District Dynamic Mapping Project}{16}{subsection.50}
 \contentsline {subsection}{\numberline {2.2.2}Energy Mapping to Identify Opportunities for Future Networks Project (EMIOFN)}{17}{subsection.53}
@@ -53,33 +53,36 @@
 \contentsline {section}{\numberline {3.4}Interface Specification}{51}{section.128}
 \contentsline {subsection}{\numberline {3.4.1}User Definition}{51}{subsection.129}
 \contentsline {subsection}{\numberline {3.4.2}Function Specification}{52}{subsection.130}
-\contentsline {chapter}{\numberline {4}Interface Design}{54}{chapter.133}
-\contentsline {section}{\numberline {4.1}Overview}{54}{section.134}
-\contentsline {section}{\numberline {4.2}(Non-interactive) Map Animation}{55}{section.135}
-\contentsline {section}{\numberline {4.3}Interactive Dynamic Map Interface}{59}{section.142}
-\contentsline {subsection}{\numberline {4.3.1}General Layout}{59}{subsection.143}
-\contentsline {subsection}{\numberline {4.3.2}Main Display Window}{60}{subsection.145}
-\contentsline {subsection}{\numberline {4.3.3}Bivariate Map Legend}{61}{subsection.147}
-\contentsline {subsubsection}{\numberline {4.3.3.1}Symbol Chosen}{61}{subsubsection.148}
-\contentsline {subsection}{\numberline {4.3.4}Time Sliders and Navigation Buttons}{63}{subsection.151}
-\contentsline {subsection}{\numberline {4.3.5}Data Plot}{64}{subsection.152}
-\contentsline {subsubsection}{\numberline {4.3.5.1}Methods to Show Plot}{64}{subsubsection.153}
-\contentsline {subsubsection}{\numberline {4.3.5.2}Providing Temporal Context in Data Plot}{66}{subsubsection.161}
-\contentsline {section}{\numberline {4.4}Use Case Demonstrations}{69}{section.164}
-\contentsline {subsection}{\numberline {4.4.1}Use Case I: Identification of Energy Recovery Opportunity}{69}{subsection.165}
-\contentsline {subsection}{\numberline {4.4.2}Use Case II: Sizing CHP Plant}{71}{subsection.169}
-\contentsline {chapter}{\numberline {5}Findings and Discussion}{76}{chapter.176}
-\contentsline {section}{\numberline {5.1}Insight of energy mapping with time information}{76}{section.177}
-\contentsline {section}{\numberline {5.2}Limitations and Further Development}{77}{section.178}
+\contentsline {subsection}{\numberline {3.4.3}Implementation tools and strategy}{53}{subsection.133}
+\contentsline {chapter}{\numberline {4}Interface Design}{54}{chapter.134}
+\contentsline {section}{\numberline {4.1}Overview}{54}{section.135}
+\contentsline {section}{\numberline {4.2}(Non-interactive) Map Animation}{55}{section.136}
+\contentsline {section}{\numberline {4.3}Interactive Dynamic Map Interface}{59}{section.143}
+\contentsline {subsection}{\numberline {4.3.1}General Layout}{59}{subsection.144}
+\contentsline {subsection}{\numberline {4.3.2}Main Display Window}{60}{subsection.146}
+\contentsline {subsection}{\numberline {4.3.3}Bivariate Map Legend}{61}{subsection.148}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Symbol Chosen}{61}{subsubsection.149}
+\contentsline {subsection}{\numberline {4.3.4}Time Sliders and Navigation Buttons}{63}{subsection.152}
+\contentsline {subsection}{\numberline {4.3.5}Data Plot}{64}{subsection.153}
+\contentsline {subsubsection}{\numberline {4.3.5.1}Methods to Show Plot}{64}{subsubsection.154}
+\contentsline {subsubsection}{\numberline {4.3.5.2}Providing Temporal Context in Data Plot}{66}{subsubsection.162}
+\contentsline {section}{\numberline {4.4}Use Case Demonstrations}{69}{section.165}
+\contentsline {subsection}{\numberline {4.4.1}Use Case I: Identification of Energy Recovery Opportunity}{69}{subsection.166}
+\contentsline {subsection}{\numberline {4.4.2}Use Case II: Sizing CHP Plant}{71}{subsection.170}
+\contentsline {chapter}{\numberline {5}Findings and Discussion}{76}{chapter.177}
+\contentsline {section}{\numberline {5.1}Summary of contribution}{76}{section.178}
+\contentsline {section}{\numberline {5.2}Limitations and Further Development}{78}{section.181}
+\contentsline {chapter}{\numberline {6}Conclusion}{82}{chapter.182}
+\contentsline {section}{\numberline {6.1}Insight of energy mapping with time information}{82}{section.183}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{79}{appendix.179}
-\contentsline {section}{\numberline {A.1}General Introduction}{79}{section.180}
-\contentsline {section}{\numberline {A.2}Explaining Each Steps}{80}{section.181}
-\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in CityEngine}{85}{appendix.196}
-\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{87}{appendix.197}
-\contentsline {section}{\numberline {C.1}Introduction}{87}{section.198}
-\contentsline {section}{\numberline {C.2}Explaining Each Steps}{87}{section.199}
-\contentsline {section}{\numberline {C.3}Final Output}{91}{section.216}
-\contentsline {chapter}{\numberline {D}Rule File Used in Final Dynamic Map Interface}{93}{appendix.218}
+\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{85}{appendix.184}
+\contentsline {section}{\numberline {A.1}General Introduction}{85}{section.185}
+\contentsline {section}{\numberline {A.2}Explaining Each Steps}{86}{section.186}
+\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in CityEngine}{91}{appendix.201}
+\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{93}{appendix.202}
+\contentsline {section}{\numberline {C.1}Introduction}{93}{section.203}
+\contentsline {section}{\numberline {C.2}Explaining Each Steps}{93}{section.204}
+\contentsline {section}{\numberline {C.3}Final Output}{97}{section.221}
+\contentsline {chapter}{\numberline {D}Rule File Used in Final Dynamic Map Interface}{99}{appendix.223}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{95}{dummy.219}
+\contentsline {chapter}{Bibliography}{101}{dummy.224}
