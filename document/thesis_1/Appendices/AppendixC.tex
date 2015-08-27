@@ -13,29 +13,34 @@ Precision T1600 Quad Core Intel Xeon, 3.10GHz machine with 16GB RAM in
 CMU Baker 140C cluster. The GIS software used is ArcScene
 10.2~\cite{arcScene2015}.
 
-The common procedure is 1) to export CityEngine models as either gdb
-file or as collada files and import the model to ArcScene 2)
-preprocess the energy profile and write it to a csv file containing
-hourly energy consumption for all building types in the
-community. 3) join the table to the 3D features 4) enable time in the
-joint layer and 5) configurate the setting of the animation and play
-the animation in ArcGIS. Each step will be explained in more detail in
-the following session.
+The common procedure is 
+\begin{enumerate}[{Step }1]
+\item Exporting CityEngine models as either gdb file or as collada
+  files and import the model to ArcScene
+\item Preprocessing the energy profile and write it to a csv file
+  containing hourly energy consumption for all building types in the
+  community.
+\item Joining the table to the 3D features
+\item Enabling time in the joint layer
+\item Configurating the setting of the animation and play
+the animation in ArcGIS.
+\end{enumerate}
+Each step will be explained in more detail in the following session.
 \section{Explaining Each Steps}
 \begin{enumerate}[1)]
 \item Exporting CityEngine model. 
 
   The exported format could be a) gdb file that contains the object
   attributes of building lots or b) collada file that only contains
-  the model geometry. Method a), the advantage is its potential to
+  the model geometry. The advantage of Method a) is its potential to
   pass attribute information from CityEngine to ArcGIS. Method b)
   requires a small script so that each building geometry could be
-  exported as one collada file.
+  exported as single collada files.
 
-\item Produce a file containing the energy profile of all buildings in
-  the community model into a csv file with one date-time column
+\item Producing a file containing the energy profile of all buildings
+  in the community model into a csv file with one date-time column
   containing the time information and several energy profile
-  information. 
+  information.
 
   The number of rows equals to $n \times 8760$ where $n$ is the unique
   building types (if two building has different energy demand
@@ -64,19 +69,21 @@ the following session.
   should use the ``convert time field'' to covert the time column in
   the imported csv table to type ``date''.
 
-\item Create the centroid for each building geometry footprint As is
-  mentioned in \sref{sec:aggregateTime}, aggregating the energy data
-  of the whole year to the 3D building geometry is not achievable with
-  the machine used in this example. So here the authors chose to
-  aggregate the energy data into a simplefiled geometry representation
-  of the buildings in the community model: the centroid of each
-  building. The steps of aggregating energy data to 3D building
-  features is the same as the steps of aggregating energy data to
-  building centroid by just changing the layer to which the data is
-  joined. An animated version of such aggregation can be accessed
+\item Create the centroid for each building geometry footprint 
+
+  As is mentioned in \sref{sec:aggregateTime}, aggregating the energy
+  data of the whole year to the 3D building geometry is not achievable
+  with the machine used in this example. So here the researcher chose
+  to aggregate the energy data into a simplefiled geometry
+  representation of the buildings in the community model: the centroid
+  of each building. The steps of aggregating energy data to 3D
+  building features is the same as the steps of aggregating energy
+  data to building centroid by just changing the layer to which the
+  data is joined. An animated version of such aggregation can be
+  accessed
   \href{http://www.armechxyj.com/energy-mapping.html#arcgisAnime}{at
     this link}. \fref{fig:animeArcGIS} shows a screenshot of the
-  ArcScene Dynamic Map showing the hourly gas heating energy demand. 
+  ArcScene Dynamic Map showing the hourly gas heating energy demand.
 
 \begin{figure}[h!]
   \centering
@@ -112,14 +119,14 @@ layer'' tool to create a point feature (``cen'')
 
 \item Import the centroid layer (``cen'') to the working gdb. 
 
-  This step important, because in the documentation about ``join'',
+  This step is important, because in the documentation about ``join'',
   ``When you create a join in such a case (one-to-many or many-to-
   many), there are differences between how tools and other
   layer-specific settings work depending on the data source. If you
   are using geodatabase data to create the join, all matching records
   are returned. If you are using nondatabase data, like shapefiles or
   dBASE tables, to create the join, only the first matching record is
-  returned.''~\cite{GISjoin2014} If we do not import it to gdb file,
+  returned.''~\cite{GISjoin2014} If one do not import it to gdb file,
   the record that retains are only one row for each building type,
   which is not desirable for the current situation. In order to retain
   all 8760 matching records for each building type, importing the
@@ -201,7 +208,7 @@ version could be found
 
 One issue regarding using ArcScene as the generator of images for 3D
 visualization is that the ``DataFrame'' module in image exporting does
-not work for ArcScene, this means we cannot export 3D map image
+not work for ArcScene, this means one cannot export 3D map image
 sequences for later post processing and display. This acts as another
 drawback that disables us from using ArcGIS in producing map images
 for implementing a dynamic energy map.

@@ -72,17 +72,18 @@
 \contentsline {chapter}{\numberline {5}Findings and Discussion}{76}{chapter.177}
 \contentsline {section}{\numberline {5.1}Summary of contribution}{76}{section.178}
 \contentsline {section}{\numberline {5.2}Limitations and Further Development}{78}{section.181}
-\contentsline {chapter}{\numberline {6}Conclusion}{82}{chapter.182}
-\contentsline {section}{\numberline {6.1}Insight of energy mapping with time information}{82}{section.183}
+\contentsline {chapter}{\numberline {6}Conclusion}{83}{chapter.182}
+\contentsline {section}{\numberline {6.1}Future Opportunities}{83}{section.183}
+\contentsline {section}{\numberline {6.2}Insight of Dynamic Energy Map}{85}{section.184}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{85}{appendix.184}
-\contentsline {section}{\numberline {A.1}General Introduction}{85}{section.185}
-\contentsline {section}{\numberline {A.2}Explaining Each Steps}{86}{section.186}
-\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in CityEngine}{91}{appendix.201}
-\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{93}{appendix.202}
-\contentsline {section}{\numberline {C.1}Introduction}{93}{section.203}
-\contentsline {section}{\numberline {C.2}Explaining Each Steps}{93}{section.204}
-\contentsline {section}{\numberline {C.3}Final Output}{97}{section.221}
-\contentsline {chapter}{\numberline {D}Rule File Used in Final Dynamic Map Interface}{99}{appendix.223}
+\contentsline {chapter}{\numberline {A}Implementing Dynamic Energy Map in CityEngine}{86}{appendix.185}
+\contentsline {section}{\numberline {A.1}General Introduction}{86}{section.186}
+\contentsline {section}{\numberline {A.2}Explaining Each Steps}{87}{section.191}
+\contentsline {chapter}{\numberline {B}Rule File for Implementing Dynamic Energy Map in CityEngine}{93}{appendix.206}
+\contentsline {chapter}{\numberline {C}Implementing Dynamic Energy Map in ArcGIS}{95}{appendix.207}
+\contentsline {section}{\numberline {C.1}Introduction}{95}{section.208}
+\contentsline {section}{\numberline {C.2}Explaining Each Steps}{96}{section.214}
+\contentsline {section}{\numberline {C.3}Final Output}{100}{section.231}
+\contentsline {chapter}{\numberline {D}Rule File Used in Final Dynamic Map Interface}{101}{appendix.233}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{101}{dummy.224}
+\contentsline {chapter}{Bibliography}{103}{dummy.234}
