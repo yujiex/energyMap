@@ -277,10 +277,11 @@ def plotHist(arr, category, save_dir):
 #   p2 = ggplot(aes(x = col2), data = df) + geom_histogram()
 #   p3 = ggplot(aes(x = col3), data = df) + geom_histogram()
     p4 = ggplot(aes(x = col4), data = df) + geom_histogram()
-    ggsave(plot = p1, filename = col1 + ".png", path = save_dir, width = 5, height = 5, dpi = 100) # reduce dpi to save compile time
+    ggsave(plot = p1, filename = col1 + ".png", path = save_dir, width = 5, height = 4, dpi = 75) # reduce dpi to save compile time
 #   ggsave(plot = p2, filename = col2 + "no0.png", path = save_dir)
 #   ggsave(plot = p3, filename = col3 + "no0.png", path = save_dir)
-    ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = 5, height = 5, dpi = 100)
+#   ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = 5, height = 5, dpi = 100)
+    ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = 5, height = 4, dpi = 75)
 
 # two version of making plot
 # use ggplot must use default binwidth, if changed the figure is weird
