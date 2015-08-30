@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from ggplot import *
+import util_array as ar
 
 # ###############
 # global setting of user interface
@@ -71,21 +72,6 @@ hour_start = 0
 hour_end = 8759
 interval = (hour_end - hour_start) / 10
 
-def getAve(lst):
-    return sum(lst)/len(lst)
-# functions to control buttons to jump forward and backward
-def advance24h():
-    allyear.set(allyear.get() + 24)
-
-def advance1h():
-    allyear.set(allyear.get() + 1)
-
-def back24h():
-    allyear.set(allyear.get() - 24)
-
-def back1h():
-    allyear.set(allyear.get() - 1)
-
 def display(idx, time, imgName):
     hmap.plotImg(imgName)
     hmap.titleX(time, "TkDefaultFont", "L")
@@ -127,22 +113,29 @@ ot_font = "TkDefault 6"
 font_color = "gray45"
 
 # variables of option menu
-
-master.typeVar = StringVar(master)
+master.typeVar = StringVar(master) # plot topic
 master.typeVar.set("space heat")
-master.numVar = StringVar(master)
+master.numVar = StringVar(master)  # plot quantities
 master.numVar.set("single")
-master.timeVar = StringVar(master)
+master.timeVar = StringVar(master) # time interval and duration
 master.timeVar.set("day")
-master.dimVar = StringVar(master)
+master.dimVar = StringVar(master)  # 2D/3D toggle
 master.dimVar.set("2D")
-master.statVar = StringVar(master)
+master.statVar = StringVar(master) # aggregation method
 master.statVar.set("exact")
 
-# option widget for plotting profiles for single building or building groups
+#reading in building information configuration
 [bdCountDict, bdTypeDict, areaDict, initDict, bdSectorDict,bdFilenameDict] = ld.readLand()
 bdTypelist = [key for key in bdCountDict]
 bdinitlist = [initDict[key] for key in initDict]  # key is building type
+
+def showTxt():
+    msg = ld.generalMsg()
+    heatmsg = Message(master,text = msg, font = bd_font, width =
+                      category * s_colorcell, fg = font_color)
+    heatmsg.grid(row = row_colorscheme, column = col_colorscheme,
+                rowspan = h_span_colorscheme, columnspan =
+                w_span_colorscheme)
 
 def plotBuilding():
     dirname = "energyData/Community_"
@@ -178,7 +171,7 @@ def plotBuilding():
                 g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
                 g.set_xlim(0, numPeriod + 1)
     else:
-        f, axarr = plt.subplots(2, 1, sharex=False, sharey = False)
+        f, axarr = plt.subplots(2, 1, sharex = False, sharey = False)
         sr = pd.Series(np.genfromtxt(filename, delimiter = ','))
 
         g1 = sr[idx:(min(idx+step, 8760))].plot(ax = axarr[0], title = title)
@@ -187,17 +180,16 @@ def plotBuilding():
         if stat == "exact":
             sr2 = pd.Series([sr[idx%step + i*step] for i in range(numPeriod)])
             title = '{0} with step {1}'.format(title, period)
-        elif stat == "peak":
-            sr2 = pd.Series([max(sr[i*step:(i + 1)*step])
-                            for i in range(numPeriod)])
-            title = '{0} {1} '.format(stat.capitalize(), (period+"ly").capitalize(), title)
-        elif stat == "total":
-            sr2 = pd.Series([sum(sr[i*step:(i + 1)*step])
-                            for i in range(numPeriod)])
-            title = '{0} {1} '.format(stat.capitalize(), (period+"ly").capitalize(), title)
-        elif stat == "average":
-            sr2 = pd.Series([getAve(sr[i*step:(i + 1)*step])
-                            for i in range(numPeriod)])
+        else:
+            if stat == "peak":
+                sr2 = pd.Series([max(sr[i*step:(i + 1)*step])
+                                for i in range(numPeriod)])
+            if stat == "total":
+                sr2 = pd.Series([sum(sr[i*step:(i + 1)*step])
+                                for i in range(numPeriod)])
+            if stat == "average":
+                sr2 = pd.Series([ar.getAve(sr[i*step:(i + 1)*step])
+                                for i in range(numPeriod)])
             title = '{0} {1} {2}'.format(stat.capitalize(), period+"ly", title)
 
         g2 = sr2.plot(ax = axarr[1], title = title)
@@ -207,20 +199,6 @@ def plotBuilding():
         windowTitle = "Community " + title
     f.canvas.set_window_title(windowTitle)
     plt.show()
-
-# clear selected landuse for calculation
-def clearSelect():
-    global landSelection # modify the global copy
-    landSelection = []
-    hmap.g.delete("a")
-
-def showTxt():
-    msg = ld.generalMsg()
-    heatmsg = Message(master,text = msg, font = bd_font, width =
-                      category * s_colorcell, fg = font_color)
-    heatmsg.grid(row = row_colorscheme, column = col_colorscheme,
-                rowspan = h_span_colorscheme, columnspan =
-                w_span_colorscheme)
 
 # show legend in a separate window
 def showLegend():
@@ -255,6 +233,22 @@ def showLegend():
         g.create_text(size/2, size/2, fill = font_color,
                     font = bd_font, text = "x")
     legendWd.mainloop()
+
+# functions to control buttons to jump forward and backward
+def advance24h():
+    allyear.set(allyear.get() + 24)
+def advance1h():
+    allyear.set(allyear.get() + 1)
+def back24h():
+    allyear.set(allyear.get() - 24)
+def back1h():
+    allyear.set(allyear.get() - 1)
+
+# clear selected landuse for calculation
+def clearSelect():
+    global landSelection # modify the global copy
+    landSelection = []
+    hmap.g.delete("a")
 
 # buttons to control advance and back
 buttonList = [[{'text':'+24h', 'cmd':advance24h},
@@ -376,7 +370,7 @@ def landName(event):
                                     for i in range(numPeriod)])
                     title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 elif stat == "average":
-                    sr = pd.Series([getAve(building[i*step:(i + 1)*step])
+                    sr = pd.Series([ar.getAve(building[i*step:(i + 1)*step])
                                     for i in range(numPeriod)])
                     title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 g2 = sr.plot(ax = axarr[1],title = title)
@@ -401,7 +395,7 @@ def landName(event):
                         sr = pd.Series([max(selectDF['agg'][i*step:(i+1)*step])
                                        for i in range(numPeriod)])
                     elif stat == "average":
-                        sr = pd.Series([getAve(selectDF['agg'][i*step:(i+1)*step]) for i in range(numPeriod)])
+                        sr = pd.Series([ar.getAve(selectDF['agg'][i*step:(i+1)*step]) for i in range(numPeriod)])
                     elif stat == "total":
                         sr = pd.Series([sum(selectDF['agg'][i*step:(i+1)*step])
                                        for i in range(numPeriod)])

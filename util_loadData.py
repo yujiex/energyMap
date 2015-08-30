@@ -230,10 +230,10 @@ def read2dicts():
                                                  dictArr[5][key])]
     dictRecover = {}
     for key in dictArr[0]:
-        if key == "Large Office" or key == "Hospital" or key == "HighriseApartment":
-            dictRecover[key] = [x * 1.15 for x in dictArr[3][key]]
+        if key == "LargeOffice" or key == "Hospital" or key == "HighriseApartment":
+            dictRecover[key] = [x * 1.15 for x in dictArr[4][key]]
         else:
-            dictRecover[key] = [x * 1.25 for x in dictArr[3][key]]
+            dictRecover[key] = [x * 1.25 for x in dictArr[4][key]]
     dictWaterHeat = {}
     for key in dictArr[0]:
         dictWaterHeat[key] = [x + y for (x, y) in zip(dictArr[2][key],

@@ -2,6 +2,9 @@
 import util_order as od
 import bisect as bs
 
+def getAve(lst):
+    return sum(lst)/len(lst)
+
 # helper function, return the prefix sum of the list
 def prefixSum(mylist):
     preflist = []
@@ -153,8 +156,8 @@ def test_interp():
     assert(cmp(interp(1, 10, 4), [1, 4, 7, 10]) == 0)
     assert(cmp(interp(1.0, 10.0, 4), [1.0, 4.0, 7.0, 10.0]) == 0)
     assert(cmp(interp(1, 11, 4), [1, 4, 8, 11]) == 0)
-    assert(np.allclose(interp(1.0, 11.0, 4), 
-                       [1.0, 4.333333, 7.666667, 11.0], 
+    assert(np.allclose(interp(1.0, 11.0, 4),
+                       [1.0, 4.333333, 7.666667, 11.0],
                        rtol = 0.0, atol = 0.01))
     print("All test passed!")
 
