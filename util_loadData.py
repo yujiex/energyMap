@@ -262,26 +262,39 @@ def test_plotBoxDict():
 
 def plotHist(arr, category, save_dir):
 
+    def space2Highfen(string):
+        if ' ' in string:
+            print('{0} has space\n'.format(string))
+            strList = list(string)
+            length = len(strList)
+            for i in range(length):
+                if strList[i] == ' ':
+                    strList[i] = '-'
+            return ''.join(strList)
+        return string
+
     arr = [x for x in arr if x != 0]
     maxi = max(arr)
-    col1 = 'original-'+category
+    col1 = 'original-'+space2Highfen(category)
 #   col2 = 'linear-'+category
 #   col3 = 'log-'+category
-    col4 = 'log-Scale-'+category
+    col4 = 'log-Scale-'+space2Highfen(category)
     df = pd.DataFrame(pd.Series(arr), columns = [col1]) #original
 #   df[col2] = (maxi - df[col1])/maxi
 #   df[col3] = (np.log(maxi) - np.log(df[col1]))/np.log(maxi)
     df[col4] = np.log(df[col1])                         #logscale
 
+    width = 6
+    height = 5.5
     p1 = ggplot(aes(x = col1), data = df) + geom_histogram()
 #   p2 = ggplot(aes(x = col2), data = df) + geom_histogram()
 #   p3 = ggplot(aes(x = col3), data = df) + geom_histogram()
     p4 = ggplot(aes(x = col4), data = df) + geom_histogram()
-    ggsave(plot = p1, filename = col1 + ".png", path = save_dir, width = 5, height = 4, dpi = 75) # reduce dpi to save compile time
+    ggsave(plot = p1, filename = col1 + ".png", path = save_dir, width = width, height = height, dpi = 75) # reduce dpi to save compile time
 #   ggsave(plot = p2, filename = col2 + "no0.png", path = save_dir)
 #   ggsave(plot = p3, filename = col3 + "no0.png", path = save_dir)
 #   ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = 5, height = 5, dpi = 100)
-    ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = 5, height = 4, dpi = 75)
+    ggsave(plot = p4, filename = col4 + ".png", path = save_dir, width = width, height = height, dpi = 75)
 
 # two version of making plot
 # use ggplot must use default binwidth, if changed the figure is weird

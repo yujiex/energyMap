@@ -135,9 +135,14 @@ def createColorScheme(master, cate, row_off, col_off, gridsize,
     cl_dmd_label = Canvas(master, width = w_cl_dmd, height = h_cl_dmd)
     cl_dmd_label.grid(row = row_off + 2, column = col_off, rowspan =
                       cate)
-    cl_dmd_label.create_text(w_cl_dmd/2, h_cl_dmd/2, text =
-                             "\n".join("COOL DEMAND"), font = bd_font,
-                             fill = font_color)
+    if topic == "energy recovery":
+        cl_dmd_label.create_text(w_cl_dmd/2, h_cl_dmd/2, text =
+                                 "\n".join("COOL DEMAND"), font = bd_font,
+                                 fill = font_color)
+    else:
+        cl_dmd_label.create_text(w_cl_dmd/2, h_cl_dmd/2, text =
+                                 "\n".join("ELEC DEMAND"), font = bd_font,
+                                 fill = font_color)
 
     row_cl_label = row_off + 2 + cate
     cool_label = Canvas(master, width = gridsize, height = gridsize)

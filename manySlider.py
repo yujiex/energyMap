@@ -1,3 +1,6 @@
+# TO DO:
+# add report table: click on "report", show the exact energy consumption data for the current time step
+
 from Tkinter import *
 #from time import sleep
 import csv
@@ -120,7 +123,7 @@ master.numVar.set("single")
 master.timeVar = StringVar(master) # time interval and duration
 master.timeVar.set("day")
 master.dimVar = StringVar(master)  # 2D/3D toggle
-master.dimVar.set("2D")
+master.dimVar.set("3D")
 master.statVar = StringVar(master) # aggregation method
 master.statVar.set("exact")
 
@@ -361,17 +364,16 @@ def landName(event):
                     sr = pd.Series([building[idx%step + i*step]
                                     for i in range(numPeriod)])
                     title = '{0} with step {1}'.format(title, period)
-                elif stat == "peak":
-                    sr = pd.Series([max(building[i*step:(i + 1)*step])
-                                    for i in range(numPeriod)])
-                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
-                elif stat == "total":
-                    sr = pd.Series([sum(building[i*step:(i + 1)*step])
-                                    for i in range(numPeriod)])
-                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
-                elif stat == "average":
-                    sr = pd.Series([ar.getAve(building[i*step:(i + 1)*step])
-                                    for i in range(numPeriod)])
+                else:
+                    if stat == "peak":
+                        sr = pd.Series([max(building[i*step:(i + 1)*step])
+                                        for i in range(numPeriod)])
+                    if stat == "total":
+                        sr = pd.Series([sum(building[i*step:(i + 1)*step])
+                                        for i in range(numPeriod)])
+                    if stat == "average":
+                        sr = pd.Series([ar.getAve(building[i*step:(i + 1)*step])
+                                        for i in range(numPeriod)])
                     title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 g2 = sr.plot(ax = axarr[1],title = title)
                 g2.set_xlim(0, numPeriod - 1)
@@ -467,10 +469,11 @@ monthTick.grid(row = row_year, column = col_year, rowspan =
                h_span_year, columnspan = w_span_year, sticky = S)
 monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
              "Sep", "Oct", "Nov", "Dec"]
+w_cursor = 15
 for i in range(12):
-    monthTick.create_line(1 + w_slider/12*i, 1, 1 + w_slider/12*i, 8,
+    monthTick.create_line(w_cursor + 1 + w_slider/12*i, 1, w_cursor + 1 + w_slider/12*i, 8,
                           fill = font_color)
-    monthTick.create_text(26 + w_slider/12*i, 7, text = monthList[i],
+    monthTick.create_text(w_cursor + 26 + w_slider/12*i, 7, text = monthList[i],
                           font = nm_font, fill = font_color)
 
 optbuttonList = [{'opt': ['single', 'group', 'community'],

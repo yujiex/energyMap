@@ -3,7 +3,7 @@ from Tkinter import *
 import csv
 import ast
 from util_time import *
-import plotGraphCHP
+import plotGraph
 import util_loadData as ld
 import colorRamp as cr
 import util_geo as geo
@@ -11,18 +11,19 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from ggplot import *
+import util_array as ar
 
 # ###############
 # global setting of user interface
-w_photo = plotGraphCHP.w_photo
-h_photo = plotGraphCHP.h_photo
-photo_tb = plotGraphCHP.photo_tb
-photo_lr = plotGraphCHP.photo_lr
-w_window = plotGraphCHP.w_window
-h_window = plotGraphCHP.h_window
-h_slider = plotGraphCHP.h_slider
-w_graph = plotGraphCHP.graph_width
-h_graph = plotGraphCHP.graph_height
+w_photo = plotGraph.w_photo
+h_photo = plotGraph.h_photo
+photo_tb = plotGraph.photo_tb
+photo_lr = plotGraph.photo_lr
+w_window = plotGraph.w_window
+h_window = plotGraph.h_window
+h_slider = plotGraph.h_slider
+w_graph = plotGraph.graph_width
+h_graph = plotGraph.graph_height
 
 h_slider = 10
 w_slider = w_window
@@ -76,7 +77,7 @@ def display(idx, time, imgName):
     hmap.titleX(time, "TkDefaultFont", "L")
 
     # display curves
-    plotGraphCHP.plotAll(idx, lbound, ubound, lbound_total, ubound_total)
+    plotGraph.plotAll(idx, lbound, ubound, lbound_total, ubound_total)
 
 # control month, date, hour slider
 def printimg3(event):
@@ -85,13 +86,14 @@ def printimg3(event):
     evt_hour = (hour.get())
     idx = mdh2hour(evt_month, evt_date, evt_hour, numdays)
     allyear.set(idx)
-    imgName = hour2imgName(idx, master.dimVar.get(), "CHP")
+    imgName = hour2imgName(idx, master.dimVar.get(), "recovery")
     time = mdh2str(evt_month, evt_date, evt_hour)
     display(idx, time, imgName)
 
 def printimg(event):
     idx = allyear.get()
-    imgName = hour2imgName(idx, master.dimVar.get(), "CHP")
+    imgName = hour2imgName(idx, master.dimVar.get(), "recovery")
+
     mdh = hour2mdh(idx)
     t_month = mdh[0]
     t_date = mdh[1]
@@ -103,7 +105,7 @@ def printimg(event):
 master = Tk()
 w = str(w_graph * 2 + w_window + 10)
 master.geometry(w+'x700+0+0')
-master.title("Dynamic Heat Power Map")
+master.title("Dynamic Heating-Cooling Map")
 defaultbg = master.cget('bg')
 bd_font = "TkDefault 8 bold"
 nm_font = "TkDefault 8"
@@ -118,11 +120,11 @@ master.numVar.set("single")
 master.timeVar = StringVar(master) # time interval and duration
 master.timeVar.set("day")
 master.dimVar = StringVar(master)  # 2D/3D toggle
-master.dimVar.set("3D")
+master.dimVar.set("2D")
 master.statVar = StringVar(master) # aggregation method
 master.statVar.set("exact")
 
-# option widget for plotting profiles for single building or building groups
+#reading in building information configuration
 [bdCountDict, bdTypeDict, areaDict, initDict, bdSectorDict,bdFilenameDict] = ld.readLand()
 bdTypelist = [key for key in bdCountDict]
 bdinitlist = [initDict[key] for key in initDict]  # key is building type
@@ -141,7 +143,7 @@ def plotBuilding():
                 "recover" : "recov.csv", "electricity" : "elec.csv",
                 "heat" : "heat.csv"}
     typeDict = {"space heat" : dfSpaceHeat, "cool" : dfCool,"heat" : dfHeat,
-               "recover" : dfRecover, "electricity" : dfElec}
+                "recover" : dfRecover, "electricity" : dfElec}
     (num, choice, period, step, title, stat) = plotMethod()
     filename = dirname + fileDict[choice]
     df = typeDict[choice]
@@ -165,7 +167,7 @@ def plotBuilding():
                 elif stat == "total":
                     data = pd.Series([(df.ix[y * step:(y + 1)*step, i]).sum()
                                       for y in range(numPeriod)])
-                windowTitle = 'Single Building {0} {1}'.format(stat.               capitalize(), title)
+                windowTitle = 'Single Building {0} {1}'.format(stat.capitalize(), title)
                 g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
                 g.set_xlim(0, numPeriod + 1)
     else:
@@ -180,8 +182,8 @@ def plotBuilding():
             title = '{0} with step {1}'.format(title, period)
         else:
             if stat == "peak":
-                    sr2 = pd.Series([max(sr[i*step:(i + 1)*step])
-                                    for i in range(numPeriod)])
+                sr2 = pd.Series([max(sr[i*step:(i + 1)*step])
+                                for i in range(numPeriod)])
             if stat == "total":
                 sr2 = pd.Series([sum(sr[i*step:(i + 1)*step])
                                 for i in range(numPeriod)])
@@ -208,10 +210,11 @@ def showLegend():
                 rowspan = h_span_colorscheme, columnspan =
                 w_span_colorscheme)
     x = cr.createColorScheme(legendWd, category, row_colorscheme,
-                            col_colorscheme, s_colorcell, "quantile", "CHP")
+                             col_colorscheme, s_colorcell,
+                             "quantile", "energy recovery")
     (color_2d, coloridDict) = x
     colorGrid = cr.colorRamp_2d(category, [255, 255, 255],
-                                [255, 0, 0], [0, 255, 0])
+                                [255, 0, 0], [0, 0, 255])
 
     size = s_colorcell
     for i in range(category):
@@ -272,20 +275,20 @@ for row in buttonList:
 showTxt()
 
 # create a canvas and display images on canvas
-hmap = plotGraphCHP.ImgPlot("Dynamic Heat Power Map", row_photo, col_photo,
-                            h_span_photo, w_span_photo, w_window,
-                            h_window, photo_lr, photo_lr, photo_tb,
-                            photo_tb, master)
-
-
-
-
-
-
+hmap = plotGraph.ImgPlot("Dynamic Heat Map", row_photo, col_photo,
+                         h_span_photo, w_span_photo, w_window,
+                         h_window, photo_lr, photo_lr, photo_tb,
+                         photo_tb, master)
+'''
+def callback(event):
+    with open ('landCord.txt', 'a') as wt:
+        wt.write ('{0}, {1}, '.format(event.x, event.y))
+        print event.x, event.y
+'''
 # reading a table with landuse and coordinates
 def readLandShape():
     landDict = {}
-    with open ('input/landCHP.txt', 'r') as rd:
+    with open ('input/land.txt', 'r') as rd:
         rows = csv.reader(rd)
         for row in rows:
             key = str(row[1:])
@@ -295,30 +298,13 @@ def readLandShape():
 
 (x, y) = ld.read2dicts()
 allDict = dict(zip(x, y))
-allDict["Space Heating"]
 dfSpaceHeat = pd.DataFrame(allDict["Space Heating"])
-dfHeat = pd.DataFrame(allDict["Space Heating"])
-dfElec = pd.DataFrame(allDict["Space Heating"])
+dfHeat = pd.DataFrame(allDict["Heating"])
+dfElec = pd.DataFrame(allDict["Electricity:Facility"])
 dfCool = pd.DataFrame(allDict["Cooling:Electricity"])
 dfRecover = pd.DataFrame(allDict["Heat Recover"])
 landDict = readLandShape()
-initialDict = {
-        "SO":"SmallOffice",
-        "FR":"FullServiceRestaurant",
-        "MA":"MidriseApartment",
-        "LO":"LargeOffice",
-        "HO":"Hospital",
-        "SS":"SecondarySchool",
-        "OP":"OutPatient",
-        "SU":"SuperMarket",
-        "QR":"QuickServiceRestaurant",
-        "SM":"StripMall",
-        "PS":"PrimarySchool",
-        "SR":"Stand-aloneRetail",
-        "LH":"LargeHotel",
-        "WH":"Warehouse",
-        "SH":"SmallHotel",
-        "MO":"MediumOffice"}
+initialDict = dict([(initDict[key], key) for key in initDict])
 
 landSelection = []
 
@@ -367,7 +353,7 @@ def landName(event):
             if num == "single":
                 title = '{0} {1}'.format(bdtype, title)
                 f, axarr = plt.subplots(2, 1, sharex=False, sharey = False)
-                g1 = typeDict[choice][bdtype][idx:(min(idx+step, 8760))].          plot(ax = axarr[0], title = title)
+                g1 = typeDict[choice][bdtype][idx:(min(idx+step, 8760))].plot(ax = axarr[0], title = title)
                 g1.set_xlim(idx, min(idx+step, 8760) - 1)
 
                 building = typeDict[choice][bdtype]
@@ -383,9 +369,9 @@ def landName(event):
                         sr = pd.Series([sum(building[i*step:(i + 1)*step])
                                         for i in range(numPeriod)])
                     if stat == "average":
-                        sr = pd.Series([ar.getAve(building[i*step:(i + 1)*         step])
+                        sr = pd.Series([ar.getAve(building[i*step:(i + 1)*step])
                                         for i in range(numPeriod)])
-                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+       "ly").capitalize(), title)
+                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 g2 = sr.plot(ax = axarr[1],title = title)
                 g2.set_xlim(0, numPeriod - 1)
                 g2.axvline(idx//step, color = 'red', linestyle='--')
@@ -408,12 +394,12 @@ def landName(event):
                         sr = pd.Series([max(selectDF['agg'][i*step:(i+1)*step])
                                        for i in range(numPeriod)])
                     elif stat == "average":
-                        sr = pd.Series([ar.getAve(selectDF['agg'][i*step:(i+1)*    step]) for i in range(numPeriod)])
+                        sr = pd.Series([ar.getAve(selectDF['agg'][i*step:(i+1)*step]) for i in range(numPeriod)])
                     elif stat == "total":
                         sr = pd.Series([sum(selectDF['agg'][i*step:(i+1)*step])
                                        for i in range(numPeriod)])
 
-                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+       "ly").capitalize(), title)
+                    title = '{0} {1} {2}'.format(stat.capitalize(), (period+"ly").capitalize(), title)
                 g2 = sr.plot(ax = axarr[1], title = title)
                 g2.set_xlim(0, numPeriod - 1)
                 g2.axvline(idx//step, color = 'red', linestyle='--')
@@ -426,16 +412,11 @@ def landName(event):
             return
     print "invalid selection"
 
-def callback(event):
-    with open ('landCord.txt', 'a') as wt:
-        wt.write ('{0}, {1}, '.format(event.x, event.y))
-        print event.x, event.y
 hmap.g.bind("<Button-1>", landName)
-#hmap.g.bind("<Button-1>", callback)
 
 n_row = 4
 n_col = 2
-x = plotGraphCHP.createAll(master, n_row, n_col, row_graph_0,
+x = plotGraph.createAll(master, n_row, n_col, row_graph_0,
                         col_graph_0, h_span_graph, w_span_graph,
                         h_span_plotagg, w_span_graph)
 (lbound, ubound, lbound_total, ubound_total) = x
@@ -485,10 +466,11 @@ monthTick.grid(row = row_year, column = col_year, rowspan =
                h_span_year, columnspan = w_span_year, sticky = S)
 monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
              "Sep", "Oct", "Nov", "Dec"]
+w_cursor = 15
 for i in range(12):
-    monthTick.create_line(1 + w_slider/12*i, 1, 1 + w_slider/12*i, 8,
+    monthTick.create_line(w_cursor + 1 + w_slider/12*i, 1, w_cursor + 1 + w_slider/12*i, 8,
                           fill = font_color)
-    monthTick.create_text(26 + w_slider/12*i, 7, text = monthList[i],
+    monthTick.create_text(w_cursor + 26 + w_slider/12*i, 7, text = monthList[i],
                           font = nm_font, fill = font_color)
 
 optbuttonList = [{'opt': ['single', 'group', 'community'],
