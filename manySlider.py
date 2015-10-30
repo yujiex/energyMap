@@ -150,6 +150,12 @@ def plotBuilding():
     (num, choice, period, step, title, stat) = plotMethod()
     filename = dirname + fileDict[choice]
     df = typeDict[choice]
+    '''
+    print 'data frame in single plot'
+    print df.to_string(max_rows = 2)
+    print list(df.columns.values)
+    '''
+    headerlist = list(df.columns.values)
     idx = allyear.get()
     numPeriod = 8760 // step
     if num == "single":
@@ -158,7 +164,7 @@ def plotBuilding():
             if stat == "exact":
                 data = df.ix[idx: min(idx + step, 8760), i]
                 windowTitle = "Single Building " + title
-                g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
+                g = data.plot(ax=axarr[i/4, i%4], title = headerlist[i])
                 g.set_xlim(idx, min(idx + step, 8760) - 1)
             else:
                 if stat == "peak":
@@ -171,7 +177,7 @@ def plotBuilding():
                     data = pd.Series([(df.ix[y * step:(y + 1)*step, i]).sum()
                                       for y in range(numPeriod)])
                 windowTitle = 'Single Building {0} {1}'.format(stat.capitalize(), title)
-                g = data.plot(ax=axarr[i/4, i%4], title = bdTypelist[i])
+                g = data.plot(ax=axarr[i/4, i%4], title = headerlist[i])
                 g.set_xlim(0, numPeriod + 1)
     else:
         f, axarr = plt.subplots(2, 1, sharex = False, sharey = False)
