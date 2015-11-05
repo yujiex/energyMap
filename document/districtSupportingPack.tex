@@ -80,6 +80,14 @@ community district energy project objectives. It involves data
 collection of ``building density, mix of uses, and anchor loads''\cite
 {IDEA2012} and data assembling and map creation.
 
+Definition of energy map: ``a map showing opportunities and
+constraints for clean and renewable energy projects across a given
+area. This will incorporate thermal demand data typically presented in
+a heat map''~\cite{IDEA2012}.  
+
+Definition of heat map: ``map showing locations where heat demand is
+sufficient to support district heating. Often included as part of an
+energy map.''~\cite{IDEA2012}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\linewidth]{energyMapIDEA.png}
@@ -98,16 +106,20 @@ in the process are as follows (adapted from \cite{IDEA2012})
   \end{itemize}
 \item \textbf{Data collection}
   \begin{itemize}
+  \item Land use density
   \item Energy Demand (hourly scale~\cite{Baird2014})
     \begin{itemize}
-    \item Current energy consumption
-    \item Future energy consumption
+    \item Current energy consumption for existing buildings
+    \item Future energy consumption for potential new development
       \begin{itemize}
         \item new development rate
         \item improvement of building energy efficiency,
         \item improvement of people's energy use behavior
         \end{itemize}
       \end{itemize}
+    \item Building age (used to calibrate building energy consumption
+      prediction or assessment)
+    \item Current and future anchor load buildings
     \item Energy sources
       \begin{itemize}
       \item Renewable: solar, wind, geothermal, biomass, water body
@@ -117,8 +129,16 @@ in the process are as follows (adapted from \cite{IDEA2012})
       \item Existing district network
       \end{itemize}
     \end{itemize}
-  \item \textbf{Analysis}
+  \item \textbf{Analysis}\label{step:analysis}
     \begin{itemize}
+    \item classify urban area according to their different energy
+      solutions (``energy character area''\cite{IDEA2012}): in
+      \cite{IDEA2012}, an example of defining the ``energy character
+      area'' is as follows: for residential suburban area, which has
+      low density and low degree of mixed land use, a suitable energy
+      strategy is small scale energy generation system, such as solar
+      energy); for center city area, with high density, a large
+      district energy system with CHP is suitable.
     \item ``suitability of low carbon technology''~\cite{IDEA2012}
       \begin{itemize}
       \item Basic function
@@ -151,6 +171,31 @@ in the process are as follows (adapted from \cite{IDEA2012})
 From this analysis above, the current dynamic energy map has
 information of ``Current energy consumption'' but lacks the other
 information.
+
+IDEA document described the role of energy maps ``help identify
+opportunities for new energy project, determine suitable technologies
+and approaches to energy generation, distribution and supply,
+highlight opportunities to link to other projects or share energy
+centers; and aid decisions about prioritizing
+projects''~\cite{IDEA2012}. Energy mapping is especially helpful in
+step \ref{step:analysis} Analysis.
+
+According to IDEA document, energy maps can show:
+\begin{itemize}
+\item what sites are available (free of constraints)
+\item what energy strategy is possible for a site.
+\item what sites are with good energy potential that supports new
+  development
+\item what project should be developed first.
+\end{itemize}
+
+Energy maps can influence energy strategy by: ``encouragement of
+renewable energy generation in appropriate areas by green permitting,
+retrofit weatherization programs in areas of older buildings,
+ordinance requiring disclosure by commercial building owners of energy
+efficiency standards, setting code standards for new construction, and
+specifying district energy systems for appropriate
+areas.''~\cite{IDEA2012}
 \newpage
 \bibliographystyle{plain}
 \bibliography{myCitation}
